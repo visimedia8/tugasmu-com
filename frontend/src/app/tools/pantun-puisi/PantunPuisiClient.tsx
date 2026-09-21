@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import FilterUniversal, { FilterState } from '@/components/tools/FilterUniversal';
 import HasilOutput from '@/components/tools/HasilOutput';
+import UsageLimitModal from '@/components/shared/UsageLimitModal';
 
 export default function PantunPuisiClient() {
   const [filter, setFilter] = useState<FilterState>({
@@ -19,6 +20,7 @@ export default function PantunPuisiClient() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');
   const [error, setError] = useState('');
+  const [showLimitModal, setShowLimitModal] = useState(false);
 
   const handleGenerate = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
@@ -43,10 +45,14 @@ export default function PantunPuisiClient() {
         body: JSON.stringify({ ...filter, tema, jenis_karya: jenisKarya, variasi })
       });
       
-      if (!res.ok) throw new Error('Gagal menghubungi server TugasMu.');
-      
       const data = await res.json();
-      if (!data.success) throw new Error(data.message);
+
+      if (res.status === 429 && data.code === 'RATE_LIMITED') {
+        setShowLimitModal(true);
+        return;
+      }
+
+      if (!res.ok || !data.success) throw new Error(data.message);
       
       setHasil(data.data.hasil);
     } catch (err: unknown) {
@@ -57,8 +63,10 @@ export default function PantunPuisiClient() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleGenerate} className="bg-white border rounded-2xl p-4 md:p-6 shadow-sm">
+    <>
+      <UsageLimitModal isOpen={showLimitModal} onClose={() => setShowLimitModal(false)} />
+      <div>
+        <form onSubmit={handleGenerate} className="bg-white border rounded-2xl p-4 md:p-6 shadow-sm">
         <FilterUniversal value={filter} onChange={setFilter} disabled={isGenerating} />
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -142,5 +150,6 @@ export default function PantunPuisiClient() {
         onRegenerate={() => handleGenerate()} 
       />
     </div>
+    </>
   );
 }

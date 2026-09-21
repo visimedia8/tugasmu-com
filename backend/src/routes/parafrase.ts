@@ -2,11 +2,24 @@ import { Hono } from 'hono'
 import type { Bindings } from '../index'
 import { callOpenRouter } from '../services/ai'
 import { logUsage } from '../services/usage'
+import { checkAndIncrementRateLimit } from '../services/rateLimit'
 
 export const toolParafrase = new Hono<{ Bindings: Bindings }>()
 
 toolParafrase.post('/', async (c) => {
   try {
+    // --- Rate Limit Check ---
+    const rateLimitResult = await checkAndIncrementRateLimit(c.env, c.req.raw)
+    if (!rateLimitResult.allowed) {
+      return c.json({
+        success: false,
+        code: 'RATE_LIMITED',
+        message: 'Kamu sudah memakai 3 tools hari ini. Daftar akun gratis untuk 20x/hari.',
+        used: rateLimitResult.used,
+        limit: rateLimitResult.limit,
+      }, 429)
+    }
+
     const body = await c.req.json()
     const { jenjang, kelas, kurikulum, mata_pelajaran, input_text } = body
 
@@ -31,6 +44,8 @@ Pertahankan alur logika. Sesuaikan gaya bahasa untuk siswa ${jenjang}. Jangan be
 
     return c.json({
       success: true,
+      used: rateLimitResult.used,
+      limit: rateLimitResult.limit,
       data: { hasil }
     })
 

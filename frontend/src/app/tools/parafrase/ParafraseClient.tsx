@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import FilterUniversal, { FilterState } from '@/components/tools/FilterUniversal';
 import HasilOutput from '@/components/tools/HasilOutput';
+import UsageLimitModal from '@/components/shared/UsageLimitModal';
 
 export default function ParafraseClient() {
   const [filter, setFilter] = useState<FilterState>({
@@ -16,6 +17,7 @@ export default function ParafraseClient() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');
   const [error, setError] = useState('');
+  const [showLimitModal, setShowLimitModal] = useState(false);
 
   const handleGenerate = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
@@ -45,13 +47,15 @@ export default function ParafraseClient() {
         body: JSON.stringify({ ...filter, input_text: inputText })
       });
       
-      if (!res.ok) {
-        throw new Error('Gagal menghubungi server TugasMu.');
+      const data = await res.json();
+
+      // Handle rate limit — show soft modal instead of hard error
+      if (res.status === 429 && data.code === 'RATE_LIMITED') {
+        setShowLimitModal(true);
+        return;
       }
       
-      const data = await res.json();
-      
-      if (!data.success) {
+      if (!res.ok || !data.success) {
         throw new Error(data.message || 'Terjadi kesalahan pada AI.');
       }
       
@@ -65,7 +69,9 @@ export default function ParafraseClient() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+    <>
+      <UsageLimitModal isOpen={showLimitModal} onClose={() => setShowLimitModal(false)} />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
       {/* Left Column: Input & Configuration */}
       <div className="lg:col-span-5 bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl shadow-sm space-y-space-lg sticky top-20 border border-slate-100">
         <div className="flex items-center justify-between pb-space-sm">
@@ -145,5 +151,6 @@ export default function ParafraseClient() {
         />
       </div>
     </div>
+    </>
   );
 }
