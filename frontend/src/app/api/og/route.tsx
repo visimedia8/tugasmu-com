@@ -1,12 +1,13 @@
 import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const title = searchParams.get('title') || 'TugasMu - AI Tools Edukasi';
     const subtitle = searchParams.get('subtitle') || 'Teman Pintar Belajarmu';
-
     return new ImageResponse(
       (
         <div
@@ -48,7 +49,6 @@ export async function GET(req: NextRequest) {
             >
               TugasMu
             </div>
-            
             <div
               style={{
                 fontSize: 64,
@@ -63,10 +63,10 @@ export async function GET(req: NextRequest) {
             >
               {title}
             </div>
-
             <div
               style={{
                 fontSize: 32,
+                fontWeight: 500,
                 color: '#64748b', // slate-500
                 textAlign: 'center',
                 maxWidth: 700,
