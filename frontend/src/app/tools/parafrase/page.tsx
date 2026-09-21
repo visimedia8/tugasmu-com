@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ParafraseClient from './ParafraseClient';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
+import FAQAccordion from '@/components/shared/FAQAccordion';
 
 export const metadata: Metadata = {
   title: 'Tool Parafrase Teks AI Gratis',
@@ -105,17 +106,54 @@ export default function ParafrasePage() {
           </div>
         </div>
 
-        {/* The Client Component handles the 2-column layout and API fetch */}
         <ParafraseClient />
 
-        {/* FAQ / Content SEO */}
-        <div className="mt-space-xl p-space-lg bg-surface-container-lowest rounded-2xl shadow-sm prose prose-slate max-w-none">
-          <h2>Apa itu Parafrase?</h2>
-          <p>Parafrase adalah menulis ulang sebuah teks menggunakan kata-kata sendiri tanpa mengubah makna dasar dari teks aslinya. Ini adalah kemampuan penting dalam menulis akademik untuk menghindari plagiarisme.</p>
-          
-          <h2>Mengapa menggunakan TugasMu?</h2>
-          <p>Banyak tool pembuat parafrase di luar sana yang menghasilkan kalimat kaku seperti robot. TugasMu dirancang khusus untuk memahami konteks siswa Indonesia sehingga hasil parafrase terdengar lebih natural, menggunakan ejaan yang disempurnakan (EYD), dan disesuaikan dengan tingkat sekolahmu.</p>
-        </div>
+        <FAQAccordion 
+          title="Panduan & FAQ: Tool Parafrase TugasMu"
+          description="Pertanyaan yang sering diajukan seputar penulisan ulang teks akademik untuk jenjang SD, SMP, SMA, dan sederajat."
+          faqs={[
+            {
+              question: "Apa itu tool parafrase online gratis dari TugasMu?",
+              answer: (
+                <>
+                  <p>Tool parafrase TugasMu adalah kecerdasan buatan (AI) yang dirancang khusus untuk pelajar Indonesia dalam menyusun ulang struktur kalimat dari sebuah teks atau makalah tanpa mengubah makna aslinya. Alat ini sangat cocok bagi siswa SD, SMP, dan SMA dalam mengerjakan tugas Kurikulum Merdeka agar terhindar dari plagiasi.</p>
+                </>
+              )
+            },
+            {
+              question: "Bagaimana cara memparafrase teks tugas agar lolos Turnitin dan tidak plagiat?",
+              answer: (
+                <>
+                  <p>Untuk memastikan hasil parafrasemu aman dari deteksi plagiarisme seperti Turnitin, cukup salin teks dari sumber referensi (buku cetak, jurnal, atau website) lalu tempelkan ke dalam kotak input. AI TugasMu akan secara otomatis mengganti sinonim, mengubah struktur kalimat aktif-pasif, dan menyesuaikan gaya bahasa sehingga teks tersebut terbaca original dan otentik 100%.</p>
+                </>
+              )
+            },
+            {
+              question: "Apakah hasil parafrase TugasMu aman untuk membuat makalah Kurikulum Merdeka?",
+              answer: (
+                <>
+                  <p>Sangat aman! Berbeda dengan tool terjemahan atau parafrase robotik pada umumnya, TugasMu sudah dilatih untuk memahami pedoman Ejaan Yang Disempurnakan (EYD) dan konteks pendidikan Indonesia. Khusus untuk <strong>Kurikulum Merdeka</strong>, hasil teks yang dikeluarkan didesain untuk mendorong bernalar kritis dan bahasa yang santun, sehingga sangat layak diserahkan kepada guru.</p>
+                </>
+              )
+            },
+            {
+              question: "Berapa batasan kata atau kalimat yang bisa diparafrase sekaligus?",
+              answer: (
+                <>
+                  <p>Saat ini kamu dapat memparafrase paragraf, rangkuman, maupun bagian-bagian penting dari makalah dalam satu kali proses (umumnya hingga 500-1000 kata tergantung ketersediaan limit AI). Jika kamu memiliki dokumen yang sangat panjang, kami menyarankan untuk membaginya menjadi beberapa paragraf agar hasil tulisan ulang lebih akurat dan terstruktur rapi.</p>
+                </>
+              )
+            },
+            {
+              question: "Apa bedanya mode santai, formal, dan akademik pada parafrase otomatis ini?",
+              answer: (
+                <>
+                  <p>TugasMu memahami bahwa setiap tugas memiliki gaya bahasanya sendiri. Mode <strong>Formal/Akademik</strong> sangat direkomendasikan untuk pembuatan Karya Ilmiah Remaja (KIR), Laporan Praktikum, dan Makalah. Sedangkan mode <strong>Santai</strong> lebih cocok digunakan untuk menyusun skrip presentasi lisan, esai opini, atau artikel blog sekolah agar lebih mudah dipahami oleh teman sebaya.</p>
+                </>
+              )
+            }
+          ]}
+        />
       </section>
     </div>
   );
