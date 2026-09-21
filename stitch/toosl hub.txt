@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#855300", "error-container": "#ffdad6", "background": "#faf8ff", "surface-variant": "#dae2fd", "surface-bright": "#faf8ff", "on-tertiary-fixed-variant": "#653e00", "outline-variant": "#bec8d2", "surface": "#faf8ff", "error": "#ba1a1a", "primary-container": "#0ea5e9", "primary-fixed": "#c9e6ff", "secondary": "#006e2f", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#005321", "on-tertiary-fixed": "#2a1700", "on-primary-fixed": "#001e2f", "on-secondary-container": "#007432", "inverse-surface": "#283044", "on-error": "#ffffff", "on-primary-container": "#003751", "on-secondary-fixed": "#002109", "inverse-primary": "#89ceff", "tertiary-fixed-dim": "#ffb95f", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "secondary-fixed": "#6bff8f", "surface-dim": "#d2d9f4", "secondary-container": "#6bff8f", "surface-container-highest": "#dae2fd", "on-surface-variant": "#3e4850", "inverse-on-surface": "#eef0ff", "surface-container-high": "#e2e7ff", "primary-fixed-dim": "#89ceff", "tertiary-container": "#d88a00", "on-primary": "#ffffff", "tertiary-fixed": "#ffddb8", "surface-tint": "#006591", "outline": "#6e7881", "on-background": "#131b2e", "surface-container": "#eaedff", "surface-container-low": "#f2f3ff", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#004c6e", "primary": "#006591", "secondary-fixed-dim": "#4ae176", "on-surface": "#131b2e", "on-tertiary-container": "#4a2c00" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "1.5rem", "margin": "1rem", "gutter-tablet": "1.25rem", "gutter": "1rem", "margin-desktop": "2rem", "margin-tablet": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "space-md": "0.75rem", "space-lg": "1rem" }, "fontFamily": { "label-md": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "body-sm": [ "Inter" ], "label-sm": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "body-md": [ "Inter" ], "body-lg": [ "Inter" ], "display-lg-mobile": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ] }, "fontSize": { "label-md": [ "13px", { "lineHeight": "18px", "fontWeight": "600" } ], "headline-sm": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "18px", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "700" } ], "label-lg": [ "15px", { "lineHeight": "20px", "fontWeight": "600" } ], "display-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-md": [ "22px", { "lineHeight": "28px", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "display-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md"><header class="fixed top-0 left-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-[1200px] mx-auto px-margin-desktop flex items-center justify-between gap-space-lg"><a class="flex items-center gap-space-sm group" data-path="beranda" href="#"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-[0_1px_3px_rgba(15,23,42,0.08)]"><span class="material-symbols-outlined text-[22px]">bolt</span></div><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">TugasMu</span><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">AI</span></div></a><nav class="hidden md:flex items-center gap-1" data-active-classes="bg-surface-container text-primary font-bold"><a class="px-space-md py-1.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="beranda" href="#">Beranda</a><a aria-current="page" class="px-space-md py-1.5 rounded-xl transition-colors bg-surface-container text-primary font-bold" data-path="tools-ai" href="#">Tools AI</a><a class="px-space-md py-1.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="statistik" href="#">Statistik</a><a class="px-space-md py-1.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="guru-kontributor" href="#">Guru Kontributor</a><a class="px-space-md py-1.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="blog" href="#">Blog</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-1.5 bg-primary-container hover:bg-primary text-on-primary px-space-lg py-2 rounded-xl font-label-md text-label-md shadow-[0_1px_3px_rgba(15,23,42,0.08)] transition-all active:scale-[0.98]" data-path="coba-gratis" href="#"><span>Coba Gratis</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<div class="relative w-full max-w-[1200px] mx-auto px-margin-desktop py-space-xl">
+<!-- Ambient decorative aura -->
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-3/4 h-56 bg-gradient-to-b from-primary-fixed/30 via-surface-container/20 to-transparent blur-3xl pointer-events-none rounded-full"></div>
+<!-- Header & Pitch Section -->
+<div class="relative flex flex-col items-center text-center mb-10">
+<div class="inline-flex items-center gap-2 px-space-md py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm shadow-sm mb-space-md">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span>Eksplorasi 8+ Asisten Belajar Mandiri</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface max-w-2xl tracking-tight">
+        Koleksi Tools AI TugasMu
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mt-3">
+        Pilih asisten pintar sesuai mata pelajaran dan kebutuhan tugas harianmu. Cepat, akurat, dan gratis.
+      </p>
+<!-- Student Community Snapshot -->
+<div class="flex items-center gap-3 mt-6 px-space-lg py-2 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center ring-2 ring-surface-container-lowest">SD</div>
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center justify-center ring-2 ring-surface-container-lowest">SMP</div>
+<div class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm flex items-center justify-center ring-2 ring-surface-container-lowest">SMA</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Terverifikasi sesuai <strong class="text-on-surface font-semibold">Kurikulum Merdeka</strong> &amp; standar Kemendikbudristek
+        </span>
+</div>
+</div>
+<!-- Search & Filter Controls -->
+<div class="relative z-10 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-10 flex flex-col gap-5">
+<!-- Search Input row -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-12 pl-11 pr-28 bg-surface-container-low rounded-xl text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#0ea5e9,0_0_10px_rgba(14,165,233,0.15)] transition-all" id="toolSearchInput" placeholder="Cari tool (misal: Parafrase, Rumus Fisika, Essay Inggris)..." type="text"/>
+<div class="absolute inset-y-0 right-2 flex items-center">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">keyboard</span>
+            Ctrl + K
+          </span>
+</div>
+</div>
+<!-- Categories & Flags Bar -->
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+<!-- Category Filter Pills -->
+<div class="flex flex-wrap items-center gap-2" id="categoryFilterContainer">
+<button class="category-btn active px-4 py-2 rounded-xl font-label-md text-label-md bg-primary-container text-on-primary transition-all active:scale-[0.98] shadow-sm" data-filter="all" type="button">
+            Semua (8)
+          </button>
+<button class="category-btn px-4 py-2 rounded-xl font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-[0.98]" data-filter="bahasa" type="button">
+            Bahasa &amp; Sastra (3)
+          </button>
+<button class="category-btn px-4 py-2 rounded-xl font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-[0.98]" data-filter="matematika" type="button">
+            Matematika &amp; IPA (3)
+          </button>
+<button class="category-btn px-4 py-2 rounded-xl font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-[0.98]" data-filter="rangkuman" type="button">
+            Penyusun Rangkuman (2)
+          </button>
+<button class="category-btn px-4 py-2 rounded-xl font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-[0.98]" data-filter="ujian" type="button">
+            Latihan Ujian (2)
+          </button>
+</div>
+<!-- Quick Filter Toggles -->
+<div class="flex items-center gap-2 self-stretch sm:self-auto pt-2 lg:pt-0">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" id="togglePopular" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">local_fire_department</span>
+<span>Paling Populer</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" id="toggleMerdeka" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span>Kurikulum Merdeka</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Active Filter Feedback & Count -->
+<div class="flex items-center justify-between mb-6 px-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Daftar Generator &amp; Pemecah Masalah</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm" id="resultsCountBadge">8 Tools Aktif</span>
+</div>
+<div class="hidden sm:flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+<span>Semua tool beroperasi normal (SLA 99.9%)</span>
+</div>
+</div>
+<!-- Tools Grid (8 Bespoke Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="toolsGrid">
+<!-- Card 1 -->
+<div class="tool-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200" data-category="ujian" data-merdeka="true" data-name="Generator Soal &amp; Kuis" data-popular="true" data-usage="18400">
+<div>
+<div class="flex items-start justify-between gap-2 mb-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center shadow-sm group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">checklist_rtl</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+              Terpopuler
+            </span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Ujian &amp; Latihan</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-2 group-hover:text-primary transition-colors">
+            Generator Soal &amp; Kuis
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-4">
+            Buat paket soal pilihan ganda atau esai materi SD hingga SMA lengkap dengan kunci jawaban dan pembahasan rinci.
+          </p>
+</div>
+<div class="pt-4 mt-auto">
+<!-- Mini Progress / Stats -->
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mb-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">group</span>
+              18.4k digunakan
+            </span>
+<span class="text-secondary font-bold">99% Akurat</span>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary py-2.5 px-4 rounded-xl font-label-md text-label-md shadow-sm transition-all active:scale-[0.98]" data-path="tools-generator-soal" href="#">
+<span>Gunakan Tool</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="tool-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200" data-category="bahasa rangkuman" data-merdeka="true" data-name="Parafrase Teks &amp; Makalah" data-popular="true" data-usage="14200">
+<div>
+<div class="flex items-start justify-between gap-2 mb-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-sm group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[26px]">edit_note</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+              Rekomendasi
+            </span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Bahasa &amp; Makalah</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-2 group-hover:text-primary transition-colors">
+            Parafrase Teks &amp; Makalah
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-4">
+            Ubah susunan kalimat tugas agar terdengar natural, santun, dan lolos uji orisinalitas tanpa mengubah inti materi.
+          </p>
+</div>
+<div class="pt-4 mt-auto">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mb-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">group</span>
+              14.2k digunakan
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Lolos Turnitin</span>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary py-2.5 px-4 rounded-xl font-label-md text-label-md shadow-sm transition-all active:scale-[0.98]" data-path="tools-parafrase" href="#">
+<span>Gunakan Tool</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="tool-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200" data-category="rangkuman" data-merdeka="true" data-name="Rangkuman Materi &amp; Bab" data-popular="true" data-usage="12800">
+<div>
+<div class="flex items-start justify-between gap-2 mb-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center shadow-sm group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">subject</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+              Ringkas PDF/Buku
+            </span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Belajar Cepat</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-2 group-hover:text-primary transition-colors">
+            Rangkuman Materi &amp; Bab
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-4">
+            Ringkas bab buku cetak tebal, PDF materi guru, atau artikel panjang menjadi poin-poin hafalan dalam hitungan detik.
+          </p>
+</div>
+<div class="pt-4 mt-auto">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mb-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">group</span>
+              12.8k digunakan
+            </span>
+<span class="text-tertiary font-bold">Instant Bullets</span>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary py-2.5 px-4 rounded-xl font-label-md text-label-md shadow-sm transition-all active:scale-[0.98]" data-path="tools-rangkuman" href="#">
+<span>Gunakan Tool</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="tool-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200" data-category="matematika" data-merdeka="true" data-name="Solver Rumus Matematika &amp; IPA" data-popular="true" data-usage="11500">
+<div>
+<div class="flex items-start justify-between gap-2 mb-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center shadow-sm group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">calculate</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">biotech</span>
+              Step-by-Step
+            </span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Eksakta</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-2 group-hover:text-primary transition-colors">
+            Solver Rumus Matematika &amp; IPA
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-4">
+            Ketik atau tempel soal hitungan fisika, kimia, matematika. Dapatkan langkah penjabaran rumus tahap demi tahap.
+          </p>
+</div>
+<div class="pt-4 mt-auto">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mb-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">group</span>
+              11.5k digunakan
+            </span>
+<span class="text-primary font-bold">LateX Ready</span>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary py-2.5 px-4 rounded-xl font-label-md text-label-md shadow-sm transition-all active:scale-[0.98]" data-path="tools-solver-rumus" href="#">
+<span>Gunakan Tool</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="tool-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200" data-category="bahasa" data-merdeka="true" data-name="Korektor Grammar &amp; Essay Inggris" data-popular="false" data-usage="8900">
+<div>
+<div class="flex items-start justify-between gap-2 mb-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center shadow-sm group-hover:bg-tertiary-container group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[26px]">spellcheck</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+              SD - SMA
+            </span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-bold">Bahasa Asing</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-2 group-hover:text-primary transition-colors">
+            Korektor Grammar &amp; Essay Inggris
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-4">
+            Cek tata bahasa tulisan esai bahasa Inggris, perkaya kosakata formal, dan dapatkan saran revisi instan.
+          </p>
+</div>
+<div class="pt-4 mt-auto">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mb-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">group</span>
+              8.9k digunakan
+            </span>
+<span class="text-secondary font-bold">CEFR A1-C1</span>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary py-2.5 px-4 rounded-xl font-label-md text-label-md shadow-sm transition-all active:scale-[0.98]" data-path="tools-grammar-checker" href="#">
+<span>Gunakan Tool</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="tool-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200" data-category="bahasa" data-merdeka="true" data-name="Pembuat Pantun &amp; Sastra" data-popular="false" data-usage="7300">
+<div>
+<div class="flex items-start justify-between gap-2 mb-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-on-surface flex items-center justify-center shadow-sm group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">draw</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+              Kreatif
+            </span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Seni &amp; Bahasa</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-2 group-hover:text-primary transition-colors">
+            Pembuat Pantun &amp; Sastra
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-4">
+            Hasilkan pantun nasihat, pantun jenaka rima a-b-a-b, atau bait puisi berima indah untuk tugas seni budaya.
+          </p>
+</div>
+<div class="pt-4 mt-auto">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mb-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">group</span>
+              7.3k digunakan
+            </span>
+<span class="text-on-surface-variant font-bold">Rima a-b-a-b</span>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary py-2.5 px-4 rounded-xl font-label-md text-label-md shadow-sm transition-all active:scale-[0.98]" data-path="tools-pantun-sastra" href="#">
+<span>Gunakan Tool</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="tool-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200" data-category="ujian matematika" data-merdeka="true" data-name="Simulasi UTBK &amp; Ujian Harian" data-popular="false" data-usage="9600">
+<div>
+<div class="flex items-start justify-between gap-2 mb-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">school</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed-dim text-on-secondary-fixed font-label-sm text-label-sm">
+              Try Out SNBT
+            </span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Ujian Nasional</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-2 group-hover:text-primary transition-colors">
+            Simulasi UTBK &amp; Ujian Harian
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-4">
+            Latihan soal skolastik, penalaran umum, dan literasi dengan timer realistis serta analisis nilai prediksi kelulusan.
+          </p>
+</div>
+<div class="pt-4 mt-auto">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mb-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">group</span>
+              9.6k digunakan
+            </span>
+<span class="text-primary font-bold">Timer Ujian</span>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary py-2.5 px-4 rounded-xl font-label-md text-label-md shadow-sm transition-all active:scale-[0.98]" data-path="tools-simulasi-utbk" href="#">
+<span>Gunakan Tool</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="tool-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200" data-category="bahasa" data-merdeka="true" data-name="Penerjemah Bahasa Daerah &amp; Asing" data-popular="false" data-usage="5100">
+<div>
+<div class="flex items-start justify-between gap-2 mb-4">
+<div class="w-12 h-12 rounded-xl bg-surface-variant text-primary flex items-center justify-center shadow-sm group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">translate</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+              Lokal &amp; Global
+            </span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Kebudayaan</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-2 group-hover:text-primary transition-colors">
+            Penerjemah Bahasa Daerah &amp; Asing
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-4">
+            Terjemahkan kosakata Jawa, Sunda, Minang, hingga bahasa asing dengan konteks kalimat sekolah yang akurat.
+          </p>
+</div>
+<div class="pt-4 mt-auto">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mb-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">group</span>
+              5.1k digunakan
+            </span>
+<span class="text-tertiary font-bold">Krama &amp; Ngoko</span>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary py-2.5 px-4 rounded-xl font-label-md text-label-md shadow-sm transition-all active:scale-[0.98]" data-path="tools-penerjemah-daerah" href="#">
+<span>Gunakan Tool</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Empty State for Search / Filter -->
+<div class="hidden flex-col items-center justify-center text-center p-12 bg-surface-container-lowest rounded-xl shadow-sm my-6" id="noResultsState">
+<div class="w-16 h-16 rounded-full bg-surface-container-high text-outline flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[32px]">search_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Tool tidak ditemukan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-6">
+        Tidak ada asisten yang cocok dengan kata kunci atau filter kamu. Coba ganti kata kunci atau usulkan tool baru!
+      </p>
+<button class="px-5 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors" id="resetFiltersBtn" type="button">
+        Reset Pencarian
+      </button>
+</div>
+<!-- Kakak Hint / Pedoman Belajar Etis Card -->
+<div class="mt-14 mb-10 bg-[#fffbeb] rounded-xl p-space-lg md:p-space-xl shadow-sm flex flex-col md:flex-row items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-[#fef3c7] text-[#92400e] flex-shrink-0 flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[26px]">psychology_alt</span>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-[#fde68a] text-[#78350f] font-label-sm text-label-sm font-bold uppercase tracking-wider">
+            Tips dari Kakak Kelas
+          </span>
+<span class="font-label-md text-label-md text-[#92400e] font-semibold">Gunakan AI Sebagai Partner, Bukan Pengganti Berpikir</span>
+</div>
+<p class="font-body-md text-body-md text-[#78350f] mt-1 leading-relaxed">
+          Semua tool dirancang untuk memandu alur berpikir dan rumus dasarmu. Selalu baca kembali penjabaran langkah dari AI, pastikan kamu memahami cara pengerjaannya sebelum menyalin ke buku tugas!
+        </p>
+</div>
+</div>
+<!-- Visual Divider Featurette: Guru Kontributor & Quality Checklist -->
+<div class="mb-14 grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Kurikulum 2026 Ready</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Materi diselaraskan dengan capaian pembelajaran resmi.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">bolt</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Respon Kilat &lt; 2 Detik</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Mesin AI teroptimasi hemat kuota untuk smartphone.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">100% Gratis Pelajar</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Akses penuh tanpa kartu kredit atau langganan wajib.</p>
+</div>
+</div>
+</div>
+<!-- 'Butuh Tool Lain?' Banner (Section 3) -->
+<div class="w-full bg-primary-fixed/40 rounded-xl p-space-lg md:p-space-xl shadow-sm relative overflow-hidden mb-8">
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-start sm:items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-primary-container text-on-primary flex-shrink-0 flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[30px]">lightbulb</span>
+</div>
+<div class="text-left">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Permintaan Fitur Pelajar</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-0.5">
+              Butuh Tool atau Asisten Lain?
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-xl">
+              Ada materi atau tugas pelajaran yang belum tercover? Ajukan ide tool baru ke tim guru TugasMu. Kami buatkan dalam 3 hari kerja!
+            </p>
+</div>
+</div>
+<div class="flex-shrink-0 w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary px-6 py-3 rounded-xl font-label-lg text-label-lg shadow-md transition-all active:scale-[0.98]" data-path="hubungi-kami" href="#">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Usulkan Tool Baru</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Client Script for Filtering & Search -->
+<script>
+    (function() {
+      const searchInput = document.getElementById('toolSearchInput');
+      const categoryBtns = document.querySelectorAll('.category-btn');
+      const cards = document.querySelectorAll('.tool-card');
+      const resultsCountBadge = document.getElementById('resultsCountBadge');
+      const noResultsState = document.getElementById('noResultsState');
+      const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+      const togglePopular = document.getElementById('togglePopular');
+      const toggleMerdeka = document.getElementById('toggleMerdeka');
+
+      let currentCategory = 'all';
+      let filterPopular = false;
+      let filterMerdeka = false;
+
+      function applyFilters() {
+        const query = (searchInput.value || '').trim().toLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const name = (card.getAttribute('data-name') || '').toLowerCase();
+          const categories = (card.getAttribute('data-category') || '').toLowerCase();
+          const isPop = card.getAttribute('data-popular') === 'true';
+          const isMdk = card.getAttribute('data-merdeka') === 'true';
+
+          const matchesQuery = !query || name.includes(query) || categories.includes(query);
+          const matchesCategory = (currentCategory === 'all') || categories.includes(currentCategory);
+          const matchesPopular = !filterPopular || isPop;
+          const matchesMerdeka = !filterMerdeka || isMdk;
+
+          if (matchesQuery && matchesCategory && matchesPopular && matchesMerdeka) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        resultsCountBadge.textContent = visibleCount + ' Tools Aktif';
+
+        if (visibleCount === 0) {
+          noResultsState.classList.remove('hidden');
+          noResultsState.classList.add('flex');
+        } else {
+          noResultsState.classList.add('hidden');
+          noResultsState.classList.remove('flex');
+        }
+      }
+
+      // Search input binding
+      searchInput.addEventListener('input', applyFilters);
+
+      // Keyboard shortcut Ctrl+K
+      window.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          searchInput.focus();
+          searchInput.select();
+        }
+      });
+
+      // Category Pill Click
+      categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          categoryBtns.forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+            b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          });
+
+          btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+          btn.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+
+          currentCategory = btn.getAttribute('data-filter') || 'all';
+          applyFilters();
+        });
+      });
+
+      // Quick Toggles
+      togglePopular.addEventListener('click', () => {
+        filterPopular = !filterPopular;
+        if (filterPopular) {
+          togglePopular.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+          togglePopular.classList.add('bg-tertiary-fixed', 'text-on-tertiary-fixed', 'font-bold');
+        } else {
+          togglePopular.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          togglePopular.classList.remove('bg-tertiary-fixed', 'text-on-tertiary-fixed', 'font-bold');
+        }
+        applyFilters();
+      });
+
+      toggleMerdeka.addEventListener('click', () => {
+        filterMerdeka = !filterMerdeka;
+        if (filterMerdeka) {
+          toggleMerdeka.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+          toggleMerdeka.classList.add('bg-secondary-fixed', 'text-on-secondary-fixed', 'font-bold');
+        } else {
+          toggleMerdeka.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          toggleMerdeka.classList.remove('bg-secondary-fixed', 'text-on-secondary-fixed', 'font-bold');
+        }
+        applyFilters();
+      });
+
+      // Reset Button
+      resetFiltersBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        currentCategory = 'all';
+        filterPopular = false;
+        filterMerdeka = false;
+
+        // Reset UI buttons
+        categoryBtns.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+          b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        });
+        const defaultBtn = document.querySelector('[data-filter="all"]');
+        if (defaultBtn) {
+          defaultBtn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+          defaultBtn.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+        }
+
+        togglePopular.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        togglePopular.classList.remove('bg-tertiary-fixed', 'text-on-tertiary-fixed', 'font-bold');
+
+        toggleMerdeka.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        toggleMerdeka.classList.remove('bg-secondary-fixed', 'text-on-secondary-fixed', 'font-bold');
+
+        applyFilters();
+      });
+
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.02)] mt-auto"><div class="max-w-[1200px] mx-auto px-margin-desktop py-12 flex flex-col md:flex-row items-center justify-between gap-6"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-xl bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[18px]">bolt</span></div><span class="font-headline-sm text-headline-sm text-on-surface">TugasMu<span class="font-label-sm text-label-sm text-primary ml-1 font-bold">AI</span></span><span class="text-on-surface-variant font-body-sm text-body-sm ml-3 hidden sm:inline">© 2026 TugasMu.com. Hak cipta dilindungi.</span></div><nav class="flex flex-wrap items-center justify-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="panduan-pelajar" href="#">Panduan Pelajar</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="hubungi-kami" href="#">Hubungi Kami</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></nav><div class="sm:hidden text-center text-on-surface-variant font-body-sm text-body-sm">© 2026 TugasMu.com. Hak cipta dilindungi.</div></div></footer></body></html>

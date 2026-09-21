@@ -1,0 +1,12 @@
+name = "tugasmu-api"
+main = "src/index.ts"
+compatibility_date = "2026-09-21"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "tugasmu-db"
+database_id = "28c93166-f4f3-4f8c-a48c-c427fd70b4e5"
+migrations_dir = "migrations"
+
+[vars]
+# DEEPSEEK_API_KEY = "openrouter-api-key-here"
