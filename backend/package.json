@@ -8,10 +8,12 @@
     "build": "tsc --noEmit"
   },
   "dependencies": {
-    "hono": "^4.13.8"
+    "hono": "^4.13.8",
+    "md5": "^2.3.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260921.1",
+    "@types/md5": "^2.3.6",
     "wrangler": "^4.110.0"
   }
 }

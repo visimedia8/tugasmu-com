@@ -1,0 +1,12 @@
+name = "tugasmu-frontend"
+main = ".open-next/worker.js"
+compatibility_date = "2026-09-21"
+compatibility_flags = ["nodejs_compat"]
+
+[site]
+bucket = ".open-next/assets"
+
+[[rules]]
+type = "ESModule"
+globs = ["**/*.mjs"]
+fallthrough = true

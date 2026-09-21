@@ -4,8 +4,10 @@ import { useState } from 'react';
 import FilterUniversal, { FilterState } from '@/components/tools/FilterUniversal';
 import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
+import { useSession } from 'next-auth/react';
 
 export default function GeneratorSoalClient() {
+  const { data: session } = useSession();
   const [filter, setFilter] = useState<FilterState>({
     jenjang: '',
     kelas: '',
@@ -38,9 +40,23 @@ export default function GeneratorSoalClient() {
     setIsGenerating(true);
     
     try {
+      let token: string | null = null;
+      if (session) {
+        try {
+          const tokenRes = await fetch('/api/auth/token');
+          const tokenData = await tokenRes.json();
+          token = tokenData.token;
+        } catch (e) {
+          console.error(e);
+        }
+      }
+      
       const res = await fetch('/api/tools/generator-soal', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          ...(token ? { 'Authorization': `Bearer ${token}` } : {})
+        },
         body: JSON.stringify({ ...filter, topik, tipe_soal: tipeSoal })
       });
       

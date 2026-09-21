@@ -2,18 +2,24 @@ import { Hono } from 'hono'
 import type { Bindings } from '../index'
 import { callOpenRouter } from '../services/ai'
 import { logUsage } from '../services/usage'
-import { checkAndIncrementRateLimit } from '../services/rateLimit'
+import { checkRateLimit } from '../services/rateLimit'
+import { authMiddleware, type AuthUser } from '../middleware/auth'
 
-export const toolRangkuman = new Hono<{ Bindings: Bindings }>()
+export const toolRangkuman = new Hono<{ Bindings: Bindings, Variables: { authUser: AuthUser | null } }>()
+
+toolRangkuman.use('*', authMiddleware)
 
 toolRangkuman.post('/', async (c) => {
   try {
-    const rateLimitResult = await checkAndIncrementRateLimit(c.env, c.req.raw)
+    const authUser = c.get('authUser')
+    const rateLimitResult = await checkRateLimit(c.env, c.req.raw, authUser)
     if (!rateLimitResult.allowed) {
       return c.json({
         success: false,
         code: 'RATE_LIMITED',
-        message: 'Kamu sudah memakai 3 tools hari ini. Daftar akun gratis untuk 20x/hari.',
+        message: authUser 
+          ? `Batas harian kamu (${rateLimitResult.limit}x) sudah habis. Upgrade ke Pro untuk unlimited!` 
+          : 'Kamu sudah memakai 3 tools hari ini. Daftar akun gratis untuk 20x/hari.',
         used: rateLimitResult.used,
         limit: rateLimitResult.limit,
       }, 429)

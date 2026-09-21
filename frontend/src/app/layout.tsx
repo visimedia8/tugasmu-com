@@ -26,6 +26,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import Breadcrumb from '@/components/layout/Breadcrumb';
 import { cn } from "@/lib/utils";
+import Providers from '@/components/Providers';
 
 export default function RootLayout({
   children,
@@ -58,13 +59,16 @@ export default function RootLayout({
         />
       </head>
       <body className={cn("font-sans bg-slate-50 text-slate-900 flex flex-col min-h-screen", inter.variable, plusJakartaSans.variable)}>
-        <Navbar />
-        <Breadcrumb />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <Providers>
+          <Navbar />
+          <Breadcrumb />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
 }
+
