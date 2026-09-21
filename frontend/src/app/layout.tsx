@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 };
 
 import Script from 'next/script';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
 import Breadcrumb from '@/components/layout/Breadcrumb';
 import { cn } from "@/lib/utils";
 

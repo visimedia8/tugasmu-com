@@ -39,7 +39,6 @@ export default function ParafraseClient() {
     setIsGenerating(true);
     
     try {
-      // Temporary mock fetch to simulate backend call
       const res = await fetch('/api/tools/parafrase', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -66,56 +65,85 @@ export default function ParafraseClient() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleGenerate} className="bg-white border rounded-2xl p-4 md:p-6 shadow-sm">
-        <FilterUniversal value={filter} onChange={setFilter} disabled={isGenerating} />
-        
-        <div className="mb-6">
-          <label htmlFor="inputText" className="block text-sm font-bold text-slate-700 mb-2">
-            Masukkan teks yang ingin diparafrase:
-          </label>
-          <textarea
-            id="inputText"
-            rows={6}
-            className="w-full rounded-xl border-slate-300 border p-4 focus:ring-sky-500 focus:border-sky-500 text-slate-800"
-            placeholder="Salin teks dari buku, artikel, atau website ke sini..."
-            value={inputText}
-            onChange={(e) => setInputText(e.target.value)}
-            disabled={isGenerating}
-            required
-          ></textarea>
-          <div className="mt-2 text-right text-xs text-slate-500">
-            {inputText.length} karakter (Maksimal 2000)
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+      {/* Left Column: Input & Configuration */}
+      <div className="lg:col-span-5 bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl shadow-sm space-y-space-lg sticky top-20 border border-slate-100">
+        <div className="flex items-center justify-between pb-space-sm">
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+              <span className="material-symbols-outlined text-[16px]">tune</span>
+            </div>
+            <h2 className="font-headline-sm text-headline-sm text-on-surface">Konfigurasi AI</h2>
           </div>
+          <span className="font-label-sm text-label-sm text-primary px-2 py-0.5 rounded-full bg-primary-fixed">AI Mode Pintar</span>
         </div>
-        
-        {error && (
-          <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm font-medium">
-            ⚠️ {error}
+
+        <form onSubmit={handleGenerate} className="space-y-space-md">
+          <FilterUniversal value={filter} onChange={setFilter} disabled={isGenerating} />
+          
+          <div className="space-y-space-xs">
+            <div className="flex items-center justify-between">
+              <label htmlFor="inputText" className="block font-label-md text-label-md text-on-surface">
+                Teks Sumber
+              </label>
+              <span className="text-outline font-body-sm text-body-sm">Min. 10 karakter</span>
+            </div>
+            <textarea
+              id="inputText"
+              rows={6}
+              className="w-full p-4 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container outline-none transition-all placeholder:text-outline resize-y"
+              placeholder="Salin teks tugas atau makalah dari buku/website ke sini..."
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              disabled={isGenerating}
+              required
+            ></textarea>
+            <div className="flex justify-end text-xs text-on-surface-variant font-label-sm">
+              {inputText.length} / 2000 karakter
+            </div>
           </div>
-        )}
-        
-        <button 
-          type="submit" 
-          disabled={isGenerating || !inputText.trim()}
-          className="w-full bg-sky-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-sky-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-        >
-          {isGenerating ? (
-            <>
-              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-              Memproses Teks...
-            </>
-          ) : (
-            '✨ Parafrase Sekarang'
+          
+          {error && (
+            <div className="p-3 bg-error-container text-on-error-container rounded-xl font-label-sm text-label-sm flex items-start gap-2">
+              <span className="material-symbols-outlined text-[16px]">warning</span>
+              <span>{error}</span>
+            </div>
           )}
-        </button>
-      </form>
+          
+          <div className="pt-space-xs space-y-space-xs">
+            <button 
+              type="submit" 
+              disabled={isGenerating || !inputText.trim()}
+              className="w-full py-3.5 px-space-lg rounded-xl bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {isGenerating ? (
+                <>
+                  <span className="material-symbols-outlined animate-spin text-[20px]">sync</span>
+                  <span>Memproses Teks...</span>
+                </>
+              ) : (
+                <>
+                  <span className="material-symbols-outlined text-[22px]">auto_awesome</span>
+                  <span>Parafrase Sekarang (Gratis)</span>
+                </>
+              )}
+            </button>
+            <div className="flex items-center justify-center gap-1.5 text-on-secondary-container font-label-sm text-label-sm text-center">
+              <span className="material-symbols-outlined text-[15px] text-secondary">bolt</span>
+              <span>100% Bebas Kuota Harian • Standar Guru</span>
+            </div>
+          </div>
+        </form>
+      </div>
       
-      <HasilOutput 
-        hasil={hasil} 
-        isGenerating={isGenerating} 
-        onRegenerate={() => handleGenerate()} 
-      />
+      {/* Right Column: Interactive Output Preview */}
+      <div className="lg:col-span-7 space-y-space-md">
+        <HasilOutput 
+          hasil={hasil} 
+          isGenerating={isGenerating} 
+          onRegenerate={() => handleGenerate()} 
+        />
+      </div>
     </div>
   );
 }

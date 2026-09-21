@@ -48,12 +48,15 @@ export async function generateStaticParams() {
 }
 
 const components = {
-  // Custom components for MDX can be added here
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <Link href={props.href as string} {...props}>
       {props.children}
     </Link>
   ),
+  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-lg leading-tight" {...props} />,
+  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h2 className="font-headline-md text-headline-md text-on-surface font-bold mt-space-lg mb-space-sm" {...props} />,
+  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-md mb-space-sm" {...props} />,
+  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-md" {...props} />,
 };
 
 export default async function BlogPost({ params }: Props) {
@@ -65,37 +68,108 @@ export default async function BlogPost({ params }: Props) {
   }
 
   return (
-    <main className="container py-12 max-w-3xl mx-auto">
-      <nav className="mb-8 text-sm text-slate-500">
-        <ol className="flex items-center space-x-2">
-          <li><Link href="/" className="hover:text-slate-900">Home</Link></li>
-          <li>/</li>
-          <li><Link href="/blog" className="hover:text-slate-900">Blog</Link></li>
-          <li>/</li>
-          <li className="capitalize"><Link href={`/blog/${resolvedParams.kategori}`} className="hover:text-slate-900">{resolvedParams.kategori.replace('-', ' ')}</Link></li>
-          <li>/</li>
-          <li className="text-slate-900 truncate">{post.title}</li>
-        </ol>
+    <div className="w-full max-w-[1200px] mx-auto px-margin md:px-margin-desktop py-space-lg md:py-space-xl">
+      {/* Breadcrumbs */}
+      <nav aria-label="Breadcrumb" className="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mb-space-lg overflow-x-auto whitespace-nowrap scrollbar-none">
+        <Link className="hover:text-primary transition-colors flex items-center gap-1" href="/">
+          <span className="material-symbols-outlined text-[16px]">home</span>
+          <span>Home</span>
+        </Link>
+        <span className="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+        <Link className="hover:text-primary transition-colors" href="/blog">Blog</Link>
+        <span className="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+        <Link className="hover:text-primary transition-colors capitalize" href={`/blog/${resolvedParams.kategori}`}>
+          {resolvedParams.kategori.replace('-', ' ')}
+        </Link>
+        <span className="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+        <span className="text-primary truncate max-w-[200px] md:max-w-none font-medium">{post.title}</span>
       </nav>
 
-      <article>
-        <header className="mb-10 text-center">
-          <h1 className="text-4xl font-heading font-bold text-slate-900 mb-4">{post.title}</h1>
-          <time dateTime={post.date} className="text-slate-500">
-            {new Date(post.date).toLocaleDateString('id-ID', {
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric'
-            })}
-          </time>
-        </header>
+      {/* Layout Grid: Left Content Column + Right Sticky Utility Rail */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+        {/* Left Column: Main Article Body */}
+        <article className="lg:col-span-8 flex flex-col">
+          {/* Category Pill & Estimated Speed Read */}
+          <div className="flex flex-wrap items-center gap-space-sm mb-space-md">
+            <span className="px-space-md py-1 rounded-xl bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm tracking-wide uppercase">
+              {resolvedParams.kategori.replace('-', ' ')}
+            </span>
+            <span className="px-space-md py-1 rounded-xl bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+              <span className="material-symbols-outlined text-[14px] text-primary">schedule</span>
+              5 menit baca
+            </span>
+          </div>
 
-        <div className="prose prose-slate max-w-none prose-headings:font-heading prose-a:text-sky-600 hover:prose-a:text-sky-700">
-          <MDXRemote source={post.content} components={components} />
-        </div>
-      </article>
-      
-      {/* Article Schema JSON-LD */}
+          <h1 className="font-headline-lg text-headline-lg md:text-display-lg text-on-surface tracking-tight mb-space-lg leading-tight">
+            {post.title}
+          </h1>
+
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md p-space-md md:p-space-lg rounded-xl bg-surface-container-low mb-space-xl border border-slate-100">
+            <div className="flex items-center gap-space-md">
+              <div className="w-12 h-12 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center font-bold shadow-sm ring-2 ring-primary-fixed">
+                TM
+              </div>
+              <div>
+                <div className="flex items-center gap-1.5">
+                  <span className="font-label-lg text-label-lg text-on-surface font-bold">Tim Kurasi TugasMu</span>
+                  <span className="material-symbols-outlined text-primary text-[16px]" title="Terverifikasi">verified</span>
+                </div>
+                <p className="font-body-sm text-body-sm text-on-surface-variant">
+                  Diterbitkan pada {new Date(post.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-2 pt-space-xs sm:pt-0">
+              <button className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest hover:bg-surface-container text-secondary font-label-md text-label-md transition-all shadow-sm">
+                <span className="material-symbols-outlined text-[18px]">share</span>
+                <span className="hidden sm:inline">Bagikan</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="prose-content flex flex-col gap-space-lg text-on-surface font-body-lg text-body-lg leading-relaxed bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-sm border border-slate-100">
+            <MDXRemote source={post.content} components={components} />
+          </div>
+
+          <section className="mt-space-xl p-space-lg md:p-space-xl rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-space-lg border border-slate-100">
+            <div className="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-lg text-headline-lg font-bold shrink-0 shadow-md ring-4 ring-primary-fixed">
+              TM
+            </div>
+            <div className="flex flex-col gap-1.5 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <h4 className="font-headline-sm text-headline-sm text-on-surface font-bold">Redaksi TugasMu</h4>
+                <span className="px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm">
+                  Tim Edukasi
+                </span>
+              </div>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Tim kurator konten yang berdedikasi untuk membagikan tips belajar, pembaruan kurikulum, dan cara cerdas memanfaatkan AI bagi pelajar Indonesia.
+              </p>
+            </div>
+          </section>
+        </article>
+
+        {/* Right Column */}
+        <aside className="lg:col-span-4 flex flex-col gap-space-lg lg:sticky lg:top-24">
+          <div className="p-space-lg rounded-xl bg-gradient-to-b from-surface-container to-surface-container-high shadow-sm flex flex-col gap-space-md border border-slate-100">
+            <div className="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-xs">
+              <span className="material-symbols-outlined text-[22px]">auto_awesome</span>
+            </div>
+            <div>
+              <h4 className="font-headline-sm text-headline-sm text-on-surface font-bold">Butuh Bantuan Tugas?</h4>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Gunakan asisten AI TugasMu secara gratis. Buat soal, parafrase makalah, dan temukan jawaban dari PR-mu.
+              </p>
+            </div>
+            <Link href="/tools" className="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary py-2.5 px-4 rounded-xl font-label-md text-label-md transition-all shadow-sm">
+              <span>Buka Tools AI</span>
+              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </Link>
+          </div>
+        </aside>
+      </div>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -112,6 +186,6 @@ export default async function BlogPost({ params }: Props) {
           })
         }}
       />
-    </main>
+    </div>
   );
 }

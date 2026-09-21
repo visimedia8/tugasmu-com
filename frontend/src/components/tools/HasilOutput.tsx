@@ -12,6 +12,7 @@ export default function HasilOutput({ hasil, onRegenerate, isGenerating = false 
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
+    if (!hasil) return;
     try {
       await navigator.clipboard.writeText(hasil);
       setCopied(true);
@@ -24,48 +25,74 @@ export default function HasilOutput({ hasil, onRegenerate, isGenerating = false 
   if (!hasil && !isGenerating) return null;
 
   return (
-    <div className="mt-8 border rounded-xl overflow-hidden shadow-sm bg-white">
-      <div className="bg-slate-50 border-b px-4 py-3 flex items-center justify-between">
-        <h3 className="font-heading font-bold text-slate-800 flex items-center gap-2">
-          <span className="text-xl">✨</span> Hasil AI
-        </h3>
-        <div className="flex gap-2">
+    <>
+      {/* Output Header & Controls Bar */}
+      <div className="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-wrap items-center justify-between gap-space-sm border border-slate-100">
+        <div className="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl">
+          <button className="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm transition-colors flex items-center gap-1.5">
+            <span className="material-symbols-outlined text-[16px]">school</span>
+            <span>Hasil Akhir</span>
+          </button>
+        </div>
+        <div className="flex items-center gap-1.5">
           {onRegenerate && (
             <button 
               onClick={onRegenerate}
               disabled={isGenerating}
-              className="text-sm px-3 py-1.5 font-medium text-slate-600 bg-white border rounded-md hover:bg-slate-50 disabled:opacity-50 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold transition-all disabled:opacity-50"
+              title="Buat Ulang"
             >
-              🔄 Buat Ulang
+              <span className="material-symbols-outlined text-[18px]">refresh</span>
+              <span>Regenerate</span>
             </button>
           )}
           <button 
             onClick={handleCopy}
             disabled={isGenerating || !hasil}
-            className="text-sm px-3 py-1.5 font-medium text-sky-700 bg-sky-50 border border-sky-200 rounded-md hover:bg-sky-100 disabled:opacity-50 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-secondary-container text-on-secondary-container hover:opacity-90 font-label-sm text-label-sm font-semibold transition-all disabled:opacity-50"
+            title="Salin Teks"
           >
-            {copied ? '✅ Tersalin' : '📋 Salin Teks'}
+            <span className="material-symbols-outlined text-[16px]">
+              {copied ? 'check_circle' : 'content_copy'}
+            </span>
+            <span>{copied ? 'Tersalin' : 'Salin Teks'}</span>
           </button>
         </div>
       </div>
-      
-      <div className="p-6 relative min-h-[200px]">
+
+      {/* Output Content Card */}
+      <div className="bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl shadow-sm space-y-space-md relative min-h-[300px] border border-slate-100">
         {isGenerating ? (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm z-10">
-            <div className="w-8 h-8 border-4 border-sky-200 border-t-sky-600 rounded-full animate-spin mb-4"></div>
-            <p className="text-sm font-medium text-slate-600 animate-pulse">TugasMu sedang berpikir keras...</p>
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-surface-container-lowest/80 backdrop-blur-sm z-10 rounded-2xl">
+            <div className="w-10 h-10 border-4 border-primary-container border-t-primary rounded-full animate-spin mb-4"></div>
+            <p className="font-label-md text-label-md text-on-surface animate-pulse">TugasMu sedang memproses...</p>
           </div>
         ) : null}
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="px-2.5 py-0.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm">Output AI</span>
+          </div>
+        </div>
         
-        <div className="prose prose-slate max-w-none whitespace-pre-wrap font-sans text-slate-800 leading-relaxed">
+        <div className="prose prose-slate max-w-none whitespace-pre-wrap font-body-md text-body-md text-on-surface leading-relaxed">
           {hasil}
         </div>
+
+        {hasil && !isGenerating && (
+          <div className="mt-8 bg-tertiary-fixed/30 rounded-xl p-space-md flex gap-space-sm items-start">
+            <div className="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
+              <span className="material-symbols-outlined text-[18px]">lightbulb</span>
+            </div>
+            <div className="space-y-0.5">
+              <div className="font-label-md text-label-md text-on-tertiary-fixed font-bold">Tips Anti-Terkecoh dari Kakak Tutor</div>
+              <p className="font-body-sm text-body-sm text-on-tertiary-fixed-variant">
+                Pastikan untuk membaca ulang hasil dari AI sebelum menyalinnya ke buku tugasmu agar bahasanya benar-benar sesuai dengan gaya penulisanmu sehari-hari.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
-      
-      {/* AdSense Placeholder bawah */}
-      <div className="bg-slate-100 border-t p-4 text-center">
-        <p className="text-xs text-slate-400 font-mono">-- Tempat Iklan AdSense --</p>
-      </div>
-    </div>
+    </>
   );
 }
