@@ -117,7 +117,7 @@ export default function PricingClient() {
           
           <ul className="space-y-4 mb-8 flex-1">
             <li className="flex gap-3 text-slate-700 text-sm font-semibold"><span className="text-sky-500">✓</span> Semua fitur Pro Pelajar</li>
-            <li className="flex gap-3 text-slate-700 text-sm"><span className="text-sky-500">✓</span> Fitur "Kelas" (Segera Hadir)</li>
+            <li className="flex gap-3 text-slate-700 text-sm"><span className="text-sky-500">✓</span> Fitur &quot;Kelas&quot; (Segera Hadir)</li>
             <li className="flex gap-3 text-slate-700 text-sm"><span className="text-sky-500">✓</span> Kelola tugas murid otomatis</li>
             <li className="flex gap-3 text-slate-700 text-sm"><span className="text-sky-500">✓</span> Export hasil ke PDF/Word</li>
           </ul>

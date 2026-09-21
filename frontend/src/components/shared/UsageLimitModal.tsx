@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { useSession, signIn } from 'next-auth/react';
 
 interface UsageLimitModalProps {
   isOpen: boolean;
@@ -10,8 +9,6 @@ interface UsageLimitModalProps {
 
 export default function UsageLimitModal({ isOpen, onClose }: UsageLimitModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const { data: session } = useSession();
-  const isSignedIn = !!session;
 
   useEffect(() => {
     if (isOpen) {

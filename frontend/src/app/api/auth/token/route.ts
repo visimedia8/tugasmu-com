@@ -13,6 +13,7 @@ export async function GET() {
   }
 
   const token = await new SignJWT({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sub: (session.user as any).id,
     email: session.user.email,
     name: session.user.name,

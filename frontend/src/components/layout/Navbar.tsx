@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown, Wand2, Sparkles, LogOut, LayoutDashboard, Crown } from 'lucide-react';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { Sparkles, LogOut, Crown } from 'lucide-react';
+import { useSession, signOut } from 'next-auth/react';
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,10 +13,6 @@ export function Navbar() {
   const isSignedIn = !!session;
 
   const isActive = (path: string) => pathname === path;
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-xl">
@@ -58,20 +54,26 @@ export function Navbar() {
               </button>
             </div>
           ) : (
-            <button 
-              onClick={() => signIn('google')}
+            <Link 
+              href="/masuk"
               className="px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm transition-all shadow-md shadow-sky-500/20 active:scale-95 flex items-center gap-2"
             >
               Masuk / Daftar
-            </button>
+            </Link>
           )}
         </div>
 
         {/* Mobile Hamburger Button */}
         <div className="flex md:hidden items-center gap-4">
           {isSignedIn && (
-            <div className="flex items-center">
-              <UserButton afterSignOutUrl="/" />
+            <div className="flex items-center gap-3">
+              <Link href="/akun" className="flex items-center gap-2">
+                <img 
+                  src={session?.user?.image ?? 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'} 
+                  alt={session?.user?.name ?? 'User'} 
+                  className="w-8 h-8 rounded-full border border-slate-200"
+                />
+              </Link>
             </div>
           )}
           <button 
@@ -101,24 +103,25 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg">
           <div className="flex flex-col space-y-2 text-base font-medium text-slate-700">
-            <Link href="/tools" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors">Tools AI</Link>
-            <Link href="/#statistik" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors">Statistik</Link>
-            <Link href="/guru" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors">Guru Kontributor</Link>
-            {!isMoneyPage && (
-              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors">Blog</Link>
-            )}
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors">Beranda</Link>
+            <Link href="/tools" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors">AI Tools</Link>
+            <Link href="/harga" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors flex items-center gap-2"><Crown className="w-4 h-4"/> Premium</Link>
+            <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors">Blog</Link>
           </div>
           <div className="pt-2">
-            {!isSignedIn && (
-              <SignInButton mode="modal">
-                <button onClick={() => setIsMobileMenuOpen(false)} className="w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-center shadow-md shadow-sky-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer">
-                  <span>Masuk / Daftar</span>
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
-              </SignInButton>
+            {!isSignedIn ? (
+              <Link href="/masuk" onClick={() => setIsMobileMenuOpen(false)} className="w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-center shadow-md shadow-sky-500/25 transition-all flex items-center justify-center gap-2">
+                <span>Masuk / Daftar</span>
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </Link>
+            ) : (
+              <button onClick={() => signOut({ callbackUrl: '/' })} className="w-full py-3 rounded-xl border border-red-200 hover:bg-red-50 text-red-600 font-semibold text-center transition-all flex items-center justify-center gap-2">
+                <LogOut className="w-4 h-4" />
+                <span>Keluar</span>
+              </button>
             )}
           </div>
         </div>
