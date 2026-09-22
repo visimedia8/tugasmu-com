@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import MathSolverClient from './MathSolverClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Penjelas Soal Matematika Step-by-Step — Cara Mengerjakan Soal Cerita',
@@ -20,6 +21,8 @@ export default function MathSolverPage() {
       </div>
 
       <MathSolverClient />
+
+      <RelatedTools toolIds={["generator-soal","rangkuman","simulasi-utbk"]} />
 
       <FAQAccordion
         title="Panduan & FAQ: Penjelas Soal Matematika"

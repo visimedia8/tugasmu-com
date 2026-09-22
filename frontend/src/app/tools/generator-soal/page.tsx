@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import GeneratorSoalClient from './GeneratorSoalClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Generator Soal Latihan & Kunci Jawaban',
@@ -20,6 +21,8 @@ export default function GeneratorSoalPage() {
       </div>
       
       <GeneratorSoalClient />
+
+      <RelatedTools toolIds={["rangkuman","math-solver","simulasi-utbk"]} />
 
       <FAQAccordion 
         title="Panduan & FAQ: Generator Soal AI"

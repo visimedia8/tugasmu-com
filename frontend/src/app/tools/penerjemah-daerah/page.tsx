@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import PenerjemahDaerahClient from './PenerjemahDaerahClient';
 import { Languages, CheckCircle } from 'lucide-react';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Penerjemah Bahasa Daerah (Jawa, Sunda, Minang) - TugasMu',
@@ -21,6 +22,8 @@ export default function PenerjemahDaerahPage() {
       </div>
 
       <PenerjemahDaerahClient />
+
+      <RelatedTools toolIds={["generator-soal","rangkuman","math-solver"]} />
 
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
         <div className="prose prose-slate max-w-none prose-headings:font-heading prose-a:text-sky-600">

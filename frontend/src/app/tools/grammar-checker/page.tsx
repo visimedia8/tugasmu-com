@@ -4,6 +4,7 @@ import Link from 'next/link';
 import GrammarCheckerClient from './GrammarCheckerClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { BookOpen, CheckCircle } from 'lucide-react';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Korektor Grammar & Essay Bahasa Inggris - Pengecekan AI Otomatis',
@@ -23,6 +24,8 @@ export default function GrammarCheckerPage() {
       </div>
 
       <GrammarCheckerClient />
+
+      <RelatedTools toolIds={["kti-builder","makalah-builder","parafrase"]} />
 
       {/* SEO Helpful Content Section */}
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">

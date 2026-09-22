@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import KamusAnakClient from './KamusAnakClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Kamus Penjelas Kata Sulit untuk Anak SD - TugasMu',
@@ -28,6 +29,8 @@ export default function KamusAnakPage() {
       </div>
 
       <KamusAnakClient />
+
+      <RelatedTools toolIds={["cerita-pendek","pantun-puisi","pidato"]} />
 
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
         <div className="prose prose-slate max-w-none prose-headings:font-heading prose-a:text-sky-600">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import GrammarEYDClient from './GrammarEYDClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Cek Grammar & EYD Bahasa Indonesia Online — Koreksi Otomatis',
@@ -20,6 +21,8 @@ export default function GrammarEYDPage() {
       </div>
 
       <GrammarEYDClient />
+
+      <RelatedTools toolIds={["kti-builder","makalah-builder","parafrase"]} />
 
       <FAQAccordion
         title="Panduan & FAQ: Cek Grammar & EYD"

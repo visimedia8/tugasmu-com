@@ -3,6 +3,7 @@ import Link from 'next/link';
 import ParafraseClient from './ParafraseClient';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import FAQAccordion from '@/components/shared/FAQAccordion';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Tool Parafrase Teks AI Gratis',
@@ -107,6 +108,8 @@ export default function ParafrasePage() {
         </div>
 
         <ParafraseClient />
+
+      <RelatedTools toolIds={["kti-builder","makalah-builder","grammar-eyd"]} />
 
         <FAQAccordion 
           title="Panduan & FAQ: Tool Parafrase TugasMu"

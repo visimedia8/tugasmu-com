@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import PantunPuisiClient from './PantunPuisiClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Generator Pantun & Puisi',
@@ -20,6 +21,8 @@ export default function PantunPuisiPage() {
       </div>
       
       <PantunPuisiClient />
+
+      <RelatedTools toolIds={["cerita-pendek","kamus-anak","pidato"]} />
 
       <FAQAccordion 
         title="Panduan & FAQ: Generator Pantun & Puisi"

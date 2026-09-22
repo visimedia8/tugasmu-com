@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import KitabKuningClient from './KitabKuningClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Translator Kitab Kuning & Arab Gundul - TugasMu',
@@ -28,6 +29,8 @@ export default function KitabKuningPage() {
       </div>
 
       <KitabKuningClient />
+
+      <RelatedTools toolIds={["nahwu-shorof","muhafazhah","tafsir-quran"]} />
 
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
         <div className="prose prose-slate max-w-none prose-headings:font-heading prose-a:text-sky-600">

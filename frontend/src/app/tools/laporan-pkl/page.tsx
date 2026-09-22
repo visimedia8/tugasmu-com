@@ -4,6 +4,7 @@ import Link from 'next/link';
 import LaporanPKLClient from './LaporanPKLClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { FileText, CheckCircle } from 'lucide-react';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Generator Struktur Laporan PKL & Prakerin SMK - Otomatis Sesuai Jurusan',
@@ -23,6 +24,8 @@ export default function LaporanPKLPage() {
       </div>
 
       <LaporanPKLClient />
+
+      <RelatedTools toolIds={["proposal-usaha","akuntansi-solver","penjelas-kejuruan"]} />
 
       {/* SEO Helpful Content Section */}
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">

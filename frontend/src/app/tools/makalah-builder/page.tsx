@@ -4,6 +4,7 @@ import Link from 'next/link';
 import MakalahBuilderClient from './MakalahBuilderClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { BookOpen, CheckCircle } from 'lucide-react';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Generator Struktur Makalah Otomatis (Bab I - III) - TugasMu',
@@ -23,6 +24,8 @@ export default function MakalahBuilderPage() {
       </div>
 
       <MakalahBuilderClient />
+
+      <RelatedTools toolIds={["kti-builder","parafrase","grammar-eyd"]} />
 
       {/* SEO Helpful Content Section */}
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">

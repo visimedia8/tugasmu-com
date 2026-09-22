@@ -4,6 +4,7 @@ import Link from 'next/link';
 import TranslatorArabClient from './TranslatorArabClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { BookOpen, CheckCircle, Lightbulb } from 'lucide-react';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Translator Arab ↔ Indonesia Kontekstual Madrasah (Dengan Penjelasan Nahwu)',
@@ -23,6 +24,8 @@ export default function TranslatorArabPage() {
       </div>
 
       <TranslatorArabClient />
+
+      <RelatedTools toolIds={["kitab-kuning","nahwu-shorof","muhafazhah"]} />
 
       {/* SEO Helpful Content Section */}
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">

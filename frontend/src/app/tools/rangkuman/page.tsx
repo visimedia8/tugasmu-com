@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import RangkumanClient from './RangkumanClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Buat Rangkuman Otomatis',
@@ -20,6 +21,8 @@ export default function RangkumanPage() {
       </div>
       
       <RangkumanClient />
+
+      <RelatedTools toolIds={["generator-soal","math-solver","simulasi-utbk"]} />
 
       <FAQAccordion 
         title="Panduan & FAQ: AI Perangkum Teks"

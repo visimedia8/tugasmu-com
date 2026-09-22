@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import AkuntansiSolverClient from './AkuntansiSolverClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Kalkulator Akuntansi (Jurnal Umum, Penyesuaian) - TugasMu',
@@ -28,6 +29,8 @@ export default function AkuntansiSolverPage() {
       </div>
 
       <AkuntansiSolverClient />
+
+      <RelatedTools toolIds={["proposal-usaha","penjelas-kejuruan","cv-lamaran"]} />
 
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
         <div className="prose prose-slate max-w-none prose-headings:font-heading prose-a:text-sky-600">

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import CVLamaranClient from './CVLamaranClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { Briefcase, CheckCircle, FileText } from 'lucide-react';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Generator CV & Surat Lamaran Kerja ATS Friendly - Khusus Lulusan SMK',
@@ -23,6 +24,8 @@ export default function CVLamaranPage() {
       </div>
 
       <CVLamaranClient />
+
+      <RelatedTools toolIds={["proposal-usaha","akuntansi-solver","penjelas-kejuruan"]} />
 
       {/* SEO Helpful Content Section */}
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">

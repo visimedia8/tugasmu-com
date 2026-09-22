@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import ProposalUsahaClient from './ProposalUsahaClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Generator Proposal Usaha Sederhana (SMK / Kewirausahaan)',
@@ -28,6 +29,8 @@ export default function ProposalUsahaPage() {
       </div>
 
       <ProposalUsahaClient />
+
+      <RelatedTools toolIds={["akuntansi-solver","penjelas-kejuruan","cv-lamaran"]} />
 
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
         <div className="prose prose-slate max-w-none prose-headings:font-heading prose-a:text-sky-600">

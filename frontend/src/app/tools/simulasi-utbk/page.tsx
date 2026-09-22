@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import SimulasiUTBKClient from './SimulasiUTBKClient';
 import { School, CheckCircle } from 'lucide-react';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Simulasi Soal UTBK SNBT - Penalaran & Literasi',
@@ -21,6 +22,8 @@ export default function SimulasiUTBKPage() {
       </div>
 
       <SimulasiUTBKClient />
+
+      <RelatedTools toolIds={["generator-soal","rangkuman","math-solver"]} />
 
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
         <div className="prose prose-slate max-w-none prose-headings:font-heading prose-a:text-sky-600">

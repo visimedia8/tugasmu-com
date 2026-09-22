@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import PidatoClient from './PidatoClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
+import RelatedTools from '@/components/tools/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Generator Teks Pidato Otomatis — Semua Acara & Jenjang',
@@ -20,6 +21,8 @@ export default function PidatoPage() {
       </div>
 
       <PidatoClient />
+
+      <RelatedTools toolIds={["cerita-pendek","kamus-anak","pantun-puisi"]} />
 
       <FAQAccordion
         title="Panduan & FAQ: Generator Teks Pidato"
