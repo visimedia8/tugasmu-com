@@ -20,7 +20,10 @@ export function Footer() {
           </div>
 
           {/* Footer Links */}
-          <div className="flex items-center gap-6 text-xs sm:text-sm font-medium text-slate-500">
+          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-xs sm:text-sm font-medium text-slate-500">
+            <Link href="/" className="hover:text-slate-900 transition-colors">Beranda</Link>
+            <Link href="/harga" className="hover:text-slate-900 transition-colors">Premium</Link>
+            <Link href="/blog" className="hover:text-slate-900 transition-colors">Blog</Link>
             <Link href="/privasi" className="hover:text-slate-900 transition-colors">Privacy Policy</Link>
             <Link href="/syarat" className="hover:text-slate-900 transition-colors">Terms of Service</Link>
             <Link href="/kontak" className="hover:text-slate-900 transition-colors">Kontak</Link>

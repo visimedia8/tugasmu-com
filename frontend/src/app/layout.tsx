@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+import { DM_Sans, Fraunces } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-plus-jakarta' });
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display: 'swap' });
+const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces', display: 'swap', axes: ['SOFT', 'WONK'] });
 
 export const metadata: Metadata = {
   title: {
@@ -58,7 +58,7 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
         />
       </head>
-      <body className={cn("font-sans bg-slate-50 text-slate-900 flex flex-col min-h-screen", inter.variable, plusJakartaSans.variable)}>
+      <body className={cn("font-sans bg-brand-cream text-brand-navy flex flex-col min-h-screen", dmSans.variable, fraunces.variable)}>
         <Providers>
           <Navbar />
           <Breadcrumb />
