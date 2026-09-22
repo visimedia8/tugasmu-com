@@ -34,3 +34,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cloudflare / opennext build artifacts
+.open-next/
+wrangler-local-state/
+
+# temp files
+temp.txt
+temp_home.html
+null
