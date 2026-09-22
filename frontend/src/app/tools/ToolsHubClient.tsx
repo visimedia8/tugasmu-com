@@ -5,12 +5,25 @@ import Link from 'next/link';
 
 
 
+import { useSearchParams, useRouter } from 'next/navigation';
 import { TOOLS } from '@/data/tools';
 
-
 export default function ToolsHubClient() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  
   const [searchQuery, setSearchQuery] = useState('');
-  const [currentCategory, setCurrentCategory] = useState('all');
+  const [currentCategory, setCurrentCategory] = useState(searchParams.get('cat') || 'all');
+  
+  // Sync URL when category changes
+  const handleCategoryChange = (cat: string) => {
+    handleCategoryChange(cat);
+    if (cat === 'all') {
+      router.replace('/tools', { scroll: false });
+    } else {
+      router.replace(`/tools?cat=${cat}`, { scroll: false });
+    }
+  };
   const [filterPopular, setFilterPopular] = useState(false);
   const [filterMerdeka, setFilterMerdeka] = useState(false);
 
@@ -26,7 +39,7 @@ export default function ToolsHubClient() {
 
   const handleReset = () => {
     setSearchQuery('');
-    setCurrentCategory('all');
+    handleCategoryChange('all');
     setFilterPopular(false);
     setFilterMerdeka(false);
   };
@@ -91,34 +104,40 @@ export default function ToolsHubClient() {
             {/* Category Filter Pills */}
             <div className="flex flex-wrap items-center gap-2">
               <button 
-                onClick={() => setCurrentCategory('all')}
+                onClick={() => handleCategoryChange('all')}
                 className={`category-btn px-4 py-2 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98] ${currentCategory === 'all' ? 'bg-primary-container text-on-primary shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}
               >
-                Semua (8)
+                Semua (36)
               </button>
               <button 
-                onClick={() => setCurrentCategory('bahasa')}
-                className={`category-btn px-4 py-2 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98] ${currentCategory === 'bahasa' ? 'bg-primary-container text-on-primary shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}
+                onClick={() => handleCategoryChange('umum')}
+                className={`category-btn px-4 py-2 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98] ${currentCategory === 'umum' ? 'bg-primary-container text-on-primary shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}
               >
-                Bahasa &amp; Sastra (3)
+                Akademik & Umum
               </button>
               <button 
-                onClick={() => setCurrentCategory('matematika')}
-                className={`category-btn px-4 py-2 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98] ${currentCategory === 'matematika' ? 'bg-primary-container text-on-primary shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}
+                onClick={() => handleCategoryChange('tulis')}
+                className={`category-btn px-4 py-2 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98] ${currentCategory === 'tulis' ? 'bg-primary-container text-on-primary shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}
               >
-                Matematika &amp; IPA (3)
+                Tugas Tulis & Makalah
               </button>
               <button 
-                onClick={() => setCurrentCategory('rangkuman')}
-                className={`category-btn px-4 py-2 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98] ${currentCategory === 'rangkuman' ? 'bg-primary-container text-on-primary shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}
+                onClick={() => handleCategoryChange('pesantren')}
+                className={`category-btn px-4 py-2 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98] ${currentCategory === 'pesantren' ? 'bg-primary-container text-on-primary shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}
               >
-                Penyusun Rangkuman (2)
+                Pesantren & Madrasah
               </button>
               <button 
-                onClick={() => setCurrentCategory('ujian')}
-                className={`category-btn px-4 py-2 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98] ${currentCategory === 'ujian' ? 'bg-primary-container text-on-primary shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}
+                onClick={() => handleCategoryChange('smk')}
+                className={`category-btn px-4 py-2 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98] ${currentCategory === 'smk' ? 'bg-primary-container text-on-primary shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}
               >
-                Latihan Ujian (2)
+                SMK & Kejuruan
+              </button>
+              <button 
+                onClick={() => handleCategoryChange('anak')}
+                className={`category-btn px-4 py-2 rounded-xl font-label-md text-label-md transition-all active:scale-[0.98] ${currentCategory === 'anak' ? 'bg-primary-container text-on-primary shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}
+              >
+                SD & Anak
               </button>
             </div>
             

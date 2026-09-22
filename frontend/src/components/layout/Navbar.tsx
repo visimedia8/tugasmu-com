@@ -15,9 +15,7 @@ export function Navbar() {
 
   const isActive = (path: string) => pathname === path || pathname.startsWith(path + '/');
 
-  const navLinks = [
-    { href: '/tools', label: 'Semua Tools (Suite)' },
-  ];
+
 
   return (
     <header className="sticky top-0 z-50 w-full">
@@ -39,19 +37,46 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
-                  isActive(href)
-                    ? 'text-brand-navy bg-brand-lime'
-                    : 'text-brand-navy/70 hover:text-brand-navy hover:bg-brand-navy/5'
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
+            <Link
+              href="/tools"
+              className={`relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
+                pathname === '/tools' && !pathname.includes('cat')
+                  ? 'text-brand-navy bg-brand-lime'
+                  : 'text-brand-navy/70 hover:text-brand-navy hover:bg-brand-navy/5'
+              }`}
+            >
+              Semua Tools
+            </Link>
+            
+            <div className="relative group">
+              <button className="relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 text-brand-navy/70 hover:text-brand-navy hover:bg-brand-navy/5 flex items-center gap-1">
+                Kategori
+                <svg className="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-slate-200 shadow-xl rounded-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col z-50">
+                <Link href="/tools?cat=tulis" className="px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-sky-600 flex flex-col">
+                  <span>Tugas Tulis & Makalah</span>
+                  <span className="text-xs text-slate-400 font-normal mt-0.5">KTI, Parafrase, EYD Checker</span>
+                </Link>
+                <Link href="/tools?cat=pesantren" className="px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-sky-600 flex flex-col">
+                  <span>Pesantren & Madrasah</span>
+                  <span className="text-xs text-slate-400 font-normal mt-0.5">Kitab Kuning, Nahwu Shorof</span>
+                </Link>
+                <Link href="/tools?cat=smk" className="px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-sky-600 flex flex-col">
+                  <span>SMK & Kejuruan</span>
+                  <span className="text-xs text-slate-400 font-normal mt-0.5">Proposal, Laporan PKL, Akuntansi</span>
+                </Link>
+                <Link href="/tools?cat=anak" className="px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-sky-600 flex flex-col">
+                  <span>SD & Anak</span>
+                  <span className="text-xs text-slate-400 font-normal mt-0.5">Cerita Pendek, Kamus Anak</span>
+                </Link>
+                <Link href="/tools?cat=umum" className="px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-sky-600 flex flex-col border-t border-slate-100 mt-1 pt-3">
+                  <span>Akademik Umum</span>
+                  <span className="text-xs text-slate-400 font-normal mt-0.5">Rangkuman, Math Solver, UTBK</span>
+                </Link>
+              </div>
+            </div>
           </nav>
 
           {/* CTA */}
@@ -119,22 +144,38 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-brand-cream border-b border-brand-navy/10 px-4 pt-2 pb-6 space-y-1 shadow-lg">
-          {navLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block px-4 py-3 rounded-xl font-semibold transition-colors ${
-                isActive(href)
-                  ? 'bg-brand-lime text-brand-navy'
-                  : 'text-brand-navy/70 hover:text-brand-navy hover:bg-brand-navy/5'
-              }`}
-            >
-              {label}
-            </Link>
-          ))}
-          <div className="pt-3">
+        <div className="md:hidden bg-brand-cream border-b border-brand-navy/10 px-4 pt-2 pb-6 space-y-1 shadow-lg h-[80vh] overflow-y-auto">
+          <div className="font-bold text-xs text-brand-navy/50 uppercase tracking-wider px-4 py-2">Navigasi Utama</div>
+          <Link
+            href="/tools"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`block px-4 py-3 rounded-xl font-semibold transition-colors ${
+              pathname === '/tools' && !pathname.includes('cat')
+                ? 'bg-brand-lime text-brand-navy'
+                : 'text-brand-navy/70 hover:text-brand-navy hover:bg-brand-navy/5'
+            }`}
+          >
+            Semua Tools
+          </Link>
+
+          <div className="font-bold text-xs text-brand-navy/50 uppercase tracking-wider px-4 pt-4 pb-2">Kategori Tools</div>
+          <Link href="/tools?cat=tulis" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-navy/5 rounded-xl">
+            Tugas Tulis & Makalah
+          </Link>
+          <Link href="/tools?cat=pesantren" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-navy/5 rounded-xl">
+            Pesantren & Madrasah
+          </Link>
+          <Link href="/tools?cat=smk" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-navy/5 rounded-xl">
+            SMK & Kejuruan
+          </Link>
+          <Link href="/tools?cat=anak" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-navy/5 rounded-xl">
+            SD & Anak
+          </Link>
+          <Link href="/tools?cat=umum" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-navy/5 rounded-xl">
+            Akademik Umum
+          </Link>
+
+          <div className="pt-6 border-t border-brand-navy/10 mt-4">
             {!isSignedIn ? (
               <Link
                 href="/masuk"
