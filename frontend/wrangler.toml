@@ -9,8 +9,9 @@ routes = [
   { pattern = "www.tugasmu.com/*", zone_name = "tugasmu.com" }
 ]
 
-[site]
-bucket = ".open-next/assets"
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
 
 [[rules]]
 type = "ESModule"
