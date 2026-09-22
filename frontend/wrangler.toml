@@ -2,6 +2,12 @@ name = "tugasmu-frontend"
 main = ".open-next/worker.js"
 compatibility_date = "2026-09-21"
 compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+
+routes = [
+  { pattern = "tugasmu.com/*", zone_name = "tugasmu.com" },
+  { pattern = "www.tugasmu.com/*", zone_name = "tugasmu.com" }
+]
 
 [site]
 bucket = ".open-next/assets"
