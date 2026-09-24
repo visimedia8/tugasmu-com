@@ -33,7 +33,25 @@ export async function checkRateLimit(
       ).bind(authUser.userId, today).first<{ count: number }>()
 
       const used = row?.count ?? 1
-      return { allowed: used <= limit, used, limit }
+      
+      if (used <= limit) {
+        return { allowed: true, used, limit }
+      }
+
+      // Quota habis -> cek credit
+      const userRow = await env.DB.prepare(
+        'SELECT credit_balance FROM users WHERE id = ?'
+      ).bind(authUser.userId).first<{ credit_balance: number }>()
+      
+      const creditBalance = userRow?.credit_balance ?? 0
+      if (creditBalance > 0) {
+        await env.DB.prepare(
+          'UPDATE users SET credit_balance = credit_balance - 1 WHERE id = ? AND credit_balance > 0'
+        ).bind(authUser.userId).run()
+        return { allowed: true, used, limit } // Using credit allows the request
+      }
+
+      return { allowed: false, used, limit }
     }
 
     // Anonymous user

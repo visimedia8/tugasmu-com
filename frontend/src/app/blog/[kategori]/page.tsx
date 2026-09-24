@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllCategories, getPostSlugs, getPostBySlug } from '@/lib/mdx';
-import { Metadata } from 'next';
 
 type Props = {
   params: Promise<{ kategori: string }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props) {
   const resolvedParams = await params;
   return {
     title: `Artikel ${resolvedParams.kategori.replace('-', ' ')} | TugasMu`,
     description: `Kumpulan artikel dan panduan belajar untuk materi ${resolvedParams.kategori.replace('-', ' ')}.`,
+    alternates: { canonical: `/blog/${resolvedParams.kategori}` }
   };
 }
 

@@ -3,6 +3,7 @@ import PricingClient from './PricingClient';
 export const metadata = {
   title: 'Harga & Paket Berlangganan',
   description: 'Pilih paket berlangganan TugasMu AI untuk akses fitur premium tanpa batas.',
+  alternates: { canonical: '/harga' },
 };
 
 export default function HargaPage() {

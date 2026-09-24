@@ -13,7 +13,6 @@ export function Navbar() {
   const { data: session } = useSession();
   const isSignedIn = !!session;
 
-  const isActive = (path: string) => pathname === path || pathname.startsWith(path + '/');
 
 
 

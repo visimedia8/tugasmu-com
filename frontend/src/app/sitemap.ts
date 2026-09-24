@@ -1,17 +1,15 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/mdx';
+import fs from 'fs';
+import path from 'path';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://tugasmu.com';
   
-  // Static routes
-  const staticRoutes = [
+  // Core routes
+  const coreRoutes = [
     '',
     '/tools',
-    '/tools/parafrase',
-    '/tools/generator-soal',
-    '/tools/rangkuman',
-    '/tools/pantun-puisi',
     '/blog',
     '/tentang',
     '/kontak',
@@ -22,17 +20,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: route.startsWith('/tools') ? 1.0 : 0.8,
+    priority: route === '' ? 1.0 : (route === '/tools' ? 0.9 : 0.8),
   }));
+
+  // Dynamically get all tools
+  let toolRoutes: MetadataRoute.Sitemap = [];
+  try {
+    const toolsDir = path.join(process.cwd(), 'src/app/tools');
+    if (fs.existsSync(toolsDir)) {
+      const entries = fs.readdirSync(toolsDir, { withFileTypes: true });
+      const tools = entries
+        .filter(dirent => dirent.isDirectory() && !dirent.name.startsWith('['))
+        .map(dirent => dirent.name);
+
+      toolRoutes = tools.map((toolSlug) => ({
+        url: `${baseUrl}/tools/${toolSlug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+      }));
+    }
+  } catch (error) {
+    console.error('Error generating tools sitemap:', error);
+  }
 
   // Dynamic blog routes
-  const posts = getAllPosts();
-  const blogRoutes = posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.kategori}/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
+  let blogRoutes: MetadataRoute.Sitemap = [];
+  try {
+    const posts = getAllPosts();
+    blogRoutes = posts.map((post) => ({
+      url: `${baseUrl}/blog/${post.kategori}/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }));
+  } catch (error) {
+    console.error('Error generating blog sitemap:', error);
+  }
 
-  return [...staticRoutes, ...blogRoutes];
+  return [...coreRoutes, ...toolRoutes, ...blogRoutes];
 }

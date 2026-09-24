@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import KamusAnakClient from './KamusAnakClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Kamus Penjelas Kata Sulit untuk Anak SD - TugasMu',
   description: 'Kamus pintar yang menjelaskan kata-kata sulit dari buku pelajaran SD menggunakan perumpamaan sehari-hari yang mudah dipahami anak.',
+  alternates: { canonical: '/tools/kamus-anak' },
 };
 
 export default function KamusAnakPage() {

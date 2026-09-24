@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
 import PidatoClient from './PidatoClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Generator Teks Pidato Otomatis — Semua Acara & Jenjang',
   description: 'Buat teks pidato untuk 17 Agustus, Hari Guru, Perpisahan, dan acara sekolah lainnya secara otomatis. Pilih tema, durasi, dan gaya bahasa.',
+  alternates: { canonical: '/tools/pidato' },
 };
 
 export default function PidatoPage() {

@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import ParafraseClient from './ParafraseClient';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Tool Parafrase Teks AI Gratis',
   description: 'Tulis ulang teks tugasmu dengan bahasa yang unik dan anti-plagiat menggunakan AI TugasMu.',
+  alternates: { canonical: '/tools/parafrase' },
 };
 
 export default function ParafrasePage() {

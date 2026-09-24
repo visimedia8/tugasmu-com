@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import NahwuShorofClient from './NahwuShorofClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Penjelas Nahwu & Shorof (Bedah I'rab Otomatis)",
   description: "Analisis I'rab dan kedudukan tata bahasa (Nahwu Shorof) dari sebuah kalimat Arab secara otomatis untuk santri dan siswa MA.",
+  alternates: { canonical: '/tools/nahwu-shorof' },
 };
 
 export default function NahwuShorofPage() {

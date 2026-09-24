@@ -2,13 +2,12 @@ import { notFound } from 'next/navigation';
 import { getPostBySlug, getPostSlugs, getAllCategories } from '@/lib/mdx';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
-import { Metadata } from 'next';
 
 type Props = {
   params: Promise<{ kategori: string; slug: string }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props) {
   const resolvedParams = await params;
   const post = getPostBySlug(resolvedParams.kategori, resolvedParams.slug);
   
@@ -21,6 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | TugasMu`,
     description: post.description,
+    alternates: {
+      canonical: `/blog/${resolvedParams.kategori}/${resolvedParams.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,

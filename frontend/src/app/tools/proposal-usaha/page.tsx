@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import ProposalUsahaClient from './ProposalUsahaClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Generator Proposal Usaha Sederhana (SMK / Kewirausahaan)',
   description: 'Buat proposal bisnis tugas sekolah dengan analisis SWOT dan Rencana Anggaran secara otomatis.',
+  alternates: { canonical: '/tools/proposal-usaha' },
 };
 
 export default function ProposalUsahaPage() {

@@ -33,6 +33,9 @@ import { payment } from './routes/payment'
 import { classes } from './routes/classes'
 import { assignments } from './routes/assignments'
 import { user } from './routes/user'
+import { credits } from './routes/credits'
+import { referral } from './routes/referral'
+import { share } from './routes/share'
 
 
 export type Bindings = {
@@ -93,5 +96,8 @@ app.route('/api/assignments', assignments)
 
 // User Routes
 app.route('/api/user', user)
+app.route('/api/credits', credits)
+app.route('/api/referral', referral)
+app.route('/api/share', share)
 
 export default app

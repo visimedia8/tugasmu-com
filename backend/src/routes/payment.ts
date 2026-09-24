@@ -6,7 +6,7 @@ import md5 from 'md5'
 export const payment = new Hono<{ Bindings: Bindings, Variables: { authUser: AuthUser | null } }>()
 
 const PRICES: Record<string, number> = {
-  pro: 19000,
+  pro: 29000,
   guru: 99000,
   kelas: 299000,
 }
@@ -110,9 +110,21 @@ payment.post('/webhook', async (c) => {
     }
 
     if (resultCode === '00') { // 00 means success
-      // Extract tier and userId from orderId (Format: TM-tier-userId-timestamp)
+      // Extract tier and userId from orderId (Format: TM-tier-userId-timestamp or TM-credit-bundle-userId-timestamp)
       const parts = merchantOrderId.split('-')
-      if (parts.length >= 4) {
+      
+      if (parts[1] === 'credit') {
+        const bundle = parts[2]
+        const userId = parts[3]
+        const CREDIT_BUNDLES: Record<string, number> = { starter: 150, value: 350, semester: 700 }
+        const creditsToAdd = CREDIT_BUNDLES[bundle] ?? 0
+        
+        if (creditsToAdd > 0) {
+          await c.env.DB.prepare(`
+            UPDATE users SET credit_balance = credit_balance + ? WHERE id = ?
+          `).bind(creditsToAdd, userId).run()
+        }
+      } else if (parts.length >= 4) {
         const tier = parts[1]
         const userId = parts[2]
         

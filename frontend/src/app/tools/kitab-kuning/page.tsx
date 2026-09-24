@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import KitabKuningClient from './KitabKuningClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Translator Kitab Kuning & Arab Gundul - TugasMu',
   description: 'Terjemahkan teks Arab gundul (Kitab Kuning) ke bahasa Indonesia lengkap dengan harakat dan syarah.',
+  alternates: { canonical: '/tools/kitab-kuning' },
 };
 
 export default function KitabKuningPage() {

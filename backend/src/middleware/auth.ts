@@ -10,9 +10,10 @@ export interface AuthUser {
 
 const TIER_LIMITS: Record<string, number> = {
   free: 20,
-  pro: 999999,
-  guru: 999999,
-  kelas: 999999,
+  trial: 150,
+  pro: 500,
+  guru: 1000,
+  kelas: 2000,
 }
 
 async function verifyToken(token: string, secret: string): Promise<{ userId: string; email: string } | null> {
@@ -50,7 +51,7 @@ async function verifyToken(token: string, secret: string): Promise<{ userId: str
   }
 }
 
-export async function authMiddleware(c: Context<{ Bindings: Bindings }>, next: Next) {
+export async function authMiddleware(c: Context<{ Bindings: Bindings; Variables: { authUser: AuthUser | null } }>, next: Next) {
   const authHeader = c.req.header('Authorization')
   
   if (!authHeader?.startsWith('Bearer ')) {
@@ -78,8 +79,8 @@ export async function authMiddleware(c: Context<{ Bindings: Bindings }>, next: N
 
   try {
     const user = await c.env.DB.prepare(
-      `SELECT id, email, tier FROM users WHERE id = ?`
-    ).bind(decoded.userId).first<{ id: string; email: string; tier: string }>()
+      `SELECT id, email, tier, referral_bonus FROM users WHERE id = ?`
+    ).bind(decoded.userId).first<{ id: string; email: string; tier: string; referral_bonus: number }>()
 
     if (!user) {
       await c.env.DB.prepare(
@@ -93,11 +94,33 @@ export async function authMiddleware(c: Context<{ Bindings: Bindings }>, next: N
         dailyLimit: 20,
       } as AuthUser)
     } else {
+      // Lazy trial expiry check
+      let currentTier = user.tier
+      if (currentTier === 'trial') {
+        const trialSub = await c.env.DB.prepare(
+          'SELECT expires_at FROM subscriptions WHERE user_id = ? AND tier = ? AND status = ?'
+        ).bind(user.id, 'trial', 'active').first<{ expires_at: string }>()
+
+        if (!trialSub || new Date(trialSub.expires_at) < new Date()) {
+          // Trial expired → downgrade ke free silently
+          await c.env.DB.batch([
+            c.env.DB.prepare('UPDATE users SET tier = ? WHERE id = ?').bind('free', user.id),
+            c.env.DB.prepare('UPDATE subscriptions SET status = ? WHERE user_id = ? AND tier = ?')
+              .bind('expired', user.id, 'trial'),
+          ])
+          currentTier = 'free'
+        }
+      }
+
+      const baseLimit = TIER_LIMITS[currentTier] ?? 20
+      const referralBonus = currentTier === 'free' ? (user.referral_bonus ?? 0) : 0
+      const effectiveLimit = Math.min(baseLimit + referralBonus, currentTier === 'free' ? 70 : baseLimit)
+
       c.set('authUser', {
         userId: user.id,
         email: user.email,
-        tier: user.tier,
-        dailyLimit: TIER_LIMITS[user.tier] ?? 20,
+        tier: currentTier,
+        dailyLimit: effectiveLimit,
       } as AuthUser)
     }
   } catch (err) {

@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import MuhafazhahClient from './MuhafazhahClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Ujian Hafalan (Muhafazhah) - Sambung Ayat & Nadhom',
   description: "Generator otomatis untuk mengetes hafalan Qur'an, Alfiyah, Imrithi, atau nadhom lainnya dengan soal sambung bait.",
+  alternates: { canonical: '/tools/muhafazhah' },
 };
 
 export default function MuhafazhahPage() {

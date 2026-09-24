@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Kebijakan Privasi',
   description: 'Kebijakan Privasi TugasMu.com - Bagaimana kami melindungi dan menggunakan data Anda.',
+  alternates: { canonical: '/privasi' },
 };
 
 export default function PrivasiPage() {

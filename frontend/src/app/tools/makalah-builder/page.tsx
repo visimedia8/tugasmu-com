@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import MakalahBuilderClient from './MakalahBuilderClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { BookOpen, CheckCircle } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Generator Struktur Makalah Otomatis (Bab I - III) - TugasMu',
   description: 'Buat struktur makalah sekolah otomatis. Latar belakang, rumusan masalah, dan pembahasan disusun rapi sesuai topik dan mata pelajaranmu.',
+  alternates: { canonical: '/tools/makalah-builder' },
 };
 
 export default function MakalahBuilderPage() {

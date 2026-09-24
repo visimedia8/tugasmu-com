@@ -4,6 +4,7 @@ import BlogHubClient from './BlogHubClient';
 export const metadata = {
   title: 'Blog Edukasi | TugasMu',
   description: 'Artikel, panduan, dan tips belajar untuk siswa Indonesia.',
+  alternates: { canonical: '/blog' },
 };
 
 export default function BlogIndex() {

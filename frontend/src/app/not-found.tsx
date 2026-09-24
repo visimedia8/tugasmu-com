@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Halaman Tidak Ditemukan | TugasMu',
   description: 'Maaf, halaman yang kamu cari tidak dapat ditemukan.',
 };

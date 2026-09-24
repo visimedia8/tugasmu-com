@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import SimulasiUTBKClient from './SimulasiUTBKClient';
 import { School, CheckCircle } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Simulasi Soal UTBK SNBT - Penalaran & Literasi',
   description: 'Latihan soal UTBK SNBT terbaru dengan kunci jawaban dan pembahasan cerdas ala tutor bimbel.',
+  alternates: { canonical: '/tools/simulasi-utbk' },
 };
 
 export default function SimulasiUTBKPage() {

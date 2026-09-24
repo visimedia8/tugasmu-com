@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import PenjelasHaditsClient from './PenjelasHaditsClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Penjelas Derajat dan Makna Hadits (Syarah)',
   description: 'Cari tahu derajat hadits (shahih/dhaif) dan penjelasan kandungannya secara komprehensif.',
+  alternates: { canonical: '/tools/penjelas-hadits' },
 };
 
 export default function PenjelasHaditsPage() {

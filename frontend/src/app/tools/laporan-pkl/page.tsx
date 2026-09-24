@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import LaporanPKLClient from './LaporanPKLClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { FileText, CheckCircle } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Generator Struktur Laporan PKL & Prakerin SMK - Otomatis Sesuai Jurusan',
   description: 'Buat struktur dan draft laporan PKL (Praktik Kerja Lapangan) atau magang SMK dalam hitungan detik. Lengkap dari Latar Belakang sampai Kesimpulan sesuai jurusanmu.',
+  alternates: { canonical: '/tools/laporan-pkl' },
 };
 
 export default function LaporanPKLPage() {

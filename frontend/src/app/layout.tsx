@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
 import { DM_Sans, Fraunces } from 'next/font/google';
 import './globals.css';
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display: 'swap' });
 const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces', display: 'swap', axes: ['SOFT', 'WONK'] });
 
-export const metadata: Metadata = {
+export const metadata = {
+  metadataBase: new URL('https://tugasmu.com'),
   title: {
     template: '%s | TugasMu',
     default: 'TugasMu | AI yang ngerti pelajaran kamu',
@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'TugasMu | AI yang ngerti pelajaran kamu',
     description: 'Platform AI Gratis untuk Bantu Belajar Siswa Indonesia',
-    url: 'https://tugasmu.com',
     siteName: 'TugasMu',
     locale: 'id_ID',
     type: 'website',

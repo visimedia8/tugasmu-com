@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import PenerjemahDaerahClient from './PenerjemahDaerahClient';
 import { Languages, CheckCircle } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Penerjemah Bahasa Daerah (Jawa, Sunda, Minang) - TugasMu',
   description: 'Penerjemah bahasa daerah Indonesia lengkap dengan tingkatan bahasa (Krama, Ngoko, Lemes) dan penjelasan budaya lokal.',
+  alternates: { canonical: '/tools/penerjemah-daerah' },
 };
 
 export default function PenerjemahDaerahPage() {

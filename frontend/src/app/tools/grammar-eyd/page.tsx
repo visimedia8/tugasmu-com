@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
 import GrammarEYDClient from './GrammarEYDClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Cek Grammar & EYD Bahasa Indonesia Online — Koreksi Otomatis',
   description: 'Periksa ejaan, tanda baca, kata baku, dan EYD tulisanmu secara otomatis. Setiap koreksi disertai penjelasan aturan agar kamu benar-benar paham.',
+  alternates: { canonical: '/tools/grammar-eyd' },
 };
 
 export default function GrammarEYDPage() {

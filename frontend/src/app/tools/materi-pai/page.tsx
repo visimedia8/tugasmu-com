@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import MateriPaiClient from './MateriPaiClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Rangkuman Materi PAI, Fikih, SKI & Aqidah Akhlak',
   description: 'Generator materi pelajaran Pendidikan Agama Islam otomatis sesuai kurikulum madrasah (Fikih, SKI, Aqidah Akhlak).',
+  alternates: { canonical: '/tools/materi-pai' },
 };
 
 export default function MateriPaiPage() {

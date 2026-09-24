@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import TranslatorArabClient from './TranslatorArabClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { BookOpen, CheckCircle, Lightbulb } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Translator Arab ↔ Indonesia Kontekstual Madrasah (Dengan Penjelasan Nahwu)',
   description: 'Penerjemah Bahasa Arab ke Indonesia khusus anak Madrasah. Dapatkan terjemahan akurat (Fusha) lengkap dengan penjelasan gramatikal Nahwu & Shorof singkat.',
+  alternates: { canonical: '/tools/translator-arab' },
 };
 
 export default function TranslatorArabPage() {

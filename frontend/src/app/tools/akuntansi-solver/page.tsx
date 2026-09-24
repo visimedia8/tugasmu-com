@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import AkuntansiSolverClient from './AkuntansiSolverClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Kalkulator Akuntansi (Jurnal Umum, Penyesuaian) - TugasMu',
   description: 'Bantu mengerjakan soal transaksi akuntansi step-by-step dari Persamaan Dasar hingga Neraca, khusus anak SMK Akuntansi.',
+  alternates: { canonical: '/tools/akuntansi-solver' },
 };
 
 export default function AkuntansiSolverPage() {

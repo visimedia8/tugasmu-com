@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import PenjelasKejuruanClient from './PenjelasKejuruanClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Penjelas Konsep Materi Kejuruan SMK - TugasMu',
   description: 'Tanya teori teknis spesifik jurusanmu. Mulai dari mesin, koding, hingga resep, dijawab dengan bahasa praktikal dunia kerja.',
+  alternates: { canonical: '/tools/penjelas-kejuruan' },
 };
 
 export default function PenjelasKejuruanPage() {

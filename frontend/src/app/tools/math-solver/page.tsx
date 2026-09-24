@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
 import MathSolverClient from './MathSolverClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Penjelas Soal Matematika Step-by-Step — Cara Mengerjakan Soal Cerita',
   description: 'Pahami cara mengerjakan soal matematika SD, SMP, SMA secara bertahap. AI menjelaskan setiap langkah dengan rumus, alasan, dan tips agar tidak salah lagi.',
+  alternates: { canonical: '/tools/math-solver' },
 };
 
 export default function MathSolverPage() {

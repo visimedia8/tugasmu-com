@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import GrammarCheckerClient from './GrammarCheckerClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { BookOpen, CheckCircle } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Korektor Grammar & Essay Bahasa Inggris - Pengecekan AI Otomatis',
   description: 'Cek tata bahasa, tenses, dan ejaan tulisan esai bahasa Inggris kamu. Dapatkan saran vocabulary yang lebih natural dan penjelasan kesalahan dalam bahasa Indonesia.',
+  alternates: { canonical: '/tools/grammar-checker' },
 };
 
 export default function GrammarCheckerPage() {

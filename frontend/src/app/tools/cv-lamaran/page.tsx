@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import CVLamaranClient from './CVLamaranClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { Briefcase, CheckCircle, FileText } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Generator CV & Surat Lamaran Kerja ATS Friendly - Khusus Lulusan SMK',
   description: 'Buat CV dan Surat Lamaran Kerja otomatis yang lolos sistem ATS HRD. Dirancang khusus untuk Fresh Graduate lulusan SMK agar cepat dapat panggilan kerja.',
+  alternates: { canonical: '/tools/cv-lamaran' },
 };
 
 export default function CVLamaranPage() {

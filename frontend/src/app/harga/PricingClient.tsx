@@ -90,10 +90,10 @@ export default function PricingClient() {
           </div>
           <h3 className="text-xl font-bold text-slate-900 mb-2">Pro Pelajar</h3>
           <p className="text-slate-500 mb-6 text-sm">Untuk kamu yang ambis dan butuh bantuan penuh.</p>
-          <div className="text-4xl font-black text-slate-900 mb-8">Rp 19rb<span className="text-base font-normal text-slate-500">/bulan</span></div>
+          <div className="text-4xl font-black text-slate-900 mb-8">Rp 29rb<span className="text-base font-normal text-slate-500">/bulan</span></div>
           
           <ul className="space-y-4 mb-8 flex-1">
-            <li className="flex gap-3 text-slate-700 text-sm font-semibold"><span className="text-sky-500">✓</span> Akses UNLIMITED (tanpa batas harian)</li>
+            <li className="flex gap-3 text-slate-700 text-sm font-semibold"><span className="text-sky-500">✓</span> 500x generate per hari (lebih dari cukup)</li>
             <li className="flex gap-3 text-slate-700 text-sm"><span className="text-sky-500">✓</span> Input teks s/d 5.000 karakter</li>
             <li className="flex gap-3 text-slate-700 text-sm"><span className="text-sky-500">✓</span> Hasil lebih cepat (Prioritas Server)</li>
             <li className="flex gap-3 text-slate-700 text-sm"><span className="text-sky-500">✓</span> Tanpa iklan (Ad-free)</li>

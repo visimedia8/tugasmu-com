@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import TajwidClient from './TajwidClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Analisis Hukum Tajwid & Tahsin Al-Quran - TugasMu',
   description: 'Cari tahu hukum bacaan tajwid (Idgham, Mad, Ikhfa) pada potongan ayat Al-Quran lengkap dengan cara membacanya.',
+  alternates: { canonical: '/tools/tajwid' },
 };
 
 export default function TajwidPage() {

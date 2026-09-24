@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import EssayEnglishClient from './EssayEnglishClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Academic English Essay Writer (IGCSE, IELTS, TOEFL) Outline',
   description: 'Generate high-scoring academic essay structures automatically using PEEL methodology for Cambridge, IB, and IELTS students.',
+  alternates: { canonical: '/tools/essay-english' },
 };
 
 export default function EssayEnglishPage() {

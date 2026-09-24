@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Syarat & Ketentuan',
   description: 'Syarat dan Ketentuan Penggunaan TugasMu.com',
+  alternates: { canonical: '/syarat' },
 };
 
 export default function SyaratPage() {

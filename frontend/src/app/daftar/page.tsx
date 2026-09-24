@@ -11,6 +11,14 @@ export default function DaftarPage() {
     e.preventDefault()
     if (!email) return
     setLoading(true)
+    
+    // Save ref param to localStorage before login
+    const searchParams = new URLSearchParams(window.location.search)
+    const refCode = searchParams.get('ref')
+    if (refCode) {
+      localStorage.setItem('pending_referral_code', refCode)
+    }
+
     await signIn('credentials', {
       email,
       name: name || 'Tester',

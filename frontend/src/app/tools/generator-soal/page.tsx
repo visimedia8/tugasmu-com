@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
 import GeneratorSoalClient from './GeneratorSoalClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Generator Soal Latihan & Kunci Jawaban',
   description: 'Buat soal latihan otomatis beserta kunci jawabannya untuk SD, SMP, dan SMA.',
+  alternates: { canonical: '/tools/generator-soal' },
 };
 
 export default function GeneratorSoalPage() {

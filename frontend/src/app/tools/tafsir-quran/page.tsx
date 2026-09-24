@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import TafsirQuranClient from './TafsirQuranClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Penjelas Tafsir Ayat Al-Quran & Asbabul Nuzul',
   description: 'Dapatkan penjelasan tafsir ringkas, asbabul nuzul, dan hikmah pelajaran dari setiap ayat Al-Quran.',
+  alternates: { canonical: '/tools/tafsir-quran' },
 };
 
 export default function TafsirQuranPage() {

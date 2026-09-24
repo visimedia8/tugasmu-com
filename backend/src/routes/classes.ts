@@ -74,7 +74,33 @@ classes.post('/join', async (c) => {
       ON CONFLICT(class_id, user_id) DO NOTHING
     `).bind(classRow.id, authUser.userId).run()
 
-    return c.json({ success: true, message: 'Berhasil bergabung ke kelas', class: classRow })
+    // Cek apakah murid pernah dapat trial sebelumnya
+    const existingTrial = await c.env.DB.prepare(
+      'SELECT id FROM subscriptions WHERE user_id = ? AND tier = ?'
+    ).bind(authUser.userId, 'trial').first()
+
+    if (!existingTrial) {
+      const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
+      const subId = crypto.randomUUID()
+
+      // Insert trial subscription
+      await c.env.DB.prepare(`
+        INSERT OR IGNORE INTO subscriptions (id, user_id, tier, status, amount, expires_at)
+        VALUES (?, ?, 'trial', 'active', 0, ?)
+      `).bind(subId, authUser.userId, expiresAt).run()
+
+      // Update tier ke trial hanya jika saat ini masih free
+      await c.env.DB.prepare(
+        'UPDATE users SET tier = ? WHERE id = ? AND tier = ?'
+      ).bind('trial', authUser.userId, 'free').run()
+    }
+
+    return c.json({ 
+      success: true, 
+      message: 'Berhasil bergabung ke kelas', 
+      class: classRow,
+      trialGranted: !existingTrial
+    })
   } catch (err) {
     console.error('Join class error:', err)
     return c.json({ success: false, message: 'Gagal bergabung ke kelas' }, 500)

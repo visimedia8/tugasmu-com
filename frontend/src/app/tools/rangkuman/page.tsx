@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
 import RangkumanClient from './RangkumanClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Buat Rangkuman Otomatis',
   description: 'Ubah materi panjang jadi poin-poin penting yang gampang dihafal dengan AI TugasMu.',
+  alternates: { canonical: '/tools/rangkuman' },
 };
 
 export default function RangkumanPage() {

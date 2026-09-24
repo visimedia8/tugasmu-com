@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 
@@ -15,9 +15,30 @@ export default function ToolsHubClient() {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentCategory, setCurrentCategory] = useState(searchParams.get('cat') || 'all');
   
+  // Claim referral logic
+  useEffect(() => {
+    const refCode = localStorage.getItem('pending_referral_code')
+    if (refCode) {
+      // Check auth token
+      fetch('/api/auth/token')
+        .then(r => r.json())
+        .then(async data => {
+          if (data.token) {
+            await fetch(`${process.env.NEXT_PUBLIC_API_URL || ''}/api/referral/claim`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${data.token}` },
+              body: JSON.stringify({ code: refCode })
+            })
+            localStorage.removeItem('pending_referral_code')
+          }
+        })
+        .catch(() => {})
+    }
+  }, [])
+  
   // Sync URL when category changes
   const handleCategoryChange = (cat: string) => {
-    handleCategoryChange(cat);
+    setCurrentCategory(cat);
     if (cat === 'all') {
       router.replace('/tools', { scroll: false });
     } else {

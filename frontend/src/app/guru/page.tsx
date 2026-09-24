@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Program Guru Kontributor',
   description: 'Bergabunglah menjadi Guru Kontributor di TugasMu dan bantu ribuan siswa Indonesia belajar dengan konten yang kredibel.',
+  alternates: { canonical: '/guru' },
 };
 
 export default function GuruHubPage() {

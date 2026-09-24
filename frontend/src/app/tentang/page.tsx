@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Tentang Kami',
   description: 'Misi TugasMu untuk membantu siswa Indonesia belajar lebih cerdas dengan bantuan AI.',
+  alternates: { canonical: '/tentang' },
 };
 
 export default function TentangPage() {

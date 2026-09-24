@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import KTIBuilderClient from './KTIBuilderClient';
 import { Microscope, CheckCircle } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Generator Karya Tulis Ilmiah (KTI) - Bab 1 sampai Bab 3',
   description: 'Buat struktur kerangka Karya Tulis Ilmiah (KTI) otomatis untuk siswa SMA/K. Mulai dari latar belakang hingga metodologi penelitian.',
+  alternates: { canonical: '/tools/kti-builder' },
 };
 
 export default function KTIBuilderPage() {

@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import SlideOutlineClient from './SlideOutlineClient';
 import { Presentation, CheckCircle } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Pembuat Presentasi & Slide Outline Otomatis',
   description: 'Ubah topik tugasmu menjadi susunan slide presentasi Canva/PowerPoint lengkap dengan catatan pembicara (speaker notes).',
+  alternates: { canonical: '/tools/slide-outline' },
 };
 
 export default function SlideOutlinePage() {

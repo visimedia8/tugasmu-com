@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
 import PantunPuisiClient from './PantunPuisiClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Generator Pantun & Puisi',
   description: 'Buat pantun dan puisi seru untuk tugas sastramu otomatis dengan AI TugasMu.',
+  alternates: { canonical: '/tools/pantun-puisi' },
 };
 
 export default function PantunPuisiPage() {

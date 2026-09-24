@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from 'next';
 import CeritaPendekClient from './CeritaPendekClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Pembuat Cerita Pendek & Pengalaman Pribadi (Anak SD/SMP)',
   description: 'Otomatis membuat cerita pendek fabel, pengalaman liburan, atau dongeng untuk tugas Bahasa Indonesia.',
+  alternates: { canonical: '/tools/cerita-pendek' },
 };
 
 export default function CeritaPendekPage() {
