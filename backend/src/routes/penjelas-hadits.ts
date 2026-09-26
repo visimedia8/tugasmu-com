@@ -32,13 +32,19 @@ toolPenjelasHadits.post('/', async (c) => {
 
     const systemPrompt = `Kamu adalah Ahli Hadits (Muhaddits) dan Pakar Syarah.\nHadits/Tema: ${hadits}\n\nTugas: Jelaskan derajat hadits (Shahih/Dhaif), konteks/asbabul wurud, dan syarah kandungannya.\n\nFormat Output WAJIB:\n# SYARAH HADITS\n\n**Matan & Terjemahan:**\n(Tulis redaksi hadits atau maknanya jika hanya diberi tema)\n\n**Derajat & Takhrij:**\n(Contoh: Hadits Shahih, diriwayatkan oleh Bukhari & Muslim)\n\n## PENJELASAN (SYARAH):\n(Jelaskan maksud hadits ini, konteks saat Nabi mengucapkannya, dan penjelasan ulama)\n\n## PELAJARAN (FIQhul Hadits):\n- (Poin pelajaran 1)\n- (Poin pelajaran 2)`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'penjelas-hadits', { hadits })
+      logUsage(c.env, c.req.raw, 'penjelas-hadits', { hadits }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

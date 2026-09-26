@@ -55,13 +55,19 @@ ${!isArabToInto ? '*(Sertakan harakat lengkap pada teks Arab agar mudah dibaca)*
 
 Gunakan bahasa pengantar yang ramah ala kakak kelas santri ("kamu", "-mu").`
 
-    const hasil = await callOpenRouter(systemPrompt, teks, c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, teks, c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.3,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'translator-arab', { jenjang, mode })
+      logUsage(c.env, c.req.raw, 'translator-arab', { jenjang, mode }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

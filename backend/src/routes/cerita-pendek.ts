@@ -32,13 +32,19 @@ toolCeritaPendek.post('/', async (c) => {
 
     const systemPrompt = `Kamu adalah Penulis Buku Cerita Anak yang kreatif.\nTema Cerita: ${tema}\nTokoh Utama: ${tokoh || 'Aku'}\nGaya Bahasa: ${gayaBahasa || 'Buku Harian / Pengalaman Pribadi'}\n\nTugas: Buatkan cerita pendek (sekitar 3-4 paragraf) yang menarik, mendidik, dan menggunakan kosakata yang mudah dipahami anak SD/SMP.\n\nFormat Output WAJIB:\n# CERITA: [Buat Judul yang Menarik]\n\n[Tuliskan Paragraf 1: Pengenalan tokoh dan latar/tempat]\n\n[Tuliskan Paragraf 2 & 3: Konflik atau kejadian seru yang dialami tokoh]\n\n[Tuliskan Paragraf 4: Penyelesaian dan pesan moral yang tersirat]\n\n---\n**Pesan Moral:** [Tulis 1 kalimat pesan moral positif dari cerita ini]`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'cerita-pendek', { tema })
+      logUsage(c.env, c.req.raw, 'cerita-pendek', { tema }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

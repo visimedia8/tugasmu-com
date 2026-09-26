@@ -59,10 +59,15 @@ Aturan:
 
     const userPrompt = `Buatkan ${jenis_karya} tentang ${tema}`
 
-    const hasil = await callOpenRouter(systemPrompt, userPrompt, c.env, { temperature: 0.8 })
+    const aiRes = await callOpenRouter(systemPrompt, userPrompt, c.env, { temperature: 0.8 })
+    const hasil = aiRes.hasil
 
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'pantun-puisi', { jenjang, kelas, kurikulum, mata_pelajaran })
+      logUsage(c.env, c.req.raw, 'pantun-puisi', { jenjang, kelas, kurikulum, mata_pelajaran }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({ success: true, data: { hasil } })

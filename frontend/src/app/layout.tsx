@@ -42,6 +42,7 @@ import { Footer } from '@/components/layout/Footer';
 import Breadcrumb from '@/components/layout/Breadcrumb';
 import { cn } from "@/lib/utils";
 import Providers from '@/components/Providers';
+import { Toaster } from 'sonner';
 
 export default function RootLayout({
   children,
@@ -81,6 +82,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <Toaster richColors position="top-center" />
         </Providers>
       </body>
     </html>

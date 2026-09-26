@@ -56,10 +56,15 @@ Aturan penting:
 - Di bagian paling atas, cantumkan: "Estimasi durasi baca: ±${durasi} menit"
 - Sertakan placeholder seperti [nama pembicara] dan [nama sekolah] di bagian yang relevan`
 
-    const hasil = await callOpenRouter(systemPrompt, `Buat teks pidato bertema: ${tema} untuk acara ${acara}`, c.env)
+    const aiRes = await callOpenRouter(systemPrompt, `Buat teks pidato bertema: ${tema} untuk acara ${acara}`, c.env)
+    const hasil = aiRes.hasil
 
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'pidato', { jenjang, acara, tema })
+      logUsage(c.env, c.req.raw, 'pidato', { jenjang, acara, tema }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

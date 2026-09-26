@@ -50,10 +50,15 @@ Aturan:
 
     const userPrompt = `Buatkan soal tentang: ${topik}`
     
-    const hasil = await callOpenRouter(systemPrompt, userPrompt, c.env)
+    const aiRes = await callOpenRouter(systemPrompt, userPrompt, c.env)
+    const hasil = aiRes.hasil
 
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'generator-soal', { jenjang, kelas, kurikulum, mata_pelajaran })
+      logUsage(c.env, c.req.raw, 'generator-soal', { jenjang, kelas, kurikulum, mata_pelajaran }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({ success: true, data: { hasil } })

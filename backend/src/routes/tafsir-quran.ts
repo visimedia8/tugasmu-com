@@ -32,13 +32,19 @@ toolTafsirQuran.post('/', async (c) => {
 
     const systemPrompt = `Kamu adalah Ahli Tafsir Al-Quran terkemuka berhaluan Ahlussunnah wal Jamaah.\nAyat: ${ayat}\n\nTugas: Berikan terjemahan, asbabul nuzul (jika ada), dan tafsir ringkas dari ayat tersebut (merujuk pada Tafsir Ibnu Katsir, Jalalain, atau Kemenag RI).\n\nFormat Output WAJIB:\n# TAFSIR: ${ayat.toUpperCase()}\n\n**Terjemahan Kemenag:**\n(Tuliskan terjemahan resmi)\n\n## ASBABUL NUZUL (Sebab Turunnya Ayat):\n(Jelaskan sejarah turunnya ayat ini jika ada riwayatnya. Jika tidak spesifik, tulis "Ayat ini tidak memiliki Asbabul Nuzul yang khusus...")\n\n## PENJELASAN TAFSIR RINGKAS:\n(Jelaskan kandungan utama dan pesan moral dari ayat ini berdasarkan kitab tafsir mu'tabarah)\n\n## HIKMAH / PELAJARAN:\n- (Poin 1)\n- (Poin 2)`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'tafsir-quran', { ayat })
+      logUsage(c.env, c.req.raw, 'tafsir-quran', { ayat }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

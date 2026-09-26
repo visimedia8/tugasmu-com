@@ -60,13 +60,19 @@ Format output WAJIB:
 
 Gunakan bahasa Indonesia baku, formal, dan akademis, sesuai standar makalah penugasan ${jenjang || 'SMA'}. Jangan gunakan kata-kata informal.`
 
-    const hasil = await callOpenRouter(systemPrompt, `Buatkan draf struktur makalah dengan topik: ${topik}`, c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, `Buatkan draf struktur makalah dengan topik: ${topik}`, c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'makalah-builder', { jenjang, mataPelajaran })
+      logUsage(c.env, c.req.raw, 'makalah-builder', { jenjang, mataPelajaran }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

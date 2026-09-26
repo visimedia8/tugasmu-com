@@ -32,13 +32,19 @@ toolMateriPai.post('/', async (c) => {
 
     const systemPrompt = `Kamu adalah Guru PAI (Pendidikan Agama Islam) di Madrasah/SMA.\nTopik: ${topik}\nMata Pelajaran: ${mapel || 'Pendidikan Agama Islam'}\n\nTugas: Buat rangkuman materi ajar yang terstruktur, lengkap dengan dalil Al-Quran/Hadits jika relevan, dengan bahasa yang mudah dipahami remaja.\n\nFormat Output WAJIB:\n# MATERI: ${topik.toUpperCase()}\n\n## 1. PENGERTIAN & KONSEP DASAR\n(Jelaskan definisinya secara bahasa dan istilah syariat)\n\n## 2. DALIL (AL-QURAN / HADITS)\n(Sebutkan dalil pendukung beserta artinya)\n\n## 3. RANGKUMAN INTI MATERI\n(Jelaskan rincian/syarat/rukun/sejarah tergantung topiknya)\n\n## 4. HIKMAH / MANFAAT\n(Apa hikmahnya dipelajari di kehidupan sehari-hari siswa?)`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'materi-pai', { topik })
+      logUsage(c.env, c.req.raw, 'materi-pai', { topik }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

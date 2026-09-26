@@ -73,13 +73,19 @@ Format output WAJIB:
 
 Gunakan bahasa Indonesia profesional, format terstruktur rapi, tanpa basa-basi berlebihan.`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Buatkan surat lamaran kerja dan isi CV saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Buatkan surat lamaran kerja dan isi CV saya.', c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'cv-lamaran', { jurusan, posisiDilamar })
+      logUsage(c.env, c.req.raw, 'cv-lamaran', { jurusan, posisiDilamar }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

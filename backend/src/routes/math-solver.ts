@@ -67,13 +67,19 @@ Langkah 2: {nama langkah}
 Gunakan bahasa yang mudah dipahami siswa ${jenjang || 'SMP'}. Tunjukkan setiap perhitungan secara eksplisit.`
 
     // Use DeepSeek R1 for mathematical reasoning accuracy
-    const hasil = await callOpenRouter(systemPrompt, soal, c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, soal, c.env, {
       model: 'deepseek/deepseek-r1',
       temperature: 0.1, // low temperature for deterministic math
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'math-solver', { jenjang, kelas })
+      logUsage(c.env, c.req.raw, 'math-solver', { jenjang, kelas }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

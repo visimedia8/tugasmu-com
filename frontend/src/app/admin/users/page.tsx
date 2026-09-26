@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
 import { useEffect, useState } from 'react'
+import { toast } from 'sonner'
 
 export default function AdminUsersPage() {
   const [users, setUsers] = useState<any[]>([])
@@ -30,7 +32,7 @@ export default function AdminUsersPage() {
     }
   }
 
-  async function updateUser(id: string, updates: any) {
+  async function updateUser(id: string, updates: unknown) {
     try {
       const tokenRes = await fetch('/api/auth/token')
       const tokenData = await tokenRes.json().catch(() => ({}))
@@ -46,13 +48,14 @@ export default function AdminUsersPage() {
       })
       const data = await res.json()
       if (data.success) {
-        fetchUsers() // Refresh list
+        fetchUsers()
+        toast.success('User updated!')
       } else {
-        alert(data.message)
+        toast.error(data.message)
       }
     } catch (err) {
       console.error(err)
-      alert('Failed to update user')
+      toast.error('Failed to update user')
     }
   }
 

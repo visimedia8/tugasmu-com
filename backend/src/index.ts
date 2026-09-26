@@ -46,6 +46,7 @@ export type Bindings = {
   DUITKU_MERCHANT_KEY: string
   DUITKU_IS_PRODUCTION: string
   NEXTAUTH_SECRET: string
+  DISCORD_WEBHOOK_URL?: string
 }
 
 const app = new Hono<{ Bindings: Bindings }>()

@@ -68,13 +68,19 @@ Format output WAJIB:
 
 Pastikan isi slide **TIDAK TERLALU BANYAK TEKS**. Presentasi yang baik adalah yang poin-poinnya singkat (bullet points), sementara penjelasannya ada di bagian "Catatan Pembicara".`
 
-    const hasil = await callOpenRouter(systemPrompt, `Buatkan outline slide presentasi untuk topik: ${topik}`, c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, `Buatkan outline slide presentasi untuk topik: ${topik}`, c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'slide-outline', { audiens, jumlahSlide: maxSlides })
+      logUsage(c.env, c.req.raw, 'slide-outline', { audiens, jumlahSlide: maxSlides }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

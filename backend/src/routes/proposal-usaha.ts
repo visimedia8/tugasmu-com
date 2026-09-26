@@ -32,13 +32,19 @@ toolProposalUsaha.post('/', async (c) => {
 
     const systemPrompt = `Kamu adalah Konsultan Bisnis Profesional dan Guru Kewirausahaan.\nTugas: Buatkan struktur Proposal Usaha yang formal dan realistis.\nNama Usaha: ${namaUsaha}\nJenis Produk/Jasa: ${jenisProduk}\nTarget Pasar: ${targetPasar || 'Umum'}\n\nFormat Output WAJIB (Gunakan Markdown H1, H2, H3):\n# PROPOSAL USAHA: ${namaUsaha.toUpperCase()}\n\n## BAB 1: PENDAHULUAN\n1.1 Latar Belakang (Jelaskan alasan mendirikan usaha ${jenisProduk})\n1.2 Visi & Misi\n\n## BAB 2: ANALISIS PRODUK & PASAR\n2.1 Deskripsi Produk \n2.2 Target Pasar (${targetPasar || 'Umum'})\n2.3 Analisis SWOT (Strengths, Weaknesses, Opportunities, Threats)\n\n## BAB 3: RENCANA PEMASARAN & KEUANGAN\n3.1 Strategi Promosi\n3.2 Rencana Anggaran Awal (Simulasi modal)\n\nGunakan bahasa meyakinkan, formal, dan siap diserahkan ke guru.`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'proposal-usaha', { namaUsaha })
+      logUsage(c.env, c.req.raw, 'proposal-usaha', { namaUsaha }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

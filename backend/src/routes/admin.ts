@@ -12,6 +12,10 @@ admin.get('/stats', async (c) => {
   const usersCount = await c.env.DB.prepare('SELECT COUNT(*) as count FROM users').first<{count: number}>()
   const subscriptionsCount = await c.env.DB.prepare("SELECT COUNT(*) as count FROM subscriptions WHERE status = 'active'").first<{count: number}>()
   const toolsUsageCount = await c.env.DB.prepare('SELECT COUNT(*) as count FROM tools_usage').first<{count: number}>()
+  
+  // Margin Protector Metrics
+  const revenueTotal = await c.env.DB.prepare("SELECT SUM(amount) as total FROM subscriptions").first<{total: number}>()
+  const costTotal = await c.env.DB.prepare("SELECT SUM(cost_usd) as total FROM tools_usage").first<{total: number}>()
 
   return c.json({
     success: true,
@@ -19,6 +23,8 @@ admin.get('/stats', async (c) => {
       totalUsers: usersCount?.count ?? 0,
       activeSubscriptions: subscriptionsCount?.count ?? 0,
       totalToolsUsage: toolsUsageCount?.count ?? 0,
+      totalRevenue: revenueTotal?.total ?? 0,
+      totalCostUsd: costTotal?.total ?? 0,
     }
   })
 })
@@ -57,6 +63,35 @@ admin.put('/users/:id', async (c) => {
     ).run()
 
     return c.json({ success: true })
+  } catch (err: any) {
+    return c.json({ success: false, message: err.message }, 400)
+  }
+})
+
+admin.get('/organizations', async (c) => {
+  const limit = parseInt(c.req.query('limit') ?? '50', 10)
+  const offset = parseInt(c.req.query('offset') ?? '0', 10)
+
+  const { results } = await c.env.DB.prepare(
+    'SELECT id, name, owner_id, seat_limit, created_at FROM organizations ORDER BY created_at DESC LIMIT ? OFFSET ?'
+  ).bind(limit, offset).all()
+
+  return c.json({ success: true, organizations: results })
+})
+
+admin.post('/organizations', async (c) => {
+  try {
+    const { name, owner_id, seat_limit } = await c.req.json()
+    if (!name || !owner_id) {
+      return c.json({ success: false, message: 'Name and Owner ID are required' }, 400)
+    }
+
+    const id = crypto.randomUUID()
+    await c.env.DB.prepare(
+      'INSERT INTO organizations (id, name, owner_id, seat_limit) VALUES (?, ?, ?, ?)'
+    ).bind(id, name, owner_id, seat_limit ?? 50).run()
+
+    return c.json({ success: true, organization: { id, name, owner_id, seat_limit } })
   } catch (err: any) {
     return c.json({ success: false, message: err.message }, 400)
   }

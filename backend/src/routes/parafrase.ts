@@ -42,10 +42,15 @@ Konteks siswa:
 Tugas: Parafrase teks berikut menjadi versi unik dengan makna yang sama. 
 Pertahankan alur logika. Sesuaikan gaya bahasa untuk siswa ${jenjang}. Jangan berikan pembukaan atau penutup, langsung berikan hasil parafrasenya.`
 
-    const hasil = await callOpenRouter(systemPrompt, input_text, c.env)
+    const aiRes = await callOpenRouter(systemPrompt, input_text, c.env)
+    const hasil = aiRes.hasil
 
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'parafrase', { jenjang, kelas, kurikulum, mata_pelajaran })
+      logUsage(c.env, c.req.raw, 'parafrase', { jenjang, kelas, kurikulum, mata_pelajaran }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

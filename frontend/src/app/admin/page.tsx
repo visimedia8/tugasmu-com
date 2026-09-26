@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Users, Activity, CreditCard } from 'lucide-react'
+import { Users, Activity, CreditCard, DollarSign, TrendingDown } from 'lucide-react'
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState<any>(null)
@@ -40,6 +41,26 @@ export default function AdminDashboard() {
       <h1 className="text-3xl font-bold">Dashboard</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="rounded-xl border bg-card text-card-foreground shadow">
+          <div className="flex flex-row items-center justify-between p-6 pb-2">
+            <h3 className="tracking-tight text-sm font-medium text-slate-500">Gross Revenue (IDR)</h3>
+            <DollarSign className="h-4 w-4 text-slate-500" />
+          </div>
+          <div className="p-6 pt-0">
+            <div className="text-2xl font-bold">Rp {stats.totalRevenue?.toLocaleString() || 0}</div>
+          </div>
+        </div>
+
+        <div className="rounded-xl border bg-red-50 text-card-foreground shadow">
+          <div className="flex flex-row items-center justify-between p-6 pb-2">
+            <h3 className="tracking-tight text-sm font-medium text-red-500">API Cost (USD)</h3>
+            <TrendingDown className="h-4 w-4 text-red-500" />
+          </div>
+          <div className="p-6 pt-0">
+            <div className="text-2xl font-bold text-red-600">${stats.totalCostUsd?.toFixed(4) || '0.0000'}</div>
+          </div>
+        </div>
+
         <div className="rounded-xl border bg-card text-card-foreground shadow">
           <div className="flex flex-row items-center justify-between p-6 pb-2">
             <h3 className="tracking-tight text-sm font-medium text-slate-500">Total Users</h3>

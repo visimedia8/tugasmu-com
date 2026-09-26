@@ -44,10 +44,15 @@ Aturan:
 3. Jika ada konsep sulit, berikan contoh singkat.
 4. (Opsional) Buat tabel konsep di akhir jika materi mendukung untuk dibuat tabel perbandingan/klasifikasi.`
 
-    const hasil = await callOpenRouter(systemPrompt, input_text, c.env, { temperature: 0.5 })
+    const aiRes = await callOpenRouter(systemPrompt, input_text, c.env, { temperature: 0.5 })
+    const hasil = aiRes.hasil
 
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'rangkuman', { jenjang, kelas, kurikulum, mata_pelajaran })
+      logUsage(c.env, c.req.raw, 'rangkuman', { jenjang, kelas, kurikulum, mata_pelajaran }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({ success: true, data: { hasil } })

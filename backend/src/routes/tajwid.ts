@@ -32,13 +32,19 @@ toolTajwid.post('/', async (c) => {
 
     const systemPrompt = `Kamu adalah Guru Tahsin / Tajwid Al-Quran bersertifikat.\nPotongan Ayat: ${ayat}\n\nTugas: Analisis hukum tajwid apa saja yang ada pada potongan ayat tersebut, sebutkan alasannya (huruf bertemu huruf apa), dan jelaskan cara membacanya.\n\nFormat Output WAJIB:\n# ANALISIS TAJWID\n\n**Ayat yang dianalisis:** ${ayat}\n\n## HUKUM BACAAN:\n1. **[Nama Hukum Tajwid]** (misal: Idzhar Halqi)\n   - **Sebab:** (misal: Nun mati bertemu huruf Ha)\n   - **Cara Baca:** (misal: Dibaca jelas tanpa dengung)\n\n2. (Hukum ke-2 jika ada)\n\n## TIPS TAHSIN:\n(Berikan tips posisi lidah/bibir makharijul huruf agar bacaan fasih)`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'tajwid', { ayat })
+      logUsage(c.env, c.req.raw, 'tajwid', { ayat }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

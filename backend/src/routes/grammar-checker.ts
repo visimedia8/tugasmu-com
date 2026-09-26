@@ -52,13 +52,19 @@ Format output WAJIB:
 
 Gunakan sapaan "kamu" dan gaya bahasa kakak kelas yang mendukung.`
 
-    const hasil = await callOpenRouter(systemPrompt, teks, c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, teks, c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.3,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'grammar-checker', { jenjang })
+      logUsage(c.env, c.req.raw, 'grammar-checker', { jenjang }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

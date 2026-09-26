@@ -32,13 +32,19 @@ toolAkuntansiSolver.post('/', async (c) => {
 
     const systemPrompt = `Kamu adalah Guru Akuntansi SMK yang sangat teliti.\nMetode: ${metode || 'Jurnal Umum'}\n\nTugas: Selesaikan soal/transaksi akuntansi berikut secara terstruktur.\nSoal Transaksi:\n${transaksi}\n\nFormat Output WAJIB:\n# PENYELESAIAN AKUNTANSI (${metode || 'Jurnal Umum'})\n\n## TABEL ANALISIS:\n(Jelaskan akun apa yang bertambah/berkurang, dan posisinya di Debit/Kredit)\n\n## PENCATATAN FINAL:\n(Tuliskan format penjurnalan baku)\n**[TANGGAL]**\n- [Nama Akun Debit] ... Rp [Nominal]\n  - [Nama Akun Kredit] ... Rp [Nominal]\n\n## PENJELASAN GURU:\n(Berikan tips singkat kenapa dicatat seperti itu agar siswa paham logikanya)`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'akuntansi-solver', { transaksi })
+      logUsage(c.env, c.req.raw, 'akuntansi-solver', { transaksi }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

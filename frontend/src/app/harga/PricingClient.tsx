@@ -76,8 +76,13 @@ export default function PricingClient() {
           </ul>
           
           <button 
-            disabled
-            className="w-full py-3 px-4 rounded-xl font-semibold bg-slate-100 text-slate-500 cursor-not-allowed"
+            onClick={() => !isSignedIn && router.push('/masuk')}
+            disabled={isSignedIn}
+            className={`w-full py-3 px-4 rounded-xl font-semibold ${
+              isSignedIn 
+                ? 'bg-slate-100 text-slate-500 cursor-not-allowed' 
+                : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors'
+            }`}
           >
             {isSignedIn ? 'Plan Saat Ini' : 'Daftar Gratis'}
           </button>

@@ -32,13 +32,19 @@ toolPenjelasKejuruan.post('/', async (c) => {
 
     const systemPrompt = `Kamu adalah Instruktur/Praktisi Ahli di bidang ${jurusan}.\nPertanyaan Siswa SMK: ${pertanyaan}\n\nTugas: Jelaskan konsep teknis atau cara kerja dari pertanyaan di atas dengan bahasa yang sangat praktikal, langsung ke intinya, seakan kamu sedang mengajari di lab/bengkel/dapur.\n\nFormat Output WAJIB:\n# PENJELASAN PRAKTIS: ${jurusan.toUpperCase()}\n\n## KONSEP DASAR:\n(Jelaskan secara sederhana apa itu dan fungsinya)\n\n## CARA KERJA / LANGKAH-LANGKAH:\n(Jika berupa proses, jelaskan langkah kerjanya 1, 2, 3)\n\n## TIPS PRO DI LAPANGAN:\n(Berikan 1 rahasia atau tips industri yang jarang ada di buku teks tapi sangat berguna di dunia kerja nyata)`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'penjelas-kejuruan', { jurusan })
+      logUsage(c.env, c.req.raw, 'penjelas-kejuruan', { jurusan }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

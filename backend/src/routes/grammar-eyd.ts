@@ -51,10 +51,15 @@ TEKS YANG SUDAH DIKOREKSI:
 
 Jika tidak ada kesalahan, tulis: "Tidak ditemukan kesalahan ejaan atau tanda baca. Teks sudah sesuai EYD/PUEBI."`
 
-    const hasil = await callOpenRouter(systemPrompt, teks, c.env)
+    const aiRes = await callOpenRouter(systemPrompt, teks, c.env)
+    const hasil = aiRes.hasil
 
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'grammar-eyd', { jenjang })
+      logUsage(c.env, c.req.raw, 'grammar-eyd', { jenjang }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

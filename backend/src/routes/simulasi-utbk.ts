@@ -69,13 +69,19 @@ Penjelasan: [Jelaskan langkah-langkah penyelesaiannya]
 
 Gunakan bahasa yang asyik khas tutor bimbel ("lo/gue" atau "kamu/kita") pada bagian pembahasan agar tidak membosankan.`
 
-    const hasil = await callOpenRouter(systemPrompt, `Buatkan simulasi soal untuk subtes: ${subtes}`, c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, `Buatkan simulasi soal untuk subtes: ${subtes}`, c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'simulasi-utbk', { subtes })
+      logUsage(c.env, c.req.raw, 'simulasi-utbk', { subtes }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

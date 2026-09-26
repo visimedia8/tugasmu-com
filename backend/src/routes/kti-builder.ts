@@ -77,13 +77,19 @@ Topik: ${topik}
 
 Gunakan bahasa akademis tingkat SMA/Kuliah awal. Jangan berikan jawaban akhir, tapi berikan draf berstruktur kokoh.`
 
-    const hasil = await callOpenRouter(systemPrompt, `Buatkan kerangka KTI untuk topik: ${topik}`, c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, `Buatkan kerangka KTI untuk topik: ${topik}`, c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'kti-builder', { jenjang, metode })
+      logUsage(c.env, c.req.raw, 'kti-builder', { jenjang, metode }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

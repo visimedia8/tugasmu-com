@@ -71,13 +71,19 @@ Oleh: ${namaLengkap}
 
 Gunakan bahasa Indonesia baku yang formal dan akademis, cocok untuk laporan resmi sekolah.`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Tolong buatkan draft laporan PKL saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Tolong buatkan draft laporan PKL saya.', c.env, {
       model: 'deepseek/deepseek-chat', // Use V3 for general generation
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'laporan-pkl', { kelas, jurusan })
+      logUsage(c.env, c.req.raw, 'laporan-pkl', { kelas, jurusan }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

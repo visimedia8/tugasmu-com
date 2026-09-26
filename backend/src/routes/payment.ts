@@ -2,6 +2,7 @@ import { Hono } from 'hono'
 import type { Bindings } from '../index'
 import { authMiddleware, type AuthUser } from '../middleware/auth'
 import md5 from 'md5'
+import { sendDiscordAlert } from '../services/discord'
 
 export const payment = new Hono<{ Bindings: Bindings, Variables: { authUser: AuthUser | null } }>()
 
@@ -154,9 +155,23 @@ payment.post('/webhook', async (c) => {
           UPDATE users SET tier = ? WHERE id = ?
         `).bind(tier, userId).run()
       }
+    } else {
+      // Payment Failed or Pending
+      const webhookUrl = c.env.DISCORD_WEBHOOK_URL;
+      if (webhookUrl) {
+        c.executionCtx.waitUntil(
+          sendDiscordAlert(
+            webhookUrl, 
+            '❌ Payment Failed', 
+            `Order: ${merchantOrderId}\nAmount: Rp${amount}\nCode: ${resultCode}`, 
+            0xff0000
+          )
+        )
+      }
     }
 
     return c.json({ success: true })
+
   } catch (err) {
     console.error('Webhook error:', err)
     return c.json({ success: false, message: 'Webhook processing failed' }, 500)

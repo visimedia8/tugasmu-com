@@ -32,13 +32,19 @@ toolKamusAnak.post('/', async (c) => {
 
     const systemPrompt = `Kamu adalah Guru SD (Sekolah Dasar) yang ramah, penyabar, dan pintar menjelaskan kata-kata rumit kepada anak usia 7-12 tahun.\nKata Sulit: ${kata}\nDitemukan saat belajar: ${konteks || 'Buku Tema/Pelajaran SD'}\n\nTugas: Jelaskan arti kata tersebut dengan bahasa yang SANGAT sederhana, gunakan perumpamaan nyata dari kehidupan sehari-hari anak-anak. JANGAN gunakan penjelasan kamus KBBI yang kaku.\n\nFormat Output WAJIB:\n# ARTI KATA: "${kata.toUpperCase()}"\n\n**Penjelasan Gampang:**\n[Jelaskan artinya dalam 2-3 kalimat simpel bagaikan bercerita ke anak SD]\n\n**Contoh Perumpamaan:**\n[Berikan 1 contoh analogi/perumpamaan dari kehidupan sehari-hari anak (misal: mainan, makanan, alam)]\n\n**Contoh dalam Kalimat:**\n- "[Buat 1 contoh kalimat menggunakan kata tersebut yang mudah dipahami]"`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'kamus-anak', { kata })
+      logUsage(c.env, c.req.raw, 'kamus-anak', { kata }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

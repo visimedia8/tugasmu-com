@@ -32,13 +32,19 @@ toolKitabKuning.post('/', async (c) => {
 
     const systemPrompt = `Kamu adalah Ustadz Ahli Kitab Kuning di Pesantren Salaf.\nTeks Arab Gundul: ${teksArab}\n\nTugas: Terjemahkan teks tersebut ke bahasa Indonesia, berikan harakat pada teks Arabnya, dan berikan syarah (penjelasan makna) ringkas.\n\nFormat Output WAJIB:\n# TERJEMAHAN KITAB\n\n**Teks Berharakat:**\n(Tulis ulang teks dengan harakat lengkap)\n\n**Terjemahan:**\n(Terjemahan bahasa Indonesia yang luwes)\n\n**Penjelasan Makna (Syarah):**\n(Jelaskan maksud kandungan teks tersebut secara ringkas dan kontekstual)`
 
-    const hasil = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
+    const aiRes = await callOpenRouter(systemPrompt, 'Tolong bantu saya.', c.env, {
       model: 'deepseek/deepseek-chat',
       temperature: 0.7,
     })
 
+    const hasil = aiRes.hasil
+
     c.executionCtx.waitUntil(
-      logUsage(c.env, c.req.raw, 'kitab-kuning', { teksArab })
+      logUsage(c.env, c.req.raw, 'kitab-kuning', { teksArab }, {
+      model: aiRes.model,
+      prompt_tokens: aiRes.usage.prompt_tokens,
+      completion_tokens: aiRes.usage.completion_tokens
+    })
     )
 
     return c.json({

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import Link from 'next/link'
-import { LayoutDashboard, Users, Activity } from 'lucide-react'
+import { LayoutDashboard, Users, Building } from 'lucide-react'
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
@@ -18,6 +18,10 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
           <Link href="/admin/users" className="flex items-center gap-3 px-3 py-2 text-slate-700 rounded-md hover:bg-slate-100">
             <Users size={20} />
             Manage Users
+          </Link>
+          <Link href="/admin/organizations" className="flex items-center gap-3 px-3 py-2 text-slate-700 rounded-md hover:bg-slate-100">
+            <Building size={20} />
+            Organizations (B2B)
           </Link>
         </nav>
       </aside>

@@ -10,7 +10,8 @@ export async function callOpenRouter(
   userPrompt: string,
   env: Bindings,
   options?: AiOptions
-): Promise<string> {
+): Promise<{ hasil: string, usage: { prompt_tokens: number, completion_tokens: number }, model: string }> {
+
   const apiKey = env.DEEPSEEK_API_KEY
   if (!apiKey) {
     throw new Error('Missing DEEPSEEK_API_KEY')
@@ -43,5 +44,11 @@ export async function callOpenRouter(
 
   const data = await aiResponse.json() as any
   const hasil = data.choices?.[0]?.message?.content || ''
-  return hasil
+  
+  return {
+    hasil,
+    usage: data.usage || { prompt_tokens: 0, completion_tokens: 0 },
+    model: data.model || model
+  }
 }
+
