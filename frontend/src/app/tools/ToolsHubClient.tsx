@@ -47,6 +47,7 @@ export default function ToolsHubClient() {
   };
   const [filterPopular, setFilterPopular] = useState(false);
   const [filterMerdeka, setFilterMerdeka] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(12);
 
   const filteredTools = TOOLS.filter(tool => {
     const query = searchQuery.toLowerCase();
@@ -57,6 +58,9 @@ export default function ToolsHubClient() {
 
     return matchesQuery && matchesCategory && matchesPopular && matchesMerdeka;
   });
+
+  // Reset visible count when filters change
+  useEffect(() => { setVisibleCount(12); }, [searchQuery, currentCategory, filterPopular, filterMerdeka]);
 
   const handleReset = () => {
     setSearchQuery('');
@@ -198,13 +202,14 @@ export default function ToolsHubClient() {
 
         {/* Tools Grid */}
         {filteredTools.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredTools.map((tool) => (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filteredTools.slice(0, visibleCount).map((tool) => (
               <div key={tool.id} className="tool-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200">
                 <div>
                   <div className="flex items-start justify-between gap-2 mb-4">
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-sm transition-colors ${tool.colorClass}`}>
-                      <span className="material-symbols-outlined text-[26px]">{tool.icon}</span>
+                      <span className="material-symbols-outlined text-[26px]">{tool.icon || 'extension'}</span>
                     </div>
                     <span className="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
                       {tool.isPopular && <span className="material-symbols-outlined text-[13px]" style={{ fontVariationSettings: "'FILL' 1" }}>local_fire_department</span>}
@@ -234,7 +239,20 @@ export default function ToolsHubClient() {
                 </div>
               </div>
             ))}
+
           </div>
+          {filteredTools.length > visibleCount && (
+            <div className="flex justify-center mt-8">
+              <button 
+                onClick={() => setVisibleCount(prev => prev + 12)}
+                className="px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors flex items-center gap-2"
+              >
+                <span>Muat Lebih Banyak</span>
+                <span className="material-symbols-outlined text-[18px]">expand_more</span>
+              </button>
+            </div>
+          )}
+          </>
         ) : (
           <div className="flex flex-col items-center justify-center text-center p-12 bg-surface-container-lowest rounded-xl shadow-sm my-6">
             <div className="w-16 h-16 rounded-full bg-surface-container-high text-outline flex items-center justify-center mb-4">

@@ -32,7 +32,7 @@ export function getPostBySlug(kategori: string, slug: string): BlogPost | null {
     slug: realSlug,
     kategori,
     title: data.title || '',
-    description: data.description || '',
+    description: data.description || data.excerpt || '',
     date: data.date || '',
     draft: typeof data.draft !== 'undefined' ? data.draft : false,
     content,

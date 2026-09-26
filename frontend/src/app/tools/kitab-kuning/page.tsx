@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import KitabKuningClient from './KitabKuningClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -10,6 +11,20 @@ export const metadata = {
 };
 
 export default function KitabKuningPage() {
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Translator Kitab Kuning & Arab Gundul - TugasMu",
+    "description": "Terjemahkan teks Arab gundul (Kitab Kuning) ke bahasa Indonesia lengkap dengan harakat dan syarah.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    }
+  };
   const faqs = [
   {
     "q": "Apakah bisa untuk bahasa Arab modern (Koran)?",
@@ -19,6 +34,7 @@ export default function KitabKuningPage() {
   
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
+      <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Translator & Syarah Kitab Kuning

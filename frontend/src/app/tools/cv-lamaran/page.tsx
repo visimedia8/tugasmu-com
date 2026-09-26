@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import Link from 'next/link';
 import CVLamaranClient from './CVLamaranClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
@@ -12,8 +13,23 @@ export const metadata = {
 };
 
 export default function CVLamaranPage() {
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Generator CV & Surat Lamaran Kerja ATS Friendly - Khusus Lulusan SMK",
+    "description": "Buat CV dan Surat Lamaran Kerja otomatis yang lolos sistem ATS HRD. Dirancang khusus untuk Fresh Graduate lulusan SMK agar cepat dapat panggilan kerja.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    }
+  };
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
+      <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Generator CV & Surat Lamaran Kerja (Otomatis)

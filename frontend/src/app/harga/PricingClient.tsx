@@ -96,7 +96,6 @@ export default function PricingClient() {
             <li className="flex gap-3 text-slate-700 text-sm font-semibold"><span className="text-sky-500">✓</span> 500x generate per hari (lebih dari cukup)</li>
             <li className="flex gap-3 text-slate-700 text-sm"><span className="text-sky-500">✓</span> Input teks s/d 5.000 karakter</li>
             <li className="flex gap-3 text-slate-700 text-sm"><span className="text-sky-500">✓</span> Hasil lebih cepat (Prioritas Server)</li>
-            <li className="flex gap-3 text-slate-700 text-sm"><span className="text-sky-500">✓</span> Tanpa iklan (Ad-free)</li>
           </ul>
           
           <button 

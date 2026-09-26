@@ -54,6 +54,11 @@ export default function SyaratPage() {
         <p>
           Syarat dan Ketentuan ini diatur oleh dan ditafsirkan sesuai dengan hukum Republik Indonesia.
         </p>
+
+        <h2>7. Kebijakan Pengembalian Dana (No Refund Policy)</h2>
+        <p>
+          Semua pembelian paket berlangganan (Pro/Guru) bersifat final. Kami tidak melayani pengembalian dana (refund) dengan alasan apa pun setelah transaksi berhasil dan status akun telah di-upgrade. Jika terjadi kendala teknis dari sistem kami yang menyebabkan fitur tidak dapat digunakan, kompensasi akan diberikan dalam bentuk perpanjangan masa aktif akun, bukan pengembalian dana.
+        </p>
       </div>
     </div>
   );

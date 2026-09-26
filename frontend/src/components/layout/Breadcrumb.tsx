@@ -11,9 +11,9 @@ export default function Breadcrumb() {
   const segments = pathname.split('/').filter(Boolean);
   
   return (
-    <div className="bg-slate-50 border-b">
-      <div className="container py-3">
-        <nav className="flex text-sm text-slate-500" aria-label="Breadcrumb">
+    <div className="w-full bg-brand-cream border-b border-brand-navy/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav className="flex font-body-sm text-body-sm text-brand-navy/60" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
             <li className="inline-flex items-center">
               <Link href="/" className="hover:text-slate-900 transition-colors">

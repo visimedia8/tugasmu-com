@@ -1,31 +1,17 @@
 import type { NextAuthOptions } from 'next-auth'
-import CredentialsProvider from 'next-auth/providers/credentials'
+import GoogleProvider from 'next-auth/providers/google'
 
 export const authOptions: NextAuthOptions = {
   providers: [
-    CredentialsProvider({
-      name: 'Bypass (Development)',
-      credentials: {
-        email: { label: "Email Dummy", type: "email", placeholder: "tester@tugasmu.com" },
-        name: { label: "Nama Dummy", type: "text", placeholder: "Tester" }
-      },
-      async authorize(credentials) {
-        if (!credentials?.email) return null
-        
-        // Ciptakan ID unik statis berdasarkan email agar konsisten
-        const generateId = (email: string) => {
-          let hash = 0;
-          for (let i = 0; i < email.length; i++) {
-            hash = email.charCodeAt(i) + ((hash << 5) - hash);
-          }
-          return `dev-usr-${Math.abs(hash)}`
-        }
-
-        return {
-          id: generateId(credentials.email),
-          email: credentials.email,
-          name: credentials.name || 'Tester',
-          image: 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID || 'dummy_client_id_please_change_in_prod',
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || 'dummy_client_secret_please_change_in_prod',
+      // Jika butuh refresh token
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code"
         }
       }
     })

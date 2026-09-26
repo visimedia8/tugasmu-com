@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <!-- Decorative elements -->
+  <circle cx="200" cy="150" r="400" fill="#2563EB" opacity="0.1"/>
+  <circle cx="1000" cy="500" r="300" fill="#F59E0B" opacity="0.05"/>
+  <!-- Logo centered -->
+  <g transform="translate(425, 265) scale(1)">
+    <g transform="scale(1.5)">
+      <g transform="translate(-10, -30) scale(0.8)">
+        <path d="M20 75 C20 75, 45 65, 50 80 C55 65, 80 75, 80 75 L80 30 C80 30, 55 20, 50 35 C45 20, 20 30, 20 30 Z" fill="#60A5FA" opacity="0.2"/>
+        <path d="M20 70 C20 70, 45 60, 50 75 C55 60, 80 70, 80 70 L80 25 C80 25, 55 15, 50 30 C45 15, 20 25, 20 25 Z" fill="#60A5FA" opacity="0.5"/>
+        <path d="M20 65 C20 65, 45 55, 50 70 C55 55, 80 65, 80 65 L80 20 C80 20, 55 10, 50 25 C45 10, 20 20, 20 20 Z" fill="#3B82F6"/>
+        <path d="M50 70 L50 25" stroke="#BFDBFE" stroke-width="2" stroke-linecap="round"/>
+        <path d="M50 45 L55 35 L65 30 L55 25 L50 15 L45 25 L35 30 L45 35 Z" fill="#FBBF24"/>
+      </g>
+      <text x="70" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="bold" fill="#F8FAFC">Tugas<tspan fill="#60A5FA">Mu</tspan></text>
+    </g>
+  </g>
+  <!-- Tagline -->
+  <text x="600" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#94A3B8" text-anchor="middle">Teman Pintar Belajarmu</text>
+</svg>

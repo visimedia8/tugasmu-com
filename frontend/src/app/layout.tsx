@@ -11,12 +11,28 @@ export const metadata = {
     default: 'TugasMu | AI yang ngerti pelajaran kamu',
   },
   description: 'Platform AI Gratis untuk Bantu Belajar Siswa Indonesia',
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+    ],
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: 'TugasMu | AI yang ngerti pelajaran kamu',
     description: 'Platform AI Gratis untuk Bantu Belajar Siswa Indonesia',
     siteName: 'TugasMu',
     locale: 'id_ID',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'TugasMu Banner',
+      },
+    ],
   },
 };
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 interface Post {
@@ -14,6 +14,9 @@ interface Post {
 export default function BlogHubClient({ posts }: { posts: Post[] }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentCategory, setCurrentCategory] = useState('all');
+  const [visibleCount, setVisibleCount] = useState(9);
+
+  useEffect(() => { setVisibleCount(9); }, [searchQuery, currentCategory]);
 
   // We map mdx categories to our badges
   const getCategoryBadge = (kategori: string) => {
@@ -187,8 +190,9 @@ export default function BlogHubClient({ posts }: { posts: Post[] }) {
         </div>
 
         {filteredPosts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredPosts.slice(currentCategory === 'all' && !searchQuery ? 1 : 0).map((post) => {
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredPosts.slice(currentCategory === 'all' && !searchQuery ? 1 : 0, (currentCategory === 'all' && !searchQuery ? 1 : 0) + visibleCount).map((post) => {
               const badge = getCategoryBadge(post.kategori);
               return (
                 <article key={post.slug} className="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden group">
@@ -227,7 +231,20 @@ export default function BlogHubClient({ posts }: { posts: Post[] }) {
                 </article>
               );
             })}
+
           </div>
+          {filteredPosts.length > (currentCategory === 'all' && !searchQuery ? 1 : 0) + visibleCount && (
+            <div className="flex justify-center mt-10">
+              <button 
+                onClick={() => setVisibleCount(prev => prev + 9)}
+                className="px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors flex items-center gap-2"
+              >
+                <span>Muat Lebih Banyak</span>
+                <span className="material-symbols-outlined text-[18px]">expand_more</span>
+              </button>
+            </div>
+          )}
+          </>
         ) : (
           <div className="py-16 text-center bg-surface-container-lowest rounded-xl shadow-sm mt-6">
             <div className="w-12 h-12 rounded-full bg-surface-container-high mx-auto flex items-center justify-center text-on-surface-variant mb-3">

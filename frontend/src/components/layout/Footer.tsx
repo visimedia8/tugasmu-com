@@ -14,9 +14,12 @@ export function Footer() {
               </div>
               <span className="font-bold text-slate-900 text-base font-heading">TugasMu.com</span>
             </div>
-            <span className="text-xs sm:text-sm text-slate-500">
-              © 2026 TugasMu.com. Hak cipta dilindungi.
-            </span>
+            <div className="flex flex-col text-xs sm:text-sm text-slate-500">
+              <span>© 2026 TugasMu.com. Hak cipta dilindungi.</span>
+              <span className="mt-1 flex items-center justify-center sm:justify-start gap-1">
+                Pembayaran aman via <strong>Duitku</strong> (QRIS, E-Wallet, VA)
+              </span>
+            </div>
           </div>
 
           {/* Footer Links */}

@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import KTIBuilderClient from './KTIBuilderClient';
 import { Microscope, CheckCircle } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -10,8 +11,23 @@ export const metadata = {
 };
 
 export default function KTIBuilderPage() {
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Generator Karya Tulis Ilmiah (KTI) - Bab 1 sampai Bab 3",
+    "description": "Buat struktur kerangka Karya Tulis Ilmiah (KTI) otomatis untuk siswa SMA/K. Mulai dari latar belakang hingga metodologi penelitian.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    }
+  };
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
+      <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Pembuat Karya Tulis Ilmiah (KTI)

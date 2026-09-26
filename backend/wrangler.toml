@@ -10,3 +10,6 @@ migrations_dir = "migrations"
 
 [vars]
 # DEEPSEEK_API_KEY = "openrouter-api-key-here"
+
+[triggers]
+crons = ['0 0 * * *']

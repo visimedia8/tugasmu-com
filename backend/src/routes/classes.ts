@@ -120,6 +120,7 @@ classes.get('/', async (c) => {
       JOIN class_members cm ON c.id = cm.class_id
       WHERE cm.user_id = ?
       ORDER BY c.created_at DESC
+      LIMIT 50
     `).bind(authUser.userId).all()
 
     return c.json({ success: true, classes: results })
@@ -156,6 +157,7 @@ classes.get('/:id', async (c) => {
       FROM class_members cm
       LEFT JOIN users u ON cm.user_id = u.id
       WHERE cm.class_id = ? AND cm.role = 'student'
+      LIMIT 100
     `).bind(classId).all()
 
     return c.json({ 

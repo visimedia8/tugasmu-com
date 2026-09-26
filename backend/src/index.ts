@@ -36,6 +36,7 @@ import { user } from './routes/user'
 import { credits } from './routes/credits'
 import { referral } from './routes/referral'
 import { share } from './routes/share'
+import { admin } from './routes/admin'
 
 
 export type Bindings = {
@@ -99,5 +100,24 @@ app.route('/api/user', user)
 app.route('/api/credits', credits)
 app.route('/api/referral', referral)
 app.route('/api/share', share)
+app.route('/api/admin', admin)
 
-export default app
+export default {
+  fetch: app.fetch,
+  async scheduled(event: any, env: Bindings, ctx: any) {
+    ctx.waitUntil(
+      (async () => {
+        try {
+          console.log('Running daily cleanup...')
+          // Bersihkan rate limit IP yang lebih tua dari 7 hari
+          await env.DB.prepare(`DELETE FROM ip_rate_limit WHERE date < date('now', '-7 days')`).run()
+          // Bersihkan history pemakaian user yang lebih tua dari 30 hari (opsional)
+          await env.DB.prepare(`DELETE FROM user_quota_log WHERE date < date('now', '-30 days')`).run()
+          console.log('Cleanup finished')
+        } catch (e) {
+          console.error('Cleanup error:', e)
+        }
+      })()
+    )
+  }
+}

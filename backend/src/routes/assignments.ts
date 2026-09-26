@@ -50,6 +50,7 @@ assignments.get('/class/:classId', async (c) => {
       FROM assignments a
       WHERE a.class_id = ?
       ORDER BY a.created_at DESC
+      LIMIT 50
     `).bind(authUser.userId, classId).all()
 
     return c.json({ success: true, assignments: results })
@@ -113,6 +114,7 @@ assignments.get('/:assignmentId/submissions', async (c) => {
       JOIN users u ON s.user_id = u.id
       WHERE s.assignment_id = ?
       ORDER BY s.submitted_at DESC
+      LIMIT 100
     `).bind(assignmentId).all()
 
     return c.json({ success: true, submissions: results })

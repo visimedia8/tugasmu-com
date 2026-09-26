@@ -9,6 +9,7 @@ export async function logUsage(
     kelas?: string
     kurikulum?: string
     mata_pelajaran?: string
+    [key: string]: any
   }
 ) {
   try {

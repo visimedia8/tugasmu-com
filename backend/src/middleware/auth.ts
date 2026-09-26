@@ -6,6 +6,7 @@ export interface AuthUser {
   email: string
   tier: 'anonymous' | 'free' | 'pro' | 'guru' | 'kelas'
   dailyLimit: number
+  role: string
 }
 
 const TIER_LIMITS: Record<string, number> = {
@@ -79,12 +80,12 @@ export async function authMiddleware(c: Context<{ Bindings: Bindings; Variables:
 
   try {
     const user = await c.env.DB.prepare(
-      `SELECT id, email, tier, referral_bonus FROM users WHERE id = ?`
-    ).bind(decoded.userId).first<{ id: string; email: string; tier: string; referral_bonus: number }>()
+      `SELECT id, email, tier, referral_bonus, role FROM users WHERE id = ?`
+    ).bind(decoded.userId).first<{ id: string; email: string; tier: string; referral_bonus: number; role: string }>()
 
     if (!user) {
       await c.env.DB.prepare(
-        `INSERT OR IGNORE INTO users (id, email, tier, quota_daily) VALUES (?, ?, 'free', 20)`
+        `INSERT OR IGNORE INTO users (id, email, tier, quota_daily, role) VALUES (?, ?, 'free', 20, 'user')`
       ).bind(decoded.userId, decoded.email).run()
       
       c.set('authUser', {
@@ -92,6 +93,7 @@ export async function authMiddleware(c: Context<{ Bindings: Bindings; Variables:
         email: decoded.email,
         tier: 'free',
         dailyLimit: 20,
+        role: 'user',
       } as AuthUser)
     } else {
       // Lazy trial expiry check
@@ -121,6 +123,7 @@ export async function authMiddleware(c: Context<{ Bindings: Bindings; Variables:
         email: user.email,
         tier: currentTier,
         dailyLimit: effectiveLimit,
+        role: user.role ?? 'user',
       } as AuthUser)
     }
   } catch (err) {
@@ -128,5 +131,13 @@ export async function authMiddleware(c: Context<{ Bindings: Bindings; Variables:
     c.set('authUser', null)
   }
 
+  await next()
+}
+
+export async function adminAuthMiddleware(c: Context<{ Bindings: Bindings; Variables: { authUser: AuthUser | null } }>, next: Next) {
+  const authUser = c.get('authUser')
+  if (!authUser || authUser.role !== 'admin') {
+    return c.json({ success: false, message: 'Forbidden: Admins only' }, 403)
+  }
   await next()
 }

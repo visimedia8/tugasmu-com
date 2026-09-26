@@ -1,0 +1,1727 @@
+{
+  "backend/migrations/0001_initial.sql": {
+    "mtime": 1789982554.5330272,
+    "ast_hash": "eefe1c835406c193a0bb079afa606ad9",
+    "semantic_hash": "eefe1c835406c193a0bb079afa606ad9"
+  },
+  "backend/migrations/0002_ip_rate_limit.sql": {
+    "mtime": 1790008869.7103496,
+    "ast_hash": "cf8efe3d479e31333878e967a5b86824",
+    "semantic_hash": "cf8efe3d479e31333878e967a5b86824"
+  },
+  "backend/migrations/0003_users_quota.sql": {
+    "mtime": 1790021561.4271243,
+    "ast_hash": "ad4b4f0d262f2c8933e875a3ad053862",
+    "semantic_hash": "ad4b4f0d262f2c8933e875a3ad053862"
+  },
+  "backend/migrations/0004_subscriptions.sql": {
+    "mtime": 1790021561.434196,
+    "ast_hash": "2da1f844ce89392aa41ce76d8a8e0863",
+    "semantic_hash": "2da1f844ce89392aa41ce76d8a8e0863"
+  },
+  "backend/migrations/0005_kelas.sql": {
+    "mtime": 1790021561.442968,
+    "ast_hash": "542473f70b4dbb6120483b7233b41584",
+    "semantic_hash": "542473f70b4dbb6120483b7233b41584"
+  },
+  "backend/migrations/0006_credits_referral.sql": {
+    "mtime": 1790245610.1999369,
+    "ast_hash": "675e259d3ec3cd5ced450dd33c38ebd7",
+    "semantic_hash": "675e259d3ec3cd5ced450dd33c38ebd7"
+  },
+  "backend/migrations/0007_shared_outputs.sql": {
+    "mtime": 1790245529.3967662,
+    "ast_hash": "2b104f8d055913991d2eeba3fd43e41a",
+    "semantic_hash": "2b104f8d055913991d2eeba3fd43e41a"
+  },
+  "backend/package.json": {
+    "mtime": 1790021561.443816,
+    "ast_hash": "2747898befc5b704b28b1e796394f418",
+    "semantic_hash": "2747898befc5b704b28b1e796394f418"
+  },
+  "backend/src/index.ts": {
+    "mtime": 1790245685.2601633,
+    "ast_hash": "a65aada128599109fbbdd07776c887c0",
+    "semantic_hash": "a65aada128599109fbbdd07776c887c0"
+  },
+  "backend/src/middleware/auth.ts": {
+    "mtime": 1790246313.9238203,
+    "ast_hash": "bbf373f91bf5a81f530b7ddb4e65317a",
+    "semantic_hash": "bbf373f91bf5a81f530b7ddb4e65317a"
+  },
+  "backend/src/routes/akuntansi-solver.ts": {
+    "mtime": 1790072117.9254565,
+    "ast_hash": "69c5e15880eea0abeacbafe8f55b7bac",
+    "semantic_hash": "69c5e15880eea0abeacbafe8f55b7bac"
+  },
+  "backend/src/routes/assignments.ts": {
+    "mtime": 1790448918.3634088,
+    "ast_hash": "a49faa72b73567f1bc4b9d43a0eb5887",
+    "semantic_hash": "a49faa72b73567f1bc4b9d43a0eb5887"
+  },
+  "backend/src/routes/cerita-pendek.ts": {
+    "mtime": 1790072117.9602354,
+    "ast_hash": "4ca0a1c3f1b9a8619b19720056a53cb0",
+    "semantic_hash": "4ca0a1c3f1b9a8619b19720056a53cb0"
+  },
+  "backend/src/routes/classes.ts": {
+    "mtime": 1790448909.7435145,
+    "ast_hash": "1eab164cfc7b784b64824a4b8d5d6f93",
+    "semantic_hash": "1eab164cfc7b784b64824a4b8d5d6f93"
+  },
+  "backend/src/routes/credits.ts": {
+    "mtime": 1790245573.3952417,
+    "ast_hash": "452ed5952938fb6c1b2d4020bcd1538f",
+    "semantic_hash": "452ed5952938fb6c1b2d4020bcd1538f"
+  },
+  "backend/src/routes/cv-lamaran.ts": {
+    "mtime": 1790070251.0986395,
+    "ast_hash": "b4b88b842b6193a1e93cb31777a0a811",
+    "semantic_hash": "b4b88b842b6193a1e93cb31777a0a811"
+  },
+  "backend/src/routes/essay-english.ts": {
+    "mtime": 1790072117.9967334,
+    "ast_hash": "774439b81182d63eaa09e0bd882134e3",
+    "semantic_hash": "774439b81182d63eaa09e0bd882134e3"
+  },
+  "backend/src/routes/generator-soal.ts": {
+    "mtime": 1790021561.4831111,
+    "ast_hash": "179fee2b27c3434b811af02bc110df79",
+    "semantic_hash": "179fee2b27c3434b811af02bc110df79"
+  },
+  "backend/src/routes/grammar-checker.ts": {
+    "mtime": 1790058795.9557076,
+    "ast_hash": "c4c8c77152676b34f6d6c95886ba71d7",
+    "semantic_hash": "c4c8c77152676b34f6d6c95886ba71d7"
+  },
+  "backend/src/routes/grammar-eyd.ts": {
+    "mtime": 1790021914.7866354,
+    "ast_hash": "0fc878844f960cfbbd7c17fc9d1938a9",
+    "semantic_hash": "0fc878844f960cfbbd7c17fc9d1938a9"
+  },
+  "backend/src/routes/kamus-anak.ts": {
+    "mtime": 1790072117.9769568,
+    "ast_hash": "ea8b4a4c482fb24d1150d8c8a3729a06",
+    "semantic_hash": "ea8b4a4c482fb24d1150d8c8a3729a06"
+  },
+  "backend/src/routes/kitab-kuning.ts": {
+    "mtime": 1790072687.8694298,
+    "ast_hash": "e327442469fc681bff3b274eedc2adc8",
+    "semantic_hash": "e327442469fc681bff3b274eedc2adc8"
+  },
+  "backend/src/routes/kti-builder.ts": {
+    "mtime": 1790070975.0586944,
+    "ast_hash": "1e891dc744139ad228d912418a611637",
+    "semantic_hash": "1e891dc744139ad228d912418a611637"
+  },
+  "backend/src/routes/laporan-pkl.ts": {
+    "mtime": 1790058750.9618106,
+    "ast_hash": "5592fcfd0b74473e6a76ff2fb86449c5",
+    "semantic_hash": "5592fcfd0b74473e6a76ff2fb86449c5"
+  },
+  "backend/src/routes/makalah-builder.ts": {
+    "mtime": 1790070237.5023565,
+    "ast_hash": "c821443595eae4e7a0d3184fc65f383f",
+    "semantic_hash": "c821443595eae4e7a0d3184fc65f383f"
+  },
+  "backend/src/routes/materi-pai.ts": {
+    "mtime": 1790072687.963037,
+    "ast_hash": "061d37a09858dbc3d275510eecedfefe",
+    "semantic_hash": "061d37a09858dbc3d275510eecedfefe"
+  },
+  "backend/src/routes/math-solver.ts": {
+    "mtime": 1790021915.0357049,
+    "ast_hash": "0c8d944155a3b92ffccd6372c2af99df",
+    "semantic_hash": "0c8d944155a3b92ffccd6372c2af99df"
+  },
+  "backend/src/routes/muhafazhah.ts": {
+    "mtime": 1790072687.9101763,
+    "ast_hash": "bc20c66cf2fec85c42da8cfa522f3992",
+    "semantic_hash": "bc20c66cf2fec85c42da8cfa522f3992"
+  },
+  "backend/src/routes/nahwu-shorof.ts": {
+    "mtime": 1790072687.8913946,
+    "ast_hash": "8ad2e6dfccd9288a1d76582722f82480",
+    "semantic_hash": "8ad2e6dfccd9288a1d76582722f82480"
+  },
+  "backend/src/routes/pantun-puisi.ts": {
+    "mtime": 1790021561.4901125,
+    "ast_hash": "9a54ce402bd09b38911a09f1a88e883a",
+    "semantic_hash": "9a54ce402bd09b38911a09f1a88e883a"
+  },
+  "backend/src/routes/parafrase.ts": {
+    "mtime": 1790021561.4978278,
+    "ast_hash": "136d50977d00c6ed1048794a0c691e33",
+    "semantic_hash": "136d50977d00c6ed1048794a0c691e33"
+  },
+  "backend/src/routes/payment.ts": {
+    "mtime": 1790449242.6220512,
+    "ast_hash": "d05148e232876f2fbf969beac5b4e70f",
+    "semantic_hash": "d05148e232876f2fbf969beac5b4e70f"
+  },
+  "backend/src/routes/penerjemah-daerah.ts": {
+    "mtime": 1790070963.747885,
+    "ast_hash": "11d74c917ffdc0a6c3633e8df6290023",
+    "semantic_hash": "11d74c917ffdc0a6c3633e8df6290023"
+  },
+  "backend/src/routes/penjelas-hadits.ts": {
+    "mtime": 1790072687.945567,
+    "ast_hash": "00256411dec97cbbe25fa34629250ae4",
+    "semantic_hash": "00256411dec97cbbe25fa34629250ae4"
+  },
+  "backend/src/routes/penjelas-kejuruan.ts": {
+    "mtime": 1790072117.9437015,
+    "ast_hash": "808f6e1bd6c511bb871bf177db7354bc",
+    "semantic_hash": "808f6e1bd6c511bb871bf177db7354bc"
+  },
+  "backend/src/routes/pidato.ts": {
+    "mtime": 1790021901.259358,
+    "ast_hash": "f5c1e5c0591f72a9ce1005a4899c4dac",
+    "semantic_hash": "f5c1e5c0591f72a9ce1005a4899c4dac"
+  },
+  "backend/src/routes/proposal-usaha.ts": {
+    "mtime": 1790072117.8933246,
+    "ast_hash": "53e2a4f43662e544394c1b235d0279a4",
+    "semantic_hash": "53e2a4f43662e544394c1b235d0279a4"
+  },
+  "backend/src/routes/rangkuman.ts": {
+    "mtime": 1790021561.5136757,
+    "ast_hash": "02487bb2f3f3df785609120e8b75595b",
+    "semantic_hash": "02487bb2f3f3df785609120e8b75595b"
+  },
+  "backend/src/routes/referral.ts": {
+    "mtime": 1790245573.5632231,
+    "ast_hash": "40ec6160d6df818e27ea0806ca2c55b0",
+    "semantic_hash": "40ec6160d6df818e27ea0806ca2c55b0"
+  },
+  "backend/src/routes/share.ts": {
+    "mtime": 1790245573.7454505,
+    "ast_hash": "a46ce720657cbc5d2b29f719f8326cda",
+    "semantic_hash": "a46ce720657cbc5d2b29f719f8326cda"
+  },
+  "backend/src/routes/simulasi-utbk.ts": {
+    "mtime": 1790070948.4860153,
+    "ast_hash": "d14e7bcdbc388031cad6f1f10572e4f3",
+    "semantic_hash": "d14e7bcdbc388031cad6f1f10572e4f3"
+  },
+  "backend/src/routes/slide-outline.ts": {
+    "mtime": 1790070987.23771,
+    "ast_hash": "0f6bc7bd1b2b024d21ee0c0fe875d082",
+    "semantic_hash": "0f6bc7bd1b2b024d21ee0c0fe875d082"
+  },
+  "backend/src/routes/tafsir-quran.ts": {
+    "mtime": 1790072687.9277406,
+    "ast_hash": "f9e0ae4830eff59a560faed2c9f027a0",
+    "semantic_hash": "f9e0ae4830eff59a560faed2c9f027a0"
+  },
+  "backend/src/routes/tajwid.ts": {
+    "mtime": 1790072687.982305,
+    "ast_hash": "3c1d333e298c67dbf8a2d98fc50b22ae",
+    "semantic_hash": "3c1d333e298c67dbf8a2d98fc50b22ae"
+  },
+  "backend/src/routes/translator-arab.ts": {
+    "mtime": 1790058806.1949818,
+    "ast_hash": "e065e00fcd610adec2a67f43a0ce2822",
+    "semantic_hash": "e065e00fcd610adec2a67f43a0ce2822"
+  },
+  "backend/src/routes/user.ts": {
+    "mtime": 1790021561.520418,
+    "ast_hash": "11180bb800b6dd680253956d195fa702",
+    "semantic_hash": "11180bb800b6dd680253956d195fa702"
+  },
+  "backend/src/services/ai.ts": {
+    "mtime": 1789984568.5280888,
+    "ast_hash": "2cd561f8f5c0db8c8458d34bb04e8db3",
+    "semantic_hash": "2cd561f8f5c0db8c8458d34bb04e8db3"
+  },
+  "backend/src/services/rateLimit.ts": {
+    "mtime": 1790245640.932243,
+    "ast_hash": "1d0c991f6fd4ae5b5f2576437c957c28",
+    "semantic_hash": "1d0c991f6fd4ae5b5f2576437c957c28"
+  },
+  "backend/src/services/usage.ts": {
+    "mtime": 1789984573.9924664,
+    "ast_hash": "c467d8e4b3039efa13af2e65a373044a",
+    "semantic_hash": "c467d8e4b3039efa13af2e65a373044a"
+  },
+  "backend/tsconfig.json": {
+    "mtime": 1789983181.8972404,
+    "ast_hash": "c1d872fc413874bbd2ccb52f5016a010",
+    "semantic_hash": "c1d872fc413874bbd2ccb52f5016a010"
+  },
+  "backend/worker-configuration.d.ts": {
+    "mtime": 1789984629.0964656,
+    "ast_hash": "029b24eb726169281f36f9beab6a9f63",
+    "semantic_hash": "029b24eb726169281f36f9beab6a9f63"
+  },
+  "frontend/.eslintrc.json": {
+    "mtime": 1789981802.9672356,
+    "ast_hash": "5cc89077d438e3d0d0a8308ab7e06a5a",
+    "semantic_hash": "5cc89077d438e3d0d0a8308ab7e06a5a"
+  },
+  "frontend/.open-next/.build/durable-objects/bucket-cache-purge.js": {
+    "mtime": 1790449456.4009082,
+    "ast_hash": "e9a9443b0c2d672294b5d23308d679a0",
+    "semantic_hash": "e9a9443b0c2d672294b5d23308d679a0"
+  },
+  "frontend/.open-next/.build/durable-objects/queue.js": {
+    "mtime": 1790449456.4003732,
+    "ast_hash": "265259dd46208b504fe1b4090c278de1",
+    "semantic_hash": "265259dd46208b504fe1b4090c278de1"
+  },
+  "frontend/.open-next/.build/durable-objects/sharded-tag-cache.js": {
+    "mtime": 1790449456.4009082,
+    "ast_hash": "a0a9d021ec8cec7e6074d32b8f7bbfc1",
+    "semantic_hash": "a0a9d021ec8cec7e6074d32b8f7bbfc1"
+  },
+  "frontend/.open-next/.build/open-next.config.edge.mjs": {
+    "mtime": 1790449392.4898953,
+    "ast_hash": "7cd3db9b0a638a2e0c369b8e37e964ab",
+    "semantic_hash": "7cd3db9b0a638a2e0c369b8e37e964ab"
+  },
+  "frontend/.open-next/.build/open-next.config.mjs": {
+    "mtime": 1790449392.4427688,
+    "ast_hash": "f0c7f3dfde2b4e75f04acb4a38139ef3",
+    "semantic_hash": "f0c7f3dfde2b4e75f04acb4a38139ef3"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/2117-c5687b942395652d.js": {
+    "mtime": 1790449408.6491084,
+    "ast_hash": "f4e55ce867274051aeba3e42a0a3d253",
+    "semantic_hash": "f4e55ce867274051aeba3e42a0a3d253"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/2972-8ce94bd856f9372b.js": {
+    "mtime": 1790449408.6472306,
+    "ast_hash": "03d544278916909425cec27507597df1",
+    "semantic_hash": "03d544278916909425cec27507597df1"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/3433-9ddc6f7f78d9421c.js": {
+    "mtime": 1790449408.6472306,
+    "ast_hash": "6c4a5f9c79a2746f2afeded5e45482ad",
+    "semantic_hash": "6c4a5f9c79a2746f2afeded5e45482ad"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/5024-26da2dbbe65901ba.js": {
+    "mtime": 1790449408.649457,
+    "ast_hash": "b8bc8178a0c8e3e3eaf7d15588b7061a",
+    "semantic_hash": "b8bc8178a0c8e3e3eaf7d15588b7061a"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/_not-found/page-e769ead0909b6ebe.js": {
+    "mtime": 1790449408.687232,
+    "ast_hash": "c81d1866685ad84a4cae702221a8b1ac",
+    "semantic_hash": "c81d1866685ad84a4cae702221a8b1ac"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/akun/page-656beac0bd7c226c.js": {
+    "mtime": 1790449408.5581486,
+    "ast_hash": "3fd14f15549789e380051211defe361d",
+    "semantic_hash": "3fd14f15549789e380051211defe361d"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/blog/[kategori]/[slug]/page-2c36d78cae7e8d72.js": {
+    "mtime": 1790449408.5743096,
+    "ast_hash": "1a188fa65fbdbc9bb8e1b22886a2bab4",
+    "semantic_hash": "1a188fa65fbdbc9bb8e1b22886a2bab4"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/blog/[kategori]/page-30231f93a52a4e68.js": {
+    "mtime": 1790449408.5743096,
+    "ast_hash": "7a36c7d1ae8509e0c462b0ea1f32fd4e",
+    "semantic_hash": "7a36c7d1ae8509e0c462b0ea1f32fd4e"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/daftar/page-ba6070addfa08cfc.js": {
+    "mtime": 1790449408.5372977,
+    "ast_hash": "6ad8e04295cedea3f333d85341811354",
+    "semantic_hash": "6ad8e04295cedea3f333d85341811354"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/guru/page-a088d92b9b6ceb24.js": {
+    "mtime": 1790449408.687232,
+    "ast_hash": "77e86fabbe06b7367e2902e45ec8237a",
+    "semantic_hash": "77e86fabbe06b7367e2902e45ec8237a"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/harga/page-cca752ffb3e1387a.js": {
+    "mtime": 1790449408.5663316,
+    "ast_hash": "87ad9da79d62e30e6052520fd72e0bae",
+    "semantic_hash": "87ad9da79d62e30e6052520fd72e0bae"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/kontak/page-9c2c6bd212bab863.js": {
+    "mtime": 1790449408.687232,
+    "ast_hash": "53ae4683fa66cf7ae159a6ff209bda58",
+    "semantic_hash": "53ae4683fa66cf7ae159a6ff209bda58"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/layout-2749ad3b1b76cba2.js": {
+    "mtime": 1790449408.5321074,
+    "ast_hash": "7acb1d70cb7f206c5d4ab33726c58923",
+    "semantic_hash": "7acb1d70cb7f206c5d4ab33726c58923"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/masuk/page-623b86b66e87e347.js": {
+    "mtime": 1790449408.5372977,
+    "ast_hash": "7d703454fb4d13b1e3e34301ee63cd48",
+    "semantic_hash": "7d703454fb4d13b1e3e34301ee63cd48"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/not-found-1a53fbb0c8e86a08.js": {
+    "mtime": 1790449408.5269144,
+    "ast_hash": "0685ef14efc7249487e63d0acffb9fd5",
+    "semantic_hash": "0685ef14efc7249487e63d0acffb9fd5"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/page-e951b30e639074c8.js": {
+    "mtime": 1790449408.5659757,
+    "ast_hash": "fd48d7054014e2ad90cc0eb85306bc5e",
+    "semantic_hash": "fd48d7054014e2ad90cc0eb85306bc5e"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/privasi/page-c267b4040a1f04c1.js": {
+    "mtime": 1790449408.687232,
+    "ast_hash": "c2f0e61c3c67b439a086084365b4b380",
+    "semantic_hash": "c2f0e61c3c67b439a086084365b4b380"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/s/[id]/page-332fd3bc4ddb0112.js": {
+    "mtime": 1790449408.5581486,
+    "ast_hash": "3fc7a0be232368a3a755b1a46f9bcc8c",
+    "semantic_hash": "3fc7a0be232368a3a755b1a46f9bcc8c"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/syarat/page-5b6130d107940699.js": {
+    "mtime": 1790449408.566965,
+    "ast_hash": "63985170646b765de9a7a932409f100d",
+    "semantic_hash": "63985170646b765de9a7a932409f100d"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/app/tentang/page-51de9f5f1992f540.js": {
+    "mtime": 1790449408.5663316,
+    "ast_hash": "96c129c5dcf7f852395489868553eb32",
+    "semantic_hash": "96c129c5dcf7f852395489868553eb32"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/fd9d1056-2718004965b0207a.js": {
+    "mtime": 1790449408.6406627,
+    "ast_hash": "a2e6693b6b8e2ae5167ce7ceb21dd431",
+    "semantic_hash": "a2e6693b6b8e2ae5167ce7ceb21dd431"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/framework-cf6f5bdca6ba0184.js": {
+    "mtime": 1790449408.636977,
+    "ast_hash": "67f3df7b225e25242578b3de11778dd9",
+    "semantic_hash": "67f3df7b225e25242578b3de11778dd9"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/main-app-f30bb01764683cd9.js": {
+    "mtime": 1790449408.5269144,
+    "ast_hash": "761f972e457f499dfd5e7ec9941effb6",
+    "semantic_hash": "761f972e457f499dfd5e7ec9941effb6"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/pages/_app-78ddf957b9a9b996.js": {
+    "mtime": 1790449408.5269144,
+    "ast_hash": "73c10cb4d01ae14e0b72c721b7e486f5",
+    "semantic_hash": "73c10cb4d01ae14e0b72c721b7e486f5"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/pages/_error-7ce03bcf1df914ce.js": {
+    "mtime": 1790449408.5269144,
+    "ast_hash": "363a6fafc5978e5f149cd6c36b4104f6",
+    "semantic_hash": "363a6fafc5978e5f149cd6c36b4104f6"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/polyfills-42372ed130431b0a.js": {
+    "mtime": 1790449408.6908336,
+    "ast_hash": "846118c33b2c0e922d7b3a7676f81f6f",
+    "semantic_hash": "846118c33b2c0e922d7b3a7676f81f6f"
+  },
+  "frontend/.open-next/assets/_next/static/chunks/webpack-37f8c22e297b04f8.js": {
+    "mtime": 1790449408.6322117,
+    "ast_hash": "3006b869e4dfe6cc4bbbe33deea4eab7",
+    "semantic_hash": "3006b869e4dfe6cc4bbbe33deea4eab7"
+  },
+  "frontend/.open-next/cloudflare-templates/images.d.ts": {
+    "mtime": 1789986178.7536733,
+    "ast_hash": "b051d677b24bb0493584b5b75eade615",
+    "semantic_hash": "b051d677b24bb0493584b5b75eade615"
+  },
+  "frontend/.open-next/cloudflare-templates/images.js": {
+    "mtime": 1789986172.4133446,
+    "ast_hash": "1bd92a13ad8d54490f3f94afe27c0bb2",
+    "semantic_hash": "1bd92a13ad8d54490f3f94afe27c0bb2"
+  },
+  "frontend/.open-next/cloudflare-templates/init.d.ts": {
+    "mtime": 1789986179.032626,
+    "ast_hash": "3c2864d2b5f255f88ecc4f8565545d0e",
+    "semantic_hash": "3c2864d2b5f255f88ecc4f8565545d0e"
+  },
+  "frontend/.open-next/cloudflare-templates/init.js": {
+    "mtime": 1789986172.9806776,
+    "ast_hash": "04b8e960db122e1b06da824bb290f5ff",
+    "semantic_hash": "04b8e960db122e1b06da824bb290f5ff"
+  },
+  "frontend/.open-next/cloudflare-templates/shims/empty.d.ts": {
+    "mtime": 1789986178.2509453,
+    "ast_hash": "122a165ba7871bf631c58a0b03972416",
+    "semantic_hash": "122a165ba7871bf631c58a0b03972416"
+  },
+  "frontend/.open-next/cloudflare-templates/shims/empty.js": {
+    "mtime": 1789986171.1840262,
+    "ast_hash": "e7e903292711dd5aeb5a8c50deb849a6",
+    "semantic_hash": "e7e903292711dd5aeb5a8c50deb849a6"
+  },
+  "frontend/.open-next/cloudflare-templates/shims/env.d.ts": {
+    "mtime": 1789986178.3960395,
+    "ast_hash": "61534f9e63d5101290fa4059f36b172f",
+    "semantic_hash": "61534f9e63d5101290fa4059f36b172f"
+  },
+  "frontend/.open-next/cloudflare-templates/shims/env.js": {
+    "mtime": 1789986171.5969734,
+    "ast_hash": "b1726bc951f9127af5ad55437c6ef29d",
+    "semantic_hash": "b1726bc951f9127af5ad55437c6ef29d"
+  },
+  "frontend/.open-next/cloudflare-templates/shims/fetch.d.ts": {
+    "mtime": 1789986178.4874592,
+    "ast_hash": "073dc5906dae8d61f1f8b0cd13bd09fc",
+    "semantic_hash": "073dc5906dae8d61f1f8b0cd13bd09fc"
+  },
+  "frontend/.open-next/cloudflare-templates/shims/fetch.js": {
+    "mtime": 1789986171.8690038,
+    "ast_hash": "073dc5906dae8d61f1f8b0cd13bd09fc",
+    "semantic_hash": "073dc5906dae8d61f1f8b0cd13bd09fc"
+  },
+  "frontend/.open-next/cloudflare-templates/shims/throw.d.ts": {
+    "mtime": 1789986180.6328168,
+    "ast_hash": "122a165ba7871bf631c58a0b03972416",
+    "semantic_hash": "122a165ba7871bf631c58a0b03972416"
+  },
+  "frontend/.open-next/cloudflare-templates/shims/throw.js": {
+    "mtime": 1789986175.9956217,
+    "ast_hash": "bebeaa41c8ca7510f92780223345f095",
+    "semantic_hash": "bebeaa41c8ca7510f92780223345f095"
+  },
+  "frontend/.open-next/cloudflare-templates/skew-protection.d.ts": {
+    "mtime": 1789986180.4843135,
+    "ast_hash": "06585b11d4c9d43faea9c916d5fa2943",
+    "semantic_hash": "06585b11d4c9d43faea9c916d5fa2943"
+  },
+  "frontend/.open-next/cloudflare-templates/skew-protection.js": {
+    "mtime": 1789986175.7504494,
+    "ast_hash": "399e081f5fc0b19ba09c499f693b0715",
+    "semantic_hash": "399e081f5fc0b19ba09c499f693b0715"
+  },
+  "frontend/.open-next/cloudflare-templates/worker.d.ts": {
+    "mtime": 1789986180.9070957,
+    "ast_hash": "540cef27088c824bd40fb3e9bb9b64db",
+    "semantic_hash": "540cef27088c824bd40fb3e9bb9b64db"
+  },
+  "frontend/.open-next/cloudflare-templates/worker.js": {
+    "mtime": 1789986176.5887508,
+    "ast_hash": "b288010d695320af37e2fa2a7a00bcff",
+    "semantic_hash": "b288010d695320af37e2fa2a7a00bcff"
+  },
+  "frontend/.open-next/cloudflare/cache-assets-manifest.sql": {
+    "mtime": 1790449449.0913987,
+    "ast_hash": "c21402f2defecc295644961548951778",
+    "semantic_hash": "c21402f2defecc295644961548951778"
+  },
+  "frontend/.open-next/cloudflare/images.js": {
+    "mtime": 1790449443.8460875,
+    "ast_hash": "272d9a18269b7bdff5ba129bbb7c1a98",
+    "semantic_hash": "272d9a18269b7bdff5ba129bbb7c1a98"
+  },
+  "frontend/.open-next/cloudflare/init.js": {
+    "mtime": 1790449443.8051722,
+    "ast_hash": "e90523d79d87bee216b94873405f1ba6",
+    "semantic_hash": "e90523d79d87bee216b94873405f1ba6"
+  },
+  "frontend/.open-next/cloudflare/next-env.mjs": {
+    "mtime": 1790449443.5852475,
+    "ast_hash": "c6c4e70ecddde41bbe28e1a8f78f0dcc",
+    "semantic_hash": "c6c4e70ecddde41bbe28e1a8f78f0dcc"
+  },
+  "frontend/.open-next/cloudflare/skew-protection.js": {
+    "mtime": 1790449443.8686433,
+    "ast_hash": "ba2e7c660570fda47baf1dcbb4f60f0b",
+    "semantic_hash": "ba2e7c660570fda47baf1dcbb4f60f0b"
+  },
+  "frontend/.open-next/dynamodb-provider/dynamodb-cache.json": {
+    "mtime": 1790449448.9969175,
+    "ast_hash": "1728982cc4860b2f2b93c2f528d50738",
+    "semantic_hash": "1728982cc4860b2f2b93c2f528d50738"
+  },
+  "frontend/.open-next/dynamodb-provider/open-next.config.mjs": {
+    "mtime": 1790449392.4427688,
+    "ast_hash": "f0c7f3dfde2b4e75f04acb4a38139ef3",
+    "semantic_hash": "f0c7f3dfde2b4e75f04acb4a38139ef3"
+  },
+  "frontend/.open-next/middleware/handler.mjs": {
+    "mtime": 1790449444.4177184,
+    "ast_hash": "2481f387b3152080021b13e87c0fcbeb",
+    "semantic_hash": "2481f387b3152080021b13e87c0fcbeb"
+  },
+  "frontend/.open-next/middleware/open-next.config.mjs": {
+    "mtime": 1790449392.4898953,
+    "ast_hash": "7cd3db9b0a638a2e0c369b8e37e964ab",
+    "semantic_hash": "7cd3db9b0a638a2e0c369b8e37e964ab"
+  },
+  "frontend/.open-next/server-functions/default/frontend/handler.mjs": {
+    "mtime": 1790449458.532522,
+    "ast_hash": "348e6a0aba8c0c6d9ae1573971b640a9",
+    "semantic_hash": "348e6a0aba8c0c6d9ae1573971b640a9"
+  },
+  "frontend/.open-next/server-functions/default/frontend/handler.mjs.meta.json": {
+    "mtime": 1790449458.4118624,
+    "ast_hash": "a87b6643916c8004837c9c8f848d20db",
+    "semantic_hash": "a87b6643916c8004837c9c8f848d20db"
+  },
+  "frontend/.open-next/server-functions/default/frontend/index.mjs": {
+    "mtime": 1790449456.354271,
+    "ast_hash": "004528da29825ad7b055eaa29385d556",
+    "semantic_hash": "004528da29825ad7b055eaa29385d556"
+  },
+  "frontend/.open-next/server-functions/default/frontend/open-next.config.mjs": {
+    "mtime": 1790449392.4898953,
+    "ast_hash": "7cd3db9b0a638a2e0c369b8e37e964ab",
+    "semantic_hash": "7cd3db9b0a638a2e0c369b8e37e964ab"
+  },
+  "frontend/.open-next/server-functions/default/frontend/package.json": {
+    "mtime": 1790021563.7867868,
+    "ast_hash": "74836a50147217b15a28a25cf5050299",
+    "semantic_hash": "74836a50147217b15a28a25cf5050299"
+  },
+  "frontend/.open-next/server-functions/default/handler.mjs": {
+    "mtime": 1790449458.5523005,
+    "ast_hash": "c958c602390dd4132b03b11494057ca9",
+    "semantic_hash": "c958c602390dd4132b03b11494057ca9"
+  },
+  "frontend/.open-next/server-functions/default/index.mjs": {
+    "mtime": 1790449456.3719008,
+    "ast_hash": "adb36337b3111b0b921d5dabfc8e3acd",
+    "semantic_hash": "adb36337b3111b0b921d5dabfc8e3acd"
+  },
+  "frontend/.open-next/server-functions/default/package.json": {
+    "mtime": 1789981785.2772932,
+    "ast_hash": "9d1965d8b50e9bd96a192f2336d6bfb2",
+    "semantic_hash": "9d1965d8b50e9bd96a192f2336d6bfb2"
+  },
+  "frontend/.open-next/worker.js": {
+    "mtime": 1789986176.5887508,
+    "ast_hash": "b288010d695320af37e2fa2a7a00bcff",
+    "semantic_hash": "b288010d695320af37e2fa2a7a00bcff"
+  },
+  "frontend/components.json": {
+    "mtime": 1789982326.6207268,
+    "ast_hash": "d37c9d6701bafb02675152df323b964c",
+    "semantic_hash": "d37c9d6701bafb02675152df323b964c"
+  },
+  "frontend/fix-blog-hub.js": {
+    "mtime": 1790448736.8692002,
+    "ast_hash": "f304c606c2015f2090cdc3a7af32a6cd",
+    "semantic_hash": "f304c606c2015f2090cdc3a7af32a6cd"
+  },
+  "frontend/fix-icon.js": {
+    "mtime": 1790362651.9986308,
+    "ast_hash": "4a23433c9a474b8a3b8a08476e26abda",
+    "semantic_hash": "4a23433c9a474b8a3b8a08476e26abda"
+  },
+  "frontend/fix-simulasi.js": {
+    "mtime": 1790362804.2013144,
+    "ast_hash": "4626a69400097ea30cce3ac45e5d9711",
+    "semantic_hash": "4626a69400097ea30cce3ac45e5d9711"
+  },
+  "frontend/fix-tools-hub.js": {
+    "mtime": 1790448639.8149633,
+    "ast_hash": "6ceffdf3f59614a3f519f3f457884e57",
+    "semantic_hash": "6ceffdf3f59614a3f519f3f457884e57"
+  },
+  "frontend/fix-ui.js": {
+    "mtime": 1790359752.9382844,
+    "ast_hash": "433dbee84547c96ee561a180e132c611",
+    "semantic_hash": "433dbee84547c96ee561a180e132c611"
+  },
+  "frontend/inject_canonical.js": {
+    "mtime": 1790245314.440486,
+    "ast_hash": "a1fdf210ecebca78c364e8192eddb4d8",
+    "semantic_hash": "a1fdf210ecebca78c364e8192eddb4d8"
+  },
+  "frontend/inject_canonical_static.js": {
+    "mtime": 1790245331.295978,
+    "ast_hash": "ff6d4a6c0922a67d01ca1e4e6c58c304",
+    "semantic_hash": "ff6d4a6c0922a67d01ca1e4e6c58c304"
+  },
+  "frontend/next-env.d.ts": {
+    "mtime": 1789981803.3071225,
+    "ast_hash": "b5ed9dd8b4c5ba8e5ab8e6a379c15838",
+    "semantic_hash": "b5ed9dd8b4c5ba8e5ab8e6a379c15838"
+  },
+  "frontend/next.config.mjs": {
+    "mtime": 1790021563.7751956,
+    "ast_hash": "7e9c067218b958be8bdb2a307857777b",
+    "semantic_hash": "7e9c067218b958be8bdb2a307857777b"
+  },
+  "frontend/open-next.config.ts": {
+    "mtime": 1790021563.7811174,
+    "ast_hash": "b92bfebbc2e7ee7c2c48d51fa41a92f0",
+    "semantic_hash": "b92bfebbc2e7ee7c2c48d51fa41a92f0"
+  },
+  "frontend/package.json": {
+    "mtime": 1790021563.7867868,
+    "ast_hash": "74836a50147217b15a28a25cf5050299",
+    "semantic_hash": "74836a50147217b15a28a25cf5050299"
+  },
+  "frontend/postcss.config.mjs": {
+    "mtime": 1789981803.2621167,
+    "ast_hash": "b7941c02b947e17ae32f67ae7e664ec8",
+    "semantic_hash": "b7941c02b947e17ae32f67ae7e664ec8"
+  },
+  "frontend/src/app/akun/page.tsx": {
+    "mtime": 1790245711.1098158,
+    "ast_hash": "4fea76463bac21fffbb53b3b1f88c51e",
+    "semantic_hash": "4fea76463bac21fffbb53b3b1f88c51e"
+  },
+  "frontend/src/app/api/auth/[...nextauth]/route.ts": {
+    "mtime": 1790021563.7981143,
+    "ast_hash": "d47c5bc6269d05e7d6919bf8f52eba13",
+    "semantic_hash": "d47c5bc6269d05e7d6919bf8f52eba13"
+  },
+  "frontend/src/app/api/auth/token/route.ts": {
+    "mtime": 1790021563.8075123,
+    "ast_hash": "2dd9f00d7fcd095d39e09033271867dd",
+    "semantic_hash": "2dd9f00d7fcd095d39e09033271867dd"
+  },
+  "frontend/src/app/api/og/route.tsx": {
+    "mtime": 1790021563.8183343,
+    "ast_hash": "ea7eb216c2fd622aeb947b176d0625b8",
+    "semantic_hash": "ea7eb216c2fd622aeb947b176d0625b8"
+  },
+  "frontend/src/app/blog/BlogHubClient.tsx": {
+    "mtime": 1790449239.695579,
+    "ast_hash": "475922f98ff7a51d193c1669c0054679",
+    "semantic_hash": "475922f98ff7a51d193c1669c0054679"
+  },
+  "frontend/src/app/blog/[kategori]/[slug]/page.tsx": {
+    "mtime": 1790245702.0544693,
+    "ast_hash": "cd3fbe9f1874b71e0bfdc51d9bd21587",
+    "semantic_hash": "cd3fbe9f1874b71e0bfdc51d9bd21587"
+  },
+  "frontend/src/app/blog/[kategori]/page.tsx": {
+    "mtime": 1790245697.2116694,
+    "ast_hash": "0c09e1d447a494c873442aff8558925f",
+    "semantic_hash": "0c09e1d447a494c873442aff8558925f"
+  },
+  "frontend/src/app/blog/page.tsx": {
+    "mtime": 1790245588.4919877,
+    "ast_hash": "6350c5c2c2bdd883910d254415474017",
+    "semantic_hash": "6350c5c2c2bdd883910d254415474017"
+  },
+  "frontend/src/app/daftar/page.tsx": {
+    "mtime": 1790246083.391149,
+    "ast_hash": "6926a23241b518bba3fe1084e05090f4",
+    "semantic_hash": "6926a23241b518bba3fe1084e05090f4"
+  },
+  "frontend/src/app/guru/page.tsx": {
+    "mtime": 1790245588.5259576,
+    "ast_hash": "7fc3156df8ba23a584b01f98bb02fa1d",
+    "semantic_hash": "7fc3156df8ba23a584b01f98bb02fa1d"
+  },
+  "frontend/src/app/harga/PricingClient.tsx": {
+    "mtime": 1790450197.2212636,
+    "ast_hash": "d0929a0cfd5f3b32a790ff91cc987305",
+    "semantic_hash": "d0929a0cfd5f3b32a790ff91cc987305"
+  },
+  "frontend/src/app/harga/page.tsx": {
+    "mtime": 1790245588.5390787,
+    "ast_hash": "46c24855af931ea86c0d76e90f503538",
+    "semantic_hash": "46c24855af931ea86c0d76e90f503538"
+  },
+  "frontend/src/app/kontak/page.tsx": {
+    "mtime": 1790245588.5505066,
+    "ast_hash": "0158574cc7a2beec2bc1de0d5c95265f",
+    "semantic_hash": "0158574cc7a2beec2bc1de0d5c95265f"
+  },
+  "frontend/src/app/layout.tsx": {
+    "mtime": 1790448634.2896478,
+    "ast_hash": "31a72443cb8479eae413b06d5197330f",
+    "semantic_hash": "31a72443cb8479eae413b06d5197330f"
+  },
+  "frontend/src/app/manifest.ts": {
+    "mtime": 1790448620.6009705,
+    "ast_hash": "0494fbda152f1ef6665daf40145e679e",
+    "semantic_hash": "0494fbda152f1ef6665daf40145e679e"
+  },
+  "frontend/src/app/masuk/page.tsx": {
+    "mtime": 1790021563.8669865,
+    "ast_hash": "fc67df92575ea6825149250cec3033ba",
+    "semantic_hash": "fc67df92575ea6825149250cec3033ba"
+  },
+  "frontend/src/app/not-found.tsx": {
+    "mtime": 1790245588.5719922,
+    "ast_hash": "3cd91b4b2e27516dbe06f1ddf58d3dcc",
+    "semantic_hash": "3cd91b4b2e27516dbe06f1ddf58d3dcc"
+  },
+  "frontend/src/app/page.tsx": {
+    "mtime": 1790245588.5835693,
+    "ast_hash": "aeae280579988628ca702ce3782600b0",
+    "semantic_hash": "aeae280579988628ca702ce3782600b0"
+  },
+  "frontend/src/app/privasi/page.tsx": {
+    "mtime": 1790245588.5963368,
+    "ast_hash": "0b6cd3c920bcf8c9841d974c6ec7c929",
+    "semantic_hash": "0b6cd3c920bcf8c9841d974c6ec7c929"
+  },
+  "frontend/src/app/robots.ts": {
+    "mtime": 1789984490.2425628,
+    "ast_hash": "4cf43c1c720229a0d7335757cc68c4f4",
+    "semantic_hash": "4cf43c1c720229a0d7335757cc68c4f4"
+  },
+  "frontend/src/app/s/[id]/page.tsx": {
+    "mtime": 1790246184.22927,
+    "ast_hash": "1a7e01251974e71018b79ded01eeac23",
+    "semantic_hash": "1a7e01251974e71018b79ded01eeac23"
+  },
+  "frontend/src/app/sitemap.ts": {
+    "mtime": 1790245095.5637553,
+    "ast_hash": "a50e90f575703740d127f5fa4a98950e",
+    "semantic_hash": "a50e90f575703740d127f5fa4a98950e"
+  },
+  "frontend/src/app/syarat/page.tsx": {
+    "mtime": 1790450058.7570858,
+    "ast_hash": "f97d50c4a6d5826963fa67c790b46591",
+    "semantic_hash": "f97d50c4a6d5826963fa67c790b46591"
+  },
+  "frontend/src/app/tentang/page.tsx": {
+    "mtime": 1790245588.6200519,
+    "ast_hash": "51444fb42a1c0821a68cfd0e1a06bc51",
+    "semantic_hash": "51444fb42a1c0821a68cfd0e1a06bc51"
+  },
+  "frontend/src/app/tools/ToolsHubClient.tsx": {
+    "mtime": 1790449012.4141116,
+    "ast_hash": "dc947aea7b22da925b68f4b5160b5a0c",
+    "semantic_hash": "dc947aea7b22da925b68f4b5160b5a0c"
+  },
+  "frontend/src/app/tools/akuntansi-solver/AkuntansiSolverClient.tsx": {
+    "mtime": 1790072117.9312181,
+    "ast_hash": "225ef0d6febc069b6391e794768e4159",
+    "semantic_hash": "225ef0d6febc069b6391e794768e4159"
+  },
+  "frontend/src/app/tools/akuntansi-solver/page.tsx": {
+    "mtime": 1790448937.0283732,
+    "ast_hash": "57d752e958d014bebdb1f405190e1d63",
+    "semantic_hash": "57d752e958d014bebdb1f405190e1d63"
+  },
+  "frontend/src/app/tools/cerita-pendek/CeritaPendekClient.tsx": {
+    "mtime": 1790072954.4110546,
+    "ast_hash": "f0a7250d91003bc0aa723e16b824f4e8",
+    "semantic_hash": "f0a7250d91003bc0aa723e16b824f4e8"
+  },
+  "frontend/src/app/tools/cerita-pendek/page.tsx": {
+    "mtime": 1790448937.0426607,
+    "ast_hash": "18b4c875b8b9d56f8647540def83d8c0",
+    "semantic_hash": "18b4c875b8b9d56f8647540def83d8c0"
+  },
+  "frontend/src/app/tools/cv-lamaran/CVLamaranClient.tsx": {
+    "mtime": 1790070349.862825,
+    "ast_hash": "662dcc6df7b0151fa5f07df2effa49e7",
+    "semantic_hash": "662dcc6df7b0151fa5f07df2effa49e7"
+  },
+  "frontend/src/app/tools/cv-lamaran/page.tsx": {
+    "mtime": 1790448937.0609622,
+    "ast_hash": "ccefdb9ae2a42182cd742f2ad9c24dd5",
+    "semantic_hash": "ccefdb9ae2a42182cd742f2ad9c24dd5"
+  },
+  "frontend/src/app/tools/essay-english/EssayEnglishClient.tsx": {
+    "mtime": 1790072118.0012312,
+    "ast_hash": "9058e1d15c18ee58a77f43b3d048c0b0",
+    "semantic_hash": "9058e1d15c18ee58a77f43b3d048c0b0"
+  },
+  "frontend/src/app/tools/essay-english/page.tsx": {
+    "mtime": 1790448937.0742483,
+    "ast_hash": "1b44001fc643c455a98bb0883f186f07",
+    "semantic_hash": "1b44001fc643c455a98bb0883f186f07"
+  },
+  "frontend/src/app/tools/generator-soal/GeneratorSoalClient.tsx": {
+    "mtime": 1790021563.8774786,
+    "ast_hash": "9724f0ea74928b4350b36ea1702a4346",
+    "semantic_hash": "9724f0ea74928b4350b36ea1702a4346"
+  },
+  "frontend/src/app/tools/generator-soal/page.tsx": {
+    "mtime": 1790448937.084892,
+    "ast_hash": "c457c204fe204526a567af1a77f409e4",
+    "semantic_hash": "c457c204fe204526a567af1a77f409e4"
+  },
+  "frontend/src/app/tools/grammar-checker/GrammarCheckerClient.tsx": {
+    "mtime": 1790069236.7587209,
+    "ast_hash": "49d387fc0b3294e6a3ce5ab678ba55c3",
+    "semantic_hash": "49d387fc0b3294e6a3ce5ab678ba55c3"
+  },
+  "frontend/src/app/tools/grammar-checker/page.tsx": {
+    "mtime": 1790448937.0951748,
+    "ast_hash": "409f06998788ff3b33a74f65e4b44dbd",
+    "semantic_hash": "409f06998788ff3b33a74f65e4b44dbd"
+  },
+  "frontend/src/app/tools/grammar-eyd/GrammarEYDClient.tsx": {
+    "mtime": 1790022457.997713,
+    "ast_hash": "b9c09ccf3e61c65a375c659e79db482e",
+    "semantic_hash": "b9c09ccf3e61c65a375c659e79db482e"
+  },
+  "frontend/src/app/tools/grammar-eyd/page.tsx": {
+    "mtime": 1790448937.1053567,
+    "ast_hash": "8bad3aa3b3534bc0c1740de9025a5f3f",
+    "semantic_hash": "8bad3aa3b3534bc0c1740de9025a5f3f"
+  },
+  "frontend/src/app/tools/kamus-anak/KamusAnakClient.tsx": {
+    "mtime": 1790072117.9825418,
+    "ast_hash": "006a108bc5a2b670efb1c2cce589edca",
+    "semantic_hash": "006a108bc5a2b670efb1c2cce589edca"
+  },
+  "frontend/src/app/tools/kamus-anak/page.tsx": {
+    "mtime": 1790448937.1162753,
+    "ast_hash": "4c80727aaac4e211eb465b12827bbfe5",
+    "semantic_hash": "4c80727aaac4e211eb465b12827bbfe5"
+  },
+  "frontend/src/app/tools/kitab-kuning/KitabKuningClient.tsx": {
+    "mtime": 1790072687.8754241,
+    "ast_hash": "a6a78ce24397873df9658447b311adf1",
+    "semantic_hash": "a6a78ce24397873df9658447b311adf1"
+  },
+  "frontend/src/app/tools/kitab-kuning/page.tsx": {
+    "mtime": 1790448937.123677,
+    "ast_hash": "cb7b66ada6b378b4dc72500a3929921f",
+    "semantic_hash": "cb7b66ada6b378b4dc72500a3929921f"
+  },
+  "frontend/src/app/tools/kti-builder/KTIBuilderClient.tsx": {
+    "mtime": 1790071343.3678336,
+    "ast_hash": "bc2225a17909ba19a9d5c878b0e86cf6",
+    "semantic_hash": "bc2225a17909ba19a9d5c878b0e86cf6"
+  },
+  "frontend/src/app/tools/kti-builder/page.tsx": {
+    "mtime": 1790448937.137431,
+    "ast_hash": "dae9e8abb4308494e860766508cba932",
+    "semantic_hash": "dae9e8abb4308494e860766508cba932"
+  },
+  "frontend/src/app/tools/laporan-pkl/LaporanPKLClient.tsx": {
+    "mtime": 1790069224.1261168,
+    "ast_hash": "e569b506abe499b4f43e5d09f0890d6f",
+    "semantic_hash": "e569b506abe499b4f43e5d09f0890d6f"
+  },
+  "frontend/src/app/tools/laporan-pkl/page.tsx": {
+    "mtime": 1790448937.170231,
+    "ast_hash": "fec20ce3c1ecb0955186e43702c7fdf4",
+    "semantic_hash": "fec20ce3c1ecb0955186e43702c7fdf4"
+  },
+  "frontend/src/app/tools/makalah-builder/MakalahBuilderClient.tsx": {
+    "mtime": 1790070316.4818428,
+    "ast_hash": "a35210988e04ea9ac7c56589bf249588",
+    "semantic_hash": "a35210988e04ea9ac7c56589bf249588"
+  },
+  "frontend/src/app/tools/makalah-builder/page.tsx": {
+    "mtime": 1790448937.203629,
+    "ast_hash": "46142a5c66ba5ce73740a0eca0d0054a",
+    "semantic_hash": "46142a5c66ba5ce73740a0eca0d0054a"
+  },
+  "frontend/src/app/tools/materi-pai/MateriPaiClient.tsx": {
+    "mtime": 1790072687.9694872,
+    "ast_hash": "83b680a721758feacf33933ed24b3641",
+    "semantic_hash": "83b680a721758feacf33933ed24b3641"
+  },
+  "frontend/src/app/tools/materi-pai/page.tsx": {
+    "mtime": 1790448937.240474,
+    "ast_hash": "1b750caa780752ea77bf905087a392f7",
+    "semantic_hash": "1b750caa780752ea77bf905087a392f7"
+  },
+  "frontend/src/app/tools/math-solver/MathSolverClient.tsx": {
+    "mtime": 1790022465.5114248,
+    "ast_hash": "b425542dcc730d969c0efc960b8cb2cb",
+    "semantic_hash": "b425542dcc730d969c0efc960b8cb2cb"
+  },
+  "frontend/src/app/tools/math-solver/page.tsx": {
+    "mtime": 1790448937.258227,
+    "ast_hash": "8aa8950936730227ff31cc542c6b9d4f",
+    "semantic_hash": "8aa8950936730227ff31cc542c6b9d4f"
+  },
+  "frontend/src/app/tools/muhafazhah/MuhafazhahClient.tsx": {
+    "mtime": 1790072687.9157736,
+    "ast_hash": "223c3c537a69a887380f9aa20cadec02",
+    "semantic_hash": "223c3c537a69a887380f9aa20cadec02"
+  },
+  "frontend/src/app/tools/muhafazhah/page.tsx": {
+    "mtime": 1790448937.268064,
+    "ast_hash": "0a8ae68cee14a1733d8ef7cceabcc5fa",
+    "semantic_hash": "0a8ae68cee14a1733d8ef7cceabcc5fa"
+  },
+  "frontend/src/app/tools/nahwu-shorof/NahwuShorofClient.tsx": {
+    "mtime": 1790073103.4090369,
+    "ast_hash": "c6d483a006d79b48ed52a21c05a4afd2",
+    "semantic_hash": "c6d483a006d79b48ed52a21c05a4afd2"
+  },
+  "frontend/src/app/tools/nahwu-shorof/page.tsx": {
+    "mtime": 1790448937.2794185,
+    "ast_hash": "fe55b782f40448db52dc439c73e5a816",
+    "semantic_hash": "fe55b782f40448db52dc439c73e5a816"
+  },
+  "frontend/src/app/tools/page.tsx": {
+    "mtime": 1790246027.921753,
+    "ast_hash": "610f6f5c34cf5d1bee2bec1e16d711de",
+    "semantic_hash": "610f6f5c34cf5d1bee2bec1e16d711de"
+  },
+  "frontend/src/app/tools/pantun-puisi/PantunPuisiClient.tsx": {
+    "mtime": 1790021563.890172,
+    "ast_hash": "24dd1544c5cc740e4f29ad8f3e6455c1",
+    "semantic_hash": "24dd1544c5cc740e4f29ad8f3e6455c1"
+  },
+  "frontend/src/app/tools/pantun-puisi/page.tsx": {
+    "mtime": 1790448937.2896192,
+    "ast_hash": "6da5b3ba27b7c0ed1e074b9b63077ddd",
+    "semantic_hash": "6da5b3ba27b7c0ed1e074b9b63077ddd"
+  },
+  "frontend/src/app/tools/parafrase/ParafraseClient.tsx": {
+    "mtime": 1790021563.8981502,
+    "ast_hash": "b730ba4d2ffb8d2caf828af9ce7fe7b6",
+    "semantic_hash": "b730ba4d2ffb8d2caf828af9ce7fe7b6"
+  },
+  "frontend/src/app/tools/parafrase/page.tsx": {
+    "mtime": 1790448896.8195012,
+    "ast_hash": "b67e635f6c514d6ee42665368f2c7bc0",
+    "semantic_hash": "b67e635f6c514d6ee42665368f2c7bc0"
+  },
+  "frontend/src/app/tools/penerjemah-daerah/PenerjemahDaerahClient.tsx": {
+    "mtime": 1790071316.248482,
+    "ast_hash": "908389702d92dee19f20de884b38a744",
+    "semantic_hash": "908389702d92dee19f20de884b38a744"
+  },
+  "frontend/src/app/tools/penerjemah-daerah/page.tsx": {
+    "mtime": 1790448937.301781,
+    "ast_hash": "70ecf468b9eed6f3295db7191212a323",
+    "semantic_hash": "70ecf468b9eed6f3295db7191212a323"
+  },
+  "frontend/src/app/tools/penjelas-hadits/PenjelasHaditsClient.tsx": {
+    "mtime": 1790072687.951213,
+    "ast_hash": "bc3bc9109372ece8da596f1db0f06930",
+    "semantic_hash": "bc3bc9109372ece8da596f1db0f06930"
+  },
+  "frontend/src/app/tools/penjelas-hadits/page.tsx": {
+    "mtime": 1790448937.3114576,
+    "ast_hash": "3f8aed1aaafcb7cd99d8b18e7908cc92",
+    "semantic_hash": "3f8aed1aaafcb7cd99d8b18e7908cc92"
+  },
+  "frontend/src/app/tools/penjelas-kejuruan/PenjelasKejuruanClient.tsx": {
+    "mtime": 1790072117.949003,
+    "ast_hash": "1b1759797c8096344e0a683ce72f970d",
+    "semantic_hash": "1b1759797c8096344e0a683ce72f970d"
+  },
+  "frontend/src/app/tools/penjelas-kejuruan/page.tsx": {
+    "mtime": 1790448937.3222642,
+    "ast_hash": "5b188a8bc271564e39cf6296c6a8a82f",
+    "semantic_hash": "5b188a8bc271564e39cf6296c6a8a82f"
+  },
+  "frontend/src/app/tools/pidato/PidatoClient.tsx": {
+    "mtime": 1790022461.8664072,
+    "ast_hash": "e7c730e8f775be4059b9a6c58191e0fe",
+    "semantic_hash": "e7c730e8f775be4059b9a6c58191e0fe"
+  },
+  "frontend/src/app/tools/pidato/page.tsx": {
+    "mtime": 1790448937.3326836,
+    "ast_hash": "29762f3412f027e3cdc00b4721a3bbfb",
+    "semantic_hash": "29762f3412f027e3cdc00b4721a3bbfb"
+  },
+  "frontend/src/app/tools/proposal-usaha/ProposalUsahaClient.tsx": {
+    "mtime": 1790072117.899476,
+    "ast_hash": "bd80840108375586e42a8d9399fb4c88",
+    "semantic_hash": "bd80840108375586e42a8d9399fb4c88"
+  },
+  "frontend/src/app/tools/proposal-usaha/page.tsx": {
+    "mtime": 1790448937.3433237,
+    "ast_hash": "c739fda206169d8eed68505223ef189d",
+    "semantic_hash": "c739fda206169d8eed68505223ef189d"
+  },
+  "frontend/src/app/tools/rangkuman/RangkumanClient.tsx": {
+    "mtime": 1790021563.9128692,
+    "ast_hash": "d0070591edd25816cd31c0adce8a0360",
+    "semantic_hash": "d0070591edd25816cd31c0adce8a0360"
+  },
+  "frontend/src/app/tools/rangkuman/page.tsx": {
+    "mtime": 1790448937.3527794,
+    "ast_hash": "7fb7431c70a3ae89a99092c3afdcc6e7",
+    "semantic_hash": "7fb7431c70a3ae89a99092c3afdcc6e7"
+  },
+  "frontend/src/app/tools/simulasi-utbk/SimulasiUTBKClient.tsx": {
+    "mtime": 1790071194.9515586,
+    "ast_hash": "8833aed62beffb3844b0cd642e701c14",
+    "semantic_hash": "8833aed62beffb3844b0cd642e701c14"
+  },
+  "frontend/src/app/tools/simulasi-utbk/page.tsx": {
+    "mtime": 1790448937.362506,
+    "ast_hash": "6ae7cea3389e848d9df27b6394f0cc40",
+    "semantic_hash": "6ae7cea3389e848d9df27b6394f0cc40"
+  },
+  "frontend/src/app/tools/slide-outline/SlideOutlineClient.tsx": {
+    "mtime": 1790071370.9464793,
+    "ast_hash": "630068b1d7e685f9be648aee2dd063b8",
+    "semantic_hash": "630068b1d7e685f9be648aee2dd063b8"
+  },
+  "frontend/src/app/tools/slide-outline/page.tsx": {
+    "mtime": 1790448937.3737547,
+    "ast_hash": "a46220cd3dfc9ff258977bf34e4f30bd",
+    "semantic_hash": "a46220cd3dfc9ff258977bf34e4f30bd"
+  },
+  "frontend/src/app/tools/tafsir-quran/TafsirQuranClient.tsx": {
+    "mtime": 1790072687.932934,
+    "ast_hash": "fe6a4566610533fa2629a76706b0ff63",
+    "semantic_hash": "fe6a4566610533fa2629a76706b0ff63"
+  },
+  "frontend/src/app/tools/tafsir-quran/page.tsx": {
+    "mtime": 1790448937.3832192,
+    "ast_hash": "6d26aa270f884f4239567737d2282b4f",
+    "semantic_hash": "6d26aa270f884f4239567737d2282b4f"
+  },
+  "frontend/src/app/tools/tajwid/TajwidClient.tsx": {
+    "mtime": 1790072687.9878614,
+    "ast_hash": "950765e40554b6283b13eac32be154eb",
+    "semantic_hash": "950765e40554b6283b13eac32be154eb"
+  },
+  "frontend/src/app/tools/tajwid/page.tsx": {
+    "mtime": 1790448937.3952692,
+    "ast_hash": "b221e0c6e2b55738d62c612ed61d1713",
+    "semantic_hash": "b221e0c6e2b55738d62c612ed61d1713"
+  },
+  "frontend/src/app/tools/translator-arab/TranslatorArabClient.tsx": {
+    "mtime": 1790069250.2754023,
+    "ast_hash": "131ef20cb042656de899ed52a18e4fbb",
+    "semantic_hash": "131ef20cb042656de899ed52a18e4fbb"
+  },
+  "frontend/src/app/tools/translator-arab/page.tsx": {
+    "mtime": 1790448937.4050188,
+    "ast_hash": "0f2b568ae3057e0144459c7da1b69eb2",
+    "semantic_hash": "0f2b568ae3057e0144459c7da1b69eb2"
+  },
+  "frontend/src/components/Providers.tsx": {
+    "mtime": 1790021563.9294455,
+    "ast_hash": "6ecd2aa58d6d614a43d4a6677f05f9d1",
+    "semantic_hash": "6ecd2aa58d6d614a43d4a6677f05f9d1"
+  },
+  "frontend/src/components/home/BlogPreview.tsx": {
+    "mtime": 1789982336.4872575,
+    "ast_hash": "f109632bc074554f80c97841f4ea4f4f",
+    "semantic_hash": "f109632bc074554f80c97841f4ea4f4f"
+  },
+  "frontend/src/components/home/StatsCounter.tsx": {
+    "mtime": 1789986749.3661897,
+    "ast_hash": "34c1a200114d6f45be068fcd98d4b0a3",
+    "semantic_hash": "34c1a200114d6f45be068fcd98d4b0a3"
+  },
+  "frontend/src/components/home/ToolsGrid.tsx": {
+    "mtime": 1790073189.3317695,
+    "ast_hash": "09257bca96ef9e766cce421560c6bbc9",
+    "semantic_hash": "09257bca96ef9e766cce421560c6bbc9"
+  },
+  "frontend/src/components/layout/Breadcrumb.tsx": {
+    "mtime": 1790359467.5379379,
+    "ast_hash": "2151c3fbf64116824da9553516bea7bf",
+    "semantic_hash": "2151c3fbf64116824da9553516bea7bf"
+  },
+  "frontend/src/components/layout/Footer.tsx": {
+    "mtime": 1790058107.519995,
+    "ast_hash": "74775aa4db390e768712796afff957a2",
+    "semantic_hash": "74775aa4db390e768712796afff957a2"
+  },
+  "frontend/src/components/layout/Navbar.tsx": {
+    "mtime": 1790245540.134793,
+    "ast_hash": "4eb610660cc6034863f2eed49face010",
+    "semantic_hash": "4eb610660cc6034863f2eed49face010"
+  },
+  "frontend/src/components/shared/FAQAccordion.tsx": {
+    "mtime": 1790006873.038735,
+    "ast_hash": "8f87b43f745e747ed1acd22debc06ad5",
+    "semantic_hash": "8f87b43f745e747ed1acd22debc06ad5"
+  },
+  "frontend/src/components/shared/SchemaMarkup.tsx": {
+    "mtime": 1789983131.8111045,
+    "ast_hash": "16708001544b3106b5a17450a6901222",
+    "semantic_hash": "16708001544b3106b5a17450a6901222"
+  },
+  "frontend/src/components/shared/UsageLimitModal.tsx": {
+    "mtime": 1790245730.722076,
+    "ast_hash": "b0783c2acbf8672bed3e3308451a3fd6",
+    "semantic_hash": "b0783c2acbf8672bed3e3308451a3fd6"
+  },
+  "frontend/src/components/tools/AdPlaceholder.tsx": {
+    "mtime": 1789984503.0592093,
+    "ast_hash": "dd9b8b18eee44351f8f03b6e5e93432c",
+    "semantic_hash": "dd9b8b18eee44351f8f03b6e5e93432c"
+  },
+  "frontend/src/components/tools/FilterUniversal.tsx": {
+    "mtime": 1789986947.9200015,
+    "ast_hash": "2c8e1ac020931f4317f1d9bd209c8d36",
+    "semantic_hash": "2c8e1ac020931f4317f1d9bd209c8d36"
+  },
+  "frontend/src/components/tools/HasilOutput.tsx": {
+    "mtime": 1790246168.8452632,
+    "ast_hash": "a9c3e071b2d3aef525a4681f188d6a0c",
+    "semantic_hash": "a9c3e071b2d3aef525a4681f188d6a0c"
+  },
+  "frontend/src/components/tools/RelatedTools.tsx": {
+    "mtime": 1790074674.238539,
+    "ast_hash": "8ad728c40ba8b1d6a09c8f434757e9dc",
+    "semantic_hash": "8ad728c40ba8b1d6a09c8f434757e9dc"
+  },
+  "frontend/src/components/ui/button.tsx": {
+    "mtime": 1789982396.91688,
+    "ast_hash": "2700bddde0ac66fc6f2fc1b56fcfdc2d",
+    "semantic_hash": "2700bddde0ac66fc6f2fc1b56fcfdc2d"
+  },
+  "frontend/src/data/tools.ts": {
+    "mtime": 1790362850.443386,
+    "ast_hash": "8c7550029f20924c4f93c512c1da01b4",
+    "semantic_hash": "8c7550029f20924c4f93c512c1da01b4"
+  },
+  "frontend/src/lib/authOptions.ts": {
+    "mtime": 1790021564.2435484,
+    "ast_hash": "2a7c5610a282b300f629acedf0477429",
+    "semantic_hash": "2a7c5610a282b300f629acedf0477429"
+  },
+  "frontend/src/lib/constants/kurikulum.ts": {
+    "mtime": 1789982260.6268435,
+    "ast_hash": "a64f1cf3a703f2f5bee3c1a8043e7e61",
+    "semantic_hash": "a64f1cf3a703f2f5bee3c1a8043e7e61"
+  },
+  "frontend/src/lib/mdx.ts": {
+    "mtime": 1790362084.0436423,
+    "ast_hash": "10448b5d5e7a473a35d622b92a2ccca8",
+    "semantic_hash": "10448b5d5e7a473a35d622b92a2ccca8"
+  },
+  "frontend/src/lib/utils.ts": {
+    "mtime": 1789982848.5963194,
+    "ast_hash": "a40ab276f43a0e0a273926a9fa5055cc",
+    "semantic_hash": "a40ab276f43a0e0a273926a9fa5055cc"
+  },
+  "frontend/tailwind.config.ts": {
+    "mtime": 1790072166.467668,
+    "ast_hash": "7307713fc156daacd229988ceaf382aa",
+    "semantic_hash": "7307713fc156daacd229988ceaf382aa"
+  },
+  "frontend/tsconfig.json": {
+    "mtime": 1789981804.2766116,
+    "ast_hash": "3bd7a3770c6b44dbcaab1d2f175db8bd",
+    "semantic_hash": "3bd7a3770c6b44dbcaab1d2f175db8bd"
+  },
+  "package.json": {
+    "mtime": 1789981785.2772932,
+    "ast_hash": "9d1965d8b50e9bd96a192f2336d6bfb2",
+    "semantic_hash": "9d1965d8b50e9bd96a192f2336d6bfb2"
+  },
+  "scratch/generate-icons.js": {
+    "mtime": 1790361564.6608417,
+    "ast_hash": "5216a0ef2f38ffe7115b9eb2dae761c4",
+    "semantic_hash": "5216a0ef2f38ffe7115b9eb2dae761c4"
+  },
+  "scratch/update-categories.js": {
+    "mtime": 1790075305.8553839,
+    "ast_hash": "0d145fbc3e6d03c566597c064d8bbe62",
+    "semantic_hash": "0d145fbc3e6d03c566597c064d8bbe62"
+  },
+  "shared/package.json": {
+    "mtime": 1789981803.7306957,
+    "ast_hash": "746fdc85d38790f645681f9bd578de99",
+    "semantic_hash": "746fdc85d38790f645681f9bd578de99"
+  },
+  ".agents/rules/brand-lexicon.md": {
+    "mtime": 1790021561.4212823,
+    "ast_hash": "0c01a2f630f4361dfd3e90cf655cc8e8",
+    "semantic_hash": "0c01a2f630f4361dfd3e90cf655cc8e8"
+  },
+  "backend/README.md": {
+    "mtime": 1789463288.0,
+    "ast_hash": "0ac0ede4ae308d90143633e50a35c097",
+    "semantic_hash": "0ac0ede4ae308d90143633e50a35c097"
+  },
+  "backend/pnpm-workspace.yaml": {
+    "mtime": 1789463288.0,
+    "ast_hash": "cbca11f6bc0d08578f3f92e1ec5e5952",
+    "semantic_hash": "cbca11f6bc0d08578f3f92e1ec5e5952"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/bahasa-indonesia/cara-melakukan-parafrase-kalimat.mdx": {
+    "mtime": 1790021563.943751,
+    "ast_hash": "94955c5a17df35db6e2765d85dbfd98f",
+    "semantic_hash": "94955c5a17df35db6e2765d85dbfd98f"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/bahasa-indonesia/cara-membuat-kesimpulan-eyd.mdx": {
+    "mtime": 1790021563.9504678,
+    "ast_hash": "3a92ebd2ade8653741605462ca56ba67",
+    "semantic_hash": "3a92ebd2ade8653741605462ca56ba67"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/bahasa-indonesia/cara-mencari-ide-pokok-paragraf.mdx": {
+    "mtime": 1790021563.9598255,
+    "ast_hash": "0c02e5b0fb054551aa8d40d74fa2f72c",
+    "semantic_hash": "0c02e5b0fb054551aa8d40d74fa2f72c"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/bahasa-indonesia/cara-menulis-makalah-yang-benar.mdx": {
+    "mtime": 1790021563.9675825,
+    "ast_hash": "0fd6c2a0cb36b4ddec08de0342f6d53a",
+    "semantic_hash": "0fd6c2a0cb36b4ddec08de0342f6d53a"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/bahasa-indonesia/ciri-teks-argumentasi.mdx": {
+    "mtime": 1790021563.988722,
+    "ast_hash": "a6dbe25116f74ad741f4143e3198934a",
+    "semantic_hash": "a6dbe25116f74ad741f4143e3198934a"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/bahasa-indonesia/macam-macam-majas-dan-contoh.mdx": {
+    "mtime": 1790021563.994962,
+    "ast_hash": "0fa7d849b9750a16a95551e0ca22c10f",
+    "semantic_hash": "0fa7d849b9750a16a95551e0ca22c10f"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/bahasa-indonesia/perbedaan-kalimat-aktif-pasif.mdx": {
+    "mtime": 1790021564.005579,
+    "ast_hash": "e60903baa2f621638f3f957eb0d2f0d4",
+    "semantic_hash": "e60903baa2f621638f3f957eb0d2f0d4"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/bahasa-indonesia/struktur-teks-eksposisi.mdx": {
+    "mtime": 1790021564.0289717,
+    "ast_hash": "da75e44613375b83ef75266f1efea5a6",
+    "semantic_hash": "da75e44613375b83ef75266f1efea5a6"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/ipa/fotosintesis-adalah.mdx": {
+    "mtime": 1790022582.657742,
+    "ast_hash": "638a441187afb00f3ec4cfe7b87081c9",
+    "semantic_hash": "638a441187afb00f3ec4cfe7b87081c9"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/ipa/hukum-newton-1-2-3.mdx": {
+    "mtime": 1790022568.272125,
+    "ast_hash": "ccfac399e40e0abfb7bca37f470e202d",
+    "semantic_hash": "ccfac399e40e0abfb7bca37f470e202d"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/ipa/ikatan-kimia-ion-kovalen.mdx": {
+    "mtime": 1790022574.2332325,
+    "ast_hash": "3059413071818e2145936bb7a87e0c59",
+    "semantic_hash": "3059413071818e2145936bb7a87e0c59"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/ipa/rumus-gerak-lurus.mdx": {
+    "mtime": 1790057120.3813236,
+    "ast_hash": "ef30af2ada72cb89a1e92b90dab1b11f",
+    "semantic_hash": "ef30af2ada72cb89a1e92b90dab1b11f"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/ipa/sistem-pencernaan-manusia.mdx": {
+    "mtime": 1790022596.026016,
+    "ast_hash": "f2b85168614a16e71b09c4cabdd57391",
+    "semantic_hash": "f2b85168614a16e71b09c4cabdd57391"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/kurikulum-merdeka/cara-menghitung-nilai-rapor.mdx": {
+    "mtime": 1790021564.037015,
+    "ast_hash": "32d91ef6e5d8ca2467981f8daaf1b3de",
+    "semantic_hash": "32d91ef6e5d8ca2467981f8daaf1b3de"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/kurikulum-merdeka/mata-pelajaran-pilihan-sma.mdx": {
+    "mtime": 1790021564.0446086,
+    "ast_hash": "ed24cc2c7cd4cb6e13674a9bb01fadb0",
+    "semantic_hash": "ed24cc2c7cd4cb6e13674a9bb01fadb0"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/kurikulum-merdeka/memahami-sistem-fase-sekolah.mdx": {
+    "mtime": 1790021564.054103,
+    "ast_hash": "a6fef3386ca6a98aa600c4a3d40a6d27",
+    "semantic_hash": "a6fef3386ca6a98aa600c4a3d40a6d27"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/kurikulum-merdeka/pengertian-p5-dan-contoh-projek.mdx": {
+    "mtime": 1790021564.0613804,
+    "ast_hash": "e58219f24127137a894e0a64a3290e21",
+    "semantic_hash": "e58219f24127137a894e0a64a3290e21"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/kurikulum-merdeka/perbedaan-kurikulum-merdeka-dan-k13.mdx": {
+    "mtime": 1790021564.065722,
+    "ast_hash": "98598581ab8cf90fe90eba8eb09e3d7b",
+    "semantic_hash": "98598581ab8cf90fe90eba8eb09e3d7b"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/matematika/cara-memahami-logaritma.mdx": {
+    "mtime": 1790021564.075876,
+    "ast_hash": "e31c4fe747efbad43fd4401031ab087e",
+    "semantic_hash": "e31c4fe747efbad43fd4401031ab087e"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/matematika/cara-menghitung-pecahan-campuran.mdx": {
+    "mtime": 1790021564.0863922,
+    "ast_hash": "1125d01e5c9b201fb22d3a7b2aef77bf",
+    "semantic_hash": "1125d01e5c9b201fb22d3a7b2aef77bf"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/matematika/konsep-dasar-aljabar-smp.mdx": {
+    "mtime": 1790021564.0971677,
+    "ast_hash": "0167f4040fe98334624edd9dfc905141",
+    "semantic_hash": "0167f4040fe98334624edd9dfc905141"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/matematika/mengerjakan-soal-matriks.mdx": {
+    "mtime": 1790021564.1089072,
+    "ast_hash": "5da036f7c630287e487e02ecec3273c8",
+    "semantic_hash": "5da036f7c630287e487e02ecec3273c8"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/matematika/penerapan-rumus-pythagoras.mdx": {
+    "mtime": 1790021564.1191726,
+    "ast_hash": "274911bf7b715c2d15c7165b220fd690",
+    "semantic_hash": "274911bf7b715c2d15c7165b220fd690"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/matematika/rumus-bangun-ruang-lengkap.mdx": {
+    "mtime": 1790021564.1266348,
+    "ast_hash": "fbbebfa9ef0f709f570a8a3eeda568a0",
+    "semantic_hash": "fbbebfa9ef0f709f570a8a3eeda568a0"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/matematika/tips-menjawab-soal-cerita.mdx": {
+    "mtime": 1790021564.134207,
+    "ast_hash": "feb99b3022b3e8cc496f84592140b6d2",
+    "semantic_hash": "feb99b3022b3e8cc496f84592140b6d2"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/persiapan-ujian/cara-simulasi-utbk-snbt.mdx": {
+    "mtime": 1790021564.1425028,
+    "ast_hash": "ca209a16a9a3f7330d3d4e3a3136b3f6",
+    "semantic_hash": "ca209a16a9a3f7330d3d4e3a3136b3f6"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/persiapan-ujian/latihan-soal-akm-literasi.mdx": {
+    "mtime": 1790021564.1525247,
+    "ast_hash": "032243b995244503c0280230c0e3cc34",
+    "semantic_hash": "032243b995244503c0280230c0e3cc34"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/persiapan-ujian/menggunakan-generator-soal-ai.mdx": {
+    "mtime": 1790021564.1597452,
+    "ast_hash": "9c85742764578e211e6b99c3836cefa8",
+    "semantic_hash": "9c85742764578e211e6b99c3836cefa8"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/persiapan-ujian/pentingnya-membuat-rangkuman.mdx": {
+    "mtime": 1790021564.167303,
+    "ast_hash": "31167dea7ac879aba07d7e82ee8e8dbd",
+    "semantic_hash": "31167dea7ac879aba07d7e82ee8e8dbd"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/persiapan-ujian/strategi-mengerjakan-soal-pilihan-ganda.mdx": {
+    "mtime": 1790021564.1786125,
+    "ast_hash": "cedc4249d53c7c89ede28921cf356a27",
+    "semantic_hash": "cedc4249d53c7c89ede28921cf356a27"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/tips-belajar/bahaya-joki-tugas-sekolah.mdx": {
+    "mtime": 1790021564.182487,
+    "ast_hash": "e3ef11e809794fd2f8a9c671ca267a10",
+    "semantic_hash": "e3ef11e809794fd2f8a9c671ca267a10"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/tips-belajar/cara-menyusun-laporan-praktikum-fisika.mdx": {
+    "mtime": 1790021564.2001834,
+    "ast_hash": "eb91113c4ae5173b9a9bb81d48cc5c3f",
+    "semantic_hash": "eb91113c4ae5173b9a9bb81d48cc5c3f"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/tips-belajar/manajemen-waktu-pr-dan-ekskul.mdx": {
+    "mtime": 1790021564.2157192,
+    "ast_hash": "f14df2dcc6ff83a3fddf8c4642779395",
+    "semantic_hash": "f14df2dcc6ff83a3fddf8c4642779395"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/tips-belajar/mengerjakan-pr-matematika-dengan-ai.mdx": {
+    "mtime": 1790021564.2228765,
+    "ast_hash": "8d80c63e1c4e0a9e82a5ebd89eae0a9f",
+    "semantic_hash": "8d80c63e1c4e0a9e82a5ebd89eae0a9f"
+  },
+  "frontend/.open-next/server-functions/default/frontend/src/content/blog/tips-belajar/teknik-feynman-untuk-menghafal.mdx": {
+    "mtime": 1790021564.2314076,
+    "ast_hash": "aa54dbd93c93a4495c6a3acc537b6ea3",
+    "semantic_hash": "aa54dbd93c93a4495c6a3acc537b6ea3"
+  },
+  "frontend/README.md": {
+    "mtime": 1789981803.1228843,
+    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "semantic_hash": "f15aaa42d5d299d091b1171097ea56ad"
+  },
+  "frontend/src/content/blog/bahasa-indonesia/cara-melakukan-parafrase-kalimat.mdx": {
+    "mtime": 1790021563.943751,
+    "ast_hash": "94955c5a17df35db6e2765d85dbfd98f",
+    "semantic_hash": "94955c5a17df35db6e2765d85dbfd98f"
+  },
+  "frontend/src/content/blog/bahasa-indonesia/cara-membuat-kesimpulan-eyd.mdx": {
+    "mtime": 1790021563.9504678,
+    "ast_hash": "3a92ebd2ade8653741605462ca56ba67",
+    "semantic_hash": "3a92ebd2ade8653741605462ca56ba67"
+  },
+  "frontend/src/content/blog/bahasa-indonesia/cara-mencari-ide-pokok-paragraf.mdx": {
+    "mtime": 1790021563.9598255,
+    "ast_hash": "0c02e5b0fb054551aa8d40d74fa2f72c",
+    "semantic_hash": "0c02e5b0fb054551aa8d40d74fa2f72c"
+  },
+  "frontend/src/content/blog/bahasa-indonesia/cara-menulis-makalah-yang-benar.mdx": {
+    "mtime": 1790021563.9675825,
+    "ast_hash": "0fd6c2a0cb36b4ddec08de0342f6d53a",
+    "semantic_hash": "0fd6c2a0cb36b4ddec08de0342f6d53a"
+  },
+  "frontend/src/content/blog/bahasa-indonesia/ciri-teks-argumentasi.mdx": {
+    "mtime": 1790021563.988722,
+    "ast_hash": "a6dbe25116f74ad741f4143e3198934a",
+    "semantic_hash": "a6dbe25116f74ad741f4143e3198934a"
+  },
+  "frontend/src/content/blog/bahasa-indonesia/macam-macam-majas-dan-contoh.mdx": {
+    "mtime": 1790021563.994962,
+    "ast_hash": "0fa7d849b9750a16a95551e0ca22c10f",
+    "semantic_hash": "0fa7d849b9750a16a95551e0ca22c10f"
+  },
+  "frontend/src/content/blog/bahasa-indonesia/perbedaan-kalimat-aktif-pasif.mdx": {
+    "mtime": 1790021564.005579,
+    "ast_hash": "e60903baa2f621638f3f957eb0d2f0d4",
+    "semantic_hash": "e60903baa2f621638f3f957eb0d2f0d4"
+  },
+  "frontend/src/content/blog/bahasa-indonesia/struktur-teks-eksposisi.mdx": {
+    "mtime": 1790021564.0289717,
+    "ast_hash": "da75e44613375b83ef75266f1efea5a6",
+    "semantic_hash": "da75e44613375b83ef75266f1efea5a6"
+  },
+  "frontend/src/content/blog/ipa/fotosintesis-adalah.mdx": {
+    "mtime": 1790022582.657742,
+    "ast_hash": "638a441187afb00f3ec4cfe7b87081c9",
+    "semantic_hash": "638a441187afb00f3ec4cfe7b87081c9"
+  },
+  "frontend/src/content/blog/ipa/hukum-newton-1-2-3.mdx": {
+    "mtime": 1790022568.272125,
+    "ast_hash": "ccfac399e40e0abfb7bca37f470e202d",
+    "semantic_hash": "ccfac399e40e0abfb7bca37f470e202d"
+  },
+  "frontend/src/content/blog/ipa/ikatan-kimia-ion-kovalen.mdx": {
+    "mtime": 1790022574.2332325,
+    "ast_hash": "3059413071818e2145936bb7a87e0c59",
+    "semantic_hash": "3059413071818e2145936bb7a87e0c59"
+  },
+  "frontend/src/content/blog/ipa/rumus-gerak-lurus.mdx": {
+    "mtime": 1790057120.3813236,
+    "ast_hash": "ef30af2ada72cb89a1e92b90dab1b11f",
+    "semantic_hash": "ef30af2ada72cb89a1e92b90dab1b11f"
+  },
+  "frontend/src/content/blog/ipa/sistem-pencernaan-manusia.mdx": {
+    "mtime": 1790022596.026016,
+    "ast_hash": "f2b85168614a16e71b09c4cabdd57391",
+    "semantic_hash": "f2b85168614a16e71b09c4cabdd57391"
+  },
+  "frontend/src/content/blog/kurikulum-merdeka/cara-menghitung-nilai-rapor.mdx": {
+    "mtime": 1790021564.037015,
+    "ast_hash": "32d91ef6e5d8ca2467981f8daaf1b3de",
+    "semantic_hash": "32d91ef6e5d8ca2467981f8daaf1b3de"
+  },
+  "frontend/src/content/blog/kurikulum-merdeka/mata-pelajaran-pilihan-sma.mdx": {
+    "mtime": 1790021564.0446086,
+    "ast_hash": "ed24cc2c7cd4cb6e13674a9bb01fadb0",
+    "semantic_hash": "ed24cc2c7cd4cb6e13674a9bb01fadb0"
+  },
+  "frontend/src/content/blog/kurikulum-merdeka/memahami-sistem-fase-sekolah.mdx": {
+    "mtime": 1790021564.054103,
+    "ast_hash": "a6fef3386ca6a98aa600c4a3d40a6d27",
+    "semantic_hash": "a6fef3386ca6a98aa600c4a3d40a6d27"
+  },
+  "frontend/src/content/blog/kurikulum-merdeka/pengertian-p5-dan-contoh-projek.mdx": {
+    "mtime": 1790021564.0613804,
+    "ast_hash": "e58219f24127137a894e0a64a3290e21",
+    "semantic_hash": "e58219f24127137a894e0a64a3290e21"
+  },
+  "frontend/src/content/blog/kurikulum-merdeka/perbedaan-kurikulum-merdeka-dan-k13.mdx": {
+    "mtime": 1790021564.065722,
+    "ast_hash": "98598581ab8cf90fe90eba8eb09e3d7b",
+    "semantic_hash": "98598581ab8cf90fe90eba8eb09e3d7b"
+  },
+  "frontend/src/content/blog/matematika/cara-memahami-logaritma.mdx": {
+    "mtime": 1790021564.075876,
+    "ast_hash": "e31c4fe747efbad43fd4401031ab087e",
+    "semantic_hash": "e31c4fe747efbad43fd4401031ab087e"
+  },
+  "frontend/src/content/blog/matematika/cara-menghitung-pecahan-campuran.mdx": {
+    "mtime": 1790021564.0863922,
+    "ast_hash": "1125d01e5c9b201fb22d3a7b2aef77bf",
+    "semantic_hash": "1125d01e5c9b201fb22d3a7b2aef77bf"
+  },
+  "frontend/src/content/blog/matematika/konsep-dasar-aljabar-smp.mdx": {
+    "mtime": 1790021564.0971677,
+    "ast_hash": "0167f4040fe98334624edd9dfc905141",
+    "semantic_hash": "0167f4040fe98334624edd9dfc905141"
+  },
+  "frontend/src/content/blog/matematika/mengerjakan-soal-matriks.mdx": {
+    "mtime": 1790021564.1089072,
+    "ast_hash": "5da036f7c630287e487e02ecec3273c8",
+    "semantic_hash": "5da036f7c630287e487e02ecec3273c8"
+  },
+  "frontend/src/content/blog/matematika/penerapan-rumus-pythagoras.mdx": {
+    "mtime": 1790021564.1191726,
+    "ast_hash": "274911bf7b715c2d15c7165b220fd690",
+    "semantic_hash": "274911bf7b715c2d15c7165b220fd690"
+  },
+  "frontend/src/content/blog/matematika/rumus-bangun-ruang-lengkap.mdx": {
+    "mtime": 1790021564.1266348,
+    "ast_hash": "fbbebfa9ef0f709f570a8a3eeda568a0",
+    "semantic_hash": "fbbebfa9ef0f709f570a8a3eeda568a0"
+  },
+  "frontend/src/content/blog/matematika/tips-menjawab-soal-cerita.mdx": {
+    "mtime": 1790021564.134207,
+    "ast_hash": "feb99b3022b3e8cc496f84592140b6d2",
+    "semantic_hash": "feb99b3022b3e8cc496f84592140b6d2"
+  },
+  "frontend/src/content/blog/persiapan-ujian/cara-simulasi-utbk-snbt.mdx": {
+    "mtime": 1790021564.1425028,
+    "ast_hash": "ca209a16a9a3f7330d3d4e3a3136b3f6",
+    "semantic_hash": "ca209a16a9a3f7330d3d4e3a3136b3f6"
+  },
+  "frontend/src/content/blog/persiapan-ujian/latihan-soal-akm-literasi.mdx": {
+    "mtime": 1790021564.1525247,
+    "ast_hash": "032243b995244503c0280230c0e3cc34",
+    "semantic_hash": "032243b995244503c0280230c0e3cc34"
+  },
+  "frontend/src/content/blog/persiapan-ujian/menggunakan-generator-soal-ai.mdx": {
+    "mtime": 1790021564.1597452,
+    "ast_hash": "9c85742764578e211e6b99c3836cefa8",
+    "semantic_hash": "9c85742764578e211e6b99c3836cefa8"
+  },
+  "frontend/src/content/blog/persiapan-ujian/pentingnya-membuat-rangkuman.mdx": {
+    "mtime": 1790021564.167303,
+    "ast_hash": "31167dea7ac879aba07d7e82ee8e8dbd",
+    "semantic_hash": "31167dea7ac879aba07d7e82ee8e8dbd"
+  },
+  "frontend/src/content/blog/persiapan-ujian/strategi-mengerjakan-soal-pilihan-ganda.mdx": {
+    "mtime": 1790021564.1786125,
+    "ast_hash": "cedc4249d53c7c89ede28921cf356a27",
+    "semantic_hash": "cedc4249d53c7c89ede28921cf356a27"
+  },
+  "frontend/src/content/blog/tips-belajar/bahaya-joki-tugas-sekolah.mdx": {
+    "mtime": 1790021564.182487,
+    "ast_hash": "e3ef11e809794fd2f8a9c671ca267a10",
+    "semantic_hash": "e3ef11e809794fd2f8a9c671ca267a10"
+  },
+  "frontend/src/content/blog/tips-belajar/cara-menyusun-laporan-praktikum-fisika.mdx": {
+    "mtime": 1790021564.2001834,
+    "ast_hash": "eb91113c4ae5173b9a9bb81d48cc5c3f",
+    "semantic_hash": "eb91113c4ae5173b9a9bb81d48cc5c3f"
+  },
+  "frontend/src/content/blog/tips-belajar/manajemen-waktu-pr-dan-ekskul.mdx": {
+    "mtime": 1790021564.2157192,
+    "ast_hash": "f14df2dcc6ff83a3fddf8c4642779395",
+    "semantic_hash": "f14df2dcc6ff83a3fddf8c4642779395"
+  },
+  "frontend/src/content/blog/tips-belajar/mengerjakan-pr-matematika-dengan-ai.mdx": {
+    "mtime": 1790021564.2228765,
+    "ast_hash": "8d80c63e1c4e0a9e82a5ebd89eae0a9f",
+    "semantic_hash": "8d80c63e1c4e0a9e82a5ebd89eae0a9f"
+  },
+  "frontend/src/content/blog/tips-belajar/teknik-feynman-untuk-menghafal.mdx": {
+    "mtime": 1790021564.2314076,
+    "ast_hash": "aa54dbd93c93a4495c6a3acc537b6ea3",
+    "semantic_hash": "aa54dbd93c93a4495c6a3acc537b6ea3"
+  },
+  "stitch/blog hub.txt": {
+    "mtime": 1789985481.63873,
+    "ast_hash": "7f3f31233ffdf5033bfe6a5b03843556",
+    "semantic_hash": "7f3f31233ffdf5033bfe6a5b03843556"
+  },
+  "stitch/home.txt": {
+    "mtime": 1789985366.0368104,
+    "ast_hash": "150f14bb781177f08ccaab5d15a3b1b0",
+    "semantic_hash": "150f14bb781177f08ccaab5d15a3b1b0"
+  },
+  "stitch/post single.txt": {
+    "mtime": 1789985491.7686756,
+    "ast_hash": "17c1e6792d9637845e4b27776f33df44",
+    "semantic_hash": "17c1e6792d9637845e4b27776f33df44"
+  },
+  "stitch/tools single page.txt": {
+    "mtime": 1789985539.8789046,
+    "ast_hash": "542899aee15ebe03a795bc4339a6ac7c",
+    "semantic_hash": "542899aee15ebe03a795bc4339a6ac7c"
+  },
+  "stitch/toosl hub.txt": {
+    "mtime": 1789985459.0750299,
+    "ast_hash": "7fb3a2878b03a04cb14af88a1d00830c",
+    "semantic_hash": "7fb3a2878b03a04cb14af88a1d00830c"
+  },
+  "frontend/.open-next/assets/icon-192x192.png": {
+    "mtime": 1790361577.56,
+    "ast_hash": "a5a1983fc7bcf3893ed052630027f73e",
+    "semantic_hash": "a5a1983fc7bcf3893ed052630027f73e"
+  },
+  "frontend/.open-next/assets/icon-512x512.png": {
+    "mtime": 1790361577.575,
+    "ast_hash": "d21e74eedac521f65a09b16693bee77d",
+    "semantic_hash": "d21e74eedac521f65a09b16693bee77d"
+  },
+  "frontend/.open-next/assets/icon.svg": {
+    "mtime": 1790360070.2208736,
+    "ast_hash": "d3c63d02b77bedebcd075fdab9ef0f9a",
+    "semantic_hash": "d3c63d02b77bedebcd075fdab9ef0f9a"
+  },
+  "frontend/.open-next/assets/logo-white.png": {
+    "mtime": 1790361581.263,
+    "ast_hash": "62509fe9931f95d66b98e1dff556032b",
+    "semantic_hash": "62509fe9931f95d66b98e1dff556032b"
+  },
+  "frontend/.open-next/assets/logo-white.svg": {
+    "mtime": 1790360083.5813198,
+    "ast_hash": "5dd0878fab528122e998c0044eedc969",
+    "semantic_hash": "5dd0878fab528122e998c0044eedc969"
+  },
+  "frontend/.open-next/assets/logo.png": {
+    "mtime": 1790361581.243,
+    "ast_hash": "d55c2b3354a336abccbef0cb5657fae5",
+    "semantic_hash": "d55c2b3354a336abccbef0cb5657fae5"
+  },
+  "frontend/.open-next/assets/logo.svg": {
+    "mtime": 1790360076.7073748,
+    "ast_hash": "ce31f8788c7129e98dbe1d089f7be119",
+    "semantic_hash": "ce31f8788c7129e98dbe1d089f7be119"
+  },
+  "frontend/.open-next/assets/og-bg.svg": {
+    "mtime": 1790360092.1584334,
+    "ast_hash": "a3bbd38a1943db518a0ad18300bacda1",
+    "semantic_hash": "a3bbd38a1943db518a0ad18300bacda1"
+  },
+  "frontend/.open-next/assets/og-image.jpg": {
+    "mtime": 1790361581.295,
+    "ast_hash": "59543f5036b8ee5c0b48555bd39c1b99",
+    "semantic_hash": "59543f5036b8ee5c0b48555bd39c1b99"
+  },
+  "frontend/public/apple-icon.png": {
+    "mtime": 1790361577.552,
+    "ast_hash": "118d5535d1ba83dc2083d38bd9d2cc4e",
+    "semantic_hash": "118d5535d1ba83dc2083d38bd9d2cc4e"
+  },
+  "frontend/public/favicon-16x16.png": {
+    "mtime": 1790361577.536,
+    "ast_hash": "68d797b8906d45114a44a5f31a7269ea",
+    "semantic_hash": "68d797b8906d45114a44a5f31a7269ea"
+  },
+  "frontend/public/favicon-32x32.png": {
+    "mtime": 1790361577.544,
+    "ast_hash": "ce16c9a944b3fe23d1d198dbda02357d",
+    "semantic_hash": "ce16c9a944b3fe23d1d198dbda02357d"
+  },
+  "frontend/public/icon-192x192.png": {
+    "mtime": 1790361577.56,
+    "ast_hash": "a5a1983fc7bcf3893ed052630027f73e",
+    "semantic_hash": "a5a1983fc7bcf3893ed052630027f73e"
+  },
+  "frontend/public/icon-512x512.png": {
+    "mtime": 1790361577.575,
+    "ast_hash": "d21e74eedac521f65a09b16693bee77d",
+    "semantic_hash": "d21e74eedac521f65a09b16693bee77d"
+  },
+  "frontend/public/icon.svg": {
+    "mtime": 1790360070.2208736,
+    "ast_hash": "d3c63d02b77bedebcd075fdab9ef0f9a",
+    "semantic_hash": "d3c63d02b77bedebcd075fdab9ef0f9a"
+  },
+  "frontend/public/logo-white.png": {
+    "mtime": 1790361581.263,
+    "ast_hash": "62509fe9931f95d66b98e1dff556032b",
+    "semantic_hash": "62509fe9931f95d66b98e1dff556032b"
+  },
+  "frontend/public/logo-white.svg": {
+    "mtime": 1790360083.5813198,
+    "ast_hash": "5dd0878fab528122e998c0044eedc969",
+    "semantic_hash": "5dd0878fab528122e998c0044eedc969"
+  },
+  "frontend/public/logo.png": {
+    "mtime": 1790361581.243,
+    "ast_hash": "d55c2b3354a336abccbef0cb5657fae5",
+    "semantic_hash": "d55c2b3354a336abccbef0cb5657fae5"
+  },
+  "frontend/public/logo.svg": {
+    "mtime": 1790360076.7073748,
+    "ast_hash": "ce31f8788c7129e98dbe1d089f7be119",
+    "semantic_hash": "ce31f8788c7129e98dbe1d089f7be119"
+  },
+  "frontend/public/og-bg.svg": {
+    "mtime": 1790360092.1584334,
+    "ast_hash": "a3bbd38a1943db518a0ad18300bacda1",
+    "semantic_hash": "a3bbd38a1943db518a0ad18300bacda1"
+  },
+  "frontend/public/og-image.jpg": {
+    "mtime": 1790361581.295,
+    "ast_hash": "59543f5036b8ee5c0b48555bd39c1b99",
+    "semantic_hash": "59543f5036b8ee5c0b48555bd39c1b99"
+  },
+  "icon.svg": {
+    "mtime": 1790360070.2208736,
+    "ast_hash": "d3c63d02b77bedebcd075fdab9ef0f9a",
+    "semantic_hash": "d3c63d02b77bedebcd075fdab9ef0f9a"
+  },
+  "logo-white.svg": {
+    "mtime": 1790360083.5813198,
+    "ast_hash": "5dd0878fab528122e998c0044eedc969",
+    "semantic_hash": "5dd0878fab528122e998c0044eedc969"
+  },
+  "logo.svg": {
+    "mtime": 1790360076.7073748,
+    "ast_hash": "ce31f8788c7129e98dbe1d089f7be119",
+    "semantic_hash": "ce31f8788c7129e98dbe1d089f7be119"
+  },
+  "og-bg.svg": {
+    "mtime": 1790360092.1584334,
+    "ast_hash": "a3bbd38a1943db518a0ad18300bacda1",
+    "semantic_hash": "a3bbd38a1943db518a0ad18300bacda1"
+  }
+}

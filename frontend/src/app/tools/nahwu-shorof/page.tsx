@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import NahwuShorofClient from './NahwuShorofClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -10,6 +11,20 @@ export const metadata = {
 };
 
 export default function NahwuShorofPage() {
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Penjelas Nahwu & Shorof (Bedah I",
+    "description": "Analisis I",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    }
+  };
   const faqs = [
   {
     "q": "Apakah format i'rabnya standar kitab kuning?",
@@ -19,6 +34,7 @@ export default function NahwuShorofPage() {
   
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
+      <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Bedah I'rab & Tata Bahasa Arab (Nahwu Shorof)

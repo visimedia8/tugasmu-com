@@ -1,3 +1,4 @@
+import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import GrammarEYDClient from './GrammarEYDClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -9,8 +10,23 @@ export const metadata = {
 };
 
 export default function GrammarEYDPage() {
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Cek Grammar & EYD Bahasa Indonesia Online — Koreksi Otomatis",
+    "description": "Periksa ejaan, tanda baca, kata baku, dan EYD tulisanmu secara otomatis. Setiap koreksi disertai penjelasan aturan agar kamu benar-benar paham.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    }
+  };
   return (
     <div className="container py-8 md:py-12 max-w-4xl">
+      <SchemaMarkup schema={schema} />
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Cek Grammar & EYD Bahasa Indonesia

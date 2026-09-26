@@ -41,8 +41,9 @@ payment.post('/create-transaction', authMiddleware, async (c) => {
 
     const signature = md5(`${merchantCode}${orderId}${amount}${merchantKey}`)
     
-    // Asumsikan backend url untuk callback (harus public)
-    const callbackUrl = 'https://tugasmu-api.johananggo.workers.dev/api/payment/webhook'
+    // Gunakan origin dari request agar dinamis (Dev/Prod)
+    const apiOrigin = new URL(c.req.url).origin
+    const callbackUrl = `${apiOrigin}/api/payment/webhook`
     const returnUrl = 'https://tugasmu.com/akun'
 
     const payload = {
@@ -71,7 +72,7 @@ payment.post('/create-transaction', authMiddleware, async (c) => {
       return c.json({ success: false, message: 'Failed to create transaction with Duitku' }, 500)
     }
 
-    const data = await response.json()
+    const data = await response.json() as any
 
     if (data.statusCode !== '00') {
       return c.json({ success: false, message: data.statusMessage }, 400)
