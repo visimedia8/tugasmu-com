@@ -21,6 +21,10 @@ export default function KontakPage() {
               <p className="text-slate-600">support@tugasmu.com</p>
             </div>
             <div>
+              <h3 className="font-bold text-slate-900">Telepon / WhatsApp</h3>
+              <p className="text-slate-600">+62 8XX-XXXX-XXXX (Ganti dengan nomor Anda)</p>
+            </div>
+            <div>
               <h3 className="font-bold text-slate-900">Waktu Operasional</h3>
               <p className="text-slate-600">Senin - Jumat: 09:00 - 17:00 WIB</p>
               <p className="text-sm text-slate-500 mt-1">Kami berusaha membalas pesanmu dalam 1-2 hari kerja.</p>

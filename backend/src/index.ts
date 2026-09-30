@@ -37,6 +37,7 @@ import { credits } from './routes/credits'
 import { referral } from './routes/referral'
 import { share } from './routes/share'
 import { admin } from './routes/admin'
+import { auth } from './routes/auth'
 
 
 export type Bindings = {
@@ -102,6 +103,7 @@ app.route('/api/credits', credits)
 app.route('/api/referral', referral)
 app.route('/api/share', share)
 app.route('/api/admin', admin)
+app.route('/api/auth', auth)
 
 export default {
   fetch: app.fetch,
@@ -114,6 +116,17 @@ export default {
           await env.DB.prepare(`DELETE FROM ip_rate_limit WHERE date < date('now', '-7 days')`).run()
           // Bersihkan history pemakaian user yang lebih tua dari 30 hari (opsional)
           await env.DB.prepare(`DELETE FROM user_quota_log WHERE date < date('now', '-30 days')`).run()
+            // DOWNGRADE LOGIC: Cek user yang langganannya sudah expired
+            const expiredSubs = await env.DB.prepare("SELECT user_id FROM subscriptions WHERE status = 'active' AND expires_at < CURRENT_TIMESTAMP").all();
+            if (expiredSubs.results && expiredSubs.results.length > 0) {
+              const userIds = expiredSubs.results.map(r => r.user_id);
+              console.log("Downgrading users: ", userIds);
+              await env.DB.prepare("UPDATE subscriptions SET status = 'expired' WHERE status = 'active' AND expires_at < CURRENT_TIMESTAMP").run();
+              for (const uid of userIds) {
+                await env.DB.prepare("UPDATE users SET tier = 'free' WHERE id = ? AND tier != 'free'").bind(uid).run();
+              }
+            }
+
           console.log('Cleanup finished')
         } catch (e) {
           console.error('Cleanup error:', e)

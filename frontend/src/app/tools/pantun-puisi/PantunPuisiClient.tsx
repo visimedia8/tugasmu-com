@@ -6,6 +6,8 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
+const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://api.tugasmu.com";
+
 export default function PantunPuisiClient() {
   const { data: session } = useSession();
   const [filter, setFilter] = useState<FilterState>({
@@ -52,7 +54,7 @@ export default function PantunPuisiClient() {
         }
       }
       
-      const res = await fetch('/api/tools/pantun-puisi', {
+      const res = await fetch(`${apiBase}/api/tools/pantun-puisi`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

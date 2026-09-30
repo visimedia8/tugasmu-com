@@ -4,7 +4,10 @@ import type { Bindings } from '../index'
 export interface AuthUser {
   userId: string
   email: string
-  tier: 'anonymous' | 'free' | 'pro' | 'guru' | 'kelas'
+  name: string | null
+  jenjang_default: string | null
+  kelas_default: string | null
+  tier: 'anonymous' | 'free' | 'pro' | 'guru' | 'kelas' | 'trial'
   dailyLimit: number
   role: string
 }
@@ -80,8 +83,8 @@ export async function authMiddleware(c: Context<{ Bindings: Bindings; Variables:
 
   try {
     const user = await c.env.DB.prepare(
-      `SELECT id, email, tier, referral_bonus, role FROM users WHERE id = ?`
-    ).bind(decoded.userId).first<{ id: string; email: string; tier: string; referral_bonus: number; role: string }>()
+      `SELECT id, email, tier, referral_bonus, role, name, jenjang_default, kelas_default FROM users WHERE id = ?`
+    ).bind(decoded.userId).first<{ id: string; email: string; tier: string; referral_bonus: number; role: string; name: string | null; jenjang_default: string | null; kelas_default: string | null }>()
 
     if (!user) {
       await c.env.DB.prepare(
@@ -91,6 +94,9 @@ export async function authMiddleware(c: Context<{ Bindings: Bindings; Variables:
       c.set('authUser', {
         userId: decoded.userId,
         email: decoded.email,
+        name: null,
+        jenjang_default: null,
+        kelas_default: null,
         tier: 'free',
         dailyLimit: 20,
         role: 'user',
@@ -104,7 +110,7 @@ export async function authMiddleware(c: Context<{ Bindings: Bindings; Variables:
         ).bind(user.id, 'trial', 'active').first<{ expires_at: string }>()
 
         if (!trialSub || new Date(trialSub.expires_at) < new Date()) {
-          // Trial expired → downgrade ke free silently
+          // Trial expired => downgrade ke free silently
           await c.env.DB.batch([
             c.env.DB.prepare('UPDATE users SET tier = ? WHERE id = ?').bind('free', user.id),
             c.env.DB.prepare('UPDATE subscriptions SET status = ? WHERE user_id = ? AND tier = ?')
@@ -121,6 +127,9 @@ export async function authMiddleware(c: Context<{ Bindings: Bindings; Variables:
       c.set('authUser', {
         userId: user.id,
         email: user.email,
+        name: user.name,
+        jenjang_default: user.jenjang_default,
+        kelas_default: user.kelas_default,
         tier: currentTier,
         dailyLimit: effectiveLimit,
         role: user.role ?? 'user',

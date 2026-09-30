@@ -27,7 +27,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/api/og?title=AI%20Yang%20Ngerti%20Pelajaran%20Kamu&category=Platform%20Edukasi',
         width: 1200,
         height: 630,
         alt: 'TugasMu Banner',

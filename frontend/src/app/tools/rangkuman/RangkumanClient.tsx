@@ -6,6 +6,8 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
+const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://api.tugasmu.com";
+
 export default function RangkumanClient() {
   const { data: session } = useSession();
   const [filter, setFilter] = useState<FilterState>({
@@ -49,7 +51,7 @@ export default function RangkumanClient() {
         }
       }
       
-      const res = await fetch('/api/tools/rangkuman', {
+      const res = await fetch(`${apiBase}/api/tools/rangkuman`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

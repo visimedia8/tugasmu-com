@@ -2,14 +2,16 @@
 const nextConfig = {
   output: 'standalone',
   async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: process.env.NODE_ENV === 'development' 
-          ? 'http://localhost:8787/api/:path*' 
-          : 'https://tugasmu-api.johananggo.workers.dev/api/:path*',
-      },
-    ]
+    return {
+      fallback: [
+        {
+          source: '/api/:path*',
+          destination: process.env.NODE_ENV === 'development' 
+            ? 'http://127.0.0.1:8787/api/:path*' 
+            : 'https://tugasmu-api.johananggo.workers.dev/api/:path*',
+        },
+      ]
+    };
   },
 };
 

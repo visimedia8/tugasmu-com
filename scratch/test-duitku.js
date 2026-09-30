@@ -19,21 +19,21 @@ const payload = {
   signature
 };
 
-console.log('Sending payload to Duitku Sandbox:', payload);
-
+console.log('Sending payload to api-sandbox.duitku.com/api/merchant/createinvoice');
 fetch('https://api-sandbox.duitku.com/api/merchant/createinvoice', {
   method: 'POST',
   headers: {
     'Accept': 'application/json',
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'User-Agent': 'Node/Fetch'
   },
   body: JSON.stringify(payload)
 })
 .then(async res => {
   const text = await res.text();
-  console.log(`Status: ${res.status}`);
-  console.log(`Body: ${text}`);
+  console.log(`Status 3: ${res.status}`);
+  console.log(`Body 3: ${text}`);
 })
 .catch(err => {
-  console.error('Error connecting to Duitku:', err);
+  console.error('Error 3:', err);
 });

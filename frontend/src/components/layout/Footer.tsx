@@ -16,7 +16,8 @@ export function Footer() {
             </div>
             <div className="flex flex-col text-xs sm:text-sm text-slate-500">
               <span>© 2026 TugasMu.com. Hak cipta dilindungi.</span>
-              <span className="mt-1 flex items-center justify-center sm:justify-start gap-1">
+              <span className="mt-1">Email: support@tugasmu.com | Telp: +62 8XX-XXXX-XXXX</span>
+              <span className="mt-2 flex items-center justify-center sm:justify-start gap-1">
                 Pembayaran aman via <strong>Duitku</strong> (QRIS, E-Wallet, VA)
               </span>
             </div>

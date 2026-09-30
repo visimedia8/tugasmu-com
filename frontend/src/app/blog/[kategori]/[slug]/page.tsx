@@ -28,6 +28,14 @@ export async function generateMetadata({ params }: Props) {
       description: post.description,
       type: 'article',
       publishedTime: post.date,
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(post.title)}&category=${encodeURIComponent(resolvedParams.kategori)}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
   };
 }

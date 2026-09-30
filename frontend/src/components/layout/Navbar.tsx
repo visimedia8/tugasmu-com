@@ -4,17 +4,25 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LogOut } from 'lucide-react';
+import { LogOut, LayoutDashboard, ReceiptText, ChevronDown } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
+import { Skeleton } from '@/components/ui/skeleton';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const { data: session } = useSession();
-  const isSignedIn = !!session;
-
-
-
+  const { data: session, status } = useSession();
+  const isSignedIn = status === 'authenticated';
+  const isLoading = status === 'loading';
 
   return (
     <header className="sticky top-0 z-50 w-full">
@@ -22,7 +30,7 @@ export function Navbar() {
       <div className="bg-brand-cream/95 backdrop-blur-md border-b border-brand-navy/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
-          {/* Logo — wordmark style */}
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
             <div className="w-8 h-8 rounded-lg bg-brand-navy flex items-center justify-center shadow-sm group-hover:bg-brand-lime transition-colors duration-300">
               <svg className="w-4 h-4 fill-brand-cream group-hover:fill-brand-navy transition-colors duration-300" viewBox="0 0 24 24">
@@ -80,22 +88,52 @@ export function Navbar() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
-            {isSignedIn ? (
+            {isLoading ? (
+              <Skeleton className="w-24 h-10 rounded-full" />
+            ) : isSignedIn ? (
               <div className="flex items-center gap-2">
-                <Link href="/akun">
-                  <img
-                    src={session?.user?.image ?? 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'}
-                    alt={session?.user?.name ?? 'User'}
-                    className="w-8 h-8 rounded-full border-2 border-brand-lime"
-                  />
-                </Link>
-                <button
-                  onClick={() => signOut({ callbackUrl: '/' })}
-                  className="p-2 rounded-full text-brand-navy/50 hover:text-red-500 transition-colors"
-                  aria-label="Keluar"
-                >
-                  <LogOut className="w-4 h-4" />
-                </button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <button className="flex items-center gap-2 hover:bg-brand-navy/5 p-1 rounded-full transition-colors focus:outline-none">
+                      <img
+                        src={session?.user?.image ?? 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'}
+                        alt={session?.user?.name ?? 'User'}
+                        className="w-8 h-8 rounded-full border-2 border-brand-lime"
+                      />
+                      <ChevronDown className="w-4 h-4 text-brand-navy/50 mr-1" />
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-56" align="end">
+                    <DropdownMenuLabel className="font-normal">
+                      <div className="flex flex-col space-y-1">
+                        <p className="text-sm font-medium leading-none">{session?.user?.name}</p>
+                        <p className="text-xs leading-none text-muted-foreground">
+                          {session?.user?.email}
+                        </p>
+                      </div>
+                    </DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem>
+                        <Link href="/akun" className="cursor-pointer">
+                          <LayoutDashboard className="mr-2 h-4 w-4" />
+                          <span>Dashboard Akun</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <Link href="/akun?tab=tagihan" className="cursor-pointer">
+                          <ReceiptText className="mr-2 h-4 w-4" />
+                          <span>Riwayat Transaksi</span>
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuGroup>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem className="text-red-600 focus:text-red-600 cursor-pointer" onClick={() => signOut({ callbackUrl: '/' })}>
+                      <LogOut className="mr-2 h-4 w-4" />
+                      <span>Keluar</span>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             ) : (
               <Link
@@ -109,7 +147,9 @@ export function Navbar() {
 
           {/* Mobile Hamburger */}
           <div className="flex md:hidden items-center gap-3">
-            {isSignedIn && (
+            {isLoading ? (
+              <Skeleton className="w-8 h-8 rounded-full" />
+            ) : isSignedIn && (
               <Link href="/akun">
                 <img
                   src={session?.user?.image ?? 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'}
@@ -185,7 +225,10 @@ export function Navbar() {
               </Link>
             ) : (
               <button
-                onClick={() => signOut({ callbackUrl: '/' })}
+                onClick={() => {
+                  signOut({ callbackUrl: '/' });
+                  setIsMobileMenuOpen(false);
+                }}
                 className="block w-full py-3 rounded-xl border border-red-200 hover:bg-red-50 text-red-600 font-semibold text-center transition-all"
               >
                 Keluar

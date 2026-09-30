@@ -31,7 +31,7 @@ export default function MasukPage() {
           <button
             onClick={handleGoogleLogin}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-3 bg-white border border-slate-300 text-slate-700 font-semibold py-3 px-4 rounded-xl hover:bg-slate-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
+            className="w-full flex items-center justify-center gap-3 bg-white border border-slate-300 text-slate-700 font-semibold py-3 px-4 rounded-xl hover:bg-slate-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm mb-3"
           >
             {loading ? (
               <div className="w-5 h-5 border-2 border-slate-400 border-t-transparent rounded-full animate-spin"></div>
@@ -57,6 +57,43 @@ export default function MasukPage() {
             )}
             {loading ? 'Menyiapkan...' : 'Lanjutkan dengan Google'}
           </button>
+
+          <div className="relative flex items-center py-4">
+            <div className="flex-grow border-t border-slate-200"></div>
+            <span className="flex-shrink-0 mx-4 text-slate-400 text-xs">Atau</span>
+            <div className="flex-grow border-t border-slate-200"></div>
+          </div>
+
+          <form onSubmit={async (e) => {
+            e.preventDefault();
+            setLoading(true);
+            const formData = new FormData(e.currentTarget);
+            const email = formData.get('email') as string;
+            const password = formData.get('password') as string;
+            
+            const res = await signIn('credentials', { email, password, redirect: false });
+            if (res?.error) {
+              alert("Email atau password salah");
+              setLoading(false);
+            } else {
+              window.location.href = '/tools';
+            }
+          }} className="flex flex-col gap-3">
+            <input type="email" name="email" placeholder="Email" required className="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
+            <input type="password" name="password" placeholder="Password" required className="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
+            
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full flex items-center justify-center gap-3 bg-slate-900 border border-slate-900 text-white font-semibold py-3 px-4 rounded-xl hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
+            >
+              Masuk dengan Email
+            </button>
+          </form>
+          
+          <div className="mt-4 text-center text-sm text-slate-500">
+            Belum punya akun? <a href="/daftar" className="text-sky-600 font-semibold hover:underline">Daftar di sini</a>
+          </div>
         </div>
 
         <p className="text-xs text-slate-400 text-center mt-4">

@@ -1,13 +1,29 @@
 import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
 
-export const dynamic = 'force-dynamic';
 
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    const title = searchParams.get('title') || 'TugasMu - AI Tools Edukasi';
-    const subtitle = searchParams.get('subtitle') || 'Teman Pintar Belajarmu';
+
+    // Dynamic params
+    const hasTitle = searchParams.has('title');
+    const title = hasTitle
+      ? searchParams.get('title')?.slice(0, 100)
+      : 'Teman Pintar Belajarmu';
+      
+    const hasCategory = searchParams.has('category');
+    let category = 'TUGASMU BLOG';
+    if (hasCategory) {
+      const rawCategory = searchParams.get('category');
+      if (rawCategory && rawCategory !== 'undefined') {
+        category = rawCategory
+          .split('-')
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+      }
+    }
+
     return new ImageResponse(
       (
         <div
@@ -18,62 +34,130 @@ export async function GET(req: NextRequest) {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: '#f8fafc',
-            backgroundImage: 'radial-gradient(circle at 25px 25px, #e2e8f0 2%, transparent 0%), radial-gradient(circle at 75px 75px, #e2e8f0 2%, transparent 0%)',
-            backgroundSize: '100px 100px',
-            padding: '40px',
-            fontFamily: 'sans-serif',
+            backgroundColor: '#0f1f3d',
+            position: 'relative',
+            overflow: 'hidden',
           }}
         >
+          {/* Noise overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\' opacity=\'0.04\'/%3E%3C/svg%3E")',
+              backgroundRepeat: 'repeat',
+            }}
+          />
+
+          {/* Accent decoration 1 (Lime) */}
+          <div
+            style={{
+              position: 'absolute',
+              top: -150,
+              right: -100,
+              width: 500,
+              height: 500,
+              backgroundColor: '#b8ff57',
+              filter: 'blur(120px)',
+              opacity: 0.25,
+              borderRadius: '50%',
+            }}
+          />
+          
+          {/* Accent decoration 2 (Sky) */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: -150,
+              left: -100,
+              width: 600,
+              height: 600,
+              backgroundColor: '#0ea5e9',
+              filter: 'blur(140px)',
+              opacity: 0.35,
+              borderRadius: '50%',
+            }}
+          />
+
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center',
+              alignItems: 'flex-start',
               justifyContent: 'center',
-              backgroundColor: 'white',
-              borderRadius: '24px',
-              padding: '60px 80px',
-              boxShadow: '0 10px 40px -10px rgba(0,0,0,0.1)',
-              border: '2px solid #f1f5f9',
+              width: '85%',
+              padding: '40px',
+              zIndex: 10,
             }}
           >
+            {/* Category Badge */}
             <div
               style={{
-                fontSize: 32,
-                fontWeight: 800,
-                color: '#0284c7', // sky-600
-                marginBottom: 24,
-                letterSpacing: '-0.05em',
+                display: 'flex',
+                alignItems: 'center',
+                backgroundColor: '#b8ff57',
+                padding: '8px 24px',
+                borderRadius: '9999px',
+                marginBottom: '32px',
               }}
             >
-              TugasMu
+              <span
+                style={{
+                  fontSize: '24px',
+                  fontWeight: 700,
+                  color: '#0f1f3d',
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                {category}
+              </span>
             </div>
+
+            {/* Main Title */}
             <div
               style={{
-                fontSize: 64,
+                fontSize: '64px',
                 fontWeight: 900,
-                color: '#0f172a', // slate-900
-                textAlign: 'center',
-                lineHeight: 1.1,
-                marginBottom: 24,
-                maxWidth: 800,
+                color: '#f7f3ec',
+                lineHeight: 1.3,
+                marginBottom: '40px',
                 letterSpacing: '-0.02em',
               }}
             >
               {title}
             </div>
+
+            {/* Bottom Brand Watermark */}
             <div
               style={{
-                fontSize: 32,
-                fontWeight: 500,
-                color: '#64748b', // slate-500
-                textAlign: 'center',
-                maxWidth: 700,
-                lineHeight: 1.4,
+                display: 'flex',
+                alignItems: 'center',
+                marginTop: 'auto',
+                position: 'absolute',
+                bottom: '80px',
               }}
             >
-              {subtitle}
+              <div
+                style={{
+                  fontSize: '36px',
+                  fontWeight: 800,
+                  color: '#b8ff57',
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                TugasMu
+              </div>
+              <div
+                style={{
+                  fontSize: '36px',
+                  fontWeight: 400,
+                  color: '#f7f3ec',
+                  marginLeft: '12px',
+                }}
+              >
+                — Teman Pintar Belajarmu
+              </div>
             </div>
           </div>
         </div>
@@ -83,8 +167,10 @@ export async function GET(req: NextRequest) {
         height: 630,
       }
     );
-  } catch (e: unknown) {
-    console.error(e);
-    return new Response('Failed to generate image', { status: 500 });
+  } catch (error) {
+    console.error(error);
+    return new Response(`Failed to generate the image`, {
+      status: 500,
+    });
   }
 }

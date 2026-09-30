@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
+const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://api.tugasmu.com";
+
 export default function PricingClient() {
   const { data: session } = useSession();
   const isSignedIn = !!session;
@@ -29,7 +31,7 @@ export default function PricingClient() {
       }
 
       // 2. Buat transaksi Duitku di Backend
-      const res = await fetch('/api/payment/create-transaction', {
+      const res = await fetch(`${apiBase}/api/payment/create-transaction`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
