@@ -75,6 +75,10 @@ export default function MathSolverPseoPage({ params }: PageProps) {
 
       <MathSolverClient initialSoal={data.initialPrompt} />
 
+      {/* Teks Unik untuk mencegah Thin Content (SEO) */}
+      <div className="mt-12 prose prose-slate max-w-none prose-h2:text-2xl prose-h2:text-slate-800 prose-p:text-slate-600 prose-strong:text-slate-800"
+           dangerouslySetInnerHTML={{ __html: data.explanation }} />
+
       <RelatedTools toolIds={["generator-soal","rangkuman","simulasi-utbk"]} />
 
       <FAQAccordion

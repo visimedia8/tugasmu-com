@@ -72,6 +72,10 @@ export default function GrammarEydPseoPage({ params }: PageProps) {
 
       <GrammarEYDClient initialTeks={data.initialPrompt} />
 
+      {/* Teks Unik untuk mencegah Thin Content (SEO) */}
+      <div className="mt-12 prose prose-slate max-w-none prose-h2:text-2xl prose-h2:text-slate-800 prose-p:text-slate-600 prose-strong:text-slate-800"
+           dangerouslySetInnerHTML={{ __html: data.explanation }} />
+
       <RelatedTools toolIds={["parafrase","laporan-pkl","cerita-pendek"]} />
 
       <FAQAccordion

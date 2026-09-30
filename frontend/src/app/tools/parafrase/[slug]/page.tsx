@@ -72,6 +72,10 @@ export default function ParafrasePseoPage({ params }: PageProps) {
 
       <ParafraseClient initialInputText={data.initialPrompt} />
 
+      {/* Teks Unik untuk mencegah Thin Content (SEO) */}
+      <div className="mt-12 prose prose-slate max-w-none prose-h2:text-2xl prose-h2:text-slate-800 prose-p:text-slate-600 prose-strong:text-slate-800"
+           dangerouslySetInnerHTML={{ __html: data.explanation }} />
+
       <div className="max-w-4xl mt-16">
         <RelatedTools toolIds={["grammar-eyd", "rangkuman", "makalah-builder"]} />
 
