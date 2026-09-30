@@ -6,7 +6,11 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function MathSolverClient() {
+interface MathSolverClientProps {
+  initialSoal?: string;
+}
+
+export default function MathSolverClient({ initialSoal = '' }: MathSolverClientProps = {}) {
   const { data: session } = useSession();
   const [filter, setFilter] = useState<FilterState>({
     jenjang: '',
@@ -15,7 +19,7 @@ export default function MathSolverClient() {
     mata_pelajaran: '',
   });
 
-  const [soal, setSoal] = useState('');
+  const [soal, setSoal] = useState(initialSoal);
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');
   const [error, setError] = useState('');

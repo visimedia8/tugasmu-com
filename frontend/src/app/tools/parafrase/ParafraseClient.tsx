@@ -8,7 +8,11 @@ import { useSession } from 'next-auth/react';
 
 const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://api.tugasmu.com";
 
-export default function ParafraseClient() {
+interface ParafraseClientProps {
+  initialInputText?: string;
+}
+
+export default function ParafraseClient({ initialInputText = '' }: ParafraseClientProps = {}) {
   const { data: session } = useSession();
   const [filter, setFilter] = useState<FilterState>({
     jenjang: '',
@@ -17,7 +21,7 @@ export default function ParafraseClient() {
     mata_pelajaran: '',
   });
   
-  const [inputText, setInputText] = useState('');
+  const [inputText, setInputText] = useState(initialInputText);
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');
   const [error, setError] = useState('');
