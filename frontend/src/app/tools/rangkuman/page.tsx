@@ -2,6 +2,7 @@ import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import RangkumanClient from './RangkumanClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
   title: 'Buat Rangkuman Otomatis',
@@ -26,6 +27,7 @@ export default function RangkumanPage() {
   };
   return (
     <div className="container py-8 md:py-12 max-w-4xl">
+      <ToolSchema toolId="rangkuman" />
       <SchemaMarkup schema={schema} />
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">

@@ -5,6 +5,7 @@ import GrammarCheckerClient from './GrammarCheckerClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { BookOpen, CheckCircle } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
+import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
   title: 'Korektor Grammar & Essay Bahasa Inggris - Pengecekan AI Otomatis',
@@ -29,6 +30,7 @@ export default function GrammarCheckerPage() {
   };
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
+      <ToolSchema toolId="grammar-checker" />
       <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">

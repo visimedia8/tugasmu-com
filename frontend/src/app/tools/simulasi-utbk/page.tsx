@@ -3,6 +3,7 @@ import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import SimulasiUTBKClient from './SimulasiUTBKClient';
 import { School, CheckCircle } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
+import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
   title: 'Simulasi Soal UTBK SNBT - Penalaran & Literasi',
@@ -27,6 +28,7 @@ export default function SimulasiUTBKPage() {
   };
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
+      <ToolSchema toolId="simulasi-utbk" />
       <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">

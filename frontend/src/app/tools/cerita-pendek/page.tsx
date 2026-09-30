@@ -3,6 +3,7 @@ import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import CeritaPendekClient from './CeritaPendekClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
   title: 'Pembuat Cerita Pendek & Pengalaman Pribadi (Anak SD/SMP)',
@@ -34,6 +35,7 @@ export default function CeritaPendekPage() {
   
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
+      <ToolSchema toolId="cerita-pendek" />
       <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">

@@ -3,6 +3,7 @@ import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import PenjelasHaditsClient from './PenjelasHaditsClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
   title: 'Penjelas Derajat dan Makna Hadits (Syarah)',
@@ -34,6 +35,7 @@ export default function PenjelasHaditsPage() {
   
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
+      <ToolSchema toolId="penjelas-hadits" />
       <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">

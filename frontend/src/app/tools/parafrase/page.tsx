@@ -3,6 +3,7 @@ import ParafraseClient from './ParafraseClient';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
   title: 'Tool Parafrase Teks AI Gratis',
@@ -60,6 +61,7 @@ export default function ParafrasePage() {
 
   return (
     <div className="w-full bg-surface min-h-screen">
+      <ToolSchema toolId="parafrase" />
       <SchemaMarkup schema={schema} />
       <SchemaMarkup schema={faqSchema} />
       
