@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { PSEO_DATA } from '@/lib/seo/pseo-data';
-import GrammarEYDClient from '../GrammarEydClient';
+import GrammarEYDClient from '../GrammarEYDClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 import ToolSchema from '@/components/seo/ToolSchema';
