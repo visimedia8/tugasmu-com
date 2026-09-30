@@ -52,9 +52,9 @@ ACTIVE_CLUSTERS:
   - /blog/ujian              (5 artikel live)
 
 GAPS:
-  - INTERNAL SILO LINKS: 0% artikel punya link ke Category Hub (/blog/[kategori]/) → WAJIB diperbaiki
-  - SIBLING ARTICLE LINKS: 0% artikel punya link ke artikel saudaranya → WAJIB diperbaiki
-  - TONE VIOLATION (30 artikel): Gaya bahasa terlalu akademis/tesis, belum sesuai Persona "Kakak Kelas"
+  - INTERNAL SILO LINKS: FIXED (Silo link added via UI template)
+  - SIBLING ARTICLE LINKS: FIXED (Related articles added via UI template)
+  - TONE VIOLATION (35 artikel): FIXED (Semua artikel sudah di-rewrite dengan Persona Kakak Kelas)
   - KAMUS/GLOSARIUM: Belum ada (Fase 2, planned)
   - KLASTER MISSING: /blog/sejarah/, /blog/ipa/, /blog/ppkn/ belum ada artikel
 

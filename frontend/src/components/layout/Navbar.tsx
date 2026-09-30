@@ -55,6 +55,17 @@ export function Navbar() {
               Semua Tools
             </Link>
             
+            <Link
+              href="/kamus"
+              className={`relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
+                pathname.startsWith('/kamus')
+                  ? 'text-brand-navy bg-brand-lime'
+                  : 'text-brand-navy/70 hover:text-brand-navy hover:bg-brand-navy/5'
+              }`}
+            >
+              Kamus
+            </Link>
+            
             <div className="relative group">
               <button className="relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 text-brand-navy/70 hover:text-brand-navy hover:bg-brand-navy/5 flex items-center gap-1">
                 Kategori
@@ -184,7 +195,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-brand-cream border-b border-brand-navy/10 px-4 pt-2 pb-6 space-y-1 shadow-lg h-[80vh] overflow-y-auto">
-          <div className="font-bold text-xs text-brand-navy/50 uppercase tracking-wider px-4 py-2">Navigasi Utama</div>
+          <div className="font-bold text-xs text-brand-navy/50 uppercase tracking-wider px-4 py-2 mt-4">Navigasi Utama</div>
           <Link
             href="/tools"
             onClick={() => setIsMobileMenuOpen(false)}
@@ -195,6 +206,18 @@ export function Navbar() {
             }`}
           >
             Semua Tools
+          </Link>
+
+          <Link
+            href="/kamus"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`block px-4 py-3 rounded-xl font-semibold transition-colors ${
+              pathname.startsWith('/kamus')
+                ? 'bg-brand-lime text-brand-navy'
+                : 'text-brand-navy/70 hover:text-brand-navy hover:bg-brand-navy/5'
+            }`}
+          >
+            Kamus Glosarium
           </Link>
 
           <div className="font-bold text-xs text-brand-navy/50 uppercase tracking-wider px-4 pt-4 pb-2">Kategori Tools</div>
