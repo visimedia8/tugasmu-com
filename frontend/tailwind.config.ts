@@ -8,6 +8,14 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem', // px-4
+        sm: '1.5rem',    // sm:px-6
+        lg: '2rem',      // lg:px-8
+      },
+    },
     extend: {
       fontFamily: {
         // New unique fonts
