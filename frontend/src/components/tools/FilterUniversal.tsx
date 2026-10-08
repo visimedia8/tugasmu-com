@@ -39,21 +39,21 @@ export default function FilterUniversal({ value, onChange, disabled = false }: F
   }
 
   return (
-    <div className="space-y-space-md mb-6">
+    <div className="space-y-5 mb-6">
       {/* Jenjang Pendidikan */}
-      <div className="space-y-space-xs">
-        <label className="block font-label-md text-label-md text-on-surface">Jenjang Pendidikan</label>
-        <div className="grid grid-cols-4 gap-1.5 bg-surface-container-low p-1 rounded-xl">
+      <div>
+        <label className="block text-sm font-semibold text-slate-800 mb-2">Jenjang Pendidikan</label>
+        <div className="flex flex-wrap gap-1.5 bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/60">
           {Object.keys(JENJANG_KELAS_MAP).map((j) => (
             <button
               key={j}
               type="button"
               disabled={disabled}
               onClick={() => handleJenjangChange(j as FilterState['jenjang'])}
-              className={`py-1.5 rounded-lg text-center font-label-sm text-label-sm transition-colors ${
+              className={`flex-1 min-w-[70px] py-2 px-3 rounded-xl text-center text-sm transition-all duration-200 ${
                 value.jenjang === j 
-                  ? 'bg-primary-container text-on-primary font-bold shadow-sm'
-                  : 'text-on-surface-variant hover:text-on-surface'
+                  ? 'bg-brand-navy text-white font-semibold shadow-md'
+                  : 'text-slate-600 font-medium hover:bg-slate-200/50 hover:text-slate-900'
               }`}
             >
               {j.toUpperCase()}
@@ -62,13 +62,13 @@ export default function FilterUniversal({ value, onChange, disabled = false }: F
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Kelas */}
-        <div className="space-y-space-xs">
-          <label className="block font-label-md text-label-md text-on-surface">Kelas</label>
+        <div>
+          <label className="block text-sm font-semibold text-slate-800 mb-2">Kelas</label>
           <div className="relative">
             <select 
-              className="w-full h-11 px-3.5 pr-10 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container outline-none transition-all appearance-none disabled:opacity-50"
+              className="w-full h-12 px-4 pr-10 rounded-xl bg-white border border-slate-200 text-slate-800 text-sm font-medium focus:border-brand-navy focus:ring-4 focus:ring-brand-navy/10 outline-none transition-all appearance-none disabled:opacity-50 disabled:bg-slate-50 cursor-pointer"
               value={value.kelas}
               onChange={(e) => onChange({ ...value, kelas: e.target.value, mata_pelajaran: '' })}
               disabled={disabled || !value.jenjang}
@@ -79,16 +79,16 @@ export default function FilterUniversal({ value, onChange, disabled = false }: F
                 <option key={k} value={k}>Kelas {k}</option>
               ))}
             </select>
-            <span className="material-symbols-outlined pointer-events-none absolute right-3 top-2.5 text-on-surface-variant text-[20px]">expand_more</span>
+            <span className="material-symbols-outlined pointer-events-none absolute right-3 top-3 text-slate-400 text-[20px]">expand_more</span>
           </div>
         </div>
 
         {/* Mata Pelajaran */}
-        <div className="space-y-space-xs">
-          <label className="block font-label-md text-label-md text-on-surface">Mata Pelajaran</label>
+        <div>
+          <label className="block text-sm font-semibold text-slate-800 mb-2">Mata Pelajaran</label>
           <div className="relative">
             <select 
-              className="w-full h-11 px-3.5 pr-10 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container outline-none transition-all appearance-none disabled:opacity-50"
+              className="w-full h-12 px-4 pr-10 rounded-xl bg-white border border-slate-200 text-slate-800 text-sm font-medium focus:border-brand-navy focus:ring-4 focus:ring-brand-navy/10 outline-none transition-all appearance-none disabled:opacity-50 disabled:bg-slate-50 cursor-pointer"
               value={value.mata_pelajaran}
               onChange={(e) => onChange({ ...value, mata_pelajaran: e.target.value })}
               disabled={disabled || !value.jenjang}
@@ -99,16 +99,16 @@ export default function FilterUniversal({ value, onChange, disabled = false }: F
                 <option key={m} value={m}>{m}</option>
               ))}
             </select>
-            <span className="material-symbols-outlined pointer-events-none absolute right-3 top-2.5 text-on-surface-variant text-[20px]">expand_more</span>
+            <span className="material-symbols-outlined pointer-events-none absolute right-3 top-3 text-slate-400 text-[20px]">expand_more</span>
           </div>
         </div>
       </div>
       
       {/* Kurikulum */}
-      <div className="space-y-space-xs">
-        <label className="block font-label-md text-label-md text-on-surface">Kurikulum</label>
-        <div className="flex gap-2">
-          <label className="flex items-center gap-2 p-2 px-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors flex-1">
+      <div>
+        <label className="block text-sm font-semibold text-slate-800 mb-2">Kurikulum</label>
+        <div className="flex gap-3">
+          <label className={`flex items-center gap-3 p-3 px-4 rounded-xl cursor-pointer transition-all flex-1 border ${value.kurikulum === 'merdeka' ? 'bg-brand-navy/5 border-brand-navy/30' : 'bg-white border-slate-200 hover:border-slate-300'}`}>
             <input 
               type="radio" 
               name="kurikulum" 
@@ -116,11 +116,11 @@ export default function FilterUniversal({ value, onChange, disabled = false }: F
               checked={value.kurikulum === 'merdeka'}
               onChange={() => onChange({ ...value, kurikulum: 'merdeka' })}
               disabled={disabled}
-              className="w-4 h-4 accent-primary-container cursor-pointer"
+              className="w-4 h-4 text-brand-navy focus:ring-brand-navy border-slate-300"
             />
-            <span className="font-label-sm text-label-sm text-on-surface">Merdeka</span>
+            <span className={`text-sm font-medium ${value.kurikulum === 'merdeka' ? 'text-brand-navy' : 'text-slate-700'}`}>Merdeka</span>
           </label>
-          <label className="flex items-center gap-2 p-2 px-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors flex-1">
+          <label className={`flex items-center gap-3 p-3 px-4 rounded-xl cursor-pointer transition-all flex-1 border ${value.kurikulum === 'k13' ? 'bg-brand-navy/5 border-brand-navy/30' : 'bg-white border-slate-200 hover:border-slate-300'}`}>
             <input 
               type="radio" 
               name="kurikulum" 
@@ -128,9 +128,9 @@ export default function FilterUniversal({ value, onChange, disabled = false }: F
               checked={value.kurikulum === 'k13'}
               onChange={() => onChange({ ...value, kurikulum: 'k13' })}
               disabled={disabled}
-              className="w-4 h-4 accent-primary-container cursor-pointer"
+              className="w-4 h-4 text-brand-navy focus:ring-brand-navy border-slate-300"
             />
-            <span className="font-label-sm text-label-sm text-on-surface">2013 (K13)</span>
+            <span className={`text-sm font-medium ${value.kurikulum === 'k13' ? 'text-brand-navy' : 'text-slate-700'}`}>2013 (K13)</span>
           </label>
         </div>
       </div>
