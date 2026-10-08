@@ -66,19 +66,19 @@ export default function HasilOutput({ hasil, onRegenerate, isGenerating = false 
   return (
     <>
       {/* Output Header & Controls Bar */}
-      <div className="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-wrap items-center justify-between gap-space-sm border border-slate-100">
-        <div className="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl">
-          <button className="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm transition-colors flex items-center gap-1.5">
-            <span className="material-symbols-outlined text-[16px]">school</span>
+      <div className="bg-white rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-3 border border-slate-200">
+        <div className="flex items-center gap-1 bg-slate-50 p-1.5 rounded-xl border border-slate-100">
+          <button className="px-4 py-1.5 rounded-lg bg-white text-slate-800 font-semibold text-sm shadow-sm flex items-center gap-2">
+            <span className="material-symbols-outlined text-[18px] text-brand-sky">school</span>
             <span>Hasil Akhir</span>
           </button>
         </div>
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-2">
           {onRegenerate && (
             <button 
               onClick={onRegenerate}
               disabled={isGenerating}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold transition-all disabled:opacity-50"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-all disabled:opacity-50"
               title="Buat Ulang"
             >
               <span className="material-symbols-outlined text-[18px]">refresh</span>
@@ -88,23 +88,23 @@ export default function HasilOutput({ hasil, onRegenerate, isGenerating = false 
           <button 
             onClick={handleShare}
             disabled={isGenerating || !hasil || isSharing}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold transition-all disabled:opacity-50"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-all disabled:opacity-50"
             title="Bagikan"
           >
             {isSharing ? (
-              <div className="w-4 h-4 border-2 border-surface-variant border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-4 h-4 border-2 border-slate-400 border-t-transparent rounded-full animate-spin"></div>
             ) : (
-              <span className="material-symbols-outlined text-[16px]">share</span>
+              <span className="material-symbols-outlined text-[18px]">share</span>
             )}
             <span className="hidden sm:inline">Bagikan</span>
           </button>
           <button 
             onClick={handleCopy}
             disabled={isGenerating || !hasil}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-secondary-container text-on-secondary-container hover:opacity-90 font-label-sm text-label-sm font-semibold transition-all disabled:opacity-50"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-navy hover:bg-slate-800 text-white font-semibold text-sm transition-all shadow-sm disabled:opacity-50"
             title="Salin Teks"
           >
-            <span className="material-symbols-outlined text-[16px]">
+            <span className="material-symbols-outlined text-[18px]">
               {copied ? 'check_circle' : 'content_copy'}
             </span>
             <span className="hidden sm:inline">{copied ? 'Tersalin' : 'Salin Teks'}</span>
@@ -113,10 +113,10 @@ export default function HasilOutput({ hasil, onRegenerate, isGenerating = false 
       </div>
 
       {shareUrl && (
-        <div className="mt-2 p-3 bg-sky-50 rounded-xl flex items-center justify-between gap-3 border border-sky-100 shadow-sm animate-in fade-in slide-in-from-top-2">
+        <div className="mt-3 p-4 bg-sky-50 rounded-xl flex items-center justify-between gap-3 border border-sky-100 shadow-sm animate-in fade-in slide-in-from-top-2">
           <div className="flex flex-col overflow-hidden">
-            <span className="text-xs font-semibold text-sky-800">Link Berhasil Dibuat</span>
-            <span className="text-xs text-sky-600 truncate">{shareUrl}</span>
+            <span className="text-sm font-semibold text-sky-900">Link Berhasil Dibuat</span>
+            <span className="text-sm text-sky-600 truncate">{shareUrl}</span>
           </div>
           <div className="flex gap-2 shrink-0">
             <button 
@@ -124,7 +124,7 @@ export default function HasilOutput({ hasil, onRegenerate, isGenerating = false 
                 navigator.clipboard.writeText(shareUrl)
                 alert('Link disalin!')
               }} 
-              className="px-3 py-1.5 bg-white border border-sky-200 rounded-lg text-xs text-sky-700 font-semibold hover:bg-sky-50 transition-colors"
+              className="px-4 py-2 bg-white border border-sky-200 rounded-lg text-sm text-sky-700 font-semibold hover:bg-sky-50 transition-colors shadow-sm"
             >
               Copy
             </button>
@@ -132,7 +132,7 @@ export default function HasilOutput({ hasil, onRegenerate, isGenerating = false 
               href={`https://wa.me/?text=Aku%20baru%20bikin%20tugas%20pakai%20TugasMu%20AI,%20hasilnya%20keren%20banget!%20Lihat%20deh:%20${shareUrl}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 bg-green-500 text-white rounded-lg text-xs font-semibold hover:bg-green-600 transition-colors flex items-center gap-1"
+              className="px-4 py-2 bg-emerald-500 text-white rounded-lg text-sm font-semibold hover:bg-emerald-600 transition-colors shadow-sm flex items-center gap-2"
             >
               WhatsApp
             </a>
@@ -141,32 +141,32 @@ export default function HasilOutput({ hasil, onRegenerate, isGenerating = false 
       )}
 
       {/* Output Content Card */}
-      <div className="bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl shadow-sm space-y-space-md relative min-h-[300px] border border-slate-100">
+      <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 relative min-h-[300px]">
         {isGenerating ? (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-surface-container-lowest/80 backdrop-blur-sm z-10 rounded-2xl">
-            <div className="w-10 h-10 border-4 border-primary-container border-t-primary rounded-full animate-spin mb-4"></div>
-            <p className="font-label-md text-label-md text-on-surface animate-pulse">TugasMu sedang memproses...</p>
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm z-10 rounded-3xl">
+            <div className="w-12 h-12 border-4 border-slate-100 border-t-brand-sky rounded-full animate-spin mb-4"></div>
+            <p className="font-semibold text-slate-700 animate-pulse">TugasMu sedang memproses...</p>
           </div>
         ) : null}
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm">Output AI</span>
+            <span className="px-3 py-1 rounded-full bg-brand-sky/10 text-brand-sky font-semibold text-xs uppercase tracking-wider">Output AI</span>
           </div>
         </div>
         
-        <div className="prose prose-slate max-w-none whitespace-pre-wrap font-body-md text-body-md text-on-surface leading-relaxed">
+        <div className="prose prose-slate max-w-none whitespace-pre-wrap text-base text-slate-700 leading-relaxed">
           {hasil}
         </div>
 
         {hasil && !isGenerating && (
-          <div className="mt-8 bg-tertiary-fixed/30 rounded-xl p-space-md flex gap-space-sm items-start">
-            <div className="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
-              <span className="material-symbols-outlined text-[18px]">lightbulb</span>
+          <div className="mt-10 bg-amber-50 rounded-2xl p-5 flex gap-4 items-start border border-amber-100">
+            <div className="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center shrink-0">
+              <span className="material-symbols-outlined text-[20px]">lightbulb</span>
             </div>
-            <div className="space-y-0.5">
-              <div className="font-label-md text-label-md text-on-tertiary-fixed font-bold">Tips Anti-Terkecoh dari Kakak Tutor</div>
-              <p className="font-body-sm text-body-sm text-on-tertiary-fixed-variant">
+            <div className="space-y-1">
+              <div className="text-base text-amber-900 font-bold">Tips Anti-Terkecoh dari Kakak Tutor</div>
+              <p className="text-sm text-amber-800/80 leading-relaxed">
                 Pastikan untuk membaca ulang hasil dari AI sebelum menyalinnya ke buku tugasmu agar bahasanya benar-benar sesuai dengan gaya penulisanmu sehari-hari.
               </p>
             </div>

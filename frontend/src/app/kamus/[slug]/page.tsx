@@ -1,3 +1,6 @@
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+
 import { notFound } from 'next/navigation';
 import { getKamusBySlug, getKamusSlugs } from '@/lib/kamus';
 import { MDXRemote } from 'next-mdx-remote/rsc';

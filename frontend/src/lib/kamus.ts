@@ -15,7 +15,6 @@ export type KamusEntry = {
 
 export function getKamusSlugs() {
   if (!fs.existsSync(kamusDirectory)) {
-    fs.mkdirSync(kamusDirectory, { recursive: true });
     return [];
   }
   return fs.readdirSync(kamusDirectory).filter((file) => file.endsWith('.mdx'));

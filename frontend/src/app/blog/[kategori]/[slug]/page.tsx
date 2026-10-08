@@ -1,3 +1,4 @@
+export const dynamicParams = false;
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getPostSlugs, getAllCategories, getAllPosts } from '@/lib/mdx';
 import { MDXRemote } from 'next-mdx-remote/rsc';
