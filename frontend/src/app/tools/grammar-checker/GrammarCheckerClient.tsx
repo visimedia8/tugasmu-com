@@ -86,33 +86,34 @@ export default function GrammarCheckerClient() {
   };
 
   return (
-    <form onSubmit={handleGenerate} className="space-y-6">
-      <FilterUniversal value={filter} onChange={setFilter} disabled={isGenerating} />
+    <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 mb-12">
+      <form onSubmit={handleGenerate} className="space-y-6">
+        <FilterUniversal value={filter} onChange={setFilter} disabled={isGenerating} />
 
-      <div className="space-y-2">
-        <label className="block font-label-md text-label-md text-on-surface">Teks Bahasa Inggris</label>
-        <textarea
-          value={teks}
-          onChange={(e) => setTeks(e.target.value)}
+        <div>
+          <label className="block text-sm font-semibold text-slate-800 mb-2">Teks Bahasa Inggris</label>
+          <textarea
+            value={teks}
+            onChange={(e) => setTeks(e.target.value)}
+            disabled={isGenerating}
+            rows={8}
+            placeholder="Paste essay atau tulisan bahasa Inggris kamu di sini..."
+            className="w-full px-4 py-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:bg-white focus:border-brand-navy focus:ring-4 focus:ring-brand-navy/10 outline-none transition-all resize-none disabled:opacity-50"
+          />
+        </div>
+
+        {error && (
+          <p className="text-rose-600 text-sm font-medium bg-rose-50 border border-rose-100 px-4 py-3 rounded-xl">{error}</p>
+        )}
+
+        <button
+          type="submit"
           disabled={isGenerating}
-          rows={8}
-          placeholder="Paste essay atau tulisan bahasa Inggris kamu di sini..."
-          className="w-full px-3.5 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container outline-none transition-all resize-none disabled:opacity-50"
-        />
-      </div>
-
-      {error && (
-        <p className="text-error font-body-sm text-body-sm bg-error-container px-4 py-2 rounded-xl">{error}</p>
-      )}
-
-      <button
-        type="submit"
-        disabled={isGenerating}
-        className="w-full h-12 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all shadow-sm disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-      >
-        {isGenerating ? (
-          <>
-            <span className="material-symbols-outlined animate-spin text-[20px]">progress_activity</span>
+          className="w-full h-14 rounded-2xl bg-brand-navy hover:bg-slate-800 text-white font-semibold text-base transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        >
+          {isGenerating ? (
+            <>
+              <span className="material-symbols-outlined animate-spin text-[20px]">progress_activity</span>
             <span>Memeriksa Grammar...</span>
           </>
         ) : (
@@ -128,6 +129,7 @@ export default function GrammarCheckerClient() {
       {showLimitModal && (
         <UsageLimitModal isOpen={showLimitModal} onClose={() => setShowLimitModal(false)} />
       )}
-    </form>
+      </form>
+    </div>
   );
 }

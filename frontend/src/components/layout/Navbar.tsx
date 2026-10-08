@@ -3,7 +3,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { LogOut, LayoutDashboard, ReceiptText, ChevronDown } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -19,7 +18,6 @@ import {
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
   const { data: session, status } = useSession();
   const isSignedIn = status === 'authenticated';
   const isLoading = status === 'loading';

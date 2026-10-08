@@ -1,3 +1,4 @@
+
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { PSEO_DATA } from '@/lib/seo/pseo-data';

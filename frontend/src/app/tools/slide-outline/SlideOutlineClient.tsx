@@ -79,10 +79,11 @@ export default function SlideOutlineClient() {
   };
 
   return (
-    <form onSubmit={handleGenerate} className="space-y-6">
+    <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 mb-12">
+      <form onSubmit={handleGenerate} className="space-y-6">
       <div className="space-y-4">
         <div className="space-y-2">
-          <label className="block font-label-md text-label-md text-on-surface">Topik Presentasi</label>
+          <label className="block text-sm font-semibold text-slate-800 mb-2">Topik Presentasi</label>
           <input
             type="text"
             value={topik}
@@ -95,7 +96,7 @@ export default function SlideOutlineClient() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <label className="block font-label-md text-label-md text-on-surface">Jumlah Slide</label>
+            <label className="block text-sm font-semibold text-slate-800 mb-2">Jumlah Slide</label>
             <select
               value={jumlahSlide}
               onChange={(e) => setJumlahSlide(e.target.value)}
@@ -109,7 +110,7 @@ export default function SlideOutlineClient() {
             </select>
           </div>
           <div className="space-y-2">
-            <label className="block font-label-md text-label-md text-on-surface">Target Audiens</label>
+            <label className="block text-sm font-semibold text-slate-800 mb-2">Target Audiens</label>
             <select
               value={audiens}
               onChange={(e) => setAudiens(e.target.value)}
@@ -131,7 +132,7 @@ export default function SlideOutlineClient() {
       <button
         type="submit"
         disabled={isGenerating}
-        className="w-full h-12 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all shadow-sm disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full h-14 rounded-2xl bg-brand-navy hover:bg-slate-800 text-white font-semibold text-base transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {isGenerating ? (
           <>
@@ -152,5 +153,6 @@ export default function SlideOutlineClient() {
         <UsageLimitModal isOpen={showLimitModal} onClose={() => setShowLimitModal(false)} />
       )}
     </form>
+    </div>
   );
 }

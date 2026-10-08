@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import SlideOutlineClient from './SlideOutlineClient';
-import { Presentation, CheckCircle } from 'lucide-react';
+import { Presentation, CheckCircle , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -38,6 +38,23 @@ export default function SlideOutlinePage() {
           Ada tugas presentasi besok pagi tapi belum nyentuh PowerPoint atau Canva? Masukkan topik tugasmu, tentukan jumlah slide, dan AI kami akan menyusunkan apa saja isi tiap slide-nya beserta contekan naskah bicara (<em>speaker notes</em>).
         </p>
       </div>
+
+      
+        {/* Trust Badges */}
+        <div className="flex flex-wrap items-center gap-3 text-sm font-medium text-slate-600 mb-8 mt-6">
+          <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+            <CheckCircle className="w-4 h-4 text-emerald-600" /> 100% Gratis
+          </span>
+          <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+            <Zap className="w-4 h-4 text-amber-500" /> AI Super Cepat
+          </span>
+          <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+            <ShieldCheck className="w-4 h-4 text-slate-700" /> Privasi Aman
+          </span>
+          <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+            <Users className="w-4 h-4 text-sky-600" /> Dipakai 10.000+ Pelajar
+          </span>
+        </div>
 
       <SlideOutlineClient />
 

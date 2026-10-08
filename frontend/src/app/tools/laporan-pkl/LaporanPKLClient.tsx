@@ -94,12 +94,13 @@ export default function LaporanPKLClient() {
   };
 
   return (
-    <form onSubmit={handleGenerate} className="space-y-6">
+    <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 mb-12">
+      <form onSubmit={handleGenerate} className="space-y-6">
       <FilterUniversal value={filter} onChange={setFilter} disabled={isGenerating} />
 
       <div className="space-y-4">
         <div className="space-y-2">
-          <label className="block font-label-md text-label-md text-on-surface">Nama Lengkap</label>
+          <label className="block text-sm font-semibold text-slate-800 mb-2">Nama Lengkap</label>
           <input
             type="text"
             value={namaLengkap}
@@ -112,7 +113,7 @@ export default function LaporanPKLClient() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <label className="block font-label-md text-label-md text-on-surface">Tempat PKL (Nama Perusahaan)</label>
+            <label className="block text-sm font-semibold text-slate-800 mb-2">Tempat PKL (Nama Perusahaan)</label>
             <input
               type="text"
               value={namaPerusahaan}
@@ -123,7 +124,7 @@ export default function LaporanPKLClient() {
             />
           </div>
           <div className="space-y-2">
-            <label className="block font-label-md text-label-md text-on-surface">Lama Magang</label>
+            <label className="block text-sm font-semibold text-slate-800 mb-2">Lama Magang</label>
             <select
               value={lamaMagang}
               onChange={(e) => setLamaMagang(e.target.value)}
@@ -139,7 +140,7 @@ export default function LaporanPKLClient() {
         </div>
 
         <div className="space-y-2">
-          <label className="block font-label-md text-label-md text-on-surface">Divisi/Bagian (Opsional)</label>
+          <label className="block text-sm font-semibold text-slate-800 mb-2">Divisi/Bagian (Opsional)</label>
           <input
             type="text"
             value={divisi}
@@ -158,7 +159,7 @@ export default function LaporanPKLClient() {
       <button
         type="submit"
         disabled={isGenerating}
-        className="w-full h-12 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all shadow-sm disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full h-14 rounded-2xl bg-brand-navy hover:bg-slate-800 text-white font-semibold text-base transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {isGenerating ? (
           <>
@@ -179,5 +180,6 @@ export default function LaporanPKLClient() {
         <UsageLimitModal isOpen={showLimitModal} onClose={() => setShowLimitModal(false)} />
       )}
     </form>
+    </div>
   );
 }

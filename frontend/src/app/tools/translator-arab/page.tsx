@@ -3,7 +3,7 @@ import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import Link from 'next/link';
 import TranslatorArabClient from './TranslatorArabClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
-import { BookOpen, CheckCircle, Lightbulb } from 'lucide-react';
+import { BookOpen, CheckCircle, Lightbulb , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -40,6 +40,23 @@ export default function TranslatorArabPage() {
           Google Translate sering ngawur untuk tugas sekolah? Gunakan AI TugasMu yang dirancang khusus untuk memahami teks pelajaran Agama Islam, lengkap dengan penjelasan kaidah <strong>Nahwu & Shorof</strong>-nya.
         </p>
       </div>
+
+      
+        {/* Trust Badges */}
+        <div className="flex flex-wrap items-center gap-3 text-sm font-medium text-slate-600 mb-8 mt-6">
+          <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+            <CheckCircle className="w-4 h-4 text-emerald-600" /> 100% Gratis
+          </span>
+          <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+            <Zap className="w-4 h-4 text-amber-500" /> AI Super Cepat
+          </span>
+          <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+            <ShieldCheck className="w-4 h-4 text-slate-700" /> Privasi Aman
+          </span>
+          <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+            <Users className="w-4 h-4 text-sky-600" /> Dipakai 10.000+ Pelajar
+          </span>
+        </div>
 
       <TranslatorArabClient />
 

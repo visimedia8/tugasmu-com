@@ -81,7 +81,8 @@ export default function RangkumanClient() {
     <>
       <UsageLimitModal isOpen={showLimitModal} onClose={() => setShowLimitModal(false)} />
       <div>
-        <form onSubmit={handleGenerate} className="bg-white border rounded-2xl p-4 md:p-6 shadow-sm">
+        <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 mb-12">
+      <form onSubmit={handleGenerate} className="bg-white border rounded-2xl p-4 md:p-6 shadow-sm">
           <FilterUniversal value={filter} onChange={setFilter} disabled={isGenerating} />
           
           <div className="mb-6">
@@ -91,7 +92,7 @@ export default function RangkumanClient() {
             <textarea
               id="inputText"
               rows={8}
-              className="w-full rounded-xl border-slate-300 border p-4 focus:ring-sky-500 focus:border-sky-500 text-slate-800"
+              className="w-full px-4 py-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:bg-white focus:border-brand-navy focus:ring-4 focus:ring-brand-navy/10 outline-none transition-all resize-none disabled:opacity-50"
               placeholder="Salin bab buku, catatan, atau artikel panjang..."
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
@@ -109,7 +110,7 @@ export default function RangkumanClient() {
           <button 
             type="submit" 
             disabled={isGenerating || !inputText.trim()}
-            className="w-full bg-sky-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-sky-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full h-14 rounded-2xl bg-brand-navy hover:bg-slate-800 text-white font-semibold text-base transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isGenerating ? (
               <>
@@ -121,6 +122,7 @@ export default function RangkumanClient() {
             )}
           </button>
         </form>
+    </div>
         
         <HasilOutput 
           hasil={hasil} 

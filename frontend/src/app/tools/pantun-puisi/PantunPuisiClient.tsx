@@ -84,7 +84,8 @@ export default function PantunPuisiClient() {
     <>
       <UsageLimitModal isOpen={showLimitModal} onClose={() => setShowLimitModal(false)} />
       <div>
-        <form onSubmit={handleGenerate} className="bg-white border rounded-2xl p-4 md:p-6 shadow-sm">
+        <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 mb-12">
+      <form onSubmit={handleGenerate} className="bg-white border rounded-2xl p-4 md:p-6 shadow-sm">
         <FilterUniversal value={filter} onChange={setFilter} disabled={isGenerating} />
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -149,7 +150,7 @@ export default function PantunPuisiClient() {
         <button 
           type="submit" 
           disabled={isGenerating || !tema.trim()}
-          className="w-full bg-sky-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-sky-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full h-14 rounded-2xl bg-brand-navy hover:bg-slate-800 text-white font-semibold text-base transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {isGenerating ? (
             <>
@@ -161,6 +162,7 @@ export default function PantunPuisiClient() {
           )}
         </button>
       </form>
+    </div>
       
       <HasilOutput 
         hasil={hasil} 

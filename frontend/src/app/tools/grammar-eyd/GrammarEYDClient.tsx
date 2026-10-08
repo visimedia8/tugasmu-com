@@ -90,14 +90,15 @@ export default function GrammarEYDClient({ initialTeks = '' }: GrammarEYDClientP
   };
 
   return (
-    <form onSubmit={handleGenerate} className="space-y-6">
+    <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 mb-12">
+      <form onSubmit={handleGenerate} className="space-y-6">
       {/* Jenjang (opsional untuk konteks) */}
       <FilterUniversal value={filter} onChange={setFilter} disabled={isGenerating} />
 
       {/* Textarea input */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <label className="block font-label-md text-label-md text-on-surface">
+          <label className="block text-sm font-semibold text-slate-800 mb-2">
             Teks yang Ingin Diperiksa
           </label>
           <span className={`font-label-sm text-label-sm ${charCount > MAX_CHARS * 0.9 ? 'text-error' : 'text-on-surface-variant'}`}>
@@ -128,7 +129,7 @@ export default function GrammarEYDClient({ initialTeks = '' }: GrammarEYDClientP
       <button
         type="submit"
         disabled={isGenerating || charCount < 10}
-        className="w-full h-12 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all shadow-sm disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full h-14 rounded-2xl bg-brand-navy hover:bg-slate-800 text-white font-semibold text-base transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {isGenerating ? (
           <>
@@ -149,5 +150,6 @@ export default function GrammarEYDClient({ initialTeks = '' }: GrammarEYDClientP
         <UsageLimitModal isOpen={showLimitModal} onClose={() => setShowLimitModal(false)} />
       )}
     </form>
+    </div>
   );
 }

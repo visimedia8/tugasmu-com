@@ -106,12 +106,13 @@ export default function ParafraseClient({ initialInputText = '' }: ParafraseClie
           <span className="font-label-sm text-label-sm text-primary px-2 py-0.5 rounded-full bg-primary-fixed">AI Mode Pintar</span>
         </div>
 
-        <form onSubmit={handleGenerate} className="space-y-space-md">
+        <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 mb-12">
+      <form onSubmit={handleGenerate} className="space-y-space-md">
           <FilterUniversal value={filter} onChange={setFilter} disabled={isGenerating} />
           
           <div className="space-y-space-xs">
             <div className="flex items-center justify-between">
-              <label htmlFor="inputText" className="block font-label-md text-label-md text-on-surface">
+              <label htmlFor="inputText" className="block text-sm font-semibold text-slate-800 mb-2">
                 Teks Sumber
               </label>
               <span className="text-outline font-body-sm text-body-sm">Min. 10 karakter</span>
@@ -119,7 +120,7 @@ export default function ParafraseClient({ initialInputText = '' }: ParafraseClie
             <textarea
               id="inputText"
               rows={6}
-              className="w-full p-4 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container outline-none transition-all placeholder:text-outline resize-y"
+              className="w-full px-4 py-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:bg-white focus:border-brand-navy focus:ring-4 focus:ring-brand-navy/10 outline-none transition-all resize-none disabled:opacity-50"
               placeholder="Salin teks tugas atau makalah dari buku/website ke sini..."
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
@@ -142,7 +143,7 @@ export default function ParafraseClient({ initialInputText = '' }: ParafraseClie
             <button 
               type="submit" 
               disabled={isGenerating || !inputText.trim()}
-              className="w-full py-3.5 px-space-lg rounded-xl bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full h-14 rounded-2xl bg-brand-navy hover:bg-slate-800 text-white font-semibold text-base transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isGenerating ? (
                 <>
@@ -162,6 +163,7 @@ export default function ParafraseClient({ initialInputText = '' }: ParafraseClie
             </div>
           </div>
         </form>
+    </div>
       </div>
       
       {/* Right Column: Interactive Output Preview */}

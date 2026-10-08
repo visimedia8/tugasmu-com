@@ -110,12 +110,13 @@ export default function PidatoClient() {
   };
 
   return (
-    <form onSubmit={handleGenerate} className="space-y-6">
+    <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 mb-12">
+      <form onSubmit={handleGenerate} className="space-y-6">
       <FilterUniversal value={filter} onChange={setFilter} disabled={isGenerating} />
 
       {/* Pilih Acara */}
       <div className="space-y-2">
-        <label className="block font-label-md text-label-md text-on-surface">Jenis Acara</label>
+        <label className="block text-sm font-semibold text-slate-800 mb-2">Jenis Acara</label>
         <div className="relative">
           <select
             value={acara}
@@ -135,7 +136,7 @@ export default function PidatoClient() {
 
       {/* Tema */}
       <div className="space-y-2">
-        <label className="block font-label-md text-label-md text-on-surface">Tema Pidato</label>
+        <label className="block text-sm font-semibold text-slate-800 mb-2">Tema Pidato</label>
         <input
           type="text"
           value={tema}
@@ -149,7 +150,7 @@ export default function PidatoClient() {
       {/* Durasi + Gaya */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <label className="block font-label-md text-label-md text-on-surface">
+          <label className="block text-sm font-semibold text-slate-800 mb-2">
             Durasi Pidato: <span className="text-primary font-bold">±{durasi} menit</span>
           </label>
           <input
@@ -165,7 +166,7 @@ export default function PidatoClient() {
           </div>
         </div>
         <div className="space-y-2">
-          <label className="block font-label-md text-label-md text-on-surface">Gaya Bahasa</label>
+          <label className="block text-sm font-semibold text-slate-800 mb-2">Gaya Bahasa</label>
           <div className="flex flex-col gap-2">
             {[
               { val: 'formal', label: 'Formal (resmi, upacara)' },
@@ -196,7 +197,7 @@ export default function PidatoClient() {
       <button
         type="submit"
         disabled={isGenerating}
-        className="w-full h-12 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all shadow-sm disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full h-14 rounded-2xl bg-brand-navy hover:bg-slate-800 text-white font-semibold text-base transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {isGenerating ? (
           <>
@@ -217,5 +218,6 @@ export default function PidatoClient() {
         <UsageLimitModal isOpen={showLimitModal} onClose={() => setShowLimitModal(false)} />
       )}
     </form>
+    </div>
   );
 }
