@@ -34,6 +34,9 @@ export const metadata = {
       },
     ],
   },
+  other: {
+    'google-adsense-account': 'ca-pub-6491677608693930',
+  },
 };
 
 import Script from 'next/script';
@@ -71,7 +74,7 @@ export default function RootLayout({
           id="adsbygoogle-init" 
           strategy="afterInteractive" 
           crossOrigin="anonymous" 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6491677608693930"
         />
       </head>
       <body className={cn("font-sans bg-brand-cream text-brand-navy flex flex-col min-h-screen", dmSans.variable, fraunces.variable)}>

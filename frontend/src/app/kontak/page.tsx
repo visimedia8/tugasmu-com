@@ -18,11 +18,15 @@ export default function KontakPage() {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-slate-900">Email</h3>
-              <p className="text-slate-600">support@tugasmu.com</p>
+              <p className="text-slate-600">halo@tugasmu.com</p>
             </div>
             <div>
               <h3 className="font-bold text-slate-900">Telepon / WhatsApp</h3>
-              <p className="text-slate-600">+62 8XX-XXXX-XXXX (Ganti dengan nomor Anda)</p>
+              <p className="text-slate-600">+6289675491214</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900">Alamat</h3>
+              <p className="text-slate-600">Jakarta, Indonesia</p>
             </div>
             <div>
               <h3 className="font-bold text-slate-900">Waktu Operasional</h3>
@@ -32,7 +36,7 @@ export default function KontakPage() {
             <div className="pt-6 border-t">
               <h3 className="font-bold text-slate-900 mb-2">Untuk Kemitraan & Media</h3>
               <p className="text-slate-600">
-                Tertarik bekerja sama atau meliput TugasMu? Email kami di <span className="font-medium">partners@tugasmu.com</span>.
+                Tertarik bekerja sama atau meliput TugasMu? Email kami di <span className="font-medium">halo@tugasmu.com</span>.
               </p>
             </div>
           </div>

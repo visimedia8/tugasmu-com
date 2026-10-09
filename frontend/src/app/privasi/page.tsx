@@ -56,7 +56,7 @@ export default function PrivasiPage() {
 
         <h2>6. Hubungi Kami</h2>
         <p>
-          Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami melalui halaman <a href="/kontak">Kontak</a> atau kirim email ke support@tugasmu.com.
+          Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami melalui halaman <a href="/kontak">Kontak</a> atau kirim email ke halo@tugasmu.com.
         </p>
       </div>
     </div>

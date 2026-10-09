@@ -1,2 +1,1 @@
-# Placeholder for Google AdSense ads.txt
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-6491677608693930, DIRECT, f08c47fec0942fa0
