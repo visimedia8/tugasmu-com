@@ -1,14 +1,10 @@
-export const dynamic = 'force-static';
-export const dynamicParams = false;
-
 import { notFound } from 'next/navigation';
 import { getKamusBySlug, getKamusSlugs } from '@/lib/kamus';
-import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: { slug: string } | Promise<{ slug: string }>;
 };
 
 const KAMUS_TOOL_BRIDGE: Record<string, { toolName: string; toolHref: string; ctaTitle: string; ctaDesc: string }> = {
@@ -198,13 +194,14 @@ export default async function KamusEntryPage({ params }: Props) {
             </p>
           </header>
 
-          <div className="prose prose-lg md:prose-xl prose-slate max-w-none 
+          <div 
+            className="prose prose-lg md:prose-xl prose-slate max-w-none 
             prose-headings:font-heading prose-headings:text-primary prose-headings:font-bold 
             prose-a:text-primary-container hover:prose-a:text-primary 
             prose-strong:text-on-surface prose-strong:font-bold
-            prose-img:rounded-2xl prose-img:shadow-sm">
-            <MDXRemote source={entry.content} />
-          </div>
+            prose-img:rounded-2xl prose-img:shadow-sm"
+            dangerouslySetInnerHTML={{ __html: entry.html || entry.content }}
+          />
           
           {/* Internal Linking Bridge - Targeted Tool Conversion */}
           <div className="mt-16 pt-8 border-t border-surface-container">

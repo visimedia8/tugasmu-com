@@ -1,6 +1,3 @@
-export const dynamic = 'force-static';
-export const dynamicParams = false;
-
 import { getAllKamus } from '@/lib/kamus';
 import Link from 'next/link';
 

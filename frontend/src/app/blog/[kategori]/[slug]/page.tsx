@@ -1,15 +1,13 @@
-export const dynamicParams = false;
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getPostSlugs, getAllCategories, getAllPosts } from '@/lib/mdx';
-import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 
 type Props = {
-  params: Promise<{ kategori: string; slug: string }>;
+  params: { kategori: string; slug: string } | Promise<{ kategori: string; slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props) {
-  const resolvedParams = await params;
+  const resolvedParams = await Promise.resolve(params);
   const post = getPostBySlug(resolvedParams.kategori, resolvedParams.slug);
   
   if (!post) {
@@ -58,17 +56,6 @@ export async function generateStaticParams() {
   return paths;
 }
 
-const components = {
-  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <Link href={props.href as string} {...props}>
-      {props.children}
-    </Link>
-  ),
-  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-lg leading-tight" {...props} />,
-  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h2 className="font-headline-md text-headline-md text-on-surface font-bold mt-space-lg mb-space-sm" {...props} />,
-  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-md mb-space-sm" {...props} />,
-  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-md" {...props} />,
-};
 
 
 const CATEGORY_TOOL_MAP: Record<string, { name: string; href: string; desc: string }> = {
@@ -120,7 +107,7 @@ const CATEGORY_TOOL_MAP: Record<string, { name: string; href: string; desc: stri
 };
 
 export default async function BlogPost({ params }: Props) {
-  const resolvedParams = await params;
+  const resolvedParams = await Promise.resolve(params);
   const post = getPostBySlug(resolvedParams.kategori, resolvedParams.slug);
 
   if (!post) {
@@ -194,9 +181,10 @@ export default async function BlogPost({ params }: Props) {
             </div>
           </div>
 
-          <div className="prose-content flex flex-col gap-space-lg text-on-surface font-body-lg text-body-lg leading-relaxed bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-sm border border-slate-100">
-            <MDXRemote source={post.content} components={components} />
-          </div>
+          <div 
+            className="prose-content flex flex-col gap-space-lg text-on-surface font-body-lg text-body-lg leading-relaxed bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-sm border border-slate-100"
+            dangerouslySetInnerHTML={{ __html: post.html || post.content }}
+          />
 
           <section className="mt-space-xl p-space-lg md:p-space-xl rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-space-lg border border-slate-100">
             <div className="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-lg text-headline-lg font-bold shrink-0 shadow-md ring-4 ring-primary-fixed">

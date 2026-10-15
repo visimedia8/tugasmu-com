@@ -2,8 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllPosts, getAllCategories } from '@/lib/mdx';
 import { getAllKamus } from '@/lib/kamus';
 import { PSEO_DATA } from '@/lib/seo/pseo-data';
-import fs from 'fs';
-import path from 'path';
+import { TOOLS } from '@/data/tools';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://tugasmu.com';
@@ -27,26 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route.priority,
   }));
 
-  // Dynamically get all tools
-  let toolRoutes: MetadataRoute.Sitemap = [];
-  try {
-    const toolsDir = path.join(process.cwd(), 'src/app/tools');
-    if (fs.existsSync(toolsDir)) {
-      const entries = fs.readdirSync(toolsDir, { withFileTypes: true });
-      const tools = entries
-        .filter(dirent => dirent.isDirectory() && !dirent.name.startsWith('['))
-        .map(dirent => dirent.name);
-
-      toolRoutes = tools.map((toolSlug) => ({
-        url: `${baseUrl}/tools/${toolSlug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.8,
-      }));
-    }
-  } catch (error) {
-    console.error('Error generating tools sitemap:', error);
-  }
+  // Tool routes from static TOOLS registry
+  const toolRoutes: MetadataRoute.Sitemap = TOOLS.map((tool) => ({
+    url: `${baseUrl}${tool.href}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
 
   // Programmatic SEO (pSEO) routes
   const pseoRoutes: MetadataRoute.Sitemap = PSEO_DATA.map((item) => ({

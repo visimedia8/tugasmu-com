@@ -1,8 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-
-const kamusDirectory = path.join(process.cwd(), 'src/content/kamus');
+import kamusData from './generated-kamus.json';
 
 export type KamusEntry = {
   slug: string;
@@ -11,43 +7,20 @@ export type KamusEntry = {
   kategori: string;
   date: string;
   content: string;
+  html?: string;
 };
 
-export function getKamusSlugs() {
-  if (!fs.existsSync(kamusDirectory)) {
-    return [];
-  }
-  return fs.readdirSync(kamusDirectory).filter((file) => file.endsWith('.mdx'));
+export function getKamusSlugs(): string[] {
+  return (kamusData as KamusEntry[]).map((entry) => entry.slug);
 }
 
 export function getKamusBySlug(slug: string): KamusEntry | null {
   const realSlug = slug.replace(/\.mdx$/, '');
-  const fullPath = path.join(kamusDirectory, `${realSlug}.mdx`);
-  if (!fs.existsSync(fullPath)) return null;
-  
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-
-  return {
-    slug: realSlug,
-    title: data.title || '',
-    description: data.description || data.excerpt || '',
-    kategori: data.kategori || 'Glosarium',
-    date: data.date || new Date().toISOString(),
-    content,
-  };
+  const entry = (kamusData as KamusEntry[]).find((item) => item.slug === realSlug);
+  return entry || null;
 }
 
 export function getAllKamus(): KamusEntry[] {
-  const slugs = getKamusSlugs();
-  const entries: KamusEntry[] = [];
-
-  slugs.forEach((slug) => {
-    const entry = getKamusBySlug(slug);
-    if (entry) entries.push(entry);
-  });
-
-  return entries
-    // Sort alphabetically by title
-    .sort((a, b) => a.title.localeCompare(b.title));
+  return [...(kamusData as KamusEntry[])].sort((a, b) => a.title.localeCompare(b.title));
 }
+

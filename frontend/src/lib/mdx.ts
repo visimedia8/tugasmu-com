@@ -8,6 +8,7 @@ export type BlogPost = {
   date: string;
   draft: boolean;
   content: string;
+  html?: string;
 };
 
 export function getPostBySlug(kategori: string, slug: string): BlogPost | null {

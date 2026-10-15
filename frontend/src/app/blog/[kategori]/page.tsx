@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getAllCategories, getPostSlugs, getPostBySlug } from '@/lib/mdx';
 
 type Props = {
-  params: Promise<{ kategori: string }>;
+  params: { kategori: string } | Promise<{ kategori: string }>;
 };
 
 const CATEGORY_META_INFO: Record<string, { title: string; desc: string; toolName: string; toolHref: string; toolCta: string }> = {
