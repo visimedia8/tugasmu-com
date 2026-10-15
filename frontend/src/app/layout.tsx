@@ -76,6 +76,39 @@ export default function RootLayout({
           crossOrigin="anonymous" 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6491677608693930"
         />
+
+        {/* Global WebSite & Organization Schemas (Koray SSOT Foundation) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "TugasMu",
+              "url": "https://tugasmu.com",
+              "description": "Platform AI Gratis untuk Bantu Belajar Siswa Indonesia",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://tugasmu.com/blog?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "TugasMu",
+              "url": "https://tugasmu.com",
+              "logo": "https://tugasmu.com/logo.png",
+              "description": "Platform AI Edukasi Gratis untuk Siswa SD, SMP, SMA/SMK di Indonesia.",
+              "email": "halo@tugasmu.com"
+            })
+          }}
+        />
       </head>
       <body className={cn("font-sans bg-brand-cream text-brand-navy flex flex-col min-h-screen", dmSans.variable, fraunces.variable)}>
         <Providers>

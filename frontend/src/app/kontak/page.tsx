@@ -22,7 +22,7 @@ export default function KontakPage() {
             </div>
             <div>
               <h3 className="font-bold text-slate-900">Telepon / WhatsApp</h3>
-              <p className="text-slate-600">+6289675491214</p>
+              <p className="text-slate-600">089501988223</p>
             </div>
             <div>
               <h3 className="font-bold text-slate-900">Alamat</h3>

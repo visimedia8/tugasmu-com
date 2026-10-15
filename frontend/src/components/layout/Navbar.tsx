@@ -105,6 +105,22 @@ export function Navbar() {
               </div>
             </div>
 
+            {/* Kamus Glosarium */}
+            <Link
+              href="/kamus"
+              className="px-3 py-2 text-sm font-semibold rounded-full transition-all duration-200 text-brand-navy/70 hover:text-brand-navy hover:bg-brand-navy/5"
+            >
+              Kamus
+            </Link>
+
+            {/* Blog Edukasi */}
+            <Link
+              href="/blog"
+              className="px-3 py-2 text-sm font-semibold rounded-full transition-all duration-200 text-brand-navy/70 hover:text-brand-navy hover:bg-brand-navy/5"
+            >
+              Blog
+            </Link>
+
           </nav>
 
           {/* CTA */}
@@ -220,6 +236,17 @@ export function Navbar() {
           </Link>
           <Link href="/tools?cat=umum" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-brand-navy hover:bg-brand-navy/5 rounded-xl">
             Akademik Umum
+          </Link>
+
+          <div className="font-bold text-xs text-brand-navy/50 uppercase tracking-wider px-4 pt-4 pb-2">Konten & Edukasi</div>
+          <Link href="/kamus" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-brand-navy hover:bg-brand-navy/5 rounded-xl">
+            Kamus & Glosarium Pelajaran
+          </Link>
+          <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-brand-navy hover:bg-brand-navy/5 rounded-xl">
+            Blog Edukasi & Materi Sekolah
+          </Link>
+          <Link href="/harga" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-brand-navy hover:bg-brand-navy/5 rounded-xl">
+            Paket Berlangganan (Pro)
           </Link>
 
           <div className="pt-6 border-t border-brand-navy/10 mt-4">

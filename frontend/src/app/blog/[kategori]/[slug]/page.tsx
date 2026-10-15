@@ -70,6 +70,55 @@ const components = {
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-md" {...props} />,
 };
 
+
+const CATEGORY_TOOL_MAP: Record<string, { name: string; href: string; desc: string }> = {
+  'bahasa-indonesia': {
+    name: 'Tool Parafrase & Cek EYD',
+    href: '/tools/parafrase',
+    desc: 'Ubah susunan kalimat tugas agar natural, santun, dan bebas plagiasi PUEBI.'
+  },
+  'bahasa-inggris': {
+    name: 'English Grammar Checker',
+    href: '/tools/grammar-checker',
+    desc: 'Koreksi tenses, grammar, dan struktur esai Bahasa Inggris secara instan.'
+  },
+  'matematika': {
+    name: 'Math Solver Step-by-Step',
+    href: '/tools/math-solver',
+    desc: 'Pecahkan rumus aljabar, matriks, dan geometri lengkap dengan langkahnya.'
+  },
+  'agama': {
+    name: 'Tafsir & Tajwid AI',
+    href: '/tools/tafsir-quran',
+    desc: 'Pelajari hukum tajwid, arti hadits, dan intisari materi PAI dengan bimbingan AI.'
+  },
+  'smk': {
+    name: 'Pembuat Laporan PKL & CV',
+    href: '/tools/laporan-pkl',
+    desc: 'Susun bab laporan magang industri dan surat lamaran kerja standar kejuruan.'
+  },
+  'sejarah': {
+    name: 'Rangkuman & Timeline Sejarah',
+    href: '/tools/rangkuman',
+    desc: 'Ekstraksi poin peristiwa penting dan ringkas bab materi sejarah tebal.'
+  },
+  'ppkn': {
+    name: 'Generator Soal & Ringkasan PPKn',
+    href: '/tools/generator-soal',
+    desc: 'Buat latihan soal konstitusi, Pancasila, dan rangkuman sistem hukum nasional.'
+  },
+  'ipa': {
+    name: 'Rangkuman Materi Sains IPA',
+    href: '/tools/rangkuman',
+    desc: 'Pahami konsep biologi, fisika, dan kimia dengan penjelasan praktis.'
+  },
+  'ips': {
+    name: 'Rangkuman Geografi & Sosiologi',
+    href: '/tools/rangkuman',
+    desc: 'Rangkum materi ekonomi, geografi, dan sosiologi sekolah menengah.'
+  }
+};
+
 export default async function BlogPost({ params }: Props) {
   const resolvedParams = await params;
   const post = getPostBySlug(resolvedParams.kategori, resolvedParams.slug);
@@ -190,23 +239,36 @@ export default async function BlogPost({ params }: Props) {
           )}
         </article>
 
-        {/* Right Column */}
+        {/* Right Column - Contextual Silo Bridge */}
         <aside className="lg:col-span-4 flex flex-col gap-space-lg lg:sticky lg:top-24">
-          <div className="p-space-lg rounded-xl bg-gradient-to-b from-surface-container to-surface-container-high shadow-sm flex flex-col gap-space-md border border-slate-100">
-            <div className="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-xs">
-              <span className="material-symbols-outlined text-[22px]">auto_awesome</span>
-            </div>
-            <div>
-              <h4 className="font-headline-sm text-headline-sm text-on-surface font-bold">Butuh Bantuan Tugas?</h4>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                Gunakan asisten AI TugasMu secara gratis. Buat soal, parafrase makalah, dan temukan jawaban dari PR-mu.
-              </p>
-            </div>
-            <Link href="/tools" className="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary py-2.5 px-4 rounded-xl font-label-md text-label-md transition-all shadow-sm">
-              <span>Buka Tools AI</span>
-              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </Link>
-          </div>
+          {(() => {
+            const targetTool = CATEGORY_TOOL_MAP[resolvedParams.kategori] || {
+              name: 'Generator Soal & Tugas AI',
+              href: '/tools/generator-soal',
+              desc: 'Gunakan asisten AI TugasMu untuk buat soal latihan dan pecahkan tugas sekolahmu.'
+            };
+            return (
+              <div className="p-space-lg rounded-2xl bg-gradient-to-b from-surface-container to-surface-container-high shadow-sm flex flex-col gap-space-md border border-slate-100">
+                <div className="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-xs">
+                  <span className="material-symbols-outlined text-[22px]">auto_awesome</span>
+                </div>
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-primary">Rekomendasi Alat Belajar</span>
+                  <h4 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">{targetTool.name}</h4>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    {targetTool.desc}
+                  </p>
+                </div>
+                <Link href={targetTool.href} className="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary py-2.5 px-4 rounded-xl font-label-md text-label-md transition-all shadow-sm font-semibold">
+                  <span>Coba {targetTool.name}</span>
+                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </Link>
+                <Link href="/tools" className="text-center text-xs text-on-surface-variant hover:text-primary transition-colors">
+                  Atau telusuri semua 29 tools gratis →
+                </Link>
+              </div>
+            );
+          })()}
         </aside>
       </div>
 
@@ -219,9 +281,25 @@ export default async function BlogPost({ params }: Props) {
             "headline": post.title,
             "description": post.description,
             "datePublished": post.date,
+            "dateModified": post.date,
+            "inLanguage": "id-ID",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://tugasmu.com/blog/${resolvedParams.kategori}/${resolvedParams.slug}`
+            },
             "author": {
               "@type": "Organization",
-              "name": "TugasMu"
+              "name": "Redaksi Edukasi TugasMu",
+              "url": "https://tugasmu.com/tentang"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "TugasMu",
+              "url": "https://tugasmu.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://tugasmu.com/logo.png"
+              }
             }
           })
         }}

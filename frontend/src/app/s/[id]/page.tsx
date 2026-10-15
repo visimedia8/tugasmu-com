@@ -13,10 +13,14 @@ async function getSharedOutput(id: string) {
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const data = await getSharedOutput(params.id)
-  if (!data?.success) return { title: 'Output Tidak Ditemukan | TugasMu' }
+  if (!data?.success) return { title: 'Output Tidak Ditemukan | TugasMu', robots: { index: false, follow: false } }
   return {
     title: `${data.title} | TugasMu`,
     description: data.output_text.substring(0, 160),
+    robots: {
+      index: false,
+      follow: false,
+    },
     openGraph: {
       title: data.title,
       description: data.output_text.substring(0, 160),

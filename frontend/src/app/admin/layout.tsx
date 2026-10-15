@@ -2,6 +2,14 @@ import { ReactNode } from 'react'
 import Link from 'next/link'
 import { LayoutDashboard, Users, Building } from 'lucide-react'
 
+export const metadata = {
+  title: 'Admin Panel',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen bg-slate-50">
