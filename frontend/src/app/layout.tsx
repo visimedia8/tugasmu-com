@@ -35,7 +35,7 @@ export const metadata = {
     ],
   },
   other: {
-    'google-adsense-account': 'ca-pub-6491677608693930',
+    'google-adsense-account': 'ca-pub-3593394789144229',
   },
 };
 
@@ -74,7 +74,7 @@ export default function RootLayout({
           id="adsbygoogle-init" 
           strategy="afterInteractive" 
           crossOrigin="anonymous" 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6491677608693930"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593394789144229"
         />
 
         {/* Global WebSite & Organization Schemas (Koray SSOT Foundation) */}
