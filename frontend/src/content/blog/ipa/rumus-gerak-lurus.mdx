@@ -1,84 +1,100 @@
 ---
-title: "Gerak Lurus GLB dan GLBB: Pengertian, Rumus, dan Perbedaan"
-date: 2026-09-22
-excerpt: "Pelajari konsep Gerak Lurus Beraturan dan Berubah Beraturan secara mendalam untuk mendongkrak nilai fisikamu bersama teman pintar belajar."
-draft: false
-category: "ipa"
-tags: ["gerak lurus", "glb dan glbb", "ipa smp", "ipa sma", "fisika"]
+title: "Gerak Lurus GLB dan GLBB: Rumus, Grafik, Perbedaan, dan Contoh Soal"
+description: "Pelajari konsep kinematika gerak lurus beraturan (GLB) dan gerak lurus berubah beraturan (GLBB), penurunan rumus kecepatan percepatan, serta analisis grafik v-t."
+date: "2026-10-01T02:35:00Z"
+kategori: "ipa"
 ---
 
-# Gerak Lurus GLB dan GLBB: Pengertian, Rumus, dan Perbedaan
+Gerak lurus beraturan (GLB) dan gerak lurus berubah beraturan (GLBB) adalah dua konsep fundamental dalam cabang kinematika mekanika klasik yang mendeskripsikan pergerakan benda sepanjang lintasan lurus satu dimensi tanpa memperhitungkan penyebab gaya yang bekerja padanya. Memahami kinematika gerak lurus merupakan prasyarat mutlak untuk menguasai cabang ilmu fisika lanjutan, mulai dari analisis gerak parabola peluru meriam, dinamika orbit satelit, hingga perencanaan sistem akselerasi dan pengereman kereta cepat modern seperti Whoosh. Perbedaan mendasar antara GLB dan GLBB terletak pada sifat percepatan ($a$) yang dialami benda: GLB bergerak dengan kecepatan tetap tanpa mengalami percepatan sama sekali ($a = 0$), sedangkan GLBB bergerak dengan percepatan linier yang bernilai konstan ($a = \text{konstan}$), sehingga kecepatannya bertambah atau berkurang secara teratur setiap detiknya.
 
-Materi fisika tentang perpindahan posisi itu selalu langganan keluar di ujian sekolah. Makanya, kamu wajib pahami konsepnya pelan-pelan biar tiap tugasmu bisa diselesaikan dengan gampang. Kalau butuh materi lain, cek aja panduan lengkap [Ilmu Pengetahuan Alam](/blog/ipa/).
+| Parameter Kinematika | Gerak Lurus Beraturan (GLB) | GLBB Dipercepat ($a > 0$) | GLBB Diperlambat ($a < 0$) |
+| --- | --- | --- | --- |
+| **Karakteristik Kecepatan ($v$)** | Mutlak konstan sepanjang waktu ($v = \text{tetap}$) | Bertambah secara teratur terhadap waktu ($v_t > v_0$) | Berkurang secara teratur terhadap waktu ($v_t < v_0$) |
+| **Nilai Percepatan ($a$)** | Tepat bernilai nol ($a = 0\,\text{m/s}^2$) | Bernilai konstan positif ($+a$) | Bernilai konstan negatif ($-a$, sering disebut retardasi) |
+| **Bentuk Grafik Kecepatan ($v-t$)** | Garis lurus horizontal sejajar sumbu waktu ($t$) | Garis lurus miring naik ke atas dengan gradien positif | Garis lurus miring turun ke bawah menuju nol |
+| **Bentuk Grafik Posisi ($s-t$)** | Garis lurus miring dengan kemiringan konstan | Garis lengkung parabola melengkung ke atas | Garis lengkung parabola melengkung mendatar |
+| **Rumus Posisi / Jarak Tempuh ($s$)** | $s = v \cdot t$ | $s = v_0 t + \frac{1}{2}at^2$ | $s = v_0 t - \frac{1}{2}at^2$ |
+| **Contoh Nyata Sehari-hari** | Mobil melaju fitur *cruise control* di tol lurus | Buah kelapa jatuh bebas dari tangkai pohon | Mobil menginjak pedal rem menjelang lampu merah |
 
-## Pengertian Gerak Lurus dan Klasifikasinya
+## Bagaimana Rumus dan Karakteristik Gerak Lurus Beraturan (GLB) Bekerja?
 
-Gerak Lurus secara simpel adalah perubahan posisi suatu benda dari titik awal ke titik akhir yang lintasannya berupa garis lurus. Nah, sebagai teman pintar belajar, kamu bisa cobain [Generator Soal TugasMu](/tools/generator-soal) buat bikin soal latihan fisika yang pas banget sama kurikulum sekolahmu. Konsep perpindahan ini ibarat fondasi dasar buat semua hal berbau mekanika klasik yang bakal kamu temuin di sekolah.
+Rumus dan karakteristik Gerak Lurus Beraturan (GLB) bekerja berdasarkan prinsip kelajuan konstan pada lintasan lurus satu dimensi, di mana jarak tempuh berbanding lurus secara linear dengan durasi waktu tempuh.
 
-### Definisi Gerak Lurus dalam Kajian Fisika
+### Formulasi Matematis GLB $s = v 	imes t$
 
-Gerak Lurus itu didefinisikan sebagai perpindahan sebuah objek tanpa ada belokan sama sekali di lintasannya. Pokoknya, tiap benda yang geraknya cuma maju mundur di satu jalur yang lurus, pasti ngikutin aturan dasar ini.
+Formulasi matematis gerak lurus beraturan dinyatakan dengan persamaan paling sederhana dalam mekanika:
 
-### Pembagian Gerak Lurus: GLB dan GLBB
+$$s = v \cdot t$$
 
-Gerak Lurus dibagi jadi dua kategori utama berdasarkan gimana kecepatan dan percepatannya, yaitu beraturan (GLB) dan berubah beraturan (GLBB). Pembagian ini bakal ngebantu kamu banget buat ngebedain mana laju mobil yang stabil di jalan tol dan mana kelapa yang jatuh bebas dari pohonnya.
+Di mana:
+- $s$ adalah jarak atau perpindahan yang ditempuh benda (satuan meter, $\text{m}$).
+- $v$ adalah kecepatan konstan benda (satuan meter per detik, $\text{m/s}$).
+- $t$ adalah selang waktu perjalanan (satuan detik, $\text{s}$).
 
-Nah, kalau udah paham pembagian dasar ini, kamu bakal lebih siap buat ngulik rumus matematika yang sedikit lebih menantang di bab selanjutnya.
+Dari rumus di atas, kecepatan dihitung sebagai turunan pertama posisi terhadap waktu ($v = s / t$). Karena kecepatan tidak pernah berubah ($a = 0$), maka jarak yang ditempuh benda pada setiap interval waktu satu detik selalu sama. Jika sebuah mobil bergerak dengan kecepatan GLB konstan $20\,\text{m/s}$, mobil tersebut pasti menempuh jarak tepat 20 meter pada detik pertama, 20 meter pada detik kedua, dan seterusnya, sehingga dalam waktu 5 detik total jarak yang dilalui adalah $s = 20 \times 5 = 100\,\text{meter}$.
 
-## Rumus dan Ciri-ciri GLB dan GLBB
+### Analisis Grafik Posisi ($s-t$) dan Grafik Kecepatan ($v-t$) pada GLB
 
-Gerak Lurus itu punya rumus dan ciri khas yang beda-beda buat nentuin kecepatan si benda. Analisis angka-angka ini bakal jadi senjata andalan kamu buat naklukin soal ujian fisika dengan pede.
+Analisis grafik kinematika pada GLB memberikan visualisasi geometris yang sangat presisi:
+1. **Grafik Posisi terhadap Waktu ($s-t$):** Menghasilkan garis lurus linier yang miring ke atas dimulai dari titik asal ($0,0$). Kemiringan atau gradien (*slope*) dari garis grafik tersebut secara langsung mencerminkan nilai kecepatan benda:
+   $$\text{Gradien} = \frac{\Delta s}{\Delta t} = v$$
+   Semakin curam kemiringan grafik $s-t$, semakin cepat benda tersebut melaju.
+2. **Grafik Kecepatan terhadap Waktu ($v-t$):** Berbentuk garis mendatar (horizontal) sejajar sumbu waktu karena nilai kecepatan selalu konstan berapapun waktu yang telah berlalu. Luas daerah persegi panjang di bawah kurva grafik $v-t$ antara rentang waktu $t = 0$ hingga $t = t_1$ merepresentasikan jarak atau perpindahan total yang ditempuh benda:
+   $$\text{Luas Daerah} = \text{panjang} \times \text{lebar} = v \times t = s$$
 
-| Karakteristik | GLB (Beraturan) | GLBB (Berubah Beraturan) |
-| :--- | :--- | :--- |
-| Kecepatan ($v$) | Tetap / Konstan | Berubah secara beraturan |
-| Percepatan ($a$) | Nol ($a = 0$) | Tetap / Konstan ($a \neq 0$) |
-| Rumus Utama | $s = v \times t$ | $v_t = v_0 + a \cdot t$ |
-| Contoh Kasus | Mobil berjalan stabil di jalan tol | Buah kelapa jatuh dari pohonnya |
+> [!NOTE] **Miskonsepsi Umum:** Banyak orang menyamakan konsep "jarak" (distance) dengan "perpindahan" (displacement). Dalam fisika, jarak adalah besaran skalar yang mengukur total panjang lintasan yang ditempuh tanpa memedulikan arah, sedangkan perpindahan adalah besaran vektor yang mengukur perubahan posisi garis lurus terpendek dari titik awal ke titik akhir. Jika seorang atlet berlari mengelilingi lintasan lari 400 meter satu putaran penuh dan kembali ke garis start, jarak tempuhnya adalah 400 meter, namun perpindahannya tepat bernilai nol.
 
-### Ciri Gerak Lurus Beraturan (Kecepatan Konstan)
+## Bagaimana 3 Rumus Utama GLBB Menjelaskan Perubahan Kecepatan?
 
-Gerak Lurus Beraturan (GLB) punya ciri khas, yaitu kecepatannya nggak pernah berubah dari awal sampai akhir. Jarak yang ditempuh juga selalu sebanding sama waktu tempuhnya. Santai dan stabil aja geraknya!
+Tiga rumus utama GLBB menjelaskan perubahan kecepatan melalui hubungan kalkulus kinematika antara kecepatan awal ($v_0$), kecepatan akhir ($v_t$), percepatan konstan ($a$), selang waktu ($t$), dan perpindahan ($s$).
 
-### Ciri Gerak Lurus Berubah Beraturan (Percepatan Konstan)
+### Tiga Persamaan Kinematika Utama GLBB
 
-Gerak Lurus Berubah Beraturan (GLBB) ditandai dengan adanya percepatan atau perlambatan yang nilainya tetap terus. Artinya, kecepatan bendanya nambah atau berkurang dengan jumlah yang sama tiap detiknya, entah pas lagi ngegas atau ngerem.
+Tiga persamaan kinematika baku GLBB dirumuskan sebagai berikut:
 
-Perubahan kecepatan ini emang butuh ketelitian esktra pas kamu mulai masuk ke bagian itung-itungan rumus di kertas coretan.
+$$v_t = v_0 + a \cdot t$$
 
-## Langkah-langkah Menghitung Kecepatan dan Jarak pada GLB
+$$s = v_0 \cdot t + \frac{1}{2} a \cdot t^2$$
 
-Gerak Lurus bisa banget dihitung jaraknya asalkan pakai langkah yang sistematis biar nggak ketuker variabelnya. Lewat bimbingan AI di TugasMu, selalu disarankan buat kamu nulis 'diketahui' dan 'ditanya' dulu ya sebelum mulai jawab soal ujian.
+$$v_t^2 = v_0^2 + 2 \cdot a \cdot s$$
 
-### Menentukan Jarak, Kecepatan, dan Waktu
+Di mana:
+- $v_0$ adalah kecepatan awal benda saat $t = 0$ (satuan $\text{m/s}$).
+- $v_t$ adalah kecepatan akhir benda pada saat $t$ (satuan $\text{m/s}$).
+- $a$ adalah percepatan konstan (satuan $\text{m/s}^2$). Jika benda mengalami perlambatan, nilai $a$ dimasukkan dengan tanda negatif ($-a$).
+- $t$ adalah durasi waktu tempuh (satuan detik, $\text{s}$).
+- $s$ adalah jarak atau perpindahan yang ditempuh (satuan meter, $\text{m}$).
 
-Gerak Lurus butuh kamu buat kenalan dulu sama variabelnya dengan cermat sebelum masukin angka ke rumus. Ini dia langkah-langkah sistematis yang wajib kamu ikutin pas lagi ngerjain soal:
+Pemilihan rumus yang tepat dalam penyelesaian soal bergantung pada variabel yang diketahui. Apabila soal tidak mencantumkan jarak tempuh ($s$), gunakan rumus pertama. Apabila kecepatan akhir ($v_t$) tidak diketahui, gunakan rumus kedua. Apabila durasi waktu ($t$) tidak diketahui dalam narasi soal, gunakan rumus ketiga.
 
-* Menuliskan seluruh komponen yang diketahui dari soal secara lengkap dan terstruktur.
-* Mengubah satuan besaran pokok ke dalam satuan internasional (SI) seperti meter dan sekon.
-* Memilih persamaan matematis yang paling relevan dengan variabel yang ditanyakan.
-* Melakukan perhitungan aritmatika secara teliti untuk mendapatkan hasil akhir yang benar.
+Kamu dapat memverifikasi perhitungan gerak benda dan konversi satuan kelajuan $\text{km/jam}$ ke $\text{m/s}$ menggunakan [kalkulator rumus fisika dan matematika otomatis](/tools/math-solver).
 
-### Menerapkan Rumus v = s/t
+### Gerak Vertikal: Gerak Jatuh Bebas dan Gerak Vertikal ke Atas
 
-Gerak Lurus tuh pakai rumus sakti kecepatan $v = s/t$, di mana $v$ itu kecepatan, $s$ jarak, dan $t$ waktu tempuh. Rumusnya sih simpel banget, tapi pastikan satuan jarak dan waktunya udah sinkron biar hasilnya nggak meleset.
+Gerak vertikal merupakan aplikasi nyata GLBB di bawah pengaruh medan gravitasi bumi tunggal, di mana percepatan yang dialami benda adalah percepatan gravitasi bumi ($a = g \approx 9{,}8\,\text{m/s}^2$ atau $10\,\text{m/s}^2$):
+1. **Gerak Jatuh Bebas (GJB):** Gerak benda yang dijatuhkan dari suatu ketinggian $h$ tanpa kecepatan awal sama sekali ($v_0 = 0$). Sesuai rumus GLBB, kecepatan saat menyentuh tanah dan waktu jatuh dihitung melalui:
+   $$v_t = \sqrt{2 \cdot g \cdot h} \qquad t = \sqrt{\frac{2 \cdot h}{g}}$$
+   Perhatikan bahwa waktu jatuh pada gerak jatuh bebas di ruang hampa sama sekali tidak dipengaruhi oleh massa benda; bola boling dan sehelai bulu ayam yang dijatuhkan bersamaan dari menara hampa udara akan mendarat di tanah pada saat yang persis bersamaan.
+2. **Gerak Vertikal ke Atas (GVA):** Benda dilemparkan lurus ke atas dengan kecepatan awal tertentu ($v_0$). Karena gravitasi melawan arah gerak, benda mengalami perlambatan ($a = -g$). Di titik puncak tertinggi ($h_{\text{maks}}$), kecepatan benda berhenti sesaat ($v_t = 0$). Ketinggian maksimum yang dapat dicapai dirumuskan sebagai:
+   $$h_{\text{maks}} = \frac{v_0^2}{2g} \qquad t_{\text{puncak}} = \frac{v_0}{g}$$
 
-Menguasai rumus dasar ini ibarat tiket emas sebelum kamu mulai pusing ngebaca grafik-grafik di materi selanjutnya.
+## Bagaimana Membaca dan Menghitung Luas Daerah pada Grafik v-t GLBB?
 
-## Contoh Grafik GLB dan GLBB yang Sering Keluar di Ujian
+Membaca dan menghitung luas daerah pada grafik kecepatan terhadap waktu ($v-t$) merupakan metode geometris paling ampuh untuk mencari jarak tempuh tanpa harus menghafal rumus GLBB yang rumit.
 
-Gerak Lurus sering banget ditonggolin dalam bentuk grafik koordinat cartesius pas ujian sekolah atau seleksi masuk kampus. Kalau kamu bisa baca maksud dari garis miring di grafik, nilaimu pasti bakal terdongkrak tajam.
+### Geometri Trapesium pada Grafik $v-t$
 
-### Membaca Grafik Jarak terhadap Waktu (s-t)
+Pada grafik $v-t$ untuk GLBB dipercepat, kurva membentuk garis miring dengan gradien kemiringan sebesar percepatan ($a = \Delta v / \Delta t$). Bentuk area di bawah garis grafik antara waktu $t = 0$ dan $t = t_1$ membentuk bangun datar **trapesium siku-siku**:
+- Sisi sejajar pertama adalah kecepatan awal ($v_0$).
+- Sisi sejajar kedua adalah kecepatan akhir ($v_t$).
+- Tinggi trapesium adalah durasi waktu tempuh ($t$).
 
-Gerak Lurus pada grafik jarak terhadap waktu ($s-t$) khusus GLB, digambarin pakai garis lurus miring ke atas dengan tingkat kemiringan yang tetap. Kemiringan garis inilah yang nunjukin seberapa besar kecepatan benda tersebut.
+Berdasarkan rumus luas trapesium:
 
-### Membaca Grafik Kecepatan terhadap Waktu (v-t)
+$$\text{Luas Area} = \frac{(v_0 + v_t)}{2} \times t = s$$
 
-Gerak Lurus di grafik kecepatan terhadap waktu ($v-t$) buat GLBB, biasanya kelihatan lewat garis miring ke atas atau ke bawah. Luas area di bawah garis grafiknya itu setara dengan total jarak yang berhasil ditempuh sama benda.
+Rumus luas trapesium ini identik dengan rumus jarak GLBB berbasis kecepatan rata-rata ($s = \bar{v} \cdot t$), yang membuktikan keselarasan mutlak antara pendekatan visual kalkulus geometris dan formulasi aljabar fisika.
 
-Kemampuan ngebaca grafik ini bakal melengkapi pemahaman kamu soal gimana sih benda itu bergerak di dunia nyata.
+Untuk merapikan intisari materi kinematika gerak lurus dan rumus turunan GLBB, gunakan [alat rangkuman teks sains otomatis](/tools/rangkuman).
 
-## Kesimpulan GLB dan GLBB
-
-Gerak Lurus itu intinya perpindahan benda di jalur lurus, yang dibagi jadi tipe beraturan dan berubah beraturan. Rumus sama ciri GLB dan GLBB bedanya ada di faktor percepatan yang nilainya konstan. Hitung-hitungannya juga seru kalau dikerjain pakai metode sistematis antara variabel waktu dan jarak. Selain itu, grafik $s-t$ dan $v-t$ bikin kita gampang ngebayangin datanya. Jangan lupa cek juga materi seru kayak [Ikatan Kimia](/blog/ipa/ikatan-kimia-ion-kovalen) biar IPA-mu makin jago, atau langsung aja jajal [Generator Soal TugasMu](/tools/generator-soal) sekarang biar nilai ulanganmu selalu memuaskan!
+Uji penguasaan analisa grafik kecepatan dan kalkulasi soal gerak vertikal melalui latihan soal di [generator latihan soal sains dan fisika](/tools/generator-soal).
