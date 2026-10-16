@@ -1,0 +1,98 @@
+---
+title: "Turunan Fungsi Aljabar: Rumus Diferensial, Titik Stasioner, dan Aplikasi Maksimum"
+description: "Pahami konsep turunan fungsi aljabar f'(x), aturan perkalian u.v dan pembagian u/v, cara menentukan titik stasioner, serta aplikasi nilai maksimum-minimum."
+date: "2026-10-02T06:00:00Z"
+kategori: "matematika"
+---
+
+Turunan fungsi aljabar atau diferensial mengukur laju perubahan sesaat suatu nilai fungsi terhadap variabel bebasnya yang dirumuskan melalui aturan pangkat aljabar, perkalian dan pembagian fungsi, serta penentuan titik stasioner. Dalam kurikulum [Matematika](/blog/matematika/) SMA, materi kalkulus diferensial ini adalah jembatan vital untuk menghitung gradien garis singgung kurva, kecepatan dan percepatan sesaat dalam fisika, hingga mencari keuntungan maksimum atau biaya produksi minimum dalam ilmu ekonomi.
+
+Secara grafis, turunan pertama suatu fungsi $f'(x)$ melambangkan nilai kemiringan atau gradien ($m$) dari garis singgung yang menyentuh kurva $f(x)$ di titik tertentu. Berbeda dengan laju rata-rata yang membutuhkan interval dua titik, turunan menghitung laju perubahan tepat di satu titik menggunakan konsep [limit fungsi aljabar](/blog/matematika/limit-fungsi-aljabar-metode-penyelesaian):
+
+$$f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}$$
+
+| Rumus & Operasi | Bentuk Fungsi Asal $f(x)$ | Rumus Turunan Pertama $f'(x)$ | Catatan Penerapan |
+| --- | --- | --- | --- |
+| **Konstanta Murni** | $f(x) = k$ | $f'(x) = 0$ | Turunan dari angka konstan tanpa variabel selalu bernilai nol |
+| **Polinomial Dasar** | $f(x) = a x^n$ | $f'(x) = n \cdot a x^{n-1}$ | Kalikan pangkat $n$ ke depan, lalu kurangi pangkatnya dengan 1 |
+| **Penjumlahan / Pengurangan** | $f(x) = u(x) \pm v(x)$ | $f'(x) = u'(x) \pm v'(x)$ | Turunkan masing-masing suku secara independen |
+| **Aturan Perkalian** | $f(x) = u(x) \cdot v(x)$ | $f'(x) = u'v + uv'$ | Wajib menggunakan rumus $u'v + uv'$; jangan dikalikan langsung! |
+| **Aturan Pembagian** | $f(x) = \frac{u(x)}{v(x)}$ | $f'(x) = \frac{u'v - uv'}{v^2}$ | Penyebut $v(x) \neq 0$; perhatikan tanda minus pada pembilang |
+| **Aturan Rantai (*Chain Rule*)** | $f(x) = [u(x)]^n$ | $f'(x) = n \cdot [u(x)]^{n-1} \cdot u'(x)$ | Turunkan pangkat luar dulu, lalu kalikan dengan turunan fungsi dalamnya |
+
+## 1. Contoh Perhitungan Rumus Dasar Turunan
+
+### Contoh 1: Fungsi Polinomial Biasa
+Tentukan turunan pertama dari $f(x) = 3x^4 - 5x^2 + 7x - 9$.
+- Turunan dari $3x^4$ adalah $4 \cdot 3 x^{4-1} = 12x^3$
+- Turunan dari $-5x^2$ adalah $2 \cdot (-5) x^{2-1} = -10x$
+- Turunan dari $7x$ adalah $1 \cdot 7 x^{1-1} = 7x^0 = 7(1) = 7$
+- Turunan dari $-9$ adalah $0$
+- Maka hasil akhirnya:
+  $$f'(x) = 12x^3 - 10x + 7$$
+
+### Contoh 2: Aturan Perkalian $u \cdot v$
+Tentukan turunan dari $f(x) = (2x + 3)(x^2 - 4)$.
+- Misalkan $u = 2x + 3 \implies u' = 2$
+- Misalkan $v = x^2 - 4 \implies v' = 2x$
+- Masukkan ke rumus $f'(x) = u'v + uv'$:
+  $$f'(x) = 2(x^2 - 4) + (2x + 3)(2x)$$
+  $$f'(x) = (2x^2 - 8) + (4x^2 + 6x) = 6x^2 + 6x - 8$$
+
+### Contoh 3: Aturan Pembagian $\frac{u}{v}$
+Tentukan turunan dari $f(x) = \frac{3x - 1}{2x + 5}$.
+- $u = 3x - 1 \implies u' = 3$
+- $v = 2x + 5 \implies v' = 2$
+- Masukkan ke rumus $f'(x) = \frac{u'v - uv'}{v^2}$:
+  $$f'(x) = \frac{3(2x + 5) - (3x - 1)(2)}{(2x + 5)^2} = \frac{(6x + 15) - (6x - 2)}{(2x + 5)^2} = \frac{17}{(2x + 5)^2}$$
+
+## 2. Menentukan Gradien dan Persamaan Garis Singgung Kurva
+
+Gradien ($m$) garis singgung yang menyentuh kurva $y = f(x)$ pada titik berabsis $x = x_1$ adalah nilai turunan pertama di titik tersebut:
+
+$$m = f'(x_1)$$
+
+Setelah gradien $m$ diketahui dan titik koordinat singgung $(x_1, y_1)$ ditemukan, gunakan rumus persamaan garis lurus:
+
+$$y - y_1 = m(x - x_1)$$
+
+**Contoh:** Tentukan persamaan garis singgung kurva $y = x^2 - 4x + 3$ di titik $(3, 0)$.
+1. Cari turunan pertama: $y' = 2x - 4$
+2. Hitung gradien pada $x = 3$: $m = 2(3) - 4 = 6 - 4 = 2$
+3. Susun persamaan garis singgung:
+   $$y - 0 = 2(x - 3) \implies y = 2x - 6$$
+
+## 3. Titik Stasioner dan Nilai Maksimum-Minimum
+
+Suatu fungsi $f(x)$ mencapai keadaan **stasioner** (garis singgung mendatar, tidak naik dan tidak turun) ketika turunan pertamanya bernilai nol:
+
+$$f'(x) = 0$$
+
+Nilai $x$ yang memenuhi persamaan $f'(x) = 0$ disebut **pembuat stasioner**, dan nilai $f(x)$ yang dihasilkan disebut **nilai stasioner**.
+
+### Uji Turunan Kedua untuk Menentukan Jenis Titik
+Untuk mengetahui apakah titik stasioner tersebut merupakan titik balik maksimum, titik balik minimum, atau titik belok, gunakan uji turunan kedua $f''(x)$:
+1. **Titik Balik Maksimum:** Jika $f''(x) < 0$ (kurva cekung ke bawah / nilai ekstrim tertinggi).
+2. **Titik Balik Minimum:** Jika $f''(x) > 0$ (kurva cekung ke atas / nilai ekstrim terendah).
+3. **Titik Belok:** Jika $f''(x) = 0$.
+
+> [!NOTE] **Pahami Konsepnya:** Nilai turunan kedua negatif ($f'' < 0$) menghasilkan nilai maksimum karena kemiringan kurva sedang berkurang (dari positif menjadi negatif). Sebaliknya, turunan kedua positif ($f'' > 0$) menghasilkan nilai minimum karena kemiringan kurva sedang bertambah.
+
+## 4. Aplikasi Turunan: Soal Optimasi Kehidupan Nyata
+
+**Contoh Soal Optimasi:**
+Kawat sepanjang $40\text{ meter}$ akan digunakan untuk memagari sebidang kandang ternak berbentuk persegi panjang. Tentukan ukuran panjang dan lebar agar luas kandang yang dipagari bernilai maksimum!
+
+1. **Model Matematika:**
+   - Keliling $K = 2(p + l) = 40 \implies p + l = 20 \implies l = 20 - p$.
+   - Fungsi Luas $L = p \times l = p(20 - p) = 20p - p^2$.
+2. **Syarat Luas Maksimum:** Turunan pertama luas terhadap panjang harus sama dengan nol ($L' = 0$):
+   $$L'(p) = 20 - 2p = 0 \implies 2p = 20 \implies p = 10\text{ meter}$$
+3. **Cari Lebar dan Luas Maksimum:**
+   - $l = 20 - 10 = 10\text{ meter}$.
+   - Luas Maksimum $L = 10 \times 10 = 100\text{ meter persegi}$.
+Kandang akan memiliki luas maksimum jika berbentuk bujur sangkar dengan sisi masing-masing $10\text{ meter}$.
+
+Jika kamu ingin memverifikasi kalkulasi turunan aturan rantai yang panjang atau memeriksa turunan fungsi pecahanmu, gunakan asisten [pemecah rumus matematika step-by-step](/tools/math-solver).
+
+Lanjutkan eksplorasi materi kalkulus menuju operasi kebalikan turunan melalui artikel [Integral Tak Tentu dan Tentu](/blog/matematika/integral-tak-tentu-dan-tentu) serta [Limit Fungsi Aljabar dan Dalil L'Hopital](/blog/matematika/limit-fungsi-aljabar-metode-penyelesaian).

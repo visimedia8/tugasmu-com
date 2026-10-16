@@ -1,0 +1,99 @@
+---
+title: "Peluang dan Kombinatorika: Aturan Pencacahan, Permutasi, dan Kombinasi"
+description: "Kuasai kaidah perkalian pencacahan, notasi faktorial, perbedaan permutasi P(n,r) vs kombinasi C(n,r), dan rumus peluang kejadian majemuk saling lepas/bebas."
+date: "2026-10-02T08:00:00Z"
+kategori: "matematika"
+---
+
+Peluang dan kombinatorika mengkaji kemungkinan terjadinya suatu peristiwa serta kaidah menghitung susunan objek tanpa perlu mendaftar satu per satu yang meliputi aturan pencacahan, notasi faktorial, permutasi, kombinasi, dan peluang kejadian majemuk. Dalam kurikulum [Matematika](/blog/matematika/) SMA, materi ini memiliki bobot tinggi pada ujian sekolah dan tes penalaran kuantitatif UTBK karena menguji logika berpikir dan ketelitian klasifikasi masalah.
+
+Kunci utama menaklukkan materi ini adalah ketajaman membedakan dua operasi utama: kapan suatu soal harus diselesaikan dengan **Permutasi** dan kapan harus diselesaikan dengan **Kombinasi**. Banyak siswa kehilangan nilai bukan karena salah berhitung faktorial, melainkan karena salah mendiagnosis apakah urutan pemilihan objek diperhatikan atau diabaikan.
+
+| Parameter Pembeda | Kaidah Permutasi ($P$) | Kaidah Kombinasi ($C$) |
+| --- | --- | --- |
+| **Prinsip Utama** | **Urutan Diperhatikan** ($AB \neq BA$) | **Urutan Tidak Diperhatikan** ($AB = BA$) |
+| **Formula Umum** | $P(n, r) = \frac{n!}{(n - r)!}$ | $C(n, r) = \frac{n!}{r!(n - r)!}$ |
+| **Kata Kunci Soal** | Susunan jabatan (Ketua, Wakil, Sekretaris), peringkat juara (I, II, III), susunan angka sandi/PIN, nomor plat kendaraan | Memilih anggota tim delegasi, jabat tangan antar peserta, mengambil beberapa kelereng sekaligus dari kantong |
+| **Variasi Bentuk** | Permutasi unsur sama ($\frac{n!}{k_1! k_2!}$), Permutasi siklis melingkar ($(n-1)!$) | Kombinasi kelompok terpisah, ekspansi binomial Newton |
+| **Nilai Hasil** | Selalu menghasilkan angka susunan yang **lebih banyak** ($P > C$) | Selalu menghasilkan angka himpunan yang **lebih sedikit** ($C < P$) |
+
+## 1. Kaidah Pencacahan dan Notasi Faktorial
+
+Sebelum masuk ke permutasi dan kombinasi, terdapat dua aturan dasar pengisian tempat (*filling slots*):
+1. **Aturan Perkalian:** Digunakan jika serangkaian peristiwa terjadi secara **bersamaan atau berurutan**. Jika kegiatan 1 memiliki $p$ cara dan kegiatan 2 memiliki $q$ cara, total cara adalah $p \times q$.
+2. **Aturan Penjumlahan:** Digunakan jika peristiwa bersifat **alternatif pilihan** (tidak terjadi bersamaan). Total cara adalah $p + q$.
+
+### Notasi Faktorial ($n!$)
+Faktorial dari bilangan bulat positif $n$ adalah perkalian menurun berurutan dari $n$ sampai 1:
+$$n! = n \times (n - 1) \times (n - 2) \times \dots \times 3 \times 2 \times 1$$
+Ketentuan khusus yang wajib diingat:
+$$0! = 1 \quad \text{dan} \quad 1! = 1$$
+
+## 2. Permutasi: Urutan Diperhatikan
+
+Permutasi adalah cara menyusun $r$ objek dari $n$ objek yang tersedia dengan memperhatikan posisi atau urutan:
+
+$$P(n, r) = \frac{n!}{(n - r)!}$$
+
+**Contoh Soal 1 (Susunan Pengurus Kelas):**
+Dari 7 calon pengurus OSIS, akan dipilih 3 orang untuk menduduki posisi Ketua, Sekretaris, dan Bendahara. Berapa banyak susunan pengurus yang mungkin terbentuk?
+- Karena jabatan Ketua, Sekretaris, dan Bendahara memiliki tingkatan posisi berbeda, maka **urutan diperhatikan** $\implies$ gunakan Permutasi.
+- Nilai $n = 7$ dan $r = 3$:
+  $$P(7, 3) = \frac{7!}{(7 - 3)!} = \frac{7!}{4!} = \frac{7 \times 6 \times 5 \times 4!}{4!} = 7 \times 6 \times 5 = 210\text{ susunan}$$
+
+### Permutasi dengan Unsur Sama
+Jika dari $n$ objek terdapat $k_1$ unsur yang sama, $k_2$ unsur yang sama, dst:
+$$P = \frac{n!}{k_1! \cdot k_2! \cdot \dots}$$
+
+**Contoh:** Berapa banyak susunan kata berbeda yang dapat dibentuk dari huruf penyusun kata "KATAK"?
+- Total huruf $n = 5$.
+- Huruf 'K' ada 2 ($k_1 = 2$), huruf 'A' ada 2 ($k_2 = 2$), huruf 'T' ada 1.
+- $$P = \frac{5!}{2! \cdot 2!} = \frac{120}{2 \cdot 2} = \frac{120}{4} = 30\text{ kata}$$
+
+### Permutasi Siklis (Melingkar)
+Susunan $n$ objek yang diletakkan melingkar pada meja bundar dihitung dengan rumus:
+$$P_{\text{siklis}} = (n - 1)!$$
+
+## 3. Kombinasi: Urutan Tidak Diperhatikan
+
+Kombinasi adalah cara memilih $r$ objek dari $n$ objek yang tersedia tanpa mempedulikan urutan atau posisi:
+
+$$C(n, r) = \binom{n}{r} = \frac{n!}{r!(n - r)!}$$
+
+**Contoh Soal 2 (Memilih Delegasi Lomba):**
+Dari 8 siswa berprestasi, sekolah akan memilih 4 orang untuk mewakili lomba cerdas cermat. Berapa banyak tim delegasi yang dapat dibentuk?
+- Karena urutan pemanggilan siswa tidak mengubah komposisi anggota tim, maka **urutan tidak diperhatikan** $\implies$ gunakan Kombinasi.
+- Nilai $n = 8$ dan $r = 4$:
+  $$C(8, 4) = \frac{8!}{4!(8 - 4)!} = \frac{8 \times 7 \times 6 \times 5 \times 4!}{4! \cdot (4 \times 3 \times 2 \times 1)} = \frac{1.680}{24} = 70\text{ tim}$$
+
+> [!TIP] **Sifat Simetris Kombinasi:** Nilai kombinasi bersifat simetris terhadap komplemennya:
+> $$C(n, r) = C(n, n - r)$$
+> Misalnya: $C(10, 8) = C(10, 2) = \frac{10 \times 9}{2 \times 1} = 45$. Sifat ini menghemat waktu hitungmu saat $r$ mendekati $n$!
+
+## 4. Peluang Suatu Kejadian dan Kejadian Majemuk
+
+Peluang teoritis terjadinya peristiwa $A$ dalam ruang sampel $S$ adalah rasio banyaknya kejadian $n(A)$ terhadap total ruang sampel $n(S)$:
+
+$$P(A) = \frac{n(A)}{n(S)} \quad (0 \le P(A) \le 1)$$
+- $P(A) = 0$ berarti peristiwa **mustahil terjadi**.
+- $P(A) = 1$ berarti peristiwa **pasti terjadi**.
+- Peluang komplemen (bukan $A$): $P(A') = 1 - P(A)$.
+
+### Peluang Kejadian Saling Lepas (Kata Hubung "ATAU")
+Dua kejadian $A$ dan $B$ dikatakan saling lepas jika keduanya **tidak mungkin terjadi bersamaan** ($A \cap B = \emptyset$):
+$$P(A \cup B) = P(A) + P(B)$$
+
+### Peluang Kejadian Saling Bebas (Kata Hubung "DAN")
+Dua kejadian $A$ dan $B$ dikatakan saling bebas jika terjadinya peristiwa $A$ **tidak memengaruhi** peluang terjadinya peristiwa $B$:
+$$P(A \cap B) = P(A) \times P(B)$$
+
+**Contoh:** Sebuah dadu bermata 6 dan sebuah koin logam dilempar bersamaan. Tentukan peluang munculnya angka genap pada dadu DAN gambar pada koin!
+- Ruang sampel dadu $= \{1, 2, 3, 4, 5, 6\} \implies n(S_1) = 6$.
+- Angka genap $= \{2, 4, 6\} \implies n(A) = 3 \implies P(A) = \frac{3}{6} = \frac{1}{2}$.
+- Ruang sampel koin $= \{\text{Angka}, \text{Gambar}\} \implies P(B) = \frac{1}{2}$.
+- Karena pelemparan dadu dan koin saling bebas:
+  $$P(A \cap B) = P(A) \times P(B) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$$
+
+Jika kamu ingin membuat variasi soal latihan peluang kombinatorika dan menguji kemampuan logika berhitungmu secara interaktif, gunakan [generator soal dan kuis matematika AI](/tools/generator-soal).
+
+Perluas penguasaan materi numerasi lainnya dengan mempelajari [Statistika: Mean, Median, dan Modus Data](/blog/matematika/statistika-mean-median-modus) serta [Barisan dan Deret Aritmatika-Geometri](/blog/matematika/barisan-dan-deret-aritmatika-geometri).

@@ -1,0 +1,105 @@
+---
+title: "Trigonometri Dasar: Sin Cos Tan Sudut Istimewa dan Aturan Kuadran I-IV"
+description: "Pahami perbandingan trigonometri dasar sin cos tan segitiga siku-siku, tabel sudut istimewa 0°-90°, dan aturan tanda kuadran I, II, III, IV."
+date: "2026-10-02T02:00:00Z"
+kategori: "matematika"
+---
+
+Trigonometri dasar mempelajari perbandingan ukuran panjang sisi segitiga siku-siku terhadap sudut lancipnya yang meliputi fungsi rasio sinus (*sin*), cosinus (*cos*), dan tangen (*tan*). Cabang ilmu [trigonometri](/kamus/trigonometri) ini berakar dari kata Yunani *trigonon* (tiga sudut) dan *metron* (mengukur). Materi ini merupakan tiang penyangga utama dalam kurikulum [Matematika](/blog/matematika/) SMA, navigasi pelayaran, perancangan konstruksi jembatan, hingga kalkulasi vektor fisika gaya dan gelombang.
+
+Banyak pelajar merasa gentar saat pertama kali berhadapan dengan trigonometri karena banyaknya rumus sudut berelasi yang harus dihafal. Padahal, kuncinya bukan menghafal membabi buta, melainkan memahami konsep geometri segitiga siku-siku, lingkaran satuan (*unit circle*), dan aturan rotasi kuadran. Di panduan ini, kamu bakal menguasai teknik menghafal sudut istimewa dengan jari tangan serta logika tanda positif-negatif di kuadran I sampai IV dengan mudah.
+
+| Perbandingan Trigonometri | Definisi Geometri Segitiga Siku-Siku | Rumus Singkatan Mnemonik | Kebalikan Fungsi (Invers Rasio) |
+| --- | --- | --- | --- |
+| **Sinus ($\sin \theta$)** | Perbandingan sisi depan sudut terhadap sisi miring (hipotenusa) | **Sindemi** ($\frac{\text{depan}}{\text{miring}}$) | Cosecan ($\csc \theta = \frac{1}{\sin \theta} = \frac{\text{miring}}{\text{depan}}$) |
+| **Cosinus ($\cos \theta$)** | Perbandingan sisi samping sudut terhadap sisi miring (hipotenusa) | **Cossami** ($\frac{\text{samping}}{\text{miring}}$) | Secan ($\sec \theta = \frac{1}{\cos \theta} = \frac{\text{miring}}{\text{samping}}$) |
+| **Tangen ($\tan \theta$)** | Perbandingan sisi depan sudut terhadap sisi samping sudut | **Tandesa** ($\frac{\text{depan}}{\text{samping}}$) | Cotangen ($\cot \theta = \frac{1}{\tan \theta} = \frac{\text{samping}}{\text{depan}}$) |
+
+## Konsep Dasar Sindemi, Cossami, dan Tandesa
+
+Misalkan terdapat sebuah segitiga siku-siku $ABC$ dengan sudut siku-siku di titik $C$ dan sudut lancip $\theta$ berada di titik $A$:
+- **Sisi Depan ($y$):** Sisi yang berhadapan langsung dengan sudut $\theta$ (garis $BC$).
+- **Sisi Samping ($x$):** Sisi tegak lurus yang menyentuh sudut $\theta$ selain hipotenusa (garis $AC$).
+- **Sisi Miring ($r$):** Sisi terpanjang yang berhadapan langsung dengan sudut siku-siku $90^\circ$ (garis $AB$).
+
+Berdasarkan [Teorema Pythagoras](/blog/matematika/penerapan-rumus-pythagoras), berlaku hubungan $r = \sqrt{x^2 + y^2}$. Dari konfigurasi ini lahir tiga rumus perbandingan utama:
+
+$$\sin \theta = \frac{y}{r} \quad (\text{depan / miring})$$
+$$\cos \theta = \frac{x}{r} \quad (\text{samping / miring})$$
+$$\tan \theta = \frac{y}{x} = \frac{\sin \theta}{\cos \theta} \quad (\text{depan / samping})$$
+
+> [!TIP] **Identitas Dasar Pythagoras:** Karena $x^2 + y^2 = r^2$, jika kedua ruas dibagi dengan $r^2$, maka diperoleh identitas trigonometri paling fundamental:
+> $$\sin^2 \theta + \cos^2 \theta = 1$$
+> Rumus ini selalu berlaku untuk nilai sudut $\theta$ berapa pun!
+
+## Tabel Sudut Istimewa Trigonometri ($0^\circ$ - $90^\circ$)
+
+Sudut istimewa adalah sudut-sudut pada kuadran pertama yang nilai rasio perbandingannya dapat dinyatakan dalam bentuk bilangan riil pecahan dan akar sederhana tanpa memerlukan kalkulator ilmiah:
+
+| Sudut ($\theta$) | $0^\circ$ ($0$ rad) | $30^\circ$ ($\frac{\pi}{6}$ rad) | $45^\circ$ ($\frac{\pi}{4}$ rad) | $60^\circ$ ($\frac{\pi}{3}$ rad) | $90^\circ$ ($\frac{\pi}{2}$ rad) |
+| --- | :---: | :---: | :---: | :---: | :---: |
+| **$\sin \theta$** | $0 = \frac{1}{2}\sqrt{0}$ | $\frac{1}{2} = \frac{1}{2}\sqrt{1}$ | $\frac{1}{2}\sqrt{2}$ | $\frac{1}{2}\sqrt{3}$ | $1 = \frac{1}{2}\sqrt{4}$ |
+| **$\cos \theta$** | $1 = \frac{1}{2}\sqrt{4}$ | $\frac{1}{2}\sqrt{3}$ | $\frac{1}{2}\sqrt{2}$ | $\frac{1}{2} = \frac{1}{2}\sqrt{1}$ | $0 = \frac{1}{2}\sqrt{0}$ |
+| **$\tan \theta$** | $0$ | $\frac{1}{3}\sqrt{3}$ | $1$ | $\sqrt{3}$ | Tak Terdefinisi ($\infty$) |
+
+Perhatikan pola baris sinus: nilainya naik teratur dari $\frac{1}{2}\sqrt{0}$ menuju $\frac{1}{2}\sqrt{4}$. Baris cosinus adalah kebalikan persis dari baris sinus (turun dari $1$ ke $0$), sedangkan tangen diperoleh dengan membagi nilai sinus dengan cosinus ($\frac{\sin \theta}{\cos \theta}$).
+
+## Pembagian Tanda Trigonometri di Kuadran I, II, III, dan IV
+
+Sumbu koordinat Kartesius membagi lingkaran penuh $360^\circ$ menjadi 4 wilayah kuadran. Tanda nilai sinus, cosinus, dan tangen di masing-masing kuadran ditentukan oleh posisi tanda absis ($x$) dan ordinat ($y$):
+
+1. **Kuadran I ($0^\circ < \theta < 90^\circ$):**
+   - Nilai $x > 0$ dan $y > 0$.
+   - **Semua nilai fungsi bernilai Positif (+)** ($\sin, \cos, \tan > 0$).
+
+2. **Kuadran II ($90^\circ < \theta < 180^\circ$):**
+   - Nilai $x < 0$ dan $y > 0$.
+   - **Hanya Sinus (dan Cosecan) yang bernilai Positif (+)**. Nilai cosinus dan tangen bernilai negatif (-).
+
+3. **Kuadran III ($180^\circ < \theta < 270^\circ$):**
+   - Nilai $x < 0$ dan $y < 0$.
+   - **Hanya Tangen (dan Cotangen) yang bernilai Positif (+)**. Nilai sinus dan cosinus bernilai negatif (-).
+
+4. **Kuadran IV ($270^\circ < \theta < 360^\circ$):**
+   - Nilai $x > 0$ dan $y < 0$.
+   - **Hanya Cosinus (dan Secan) yang bernilai Positif (+)**. Nilai sinus dan tangen bernilai negatif (-).
+
+> [!NOTE] **Jembatan Keledai Populer:** Untuk mengingat kuadran mana yang bertanda positif, hafalkan frasa:
+> **"Semua - Sindikat - Tangan - Kosong"**
+> - Kuadran I = **Semua** positif.
+> - Kuadran II = **Sin** positif.
+> - Kuadran III = **Tan** positif.
+> - Kuadran IV = **Cos** positif.
+
+## Rumus Sudut Berelasi: Cara Mengubah Sudut Tumpul ke Kuadran I
+
+Untuk menghitung nilai trigonometri sudut di atas $90^\circ$, kita gunakan rumus sudut berelasi yang berpatokan pada garis horisontal ($180^\circ$ atau $360^\circ$) agar nama fungsi trigonometrinya tetap dan tidak berubah:
+
+### Relasi Sudut Kuadran II ($180^\circ - \alpha$)
+- $\sin(180^\circ - \alpha) = +\sin \alpha$
+- $\cos(180^\circ - \alpha) = -\cos \alpha$
+- $\tan(180^\circ - \alpha) = -\tan \alpha$
+
+**Contoh:** Hitung nilai dari $\sin 150^\circ$ dan $\cos 120^\circ$.
+- $\sin 150^\circ = \sin(180^\circ - 30^\circ) = +\sin 30^\circ = \frac{1}{2}$
+- $\cos 120^\circ = \cos(180^\circ - 60^\circ) = -\cos 60^\circ = -\frac{1}{2}$
+
+### Relasi Sudut Kuadran III ($180^\circ + \alpha$)
+- $\sin(180^\circ + \alpha) = -\sin \alpha$
+- $\cos(180^\circ + \alpha) = -\cos \alpha$
+- $\tan(180^\circ + \alpha) = +\tan \alpha$
+
+**Contoh:** Hitung nilai dari $\tan 225^\circ$.
+- $\tan 225^\circ = \tan(180^\circ + 45^\circ) = +\tan 45^\circ = 1$
+
+### Relasi Sudut Kuadran IV ($360^\circ - \alpha$)
+- $\sin(360^\circ - \alpha) = -\sin \alpha$
+- $\cos(360^\circ - \alpha) = +\cos \alpha$
+- $\tan(360^\circ - \alpha) = -\tan \alpha$
+
+**Contoh:** Hitung nilai dari $\cos 300^\circ$.
+- $\cos 300^\circ = \cos(360^\circ - 60^\circ) = +\cos 60^\circ = \frac{1}{2}$
+
+Jika kamu menemukan soal perbandingan sudut trigonometri dengan angka pecahan atau sudut bernilai negatif, periksa penyelesaiannya langkah demi langkah dengan [pemecah soal matematika AI otomatis](/tools/math-solver).
+
+Perdalam juga keterampilan berhitung aljabar pendukung trigonometri melalui artikel [Persamaan Kuadrat dan Rumus ABC](/blog/matematika/persamaan-kuadrat-rumus-dan-akar) serta materi [Sifat-Sifat Logaritma Lengkap](/blog/matematika/cara-memahami-logaritma).

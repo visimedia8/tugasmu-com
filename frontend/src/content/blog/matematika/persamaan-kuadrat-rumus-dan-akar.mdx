@@ -1,0 +1,116 @@
+---
+title: "Persamaan Kuadrat: Pemfaktoran, Kuadrat Sempurna, dan Rumus ABC Lengkap"
+description: "Pelajari rumus persamaan kuadrat ax² + bx + c = 0, cara pemfaktoran, melengkapkan kuadrat sempurna, rumus ABC, dan analisis diskriminan D."
+date: "2026-10-02T01:00:00Z"
+kategori: "matematika"
+---
+
+Persamaan kuadrat merupakan persamaan polinomial berderajat dua dengan bentuk umum $ax^2 + bx + c = 0$ yang penyelesaian akarnya dapat ditentukan melalui pemfaktoran aljabar, metode melengkapkan kuadrat sempurna, dan rumus kuadrat (*rumus ABC*). Materi [persamaan kuadrat](/kamus/persamaan-kuadrat) ini adalah fondasi krusial dalam kurikulum [Matematika](/blog/matematika/) tingkat SMP dan SMA karena menjadi pintu gerbang analisis fungsi kuadrat, kurva parabola, hingga persoalan fisika gerak parabola dan mekanika.
+
+Di artikel ini, kita bakal membedah konsep persamaan kuadrat secara tuntas. Kamu bakal belajar mengenali koefisien $a$, $b$, dan konstanta $c$, memilih metode paling efisien untuk mencari nilai akar-akar $x_1$ dan $x_2$, memahami arti fisis nilai Diskriminan ($D$), serta memanfaatkan rumus jumlah dan hasil kali akar (Teorema Vieta).
+
+| Parameter Analisis | Pemfaktoran Aljabar | Melengkapkan Kuadrat Sempurna | Rumus Kuadrat (Rumus ABC) |
+| --- | --- | --- | --- |
+| **Bentuk Operasi** | $(x - p)(x - q) = 0$ | $(x + p)^2 = q$ | $x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$ |
+| **Kecepatan Pengerjaan** | Sangat Cepat (jika angka bulat mudah difaktorkan) | Sedang (bagus untuk pembuktian konsep aljabar) | Universal (berlaku untuk semua jenis bilangan, bulat maupun pecahan/irasional) |
+| **Kelemahan Utama** | Sulit digunakan jika akar bernilai irasional atau desimal | Rawan keliru tanda minus saat pindah ruas | Membutuhkan ketelitian ekstra dalam kalkulasi tanda negatif pada $-b$ dan $4ac$ |
+| **Kapan Digunakan?** | Saat nilai $a=1$ dan faktor perkalian $c$ mudah ditemukan | Saat koefisien $b$ bernilai genap dan diminta guru dalam tugas | Saat pemfaktoran macet atau angka di dalam soal bernilai besar |
+
+## Bentuk Umum Persamaan Kuadrat dan Syarat Koefisien
+
+Setiap persamaan kuadrat wajib memenuhi format standar:
+
+$$ax^2 + bx + c = 0$$
+
+Dengan ketentuan mutlak:
+1. Nilai koefisien **$a \neq 0$** (karena jika $a=0$, suku kuadrat $x^2$ hilang dan persamaan berubah menjadi persamaan linear biasa $bx + c = 0$).
+2. Nilai koefisien $a$, $b$, dan konstanta $c$ merupakan anggota himpunan bilangan riil ($\mathbb{R}$).
+3. Nilai $x$ adalah variabel yang mewakili nilai akar penyelesaian yang membuat persamaan bernilai nol benar.
+
+> [!TIP] **Pahami Konsepnya:** Sebelum mulai mencari akar, pastikan semua suku dipindahkan ke ruas kiri sehingga ruas kanan sama dengan $0$. Jika soal tertulis $2x^2 + 5x = 12$, ubah dulu menjadi $2x^2 + 5x - 12 = 0$ agar nilai $a=2$, $b=5$, dan $c=-12$ tidak terbalik tanda positif/negatifnya!
+
+## 3 Cara Menentukan Akar-Akar Persamaan Kuadrat
+
+### 1. Metode Pemfaktoran Aljabar
+
+Metode pemfaktoran bekerja dengan memanfaatkan prinsip perkalian nol: jika $A \times B = 0$, maka $A = 0$ atau $B = 0$.
+
+Untuk persamaan dengan $a = 1$:
+$$x^2 + bx + c = (x + p)(x + q) = 0$$
+Cari dua bilangan $p$ dan $q$ yang memenuhi syarat:
+- $p + q = b$
+- $p \times q = c$
+
+**Contoh Soal 1:**
+Tentukan akar-akar dari $x^2 - 5x + 6 = 0$.
+- Nilai $b = -5$ dan $c = 6$.
+- Cari dua bilangan yang jika dikalikan hasilnya $6$ dan jika dijumlahkan hasilnya $-5$. Bilangan tersebut adalah $-2$ dan $-3$.
+- Faktorkan: $(x - 2)(x - 3) = 0$
+- Maka $x - 2 = 0 \implies x_1 = 2$ atau $x - 3 = 0 \implies x_2 = 3$.
+- Himpunan penyelesaian: $\{2, 3\}$.
+
+### 2. Metode Melengkapkan Kuadrat Sempurna
+
+Metode ini mengubah bentuk $ax^2 + bx + c = 0$ menjadi bentuk kuadrat sempurna $(x + p)^2 = q$ dengan menambahkan kedua ruas dengan $(\frac{b}{2a})^2$.
+
+**Contoh Soal 2:**
+Selesaikan $x^2 + 6x - 7 = 0$.
+1. Pindahkan konstanta ke ruas kanan: $x^2 + 6x = 7$
+2. Tambahkan kedua ruas dengan kuadrat dari setengah koefisien $x$, yaitu $(\frac{6}{2})^2 = 3^2 = 9$:
+   $$x^2 + 6x + 9 = 7 + 9$$
+3. Tulis ruas kiri sebagai bentuk kuadrat:
+   $$(x + 3)^2 = 16$$
+4. Tarik akar pada kedua ruas:
+   $$x + 3 = \pm \sqrt{16} \implies x + 3 = \pm 4$$
+5. Cari masing-masing nilai $x$:
+   - $x_1 = 4 - 3 = 1$
+   - $x_2 = -4 - 3 = -7$
+
+### 3. Metode Rumus ABC (Rumus Kuadrat)
+
+Rumus kuadrat adalah rumus mutlak paling sakti karena sanggup memecahkan persamaan kuadrat apa pun, termasuk persamaan dengan angka koma atau akar yang tidak dapat difaktorkan secara manual:
+
+$$x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+**Contoh Soal 3:**
+Tentukan penyelesaian dari $2x^2 + 3x - 5 = 0$.
+- $a = 2, b = 3, c = -5$
+- Masukkan ke dalam rumus ABC:
+  $$x_{1,2} = \frac{-3 \pm \sqrt{3^2 - 4(2)(-5)}}{2(2)}$$
+  $$x_{1,2} = \frac{-3 \pm \sqrt{9 - (-40)}}{4} = \frac{-3 \pm \sqrt{49}}{4} = \frac{-3 \pm 7}{4}$$
+- Akar pertama: $x_1 = \frac{-3 + 7}{4} = \frac{4}{4} = 1$
+- Akar kedua: $x_2 = \frac{-3 - 7}{4} = \frac{-10}{4} = -\frac{5}{2} = -2,5$
+
+## Memahami Arti Nilai Diskriminan ($D$)
+
+Bagian di bawah tanda akar pada rumus ABC disebut sebagai **Diskriminan**, yang dilambangkan dengan huruf kapital $D$:
+
+$$D = b^2 - 4ac$$
+
+Nilai diskriminan ini berfungsi sebagai penentu karakteristik dan jenis akar tanpa kamu perlu menghitung nilai akar-akarnya terlebih dahulu:
+
+1. **$D > 0$ (Diskriminan Positif):** Persamaan memiliki **dua akar riil berbeda** ($x_1 \neq x_2$). Grafiknya memotong sumbu X di dua titik berbeda.
+2. **$D = 0$ (Diskriminan Nol):** Persamaan memiliki **dua akar riil kembar/sama** ($x_1 = x_2$). Grafiknya menyinggung sumbu X di satu titik.
+3. **$D < 0$ (Diskriminan Negatif):** Persamaan **tidak memiliki akar riil** (akar imajiner/kompleks). Grafiknya tidak memotong maupun menyinggung sumbu X (*definit*).
+
+> [!NOTE] **Karakteristik Kuadrat Sempurna:** Jika $D$ bernilai bilangan kuadrat sempurna (seperti 1, 4, 9, 16, 25, 36, 49, 64, dst.), maka akar-akarnya dipastikan berupa bilangan rasional. Jika $D > 0$ tetapi bukan kuadrat sempurna, maka akar-akarnya berupa bilangan irasional (mengandung bentuk akar).
+
+## Teorema Vieta: Rumus Jumlah dan Hasil Kali Akar
+
+Jika $x_1$ dan $x_2$ adalah akar-akar dari persamaan kuadrat $ax^2 + bx + c = 0$, kamu bisa langsung menghitung operasi aljabar akar-akar tersebut tanpa perlu mencari nilai masing-masing akarnya:
+
+1. **Jumlah Akar:**
+   $$x_1 + x_2 = -\frac{b}{a}$$
+
+2. **Hasil Kali Akar:**
+   $$x_1 \cdot x_2 = \frac{c}{a}$$
+
+3. **Selisih Akar:**
+   $$|x_1 - x_2| = \frac{\sqrt{D}}{a}$$
+
+4. **Jumlah Kuadrat Akar:**
+   $$x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1x_2 = \left(-\frac{b}{a}\right)^2 - 2\left(\frac{c}{a}\right)$$
+
+Jika kamu mengalami kesulitan saat memecahkan persamaan kuadrat pecahan atau ingin memeriksa kebenaran langkah pemfaktoranmu baris demi baris, gunakan bantuan [kalkulator matematika step-by-step](/tools/math-solver).
+
+Untuk memperluas pemahaman aljabar dan geometri lainnya, pelajari juga materi pendukung seperti [Aljabar SMP: Variabel dan Persamaan Linear](/blog/matematika/konsep-dasar-aljabar-smp) serta [Operasi Matriks Lengkap dan Determinan](/blog/matematika/mengerjakan-soal-matriks) secara bertahap.

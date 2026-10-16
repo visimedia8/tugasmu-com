@@ -1,0 +1,88 @@
+---
+title: "Barisan dan Deret: Perbedaan Aritmatika dan Geometri Beserta Rumus Suku ke-n"
+description: "Pelajari pola bilangan barisan aritmatika (beda b) dan geometri (rasio r), rumus Un, Sn deret, dan deret geometri tak hingga konvergen."
+date: "2026-10-02T04:00:00Z"
+kategori: "matematika"
+---
+
+Barisan dan deret dalam matematika mengkaji pola urutan bilangan teratur yang diklasifikasikan menjadi barisan aritmatika dan barisan geometri berdasarkan sifat perubahan antar suku yang berurutan. Konsep pola bilangan ini merupakan salah satu materi paling sering muncul dalam soal ujian sekolah, asesmen nasional numerasi (AKM), hingga tes penalaran matematika UTBK SNBT di kurikulum [Matematika](/blog/matematika/).
+
+Secara sederhana, **barisan** adalah daftar bilangan yang disusun berurutan dengan aturan tertentu ($U_1, U_2, U_3, \dots, U_n$), sedangkan **deret** adalah hasil penjumlahan dari suku-suku barisan tersebut ($U_1 + U_2 + U_3 + \dots + U_n = S_n$). Perbedaan paling mendasar antara aritmatika dan geometri terletak pada cara suku berikutnya dibentuk: aritmatika menggunakan operasi penjumlahan/pengurangan dengan selisih tetap (*beda*), sedangkan geometri menggunakan operasi perkalian/pembagian dengan faktor pengali tetap (*rasio*).
+
+| Parameter Perbandingan | Barisan Aritmatika | Barisan Geometri |
+| --- | --- | --- |
+| **Operasi Penghubung Antar Suku** | Penjumlahan atau Pengurangan dengan nilai konstan | Perkalian atau Pembagian dengan nilai konstan |
+| **Karakteristik Pengubah** | **Beda ($b$):** $b = U_n - U_{n-1}$ | **Rasio ($r$):** $r = \frac{U_n}{U_{n-1}}$ |
+| **Rumus Suku ke-n ($U_n$)** | $U_n = a + (n - 1)b$ | $U_n = a \cdot r^{n-1}$ |
+| **Rumus Jumlah n Suku Pertama ($S_n$)** | $S_n = \frac{n}{2}(2a + (n - 1)b) = \frac{n}{2}(a + U_n)$ | $S_n = \frac{a(r^n - 1)}{r - 1}$ (untuk $r > 1$) atau $\frac{a(1 - r^n)}{1 - r}$ (untuk $r < 1$) |
+| **Bentuk Pola Deret Khusus** | Barisan bertingkat / Sisipan aritmatika | Deret Geometri Tak Hingga ($S_\infty = \frac{a}{1 - r}$) |
+| **Contoh Nyata** | Bunga tunggal tabungan, kenaikan tarif berkala | Pembelahan sel bakteri, peluruhan zat radioaktif, pantulan bola |
+
+## 1. Memahami Barisan dan Deret Aritmatika
+
+Pada barisan aritmatika, selisih antara dua suku yang berdampingan selalu bernilai sama dan tetap. Selisih ini disebut **beda ($b$)**:
+
+$$b = U_2 - U_1 = U_3 - U_2 = U_n - U_{n-1}$$
+
+Jika suku pertama dilambangkan dengan huruf $a$ ($U_1 = a$), maka:
+- Suku ke-1: $U_1 = a$
+- Suku ke-2: $U_2 = a + b$
+- Suku ke-3: $U_3 = a + 2b$
+- Suku ke-n: **$U_n = a + (n - 1)b$**
+
+### Contoh Soal Aritmatika 1 (Mencari Suku ke-n)
+Diketahui suatu barisan aritmatika: $3, 7, 11, 15, \dots$ Tentukan suku ke-20 barisan tersebut!
+- Suku pertama ($a$) = $3$
+- Beda ($b$) = $7 - 3 = 4$
+- Suku ke-20 ($n = 20$):
+  $$U_{20} = a + (20 - 1)b = 3 + (19 \times 4) = 3 + 76 = 79$$
+
+### Contoh Soal Aritmatika 2 (Mencari Jumlah Deret $S_n$)
+Hitunglah jumlah 15 suku pertama dari deret $4 + 9 + 14 + 19 + \dots$
+- Nilai $a = 4$, $b = 9 - 4 = 5$, dan $n = 15$.
+- Gunakan rumus deret:
+  $$S_{15} = \frac{15}{2} \left( 2(4) + (15 - 1)5 \right)$$
+  $$S_{15} = \frac{15}{2} (8 + 70) = \frac{15}{2}(78) = 15 \times 39 = 585$$
+
+> [!TIP] **Trik Cepat Nilai Suku Tengah ($U_t$):** Pada barisan aritmatika dengan banyak suku ganjil, suku tengahnya dapat dicari langsung dengan merata-ratakan suku pertama dan suku terakhir:
+> $$U_t = \frac{a + U_n}{2}$$
+
+## 2. Memahami Barisan dan Deret Geometri
+
+Pada barisan geometri, perbandingan antara dua suku yang berurutan selalu bernilai tetap. Perbandingan ini disebut **rasio ($r$)**:
+
+$$r = \frac{U_2}{U_1} = \frac{U_3}{U_2} = \frac{U_n}{U_{n-1}}$$
+
+Suku-suku barisan geometri terbentuk melalui pemangkatan rasio:
+- Suku ke-1: $U_1 = a$
+- Suku ke-2: $U_2 = a \cdot r$
+- Suku ke-3: $U_3 = a \cdot r^2$
+- Suku ke-n: **$U_n = a \cdot r^{n-1}$**
+
+### Contoh Soal Geometri 1
+Diketahui barisan geometri: $2, 6, 18, 54, \dots$ Tentukan nilai suku ke-7!
+- Suku pertama ($a$) = $2$
+- Rasio ($r$) = $\frac{6}{2} = 3$
+- Suku ke-7 ($n = 7$):
+  $$U_7 = a \cdot r^{7-1} = 2 \cdot 3^6 = 2 \cdot 729 = 1.458$$
+
+### Deret Geometri Tak Hingga ($S_\infty$)
+Jika suatu deret geometri memiliki suku tak terhingga ($n \to \infty$), deret tersebut memiliki dua kemungkinan perilaku:
+1. **Deret Divergen ($|r| \ge 1$):** Nilai suku semakin membesar tanpa batas sehingga jumlah totalnya tidak terhingga ($\infty$).
+2. **Deret Konvergen ($-1 < r < 1$):** Nilai suku semakin kecil mendekati nol sehingga jumlah totalnya memusat ke suatu nilai riil tertentu:
+
+$$S_\infty = \frac{a}{1 - r}$$
+
+**Contoh Kasus Pantulan Bola:**
+Sebuah bola dijatuhkan dari ketinggian $10\text{ meter}$. Setiap kali memantul, bola mencapai ketinggian $\frac{3}{4}$ dari ketinggian sebelumnya. Berapakah panjang total lintasan bola hingga berhenti?
+- Bola menempuh dua fase lintasan: lintasan turun dan lintasan naik.
+- Lintasan turun: $a_{\text{turun}} = 10\text{ m}, r = \frac{3}{4} \implies S_{\text{turun}} = \frac{10}{1 - \frac{3}{4}} = \frac{10}{\frac{1}{4}} = 40\text{ meter}$.
+- Lintasan naik: $a_{\text{naik}} = 10 \times \frac{3}{4} = 7,5\text{ m}, r = \frac{3}{4} \implies S_{\text{naik}} = \frac{7,5}{1 - \frac{3}{4}} = \frac{7,5}{\frac{1}{4}} = 30\text{ meter}$.
+- Total lintasan bola = $40 + 30 = 70\text{ meter}$.
+
+> [!NOTE] **Rumus Praktis Pantulan Bola:** Jika bola dijatuhkan dari ketinggian $h$ dengan pantulan $\frac{a}{b}$, panjang lintasan total dapat dihitung kilat dengan formula:
+> $$S_{\text{total}} = h \cdot \left( \frac{b + a}{b - a} \right) = 10 \cdot \left( \frac{4 + 3}{4 - 3} \right) = 10 \times 7 = 70\text{ meter}$$
+
+Jika kamu sedang mengerjakan soal barisan dan deret rumit dengan beda bertingkat atau deret geometri pecahan, uji langkah perhitunganmu dengan [alat penyelesai soal matematika step-by-step](/tools/math-solver).
+
+Lanjutkan penguasaan konsep aljabar dan analisis angka lewat [Panduan Lengkap Aljabar SMP](/blog/matematika/konsep-dasar-aljabar-smp) serta artikel [Statistika: Mean, Median, dan Modus](/blog/matematika/statistika-mean-median-modus).

@@ -1,0 +1,103 @@
+---
+title: "Statistika Matematika: Mean, Median, Modus, Kuartil, dan Simpangan Baku"
+description: "Panduan lengkap statistika data tunggal dan kelompok: cara menghitung mean, median, modus, kuartil Q1-Q3, jangkauan, dan simpangan baku."
+date: "2026-10-02T03:00:00Z"
+kategori: "matematika"
+---
+
+Statistika matematika mencakup metode pengumpulan, pengolahan, penyajian, dan analisis data numerik yang dibagi menjadi ukuran pemusatan dan ukuran penyebaran seperti nilai rata-rata hitung (*mean*), nilai tengah (*median*), frekuensi kemunculan terbanyak (*modus*), serta simpangan baku (*standar deviasi*). Dalam kurikulum [Matematika](/blog/matematika/) SMP dan SMA, pemahaman statistika merupakan bekal esensial untuk menganalisis data survei, grafik rapor akademik, hingga pengolahan data penelitian karya ilmiah remaja (KIR).
+
+Sering kali siswa merasa bingung membedakan rumus ketika data disajikan secara tunggal (*list* angka berderet) dibandingkan saat data sudah dikelompokkan ke dalam tabel distribusi frekuensi berinterval kelas. Pada artikel ini, kita bakal membedah kedua format data tersebut lengkap dengan formula, contoh perhitungan angka nyata, dan analisis sebaran data.
+
+| Kategori Statistik | Parameter Analisis | Karakteristik Utama | Formula Pokok Data Tunggal |
+| --- | --- | --- | --- |
+| **Ukuran Pemusatan** | **Mean ($\bar{x}$)** | Titik berat rata-rata matematis seluruh sampel | $\bar{x} = \frac{\sum x_i}{n}$ |
+| **Ukuran Pemusatan** | **Median ($Me$)** | Nilai posisi tepat di tengah setelah data diurutkan dari terkecil ke terbesar | Data ganjil: $x_{\frac{n+1}{2}}$; Data genap: $\frac{x_{\frac{n}{2}} + x_{\frac{n}{2} + 1}}{2}$ |
+| **Ukuran Pemusatan** | **Modus ($Mo$)** | Nilai angka yang memiliki frekuensi kemunculan paling tinggi | Cari angka yang paling sering muncul dalam himpunan data |
+| **Ukuran Letak** | **Kuartil ($Q_1, Q_2, Q_3$)** | Tiga titik batas yang membagi data terurut menjadi 4 bagian sama besar | $Q_1$ (Kuartil Bawah), $Q_2$ (Median/Tengah), $Q_3$ (Kuartil Atas) |
+| **Ukuran Penyebaran** | **Jangkauan ($R$)** | Selisih rentang nilai ekstrem tertinggi dan terendah | $R = x_{\max} - x_{\min}$ |
+| **Ukuran Penyebaran** | **Simpangan Baku ($s$)** | Tingkat dispersi atau variasi sebaran data relatif terhadap rata-rata | $s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n}}$ |
+
+## 1. Menghitung Ukuran Pemusatan Data Tunggal
+
+Misalkan diberikan data nilai ulangan matematika 9 orang siswa:
+$$70, 80, 65, 85, 90, 75, 80, 85, 80$$
+
+### Menghitung Mean (Rata-Rata Hitung)
+Jumlahkan seluruh nilai data lalu bagi dengan banyaknya data ($n = 9$):
+$$\bar{x} = \frac{70 + 80 + 65 + 85 + 90 + 75 + 80 + 85 + 80}{9} = \frac{710}{9} \approx 78,89$$
+
+### Menghitung Median (Nilai Tengah)
+**Langkah 1:** Urutkan data dari yang paling kecil ke yang paling besar:
+$$65, 70, 75, 80, \mathbf{80}, 80, 85, 85, 90$$
+**Langkah 2:** Karena banyaknya data ganjil ($n = 9$), median berada tepat di data ke-$\frac{9+1}{2} = 5$:
+$$Me = x_5 = 80$$
+
+### Menentukan Modus
+Lihat frekuensi kemunculan tiap angka:
+- 65 muncul 1 kali
+- 70 muncul 1 kali
+- 75 muncul 1 kali
+- **80 muncul 3 kali**
+- 85 muncul 2 kali
+- 90 muncul 1 kali
+
+Karena angka 80 muncul paling banyak (3 kali), maka nilai **Modus ($Mo$) = 80**.
+
+> [!TIP] **Catatan Modus:** Suatu kumpulan data bisa memiliki satu modus (*unimodus*), dua modus (*bimodus*), lebih dari dua modus (*multimodus*), atau bahkan **tidak memiliki modus sama sekali** jika seluruh angka memiliki frekuensi kemunculan yang sama persis (misal: 6, 7, 8, 9 masing-masing hanya muncul 1 kali).
+
+## 2. Kuartil dan Jangkauan Interkuartil
+
+Kuartil membagi urutan data menjadi 4 kelompok persentil ($25\%, 50\%, 75\%, 100\%$):
+- **Kuartil Bawah ($Q_1$):** Titik tengah dari separuh data bagian bawah (kiri dari median).
+- **Kuartil Tengah ($Q_2$):** Sama persis dengan nilai **Median ($Me$)**.
+- **Kuartil Atas ($Q_3$):** Titik tengah dari separuh data bagian atas (kanan dari median).
+
+Dari data terurut di atas:
+$$(65, 70), \mathbf{72,5}, (75, 80) \quad|\quad \mathbf{80} (Q_2) \quad|\quad (80, 85), \mathbf{85}, (85, 90)$$
+- Nilai $Q_1 = \frac{70 + 75}{2} = 72,5$
+- Nilai $Q_2 = 80$
+- Nilai $Q_3 = \frac{85 + 85}{2} = 85$
+
+### Jangkauan Interkuartil ($QR$) dan Simpangan Kuartil ($Q_d$)
+Jangkauan interkuartil mengukur rentang sebaran 50% data di area tengah:
+$$QR = Q_3 - Q_1 = 85 - 72,5 = 12,5$$
+Simpangan kuartil (semi-interkuartil):
+$$Q_d = \frac{1}{2} QR = \frac{1}{2}(12,5) = 6,25$$
+
+## 3. Ukuran Pemusatan pada Data Berkelompok
+
+Pada tabel distribusi frekuensi berinterval kelas, setiap kelas interval memiliki batas bawah, batas atas, dan frekuensi ($f_i$):
+
+### Rumus Mean Data Kelompok
+$$\bar{x} = \frac{\sum (f_i \cdot x_i)}{\sum f_i}$$
+Di mana $x_i$ adalah nilai titik tengah interval kelas ($x_i = \frac{\text{Batas Bawah} + \text{Batas Atas}}{2}$).
+
+### Rumus Median Data Kelompok
+$$Me = L + \left( \frac{\frac{n}{2} - \sum f_k}{f_{me}} \right) \cdot c$$
+- $L$ = Tepi bawah kelas median (Batas Bawah - 0,5)
+- $n$ = Total seluruh frekuensi ($\sum f_i$)
+- $\sum f_k$ = Jumlah frekuensi kumulatif sebelum kelas median
+- $f_{me}$ = Frekuensi asli kelas median
+- $c$ = Panjang interval kelas (lebar kelas)
+
+### Rumus Modus Data Kelompok
+$$Mo = L + \left( \frac{d_1}{d_1 + d_2} \right) \cdot c$$
+- $L$ = Tepi bawah kelas modus (kelas dengan frekuensi tertinggi)
+- $d_1$ = Selisih frekuensi kelas modus dengan kelas sebelumnya
+- $d_2$ = Selisih frekuensi kelas modus dengan kelas sesudahnya
+- $c$ = Panjang interval kelas
+
+## 4. Varians dan Simpangan Baku (*Standar Deviasi*)
+
+Simpangan baku adalah parameter paling presisi dalam statistika modern untuk mengukur seberapa jauh angka-angka dalam data menyebar dari nilai rata-ratanya:
+- **Varians (Ragam / $s^2$):**
+  $$s^2 = \frac{\sum (x_i - \bar{x})^2}{n}$$
+- **Simpangan Baku ($s$):**
+  $$s = \sqrt{s^2} = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n}}$$
+
+Semakin kecil nilai simpangan baku, semakin homogen dan seragam data tersebut (mendekati rata-rata). Sebaliknya, simpangan baku yang besar menandakan data sangat heterogen dan memiliki variasi angka yang jomplang.
+
+Jika kamu ingin menguji pemahaman konsep statistika atau butuh membuat latihan soal dengan berbagai variasi tabel distribusi frekuensi, gunakan [generator soal latihan matematika otomatis](/tools/generator-soal).
+
+Pelajari juga metode analisis peluang dan aljabar lainnya seperti [Peluang dan Kombinatorika: Aturan Pencacahan, Permutasi, dan Kombinasi](/blog/matematika/peluang-dan-kombinatorika-permutasi-kombinasi) serta [Pemodelan Soal Cerita Matematika](/blog/matematika/tips-menjawab-soal-cerita).
