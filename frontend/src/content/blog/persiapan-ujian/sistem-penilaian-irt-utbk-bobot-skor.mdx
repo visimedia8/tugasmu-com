@@ -1,0 +1,75 @@
+---
+title: "Sistem Penilaian IRT (Item Response Theory) UTBK: Bobot Soal dan Cara Kerja Skor"
+description: "Pahami sistem penilaian IRT UTBK SNBT resmi BPPP: bobot soal sulit vs mudah, pembongkaran mitos sistem minus, 3 tahapan penilaian, dan trik optimasi skor."
+date: "2026-10-02T11:30:00Z"
+kategori: "persiapan-ujian"
+---
+
+Sistem penilaian IRT (Item Response Theory) dalam UTBK SNBT merupakan metode asesmen psikometrik modern yang menentukan skor akhir berdasarkan karakteristik tingkat kesulitan masing-masing butir soal, daya pembeda butir, serta pola respon jawaban dari seluruh populasi peserta ujian. Berbeda dengan Classical Test Theory (CTT) yang hanya menjumlahkan skor mentah (satu jawaban benar sama dengan satu poin), pendekatan Teori Respon Butir (IRT) mengevaluasi kapabilitas kognitif laten (*latent trait / $\theta$*) peserta secara objektif dan terstandar secara statistik.
+
+Metode IRT telah digunakan secara konsisten oleh Balai Pengelolaan Pengujian Pendidikan (BPPP) Kemendikbudristek untuk memastikan seleksi masuk perguruan tinggi negeri berjalan adil. Dengan sistem ini, peserta yang mampu menjawab butir soal dengan tingkat kesukaran tinggi akan memperoleh bobot skor yang jauh lebih besar dibandingkan peserta yang hanya mampu menjawab soal-soal berkategori mudah. Kamu bisa merasakan simulasi penilaian berbobot ini melalui [Simulasi UTBK SNBT TugasMu](/tools/simulasi-utbk).
+
+## Perbedaan Sistem Penilaian Klasik (CTT) vs Modern (IRT)
+
+Perbandingan mendasar antara sistem penilaian lama berbasis skor mentah dan sistem IRT yang berlaku saat ini dirangkum dalam tabel berikut:
+
+| Aspek Penilaian | Teori Tes Klasik (CTT) | Item Response Theory (IRT) SNBT |
+| :--- | :--- | :--- |
+| **Nilai per Butir Soal** | Seragam (Setiap nomor berbobot sama, misal: benar = +1) | Dinamis (Setiap nomor memiliki bobot berbeda bergantung analisis statistik) |
+| **Penentuan Bobot** | Ditentukan sebelum ujian dimulai | Ditentukan **setelah** seluruh peserta selesai mengerjakan ujian |
+| **Ketergantungan Sampel** | Skor sangat bergantung pada paket soal mudah/sulit | Skor terkalibrasi secara adil tanpa terpengaruh variasi paket soal |
+| **Sistem Penalti Minus** | Ada sistem penalti minus (+4 benar, -1 salah pada era SBMPTN lama) | **TIDAK ADA SISTEM MINUS** (Salah = 0, Benar = bobot IRT) |
+
+---
+
+## Tiga Tahapan Resmi Perhitungan Skor IRT pada UTBK SNBT
+
+Berdasarkan regulasi resmi panitia seleksi nasional, penentuan skor akhir UTBK dilakukan melalui tiga tahap berurutan:
+
+```
+Alur Tiga Tahap Penilaian IRT:
+Tahap 1: Pengolahan Jawaban Mentah
+         Setiap jawaban benar diberi nilai 1, jawaban salah atau kosong diberi nilai 0.
+                           │
+                           ▼
+Tahap 2: Analisis Karakteristik Butir Soal
+         Sistem komputer menganalisis tingkat kesulitan butir soal berdasarkan 
+         persentase seluruh peserta nasional yang menjawab benar/salah pada nomor tersebut.
+                           │
+                           ▼
+Tahap 3: Pembobotan & Komputasi Skor Skolastik
+         Skor akhir peserta dihitung dengan mengintegrasikan pola jawaban terhadap 
+         parameter kesukaran (b) dan daya pembeda (a). Skor ditransformasikan 
+         ke dalam skala terstandar nasional (rata-rata 500, deviasi standar 100).
+```
+
+### Parameter Psikometrik dalam Model IRT
+
+Dalam model logistik parametrik yang umum digunakan dalam tes terstandar modern:
+* **Tingkat Kesukaran Butir ($b$)**: Mengindikasikan seberapa sulit butir soal tersebut. Jika hanya sedikit peserta nasional yang mampu menjawab nomor tertentu dengan benar, maka parameter kesukaran butir tersebut tinggi, sehingga bobot nilai yang didapat oleh penjawab benar akan melesat tinggi.
+* **Daya Pembeda Butir ($a$)**: Menunjukkan seberapa akurat butir soal tersebut membedakan antara peserta berkemampuan tinggi dan peserta berkemampuan rendah.
+* **Tebakan Semu ($c$)**: Peluang peserta menjawab benar murni karena faktor keberuntungan tebakan acak.
+
+---
+
+## Pembongkaran Mitos: Mengapa Tidak Boleh Ada Soal yang Dikosongkan?
+
+Masih banyak siswa yang ragu-ragu dan memilih mengosongkan lembar jawaban karena terpengaruh mitos masa lalu bahwa jawaban salah akan mendapat pengurangan nilai minus satu (-1).
+
+> **FAKTA RESMI**: Sejak penyelenggaraan UTBK tahun 2018 hingga SNBT tahun ini, **aturan minus satu telah dihapuskan sepenuhnya**. 
+
+* **Jawaban Benar**: Mendapatkan bobot skor positif sesuai tingkat kesukaran soal.
+* **Jawaban Salah**: Mendapatkan skor **0 (nol)**.
+* **Jawaban Dikosongkan**: Mendapatkan skor **0 (nol)**.
+
+Karena jawaban salah dan jawaban kosong sama-sama bernilai nol, maka **mengosongkan jawaban adalah kerugian mutlak**. Jika waktu ujian tersisa 30 detik dan kamu masih memiliki 3 butir soal yang belum terselesaikan, lakukan teknik eliminasi cepat terhadap opsi yang jelas mustahil, lalu pilihlah opsi paling rasional. Peluang tebakan terarah tetap memberi probabilitas 25%–50% untuk menambah skor IRT secara cuma-cuma.
+
+---
+
+## Strategi Memaksimalkan Skor Skolastik IRT
+
+1. **Amankan Soal Mudah Terlebih Dahulu**: Jangan sampai kehilangan poin pada butir soal yang dijawab benar oleh mayoritas peserta nasional. Kehilangan poin pada soal mudah akan menurunkan estimasi kemampuan dasar secara drastis.
+2. **Kuasai Materi Pembeda (Daya Pembeda Tinggi)**: Subtes seperti Penalaran Matematika dan Pengetahuan Kuantitatif sering kali memiliki proporsi soal sulit yang tinggi. Peserta yang berhasil mengumpulkan 5–8 jawaban benar pada nomor-nomor sulit ini akan menikmati lonjakan skor IRT di atas 700+.
+3. **Latihan Simulasi dengan Pengatur Waktu Ketat**: Biasakan diri mengerjakan soal di bawah tekanan sistem batas waktu komputer agar tidak panik saat sistem berpindah antarsubtes.
+
+Untuk merencanakan persiapan ujianmu secara komprehensif, ikuti panduan [jadwal belajar H-30 UTBK SNBT](/blog/persiapan-ujian/jadwal-belajar-h30-utbk-snbt-tryout), pahami [strategi memilih jurusan dan PTN](/blog/persiapan-ujian/strategi-memilih-jurusan-ptn-snbt), serta evaluasi kemampuanmu dengan [Simulasi UTBK SNBT TugasMu](/tools/simulasi-utbk).
