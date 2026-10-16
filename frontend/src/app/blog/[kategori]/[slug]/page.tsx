@@ -103,6 +103,26 @@ const CATEGORY_TOOL_MAP: Record<string, { name: string; href: string; desc: stri
     name: 'Rangkuman Geografi & Sosiologi',
     href: '/tools/rangkuman',
     desc: 'Rangkum materi ekonomi, geografi, dan sosiologi sekolah menengah.'
+  },
+  'seni-budaya': {
+    name: 'Generator Pantun & Seni',
+    href: '/tools/pantun-puisi',
+    desc: 'Hasilkan pantun, puisi berima indah, dan telaah karya seni rupa atau tari daerah.'
+  },
+  'kurikulum-merdeka': {
+    name: 'Rangkuman Kurikulum Merdeka',
+    href: '/tools/rangkuman',
+    desc: 'Sarikan materi fase capaian belajar, modul projek P5, dan kriteria KKTP rapor.'
+  },
+  'persiapan-ujian': {
+    name: 'Simulasi UTBK & Ujian AI',
+    href: '/tools/simulasi-utbk',
+    desc: 'Latih kemampuan penalaran skolastik dan simulasi try out ujian sekolah.'
+  },
+  'tips-belajar': {
+    name: 'Rangkuman Belajar Cepat',
+    href: '/tools/rangkuman',
+    desc: 'Ringkas buku materi tebal dan terapkan teknik belajar Feynman secara efektif.'
   }
 };
 
@@ -289,6 +309,41 @@ export default async function BlogPost({ params }: Props) {
                 "url": "https://tugasmu.com/logo.png"
               }
             }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tugasmu.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://tugasmu.com/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": resolvedParams.kategori.replace('-', ' '),
+                "item": `https://tugasmu.com/blog/${resolvedParams.kategori}`
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": post.title,
+                "item": `https://tugasmu.com/blog/${resolvedParams.kategori}/${resolvedParams.slug}`
+              }
+            ]
           })
         }}
       />

@@ -69,6 +69,34 @@ const CATEGORY_META_INFO: Record<string, { title: string; desc: string; toolName
     toolName: 'Rangkuman Materi IPS AI',
     toolHref: '/tools/rangkuman',
     toolCta: 'Rangkum Konsep IPS Lengkap'
+  },
+  'seni-budaya': {
+    title: 'Materi Seni Budaya & Kesenian Tradisional',
+    desc: 'Pembahasan seni rupa murni dan terapan, alat musik tradisional, tari daerah Nusantara, dan teater modern.',
+    toolName: 'Generator Pantun, Puisi & Seni AI',
+    toolHref: '/tools/pantun-puisi',
+    toolCta: 'Buat Karya Seni & Sastra'
+  },
+  'kurikulum-merdeka': {
+    title: 'Panduan Kurikulum Merdeka & Projek P5',
+    desc: 'Pemetaan capaian pembelajaran lintas fase A-F, modul ajar Projek P5, penilaian asesmen formatif-sumatif, dan KKTP rapor.',
+    toolName: 'Rangkuman Materi Kurikulum Merdeka',
+    toolHref: '/tools/rangkuman',
+    toolCta: 'Rangkum Panduan Fase & Modul'
+  },
+  'persiapan-ujian': {
+    title: 'Persiapan Ujian Sekolah & UTBK SNBT',
+    desc: 'Strategi lolos seleksi PTN, simulasi soal TPS penalaran skolastik, teknik eliminasi pilihan ganda, dan try out ujian.',
+    toolName: 'Simulator Ujian & Latihan Soal AI',
+    toolHref: '/tools/simulasi-utbk',
+    toolCta: 'Mulai Simulasi Try Out UTBK'
+  },
+  'tips-belajar': {
+    title: 'Tips Belajar Efektif & Metode Akademik',
+    desc: 'Teknik Feynman, metode Cornell, manajemen waktu PR dan ekskul, panduan laporan praktikum, serta etika belajar bebas joki.',
+    toolName: 'Rangkuman & Outline Belajar Pintar',
+    toolHref: '/tools/rangkuman',
+    toolCta: 'Optimalkan Cara Belajarmu'
   }
 };
 
@@ -150,11 +178,40 @@ export default async function BlogCategory({ params }: Props) {
     }
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tugasmu.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://tugasmu.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": info.title,
+        "item": `https://tugasmu.com/blog/${resolvedParams.kategori}`
+      }
+    ]
+  };
+
   return (
     <main className="container py-12 max-w-4xl mx-auto px-4">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <nav className="mb-8 text-sm text-slate-500">
         <ol className="flex items-center space-x-2">
