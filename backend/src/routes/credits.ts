@@ -23,7 +23,7 @@ credits.post('/buy', async (c) => {
   const orderId = `TM-credit-${body.bundle}-${authUser.userId}-${Date.now()}`.substring(0, 50)
   const merchantCode = c.env.DUITKU_MERCHANT_CODE
   const merchantKey = c.env.DUITKU_MERCHANT_KEY
-  const isProd = c.env.DUITKU_IS_PRODUCTION === 'true'
+  const isProd = c.env.DUITKU_IS_PRODUCTION === 'true' || c.env.DUITKU_IS_PRODUCTION === '1'
   const signature = md5(`${merchantCode}${orderId}${bundle.price}${merchantKey}`)
 
   const duitkuUrl = isProd

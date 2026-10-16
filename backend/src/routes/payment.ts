@@ -30,7 +30,7 @@ payment.post('/create-transaction', authMiddleware, async (c) => {
 
     const merchantCode = c.env.DUITKU_MERCHANT_CODE
     const merchantKey = c.env.DUITKU_MERCHANT_KEY
-    const isProd = false // Forced for Sandbox
+    const isProd = c.env.DUITKU_IS_PRODUCTION === 'true' || c.env.DUITKU_IS_PRODUCTION === '1'
 
     if (!merchantCode || !merchantKey) {
       return c.json({ success: false, message: 'Duitku is not configured' }, 500)

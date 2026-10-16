@@ -23,7 +23,7 @@ export async function hashPassword(password: string, salt: string): Promise<stri
   )
 
   const exportedKey = await crypto.subtle.exportKey('raw', key)
-  const hashBuffer = new Uint8Array(exportedKey)
+  const hashBuffer = new Uint8Array(exportedKey as ArrayBuffer)
   const hashArray = Array.from(hashBuffer)
   const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
   return hashHex
