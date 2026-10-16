@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 
 export default function AkunPage() {
   const { data: session, status } = useSession()
-  const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://api.tugasmu.com";
+  const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://tugasmu-api.johananggo.workers.dev";
   const router = useRouter()
   const [userInfo, setUserInfo] = useState<{user?: {tier: string, name?: string, jenjang_default?: string, kelas_default?: string}, quota?: {limit: number}} | null>(null)
   const [creditBalance, setCreditBalance] = useState<number | null>(null)

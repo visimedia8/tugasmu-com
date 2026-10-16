@@ -48,7 +48,7 @@ export default function MakalahBuilderClient() {
         }
       }
 
-      const apiBase = process.env.NEXT_PUBLIC_API_URL || 'https://api.tugasmu.com';
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || 'https://tugasmu-api.johananggo.workers.dev';
       const res = await fetch(`${apiBase}/api/tools/makalah-builder`, {
         method: 'POST',
         headers: {

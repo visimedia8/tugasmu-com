@@ -6,7 +6,7 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://api.tugasmu.com";
+const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://tugasmu-api.johananggo.workers.dev";
 
 export default function PantunPuisiClient() {
   const { data: session } = useSession();
