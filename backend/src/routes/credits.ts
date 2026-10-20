@@ -1,10 +1,14 @@
 import { Hono } from 'hono'
 import type { Bindings } from '../index'
 import { authMiddleware, type AuthUser } from '../middleware/auth'
-import md5 from 'md5'
 
 export const credits = new Hono<{ Bindings: Bindings; Variables: { authUser: AuthUser | null } }>()
 credits.use('*', authMiddleware)
+
+async function getDuitkuSignature(merchantCode: string, timestamp: string, apiKey: string): Promise<string> {
+  const buffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(merchantCode + timestamp + apiKey))
+  return Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('')
+}
 
 export const CREDIT_BUNDLES: Record<string, { credits: number; price: number; label: string }> = {
   starter:  { credits: 150, price: 10000, label: 'TugasMu Starter 150 Kredit' },
@@ -24,7 +28,13 @@ credits.post('/buy', async (c) => {
   const merchantCode = c.env.DUITKU_MERCHANT_CODE
   const merchantKey = c.env.DUITKU_MERCHANT_KEY
   const isProd = c.env.DUITKU_IS_PRODUCTION === 'true' || c.env.DUITKU_IS_PRODUCTION === '1'
-  const signature = md5(`${merchantCode}${orderId}${bundle.price}${merchantKey}`)
+
+  if (!merchantCode || !merchantKey) {
+    return c.json({ success: false, message: 'Duitku is not configured' }, 500)
+  }
+
+  const timestamp = Date.now().toString()
+  const signature = await getDuitkuSignature(merchantCode, timestamp, merchantKey)
 
   const duitkuUrl = isProd
     ? 'https://api-prod.duitku.com/api/merchant/createinvoice'
@@ -33,16 +43,20 @@ credits.post('/buy', async (c) => {
   try {
     const response = await fetch(duitkuUrl, {
       method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-duitku-signature': signature,
+        'x-duitku-timestamp': timestamp,
+        'x-duitku-merchantcode': merchantCode
+      },
       body: JSON.stringify({
-        merchantCode,
         paymentAmount: bundle.price,
         merchantOrderId: orderId,
         productDetails: bundle.label,
         email: authUser.email,
-        callbackUrl: 'https://tugasmu-api.johananggo.workers.dev/api/payment/webhook',
+        callbackUrl: 'https://api.tugasmu.com/api/payment/webhook',
         returnUrl: 'https://tugasmu.com/akun',
-        signature,
       }),
     })
 

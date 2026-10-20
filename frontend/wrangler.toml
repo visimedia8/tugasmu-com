@@ -5,9 +5,8 @@ compatibility_flags = ["nodejs_compat"]
 workers_dev = false
 
 [vars]
-NEXT_PUBLIC_API_URL = "https://tugasmu-api.johananggo.workers.dev"
-
-
+NEXT_PUBLIC_API_URL = "https://api.tugasmu.com"
+NEXTAUTH_SECRET = "rahasia_untuk_pengembangan_lokal_123"
 
 [assets]
 directory = ".open-next/assets"
@@ -17,4 +16,3 @@ binding = "ASSETS"
 type = "ESModule"
 globs = ["**/*.mjs"]
 fallthrough = true
-

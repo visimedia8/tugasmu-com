@@ -6,6 +6,11 @@ import { sendDiscordAlert } from '../services/discord'
 
 export const payment = new Hono<{ Bindings: Bindings, Variables: { authUser: AuthUser | null } }>()
 
+async function getDuitkuSignature(merchantCode: string, timestamp: string, apiKey: string): Promise<string> {
+  const buffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(merchantCode + timestamp + apiKey))
+  return Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('')
+}
+
 const PRICES: Record<string, number> = {
   pro: 29000,
   guru: 99000,
@@ -40,36 +45,36 @@ payment.post('/create-transaction', authMiddleware, async (c) => {
       ? 'https://api-prod.duitku.com/api/merchant/createinvoice' 
       : 'https://api-sandbox.duitku.com/api/merchant/createinvoice'
 
-    const signature = md5(`${merchantCode}${orderId}${amount}${merchantKey}`)
+    const timestamp = Date.now().toString()
+    const signature = await getDuitkuSignature(merchantCode, timestamp, merchantKey)
     
-    // Gunakan origin dari request agar dinamis (Dev/Prod)
-    const apiOrigin = new URL(c.req.url).origin
-    const callbackUrl = `${apiOrigin}/api/payment/webhook`
+    const callbackUrl = 'https://api.tugasmu.com/api/payment/webhook'
     const returnUrl = 'https://tugasmu.com/akun'
 
     const payload = {
-      merchantCode,
       paymentAmount: amount,
       merchantOrderId: orderId,
       productDetails: `TugasMu ${tier.toUpperCase()}`,
       email: authUser.email,
       callbackUrl,
-      returnUrl,
-      signature
+      returnUrl
     }
 
     const response = await fetch(duitkuUrl, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-duitku-signature': signature,
+        'x-duitku-timestamp': timestamp,
+        'x-duitku-merchantcode': merchantCode
       },
       body: JSON.stringify(payload)
     })
 
     if (!response.ok) {
       const errTxt = await response.text()
-      console.error('Duitku Error:', errTxt)
+      console.error('Duitku Error:', response.status, errTxt)
       return c.json({ success: false, message: 'Failed to create transaction with Duitku' }, 500)
     }
 
@@ -93,7 +98,14 @@ payment.post('/create-transaction', authMiddleware, async (c) => {
 // Webhook from Duitku
 payment.post('/webhook', async (c) => {
   try {
-    const body = await c.req.parseBody()
+    let body: any = {}
+    const contentType = c.req.header('content-type') || ''
+    if (contentType.includes('application/json')) {
+      body = await c.req.json().catch(() => ({}))
+    } else {
+      body = await c.req.parseBody().catch(() => ({}))
+    }
+
     const merchantCode = body.merchantCode as string
     const amount = body.amount as string
     const merchantOrderId = body.merchantOrderId as string
@@ -108,7 +120,8 @@ payment.post('/webhook', async (c) => {
     const expectedSignature = md5(`${envMerchantCode}${amount}${merchantOrderId}${merchantKey}`)
 
     if (signature !== expectedSignature) {
-      return c.json({ success: false, message: 'Invalid signature' }, 401)
+      console.error('Invalid signature in Duitku webhook:', { signature, expectedSignature })
+      return c.text('Bad Signature', 400)
     }
 
     if (resultCode === '00') { // 00 means success
@@ -170,7 +183,7 @@ payment.post('/webhook', async (c) => {
       }
     }
 
-    return c.json({ success: true })
+    return c.text('SUCCESS', 200)
 
   } catch (err) {
     console.error('Webhook error:', err)
