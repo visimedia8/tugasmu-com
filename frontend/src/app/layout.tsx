@@ -55,24 +55,37 @@ export default function RootLayout({
   return (
     <html lang="id">
       <head>
-        {/* Google Analytics 4 */}
+        {/* Preconnect & DNS-Prefetch for Speed */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        />
+
+        {/* Google Analytics 4 (Buffered Initialization - Zero Event Loss) */}
+        <script
+          id="google-analytics-init"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-8K10RNGN76');
+            `,
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-8K10RNGN76"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-8K10RNGN76');
-          `}
-        </Script>
         
-        {/* Google AdSense */}
+        {/* Google AdSense (Sweet Spot - Lazy loaded after first paint) */}
         <Script 
           id="adsbygoogle-init" 
-          strategy="afterInteractive" 
+          strategy="lazyOnload" 
           crossOrigin="anonymous" 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593394789144229"
         />

@@ -3,6 +3,8 @@ import ToolsGrid from '@/components/home/ToolsGrid';
 import StatsCounter from '@/components/home/StatsCounter';
 import BlogPreview from '@/components/home/BlogPreview';
 
+export const dynamic = 'force-static';
+export const revalidate = 3600;
 export const metadata = { alternates: { canonical: '/' } };
 
 export default function Home() {

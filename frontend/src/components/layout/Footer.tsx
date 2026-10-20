@@ -30,6 +30,9 @@ export function Footer() {
             <Link href="/kamus" className="hover:text-slate-900 transition-colors">Kamus</Link>
             <Link href="/harga" className="hover:text-slate-900 transition-colors">Premium</Link>
             <Link href="/blog" className="hover:text-slate-900 transition-colors">Blog</Link>
+            <Link href="/redaksi" className="hover:text-slate-900 transition-colors">Redaksi</Link>
+            <Link href="/kebijakan-editorial" className="hover:text-slate-900 transition-colors">Kebijakan Editorial</Link>
+            <Link href="/peta-situs" className="hover:text-slate-900 transition-colors">Peta Situs</Link>
             <Link href="/privasi" className="hover:text-slate-900 transition-colors">Privacy Policy</Link>
             <Link href="/syarat" className="hover:text-slate-900 transition-colors">Terms of Service</Link>
             <Link href="/kontak" className="hover:text-slate-900 transition-colors">Kontak</Link>

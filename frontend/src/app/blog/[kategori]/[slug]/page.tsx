@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getPostSlugs, getAllCategories, getAllPosts } from '@/lib/mdx';
+import { processArticleContent } from '@/lib/toc';
 import Link from 'next/link';
 
 type Props = {
@@ -134,6 +135,8 @@ export default async function BlogPost({ params }: Props) {
     notFound();
   }
 
+  const { processedHtml, toc, faqs } = processArticleContent(post.html || post.content);
+
   // Get related posts (same category, exclude current)
   const allPosts = getAllPosts();
   const relatedPosts = allPosts
@@ -201,9 +204,32 @@ export default async function BlogPost({ params }: Props) {
             </div>
           </div>
 
+          {/* Table of Contents (Daftar Isi) */}
+          {toc.length >= 2 && (
+            <nav aria-label="Daftar Isi Materi" className="mb-space-xl p-space-md md:p-space-lg rounded-2xl bg-surface-container-low border border-slate-100 shadow-xs">
+              <div className="flex items-center gap-2 mb-3 text-slate-900 font-bold font-headline-sm text-headline-sm">
+                <span className="material-symbols-outlined text-primary text-[20px]">list_alt</span>
+                <span>Daftar Isi Pembahasan</span>
+              </div>
+              <ol className="space-y-1.5 text-sm text-slate-700">
+                {toc.map((item) => (
+                  <li key={item.id} className={item.level === 3 ? "pl-5 border-l-2 border-slate-200" : ""}>
+                    <a
+                      href={'#' + item.id}
+                      className="hover:text-primary transition-colors flex items-center gap-1.5 leading-snug py-0.5"
+                    >
+                      <span className="text-slate-400 font-mono text-xs">{item.level === 2 ? '•' : '–'}</span>
+                      <span className="line-clamp-1">{item.text}</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
+
           <div 
             className="prose-content flex flex-col gap-space-lg text-on-surface font-body-lg text-body-lg leading-relaxed bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-sm border border-slate-100"
-            dangerouslySetInnerHTML={{ __html: post.html || post.content }}
+            dangerouslySetInnerHTML={{ __html: processedHtml }}
           />
 
           <section className="mt-space-xl p-space-lg md:p-space-xl rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-space-lg border border-slate-100">
@@ -298,7 +324,7 @@ export default async function BlogPost({ params }: Props) {
             "author": {
               "@type": "Organization",
               "name": "Redaksi Edukasi TugasMu",
-              "url": "https://tugasmu.com/tentang"
+              "url": "https://tugasmu.com/redaksi"
             },
             "publisher": {
               "@type": "Organization",
@@ -312,6 +338,25 @@ export default async function BlogPost({ params }: Props) {
           })
         }}
       />
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer
+                }
+              }))
+            })
+          }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
