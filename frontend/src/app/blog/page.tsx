@@ -23,8 +23,16 @@ export const metadata = {
 export default function BlogIndex() {
   const posts = getAllPosts();
   
-  // Sort posts by date, newest first
-  const sortedPosts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  // Sort posts by date, newest first and strip full content/html to keep SSR payload ultra-light (<60KB vs 5MB)
+  const sortedPosts = posts
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .map(({ slug, title, description, date, kategori }) => ({
+      slug,
+      title,
+      description,
+      date,
+      kategori,
+    }));
 
   const blogSchema = {
     "@context": "https://schema.org",
