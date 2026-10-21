@@ -69,6 +69,47 @@ const nextConfig = {
         destination: '/blog/bahasa-inggris/jenis-narrative-text-struktur',
         permanent: true,
       },
+      // Legacy dead tools and cannibalized post routes
+      {
+        source: '/tools/tanya-ai',
+        destination: '/tools',
+        permanent: true,
+      },
+      {
+        source: '/blog/bahasa-indonesia/struktur-teks-artikel-ilmiah-populer',
+        destination: '/blog/bahasa-indonesia/struktur-makalah-ilmiah-baik-benar',
+        permanent: true,
+      },
+      {
+        source: '/blog/bahasa-inggris/strategi-membaca-reading-comprehension-efektif',
+        destination: '/blog/bahasa-inggris/panduan-soal-reading-comprehension-utbk',
+        permanent: true,
+      },
+      {
+        source: '/blog/bahasa-indonesia/struktur-teks-argumentasi-ciri-contoh-analisis',
+        destination: '/blog/bahasa-indonesia/perbedaan-teks-eksposisi-argumentasi',
+        permanent: true,
+      },
+      {
+        source: '/blog/matematika/soal-cerita-matematika-pemodelan-aljabar',
+        destination: '/blog/matematika/tips-menjawab-soal-cerita',
+        permanent: true,
+      },
+      {
+        source: '/blog/matematika/persamaan-kuadrat-akar-rumus-abc',
+        destination: '/blog/matematika/persamaan-kuadrat-rumus-dan-akar',
+        permanent: true,
+      },
+      {
+        source: '/blog/bahasa-indonesia/struktur-teks-laporan-hasil-observasi-lho',
+        destination: '/blog/bahasa-indonesia/struktur-ciri-teks-laporan-observasi',
+        permanent: true,
+      },
+      {
+        source: '/blog/bahasa-indonesia/struktur-teks-pantun-syair-gurindam',
+        destination: '/blog/bahasa-indonesia/jenis-puisi-lama-pantun-syair-gurindam',
+        permanent: true,
+      },
     ];
   },
 };

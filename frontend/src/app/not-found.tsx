@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Halaman Tidak Ditemukan | TugasMu',
+  title: 'Halaman Tidak Ditemukan',
   description: 'Maaf, halaman yang kamu cari tidak dapat ditemukan.',
 };
 
