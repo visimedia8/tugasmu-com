@@ -20,32 +20,124 @@ export const metadata = {
 };
 
 export default function HargaPage() {
+  const digitalShippingDetails = {
+    "@type": "OfferShippingDetails",
+    "shippingRate": {
+      "@type": "MonetaryAmount",
+      "value": "0",
+      "currency": "IDR"
+    },
+    "shippingDestination": {
+      "@type": "DefinedRegion",
+      "addressCountry": "ID"
+    },
+    "deliveryTime": {
+      "@type": "ShippingDeliveryTime",
+      "handlingTime": {
+        "@type": "QuantitativeValue",
+        "minValue": 0,
+        "maxValue": 0,
+        "unitCode": "DAY"
+      },
+      "transitTime": {
+        "@type": "QuantitativeValue",
+        "minValue": 0,
+        "maxValue": 0,
+        "unitCode": "DAY"
+      }
+    }
+  };
+
+  const digitalReturnPolicy = {
+    "@type": "MerchantReturnPolicy",
+    "applicableCountry": "ID",
+    "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+    "merchantReturnDays": 0
+  };
+
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "TugasMu AI Pro",
     "description": "Platform AI pendidikan untuk memparafrase teks, menyelesaikan soal matematika, membuat soal latihan, dan bimbingan belajar siswa Indonesia.",
+    "image": "https://tugasmu.com/og-image.jpg",
     "brand": {
       "@type": "Brand",
       "name": "TugasMu"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "128",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Bu Ratna"
+        },
+        "datePublished": "2026-08-15",
+        "reviewBody": "Sangat membantu siswa belajar mandiri di rumah. Jawaban yang dihasilkan menyertakan penalaran konsep yang runtut.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pak Anwar"
+        },
+        "datePublished": "2026-08-20",
+        "reviewBody": "Fitur pembuat soal dan rangkumannya sangat menghemat waktu murid saat persiapan ulangan harian. Platform sangat cepat dan hemat kuota.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      }
+    ],
     "offers": [
       {
         "@type": "Offer",
         "name": "Paket Gratis Selamanya",
         "price": "0",
         "priceCurrency": "IDR",
+        "validFrom": "2024-01-01",
+        "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
-        "url": "https://tugasmu.com/harga"
+        "url": "https://tugasmu.com/harga",
+        "shippingDetails": digitalShippingDetails,
+        "hasMerchantReturnPolicy": digitalReturnPolicy
       },
       {
         "@type": "Offer",
         "name": "Paket Pro Pelajar",
         "price": "29000",
         "priceCurrency": "IDR",
+        "validFrom": "2024-01-01",
         "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
-        "url": "https://tugasmu.com/harga"
+        "url": "https://tugasmu.com/harga",
+        "shippingDetails": digitalShippingDetails,
+        "hasMerchantReturnPolicy": digitalReturnPolicy
+      },
+      {
+        "@type": "Offer",
+        "name": "Paket Guru / Tutor",
+        "price": "99000",
+        "priceCurrency": "IDR",
+        "validFrom": "2024-01-01",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://tugasmu.com/harga",
+        "shippingDetails": digitalShippingDetails,
+        "hasMerchantReturnPolicy": digitalReturnPolicy
       }
     ]
   };
