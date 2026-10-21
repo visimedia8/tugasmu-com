@@ -60,3 +60,11 @@ if (fs.existsSync(kamusDir)) {
   fs.writeFileSync(kamusOutputFile, JSON.stringify(allKamus, null, 2));
   console.log(`Generated ${allKamus.length} kamus terms into ${kamusOutputFile}`);
 }
+
+// Ensure .next pre-requisites exist on Windows for App Router
+const nextServerDir = path.join(__dirname, '../.next/server');
+fs.mkdirSync(nextServerDir, { recursive: true });
+if (!fs.existsSync(path.join(nextServerDir, 'pages-manifest.json'))) {
+  fs.writeFileSync(path.join(nextServerDir, 'pages-manifest.json'), '{}', 'utf8');
+}
+
