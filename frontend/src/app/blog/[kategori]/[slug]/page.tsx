@@ -67,7 +67,7 @@ const CATEGORY_TOOL_MAP: Record<string, { name: string; href: string; desc: stri
   },
   'bahasa-inggris': {
     name: 'English Grammar Checker',
-    href: '/tools/grammar-checker',
+    href: '/tools/grammar-bahasa-inggris',
     desc: 'Koreksi tenses, grammar, dan struktur esai Bahasa Inggris secara instan.'
   },
   'matematika': {

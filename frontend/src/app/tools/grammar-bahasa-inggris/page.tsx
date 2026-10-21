@@ -10,7 +10,7 @@ import ToolSchema from '@/components/seo/ToolSchema';
 export const metadata = {
   title: 'Korektor Grammar & Essay Bahasa Inggris - Pengecekan AI Otomatis',
   description: 'Cek tata bahasa, tenses, dan ejaan tulisan esai bahasa Inggris kamu. Dapatkan saran vocabulary yang lebih natural dan penjelasan kesalahan dalam bahasa Indonesia.',
-  alternates: { canonical: '/tools/grammar-checker' },
+  alternates: { canonical: '/tools/grammar-bahasa-inggris' },
 };
 
 export default function GrammarCheckerPage() {
@@ -35,11 +35,11 @@ export default function GrammarCheckerPage() {
   };
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
-      <ToolSchema toolId="grammar-checker" />
+      <ToolSchema toolId="grammar-bahasa-inggris" />
       <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
-          Korektor Grammar & Essay Bahasa Inggris
+          Grammar Checker Bahasa Inggris Online
         </h1>
         <p className="text-slate-600 text-lg mb-6">
           Jangan biarkan tugas essay atau PR bahasa Inggrismu penuh coretan merah. AI kami akan memperbaiki grammar, tenses, dan memberikan saran kosakata yang bikin tulisanmu terlihat lebih pro.

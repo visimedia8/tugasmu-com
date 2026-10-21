@@ -140,7 +140,7 @@ export default function CVLamaranPage() {
             </div>
             <p className="text-sm text-slate-600">Masih magang? Buat laporan PKL-mu di sini untuk memastikan nilai kelulusanmu maksimal sebelum melamar kerja.</p>
           </Link>
-          <Link href="/tools/grammar-eyd" className="p-4 rounded-2xl border border-slate-200 bg-white hover:border-sky-300 hover:shadow-md transition-all group">
+          <Link href="/tools/grammar-bahasa-indonesia" className="p-4 rounded-2xl border border-slate-200 bg-white hover:border-sky-300 hover:shadow-md transition-all group">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600">
                 <CheckCircle className="w-4 h-4" />

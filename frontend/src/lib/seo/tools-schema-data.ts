@@ -40,7 +40,15 @@ export const toolsSchemaData: Record<string, { name: string; description: string
     ]
   },
   "grammar-checker": {
-    name: "English Grammar Checker",
+    name: "Grammar Checker Bahasa Inggris Online",
+    description: "Periksa dan perbaiki kesalahan tata bahasa (grammar), ejaan, dan struktur kalimat Bahasa Inggris.",
+    faqs: [
+      { q: "Apakah alat ini bisa mengoreksi kalimat yang terbalik?", a: "Ya, alat ini mampu mendeteksi dan memperbaiki struktur kalimat (syntax) yang salah kaprah." },
+      { q: "Apakah hasil koreksinya dijelaskan?", a: "Selain memperbaiki, AI akan memberi tahu alasan mengapa kalimat aslimu salah." }
+    ]
+  },
+  "grammar-bahasa-inggris": {
+    name: "Grammar Checker Bahasa Inggris Online",
     description: "Periksa dan perbaiki kesalahan tata bahasa (grammar), ejaan, dan struktur kalimat Bahasa Inggris.",
     faqs: [
       { q: "Apakah alat ini bisa mengoreksi kalimat yang terbalik?", a: "Ya, alat ini mampu mendeteksi dan memperbaiki struktur kalimat (syntax) yang salah kaprah." },
@@ -48,7 +56,15 @@ export const toolsSchemaData: Record<string, { name: string; description: string
     ]
   },
   "grammar-eyd": {
-    name: "Pengecek Ejaan PUEBI/EYD",
+    name: "Cek Grammar & EYD Bahasa Indonesia Online",
+    description: "Koreksi kesalahan ejaan, tanda baca, dan kata tidak baku pada tugas makalah Bahasa Indonesia.",
+    faqs: [
+      { q: "Apakah alat ini menggunakan pedoman PUEBI terbaru?", a: "Ya, kami merujuk pada Pedoman Umum Ejaan Bahasa Indonesia (PUEBI) dan KBBI terbaru." },
+      { q: "Apakah bisa mengecek typo?", a: "Sangat bisa, alat ini secara otomatis mendeteksi dan memperbaiki salah ketik (typo)." }
+    ]
+  },
+  "grammar-bahasa-indonesia": {
+    name: "Cek Grammar & EYD Bahasa Indonesia Online",
     description: "Koreksi kesalahan ejaan, tanda baca, dan kata tidak baku pada tugas makalah Bahasa Indonesia.",
     faqs: [
       { q: "Apakah alat ini menggunakan pedoman PUEBI terbaru?", a: "Ya, kami merujuk pada Pedoman Umum Ejaan Bahasa Indonesia (PUEBI) dan KBBI terbaru." },

@@ -15,12 +15,12 @@ const KAMUS_TOOL_BRIDGE: Record<string, { toolName: string; toolHref: string; ct
   'kalimat-pasif': { toolName: 'Tool Parafrase AI', toolHref: '/tools/parafrase', ctaTitle: 'Ubah Kalimat Aktif ke Pasif Otomatis', ctaDesc: 'Variasikan susunan kalimat makalahmu menjadi bentuk aktif atau pasif dengan sekali klik.' },
   
   // Grammar EYD
-  'kalimat-efektif': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-eyd', ctaTitle: 'Cek Efektivitas Kalimatmu', ctaDesc: 'Singkirkan kata mubazir dan perbaiki struktur SPOK sesuai kaidah ejaan terbaru.' },
-  'puebi': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-eyd', ctaTitle: 'Koreksi Ejaan Sesuai PUEBI/EYD', ctaDesc: 'Pindai seluruh typo, tanda baca koma, dan huruf kapital pada tugasmu secara otomatis.' },
-  'kata-baku': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-eyd', ctaTitle: 'Cek Kata Baku Sesuai KBBI', ctaDesc: 'Pastikan diksi dalam laporan atau makalahmu menggunakan kata baku resmi.' },
-  'spok': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-eyd', ctaTitle: 'Sempurnakan Susunan Kalimat SPOK', ctaDesc: 'Susun kalimat yang tertata rapi dengan pola Subjek-Predikat-Objek-Keterangan yang jelas.' },
-  'majas': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-eyd', ctaTitle: 'Analisis Gaya Bahasa & Majas', ctaDesc: 'Identifikasi majas personifikasi, metafora, dan hiperbola dalam teks sastra.' },
-  'majas-personifikasi': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-eyd', ctaTitle: 'Koreksi dan Analisis Gaya Bahasa', ctaDesc: 'Pelajari gaya bahasa personifikasi dan implementasikan dalam tulisan kreatifmu.' },
+  'kalimat-efektif': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-bahasa-indonesia', ctaTitle: 'Cek Efektivitas Kalimatmu', ctaDesc: 'Singkirkan kata mubazir dan perbaiki struktur SPOK sesuai kaidah ejaan terbaru.' },
+  'puebi': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-bahasa-indonesia', ctaTitle: 'Koreksi Ejaan Sesuai PUEBI/EYD', ctaDesc: 'Pindai seluruh typo, tanda baca koma, dan huruf kapital pada tugasmu secara otomatis.' },
+  'kata-baku': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-bahasa-indonesia', ctaTitle: 'Cek Kata Baku Sesuai KBBI', ctaDesc: 'Pastikan diksi dalam laporan atau makalahmu menggunakan kata baku resmi.' },
+  'spok': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-bahasa-indonesia', ctaTitle: 'Sempurnakan Susunan Kalimat SPOK', ctaDesc: 'Susun kalimat yang tertata rapi dengan pola Subjek-Predikat-Objek-Keterangan yang jelas.' },
+  'majas': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-bahasa-indonesia', ctaTitle: 'Analisis Gaya Bahasa & Majas', ctaDesc: 'Identifikasi majas personifikasi, metafora, dan hiperbola dalam teks sastra.' },
+  'majas-personifikasi': { toolName: 'Pengecek Ejaan EYD & PUEBI', toolHref: '/tools/grammar-bahasa-indonesia', ctaTitle: 'Koreksi dan Analisis Gaya Bahasa', ctaDesc: 'Pelajari gaya bahasa personifikasi dan implementasikan dalam tulisan kreatifmu.' },
 
   // Math Solver
   'persamaan-kuadrat': { toolName: 'Math Solver Step-by-Step', toolHref: '/tools/math-solver', ctaTitle: 'Pecahkan Soal Persamaan Kuadrat', ctaDesc: 'Dapatkan penyelesaian rumus kuadrat dan pemfaktoran aljabar baris demi baris.' },

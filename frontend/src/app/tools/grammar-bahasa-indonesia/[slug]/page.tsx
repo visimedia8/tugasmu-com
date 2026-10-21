@@ -1,3 +1,6 @@
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+
 
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -14,7 +17,7 @@ interface PageProps {
 
 export function generateStaticParams() {
   return PSEO_DATA
-    .filter((item) => item.toolId === 'grammar-eyd')
+    .filter((item) => (item.toolId === 'grammar-bahasa-indonesia' || item.toolId === 'grammar-eyd'))
     .map((item) => ({
       slug: item.slug,
     }));
@@ -22,7 +25,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: PageProps): Metadata {
   const data = PSEO_DATA.find(
-    (item) => item.slug === params.slug && item.toolId === 'grammar-eyd'
+    (item) => item.slug === params.slug && (item.toolId === 'grammar-bahasa-indonesia' || item.toolId === 'grammar-eyd')
   );
 
   if (!data) return {};
@@ -30,13 +33,13 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return {
     title: data.title,
     description: data.description,
-    alternates: { canonical: `/tools/grammar-eyd/${data.slug}` },
+    alternates: { canonical: `/tools/grammar-bahasa-indonesia/${data.slug}` },
   };
 }
 
 export default function GrammarEydPseoPage({ params }: PageProps) {
   const data = PSEO_DATA.find(
-    (item) => item.slug === params.slug && item.toolId === 'grammar-eyd'
+    (item) => item.slug === params.slug && (item.toolId === 'grammar-bahasa-indonesia' || item.toolId === 'grammar-eyd')
   );
 
   if (!data) {
@@ -59,7 +62,7 @@ export default function GrammarEydPseoPage({ params }: PageProps) {
 
   return (
     <div className="container py-8 md:py-12 max-w-4xl">
-      <ToolSchema toolId="grammar-eyd" />
+      <ToolSchema toolId="grammar-bahasa-indonesia" slug={data.slug} />
       <SchemaMarkup schema={schema} />
       
       <div className="mb-8">

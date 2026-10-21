@@ -18,7 +18,7 @@ const CATEGORY_META_INFO: Record<string, { title: string; desc: string; toolName
     title: 'Materi Bahasa Inggris (Grammar & Tenses)',
     desc: 'Kumpulan pembahasan 16 tenses, passive voice, conditional sentences, essay writing, dan teks analytical exposition.',
     toolName: 'English Grammar Checker AI',
-    toolHref: '/tools/grammar-checker',
+    toolHref: '/tools/grammar-bahasa-inggris',
     toolCta: 'Periksa Grammar Esai Otomatis'
   },
   'matematika': {

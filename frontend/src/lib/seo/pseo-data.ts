@@ -65,7 +65,7 @@ export const PSEO_DATA: PseoPageData[] = [
   // --- GRAMMAR EYD (BAHASA INDONESIA) ---
   {
     slug: 'cek-penulisan-daftar-pustaka',
-    toolId: 'grammar-eyd',
+    toolId: 'grammar-bahasa-indonesia',
     title: 'Cek Format Penulisan Daftar Pustaka APA/MLA Otomatis | TugasMu',
     description: 'Periksa kebenaran format daftar pustaka (referensi) buku, jurnal, dan website sesuai standar PUEBI dan APA Style.',
     h1: 'Pengecek Format Daftar Pustaka',
@@ -75,7 +75,7 @@ export const PSEO_DATA: PseoPageData[] = [
   },
   {
     slug: 'koreksi-kalimat-efektif',
-    toolId: 'grammar-eyd',
+    toolId: 'grammar-bahasa-indonesia',
     title: 'Alat Koreksi Kalimat Efektif & Tidak Baku | TugasMu',
     description: 'Ubah kalimat bertele-tele menjadi kalimat efektif. Alat ini otomatis membuang kata pleonasme dan membetulkan struktur Subjek-Predikat.',
     h1: 'Korektor Kalimat Efektif',
@@ -85,7 +85,7 @@ export const PSEO_DATA: PseoPageData[] = [
   },
   {
     slug: 'cek-penggunaan-huruf-kapital',
-    toolId: 'grammar-eyd',
+    toolId: 'grammar-bahasa-indonesia',
     title: 'Pengecek Penggunaan Huruf Kapital & Tanda Baca | TugasMu',
     description: 'Pastikan penulisan huruf kapital pada nama tempat, gelar, dan awal kalimat sudah benar sesuai pedoman EYD V.',
     h1: 'Pendeteksi Kesalahan Huruf Kapital',

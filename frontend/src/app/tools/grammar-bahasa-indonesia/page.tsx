@@ -8,7 +8,7 @@ import ToolSchema from '@/components/seo/ToolSchema';
 export const metadata = {
   title: 'Cek Grammar & EYD Bahasa Indonesia Online — Koreksi Otomatis',
   description: 'Periksa ejaan, tanda baca, kata baku, dan EYD tulisanmu secara otomatis. Setiap koreksi disertai penjelasan aturan agar kamu benar-benar paham.',
-  alternates: { canonical: '/tools/grammar-eyd' },
+  alternates: { canonical: '/tools/grammar-bahasa-indonesia' },
 };
 
 export default function GrammarEYDPage() {
@@ -28,11 +28,11 @@ export default function GrammarEYDPage() {
   };
   return (
     <div className="container py-8 md:py-12 max-w-4xl">
-      <ToolSchema toolId="grammar-eyd" />
+      <ToolSchema toolId="grammar-bahasa-indonesia" />
       <SchemaMarkup schema={schema} />
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
-          Cek Grammar & EYD Bahasa Indonesia
+          Cek Grammar & EYD Bahasa Indonesia Online
         </h1>
         <p className="text-slate-600 text-lg">
           Periksa ejaan, tanda baca, dan kata baku dalam tulisanmu. Setiap koreksi disertai penjelasan aturan PUEBI agar kamu paham — bukan sekadar diperbaiki.

@@ -123,18 +123,18 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/tools/grammar-bahasa-indonesia',
-        destination: '/tools/grammar-eyd',
+        source: '/tools/grammar-eyd',
+        destination: '/tools/grammar-bahasa-indonesia',
         permanent: true,
       },
       {
-        source: '/tools/grammar-bahasa-indonesia/:slug',
-        destination: '/tools/grammar-eyd/:slug',
+        source: '/tools/grammar-eyd/:slug',
+        destination: '/tools/grammar-bahasa-indonesia/:slug',
         permanent: true,
       },
       {
-        source: '/tools/grammar-bahasa-inggris',
-        destination: '/tools/grammar-checker',
+        source: '/tools/grammar-checker',
+        destination: '/tools/grammar-bahasa-inggris',
         permanent: true,
       },
     ];
