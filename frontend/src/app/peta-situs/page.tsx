@@ -2,10 +2,11 @@ import Link from 'next/link';
 import { getAllPosts, getAllCategories } from '@/lib/mdx';
 import { getAllKamus } from '@/lib/kamus';
 import { TOOLS } from '@/data/tools';
+import { PSEO_DATA } from '@/lib/seo/pseo-data';
 
 export const metadata = {
   title: 'Peta Situs (HTML Sitemap) — Navigasi Lengkap Seluruh Materi & Tools',
-  description: 'Peta situs lengkap TugasMu: direktori 29 tools belajar AI, 225 panduan materi pelajaran SD/SMP/SMA/SMK, dan 40 glosarium istilah edukasi.',
+  description: 'Peta situs lengkap TugasMu: direktori 29 tools belajar AI, 50 panduan solusi & template praktis, 225 materi pelajaran SD/SMP/SMA/SMK, dan 40 glosarium istilah edukasi.',
   alternates: { canonical: '/peta-situs' },
 };
 
@@ -105,7 +106,33 @@ export default function PetaSitusPage() {
         </div>
       </section>
 
-      {/* Section 3: Klaster Blog & Materi Pelajaran */}
+      {/* Section 3: Panduan Solusi & Template Praktis (pSEO) */}
+      <section className="mb-12">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-heading font-bold text-slate-900 flex items-center gap-2">
+            <span className="w-2.5 h-6 bg-amber-500 rounded-full inline-block"></span>
+            Panduan Solusi & Template Praktis ({PSEO_DATA.length} Halaman)
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+          {PSEO_DATA.map((item) => (
+            <Link
+              key={item.slug}
+              href={`/tools/${item.toolId}/${item.slug}`}
+              className="p-3 rounded-xl bg-white border border-slate-200 hover:border-amber-400 hover:shadow-xs transition-all flex flex-col justify-between group"
+            >
+              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-600 mb-1 line-clamp-1">
+                {item.h1}
+              </span>
+              <span className="text-[11px] text-slate-500 line-clamp-1">
+                {item.subtitle}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Section 4: Klaster Blog & Materi Pelajaran */}
       <section className="mb-12">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-heading font-bold text-slate-900 flex items-center gap-2">
@@ -152,7 +179,7 @@ export default function PetaSitusPage() {
         </div>
       </section>
 
-      {/* Section 4: Glosarium & Kamus Pelajaran */}
+      {/* Section 5: Glosarium & Kamus Pelajaran */}
       <section className="mb-12">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-heading font-bold text-slate-900 flex items-center gap-2">
