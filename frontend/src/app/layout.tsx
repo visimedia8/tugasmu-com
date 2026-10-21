@@ -117,7 +117,7 @@ export default function RootLayout({
                   document.head.appendChild(adScript);
                 }
 
-                var events = ['scroll', 'touchstart', 'mousemove', 'keydown'];
+                var events = ['scroll', 'touchstart', 'mousemove', 'keydown', 'click'];
                 function trigger() {
                   loadScripts();
                   events.forEach(function(e) { window.removeEventListener(e, trigger); });
@@ -125,9 +125,9 @@ export default function RootLayout({
                 events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
 
                 if ('requestIdleCallback' in window) {
-                  requestIdleCallback(function() { setTimeout(loadScripts, 3000); });
+                  requestIdleCallback(function() { setTimeout(loadScripts, 5000); });
                 } else {
-                  setTimeout(loadScripts, 3500);
+                  setTimeout(loadScripts, 6000);
                 }
               })();
             `,
