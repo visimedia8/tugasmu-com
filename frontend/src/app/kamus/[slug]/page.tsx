@@ -64,7 +64,47 @@ const KAMUS_TOOL_BRIDGE: Record<string, { toolName: string; toolHref: string; ct
   'litosfer': { toolName: 'Rangkuman Materi Sains AI', toolHref: '/tools/rangkuman', ctaTitle: 'Pelajari Lapisan Kulit Bumi (Litosfer)', ctaDesc: 'Rangkum konsep batuan, lempeng tektonik, dan vulkanisme geografi.' },
   'tabel-periodik': { toolName: 'Rangkuman Materi Sains AI', toolHref: '/tools/rangkuman', ctaTitle: 'Hafal Unsur Tabel Periodik Kimia', ctaDesc: 'Pahami nomor atom, konfigurasi elektron, dan golongan kimia praktis.' },
   'pancasila': { toolName: 'Generator Soal & Kuis PPKn', toolHref: '/tools/generator-soal', ctaTitle: 'Uji Pemahaman Nilai-Nilai Pancasila', ctaDesc: 'Buat kuis simulasi pemahaman butir-butir Pancasila sila ke-1 sampai ke-5.' },
-  'teks-prosedur': { toolName: 'Pembuat CV & Lamaran (ATS)', toolHref: '/tools/cv-lamaran', ctaTitle: 'Susun Teks Langkah Demi Langkah', ctaDesc: 'Buat teks petunjuk teknis atau prosedur pelaksanaan kerja dengan teratur.' }
+  'teks-prosedur': { toolName: 'Pembuat CV & Lamaran (ATS)', toolHref: '/tools/cv-lamaran', ctaTitle: 'Susun Teks Langkah Demi Langkah', ctaDesc: 'Buat teks petunjuk teknis atau prosedur pelaksanaan kerja dengan teratur.' },
+
+  // --- BIOLOGI (NEW) ---
+  'osmosis': { toolName: 'Rangkuman Materi Sains AI', toolHref: '/tools/rangkuman', ctaTitle: 'Pelajari Mekanisme Osmosis & Difusi', ctaDesc: 'Rangkum konsep larutan hipotonik, hipertonik, dan plasmolisis biologi sel.' },
+  'enzim': { toolName: 'Rangkuman Materi Sains AI', toolHref: '/tools/rangkuman', ctaTitle: 'Kuasai Cara Kerja & Sifat Enzim', ctaDesc: 'Pahami teori lock and key serta faktor denaturasi enzim biokimia.' },
+  'dna': { toolName: 'Rangkuman Materi Sains AI', toolHref: '/tools/rangkuman', ctaTitle: 'Bedah Struktur DNA & Sintesis Protein', ctaDesc: 'Pelajari heliks ganda, pasangan basa nukleotida, dan replikasi genetik sel.' },
+  'meiosis': { toolName: 'Rangkuman Materi Sains AI', toolHref: '/tools/rangkuman', ctaTitle: 'Pahami Tahapan Pembelahan Meiosis', ctaDesc: 'Bandingkan profase, metafase, anafase, dan crossing over pembelahan sel gamet.' },
+  'ekosistem': { toolName: 'Rangkuman Materi Sains AI', toolHref: '/tools/rangkuman', ctaTitle: 'Pelajari Komponen Ekosistem & Trofik', ctaDesc: 'Rangkum jaring-jaring makanan dan daur biogeokimia ekologi dengan mudah.' },
+  'klorofil': { toolName: 'Rangkuman Materi Sains AI', toolHref: '/tools/rangkuman', ctaTitle: 'Kuasai Pigmen Klorofil & Tilakoid', ctaDesc: 'Pelajari penyerapan spektrum foton cahaya pada reaksi terang fotosintesis.' },
+
+  // --- FISIKA (NEW) ---
+  'hukum-kekekalan-energi': { toolName: 'Math Solver Step-by-Step', toolHref: '/tools/math-solver', ctaTitle: 'Hitung Energi Mekanik & Potensial', ctaDesc: 'Gunakan kalkulator AI untuk memecah rumus Em = Ep + Ek langkah demi langkah.' },
+  'gaya-gravitasi': { toolName: 'Math Solver Step-by-Step', toolHref: '/tools/math-solver', ctaTitle: 'Hitung Gaya Gravitasi Newton', ctaDesc: 'Pecahkan perhitungan konstanta G dan perbandingan kuadrat jarak benda.' },
+  'tekanan-hidrostatis': { toolName: 'Math Solver Step-by-Step', toolHref: '/tools/math-solver', ctaTitle: 'Hitung Tekanan Hidrostatis Zat Cair', ctaDesc: 'Masukkan massa jenis fluida dan kedalaman untuk menghitung rumus P = rho x g x h.' },
+  'efek-doppler': { toolName: 'Math Solver Step-by-Step', toolHref: '/tools/math-solver', ctaTitle: 'Pecahkan Soal Frekuensi Efek Doppler', ctaDesc: 'Pahami aturan tanda positif-negatif kelajuan sumber dan pendengar gelombang bunyi.' },
+  'hukum-archimedes': { toolName: 'Math Solver Step-by-Step', toolHref: '/tools/math-solver', ctaTitle: 'Hitung Gaya Apung Hukum Archimedes', ctaDesc: 'Selesaikan soal benda terapung, melayang, dan tenggelam secara akurat.' },
+  'energi-kinetik': { toolName: 'Math Solver Step-by-Step', toolHref: '/tools/math-solver', ctaTitle: 'Kalkulator Energi Kinetik Benda', ctaDesc: 'Hitung rumus Ek = 1/2 m v^2 dan teorema usaha-energi secara bertahap.' },
+
+  // --- KIMIA (NEW) ---
+  'larutan-elektrolit': { toolName: 'Rangkuman Materi Sains AI', toolHref: '/tools/rangkuman', ctaTitle: 'Rangkum Karakteristik Elektrolit', ctaDesc: 'Bedakan daya hantar listrik larutan asam kuat, basa, dan non-elektrolit.' },
+  'ikatan-kovalen': { toolName: 'Rangkuman Materi Sains AI', toolHref: '/tools/rangkuman', ctaTitle: 'Pahami Struktur Ikatan Kovalen', ctaDesc: 'Pelajari kaidah oktet, duplet, dan struktur Lewis pasangan elektron ikatan.' },
+  'ph-derajat-keasaman': { toolName: 'Math Solver Step-by-Step', toolHref: '/tools/math-solver', ctaTitle: 'Kalkulator Perhitungan pH Asam Basa', ctaDesc: 'Hitung nilai logaritma konsentrasi H+ dan OH- larutan kimia dengan cepat.' },
+  'reaksi-redoks': { toolName: 'Rangkuman Materi Sains AI', toolHref: '/tools/rangkuman', ctaTitle: 'Kuasai Penyetaraan Reaksi Redoks', ctaDesc: 'Pahami penentuan bilangan oksidasi, zat reduktor, dan oksidator kimia.' },
+  'larutan-penyangga': { toolName: 'Math Solver Step-by-Step', toolHref: '/tools/math-solver', ctaTitle: 'Hitung pH Larutan Penyangga (Buffer)', ctaDesc: 'Pecahkan rumus Ka dan perbandingan mol asam lemah dan basa konjugasi.' },
+  'stoikiometri': { toolName: 'Math Solver Step-by-Step', toolHref: '/tools/math-solver', ctaTitle: 'Hitung Konsep Mol & Stoikiometri', ctaDesc: 'Selesaikan perbandingan koefisien reaksi, massa molar, dan volume gas STP.' },
+
+  // --- EKONOMI (NEW) ---
+  'inflasi': { toolName: 'Kalkulator & Solver Akuntansi SMK', toolHref: '/tools/akuntansi-solver', ctaTitle: 'Pahami Dampak Inflasi pada Bisnis', ctaDesc: 'Pelajari analisis kenaikan harga barang dan penurunan daya beli uang.' },
+  'hukum-permintaan-dan-penawaran': { toolName: 'Pembuat Proposal Usaha AI', toolHref: '/tools/proposal-usaha', ctaTitle: 'Analisis Permintaan Pasar Produkmu', ctaDesc: 'Susun kurva ekuilibrium harga dan estimasi permintaan konsumen tugas kewirausahaan.' },
+  'kebijakan-fiskal': { toolName: 'Pembuat Proposal Usaha AI', toolHref: '/tools/proposal-usaha', ctaTitle: 'Pahami Anggaran Fiskal & Pajak', ctaDesc: 'Pelajari peran belanja APBN dan insentif pajak dalam perekonomian nasional.' },
+  'elastisitas-harga': { toolName: 'Kalkulator & Solver Akuntansi SMK', toolHref: '/tools/akuntansi-solver', ctaTitle: 'Hitung Koefisien Elastisitas Harga', ctaDesc: 'Tentukan sifat elastis atau inelastis permintaan komoditas bisnismu.' },
+  'produk-domestik-bruto': { toolName: 'Pembuat Proposal Usaha AI', toolHref: '/tools/proposal-usaha', ctaTitle: 'Pahami Komponen PDB (C + I + G + NX)', ctaDesc: 'Rangkum indikator pertumbuhan makroekonomi dan pendapatan nasional.' },
+  'biaya-peluang': { toolName: 'Pembuat Proposal Usaha AI', toolHref: '/tools/proposal-usaha', ctaTitle: 'Analisis Biaya Peluang (Opportunity Cost)', ctaDesc: 'Hitung nilai pilihan alternatif yang dikorbankan dalam rencana anggaran usahamu.' },
+
+  // --- SOSIOLOGI (NEW) ---
+  'stratifikasi-sosial': { toolName: 'Generator Karya Tulis Ilmiah (KTI)', toolHref: '/tools/kti-builder', ctaTitle: 'Riset Stratifikasi Sosial KTI SMA', ctaDesc: 'Susun latar belakang dan rumusan masalah sosiologi tentang kelas sosial masyarakat.' },
+  'interaksi-sosial': { toolName: 'Pembuat Presentasi & Slide Outline', toolHref: '/tools/slide-outline', ctaTitle: 'Buat Slide Presentasi Interaksi Sosial', ctaDesc: 'Rancang outline presentasi bentuk-bentuk kontak sosial asosiatif dan disosiatif.' },
+  'konflik-sosial': { toolName: 'Generator Karya Tulis Ilmiah (KTI)', toolHref: '/tools/kti-builder', ctaTitle: 'Analisis Resolusi Konflik Sosial', ctaDesc: 'Kembangkan bab pembahasan KTI mengenai mediasi dan akomodasi konflik masyarakat.' },
+  'sosialisasi': { toolName: 'Generator Karya Tulis Ilmiah (KTI)', toolHref: '/tools/kti-builder', ctaTitle: 'Riset Agen Sosialisasi Remaja', ctaDesc: 'Kaji peranan keluarga, sekolah, dan media sosial dalam pembentukan kepribadian.' },
+  'mobilitas-sosial': { toolName: 'Generator Karya Tulis Ilmiah (KTI)', toolHref: '/tools/kti-builder', ctaTitle: 'Analisis Saluran Mobilitas Sosial', ctaDesc: 'Teliti faktor pendorong gerak sosial vertikal dan horizontal melalui pendidikan.' },
+  'anomi': { toolName: 'Generator Karya Tulis Ilmiah (KTI)', toolHref: '/tools/kti-builder', ctaTitle: 'Kaji Teori Anomi & Penyimpangan', ctaDesc: 'Bedah konsep pudarnya norma sosial Emile Durkheim dan Robert Merton untuk karya ilmiah.' }
 };
 
 export async function generateMetadata({ params }: Props) {
