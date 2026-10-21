@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import { DM_Sans, Fraunces } from 'next/font/google';
 import './globals.css';
 
@@ -39,7 +40,6 @@ export const metadata = {
   },
 };
 
-import Script from 'next/script';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import Breadcrumb from '@/components/layout/Breadcrumb';
@@ -61,9 +61,23 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+          as="style"
+        />
+        <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+          media="print"
+          // @ts-expect-error responsive non-blocking stylesheet
+          onload="this.media='all'"
         />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+          />
+        </noscript>
 
         {/* Google Analytics 4 (Buffered Initialization - Zero Event Loss) */}
         <script
@@ -77,17 +91,47 @@ export default function RootLayout({
             `,
           }}
         />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-8K10RNGN76"
-          strategy="lazyOnload"
-        />
-        
-        {/* Google AdSense (Sweet Spot - Lazy loaded after first paint) */}
-        <Script 
-          id="adsbygoogle-init" 
-          strategy="lazyOnload" 
-          crossOrigin="anonymous" 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593394789144229"
+
+        {/* Sweet Spot Loader for Third-Party Scripts (GA4 & AdSense) */}
+        <script
+          id="sweet-spot-loader"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var loaded = false;
+                function loadScripts() {
+                  if (loaded) return;
+                  loaded = true;
+
+                  // 1. Load GA4
+                  var gaScript = document.createElement('script');
+                  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8K10RNGN76';
+                  gaScript.async = true;
+                  document.head.appendChild(gaScript);
+
+                  // 2. Load Google AdSense
+                  var adScript = document.createElement('script');
+                  adScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3593394789144229';
+                  adScript.crossOrigin = 'anonymous';
+                  adScript.async = true;
+                  document.head.appendChild(adScript);
+                }
+
+                var events = ['scroll', 'touchstart', 'mousemove', 'keydown'];
+                function trigger() {
+                  loadScripts();
+                  events.forEach(function(e) { window.removeEventListener(e, trigger); });
+                }
+                events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+                if ('requestIdleCallback' in window) {
+                  requestIdleCallback(function() { setTimeout(loadScripts, 3000); });
+                } else {
+                  setTimeout(loadScripts, 3500);
+                }
+              })();
+            `,
+          }}
         />
 
         {/* Global WebSite & Organization Schemas (Koray SSOT Foundation) */}

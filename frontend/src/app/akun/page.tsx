@@ -93,7 +93,7 @@ export default function AkunPage() {
             }
         })
     }
-  }, [session])
+  }, [session, apiBase])
 
   const handleBuyCredit = async (bundle: string) => {
     setBuyingBundle(bundle)
