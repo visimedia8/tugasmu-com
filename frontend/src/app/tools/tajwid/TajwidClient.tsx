@@ -5,10 +5,14 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function TajwidClient() {
+interface TajwidClientProps {
+  initialPrompt?: string;
+}
+
+export default function TajwidClient({ initialPrompt = '' }: TajwidClientProps = {}) {
   const { data: session } = useSession();
 
-  const [ayat, setAyat] = useState('');
+  const [ayat, setAyat] = useState(initialPrompt);
   
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');

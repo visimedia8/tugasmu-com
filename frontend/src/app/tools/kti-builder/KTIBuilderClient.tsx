@@ -6,7 +6,11 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function KTIBuilderClient() {
+interface KTIBuilderClientProps {
+  initialPrompt?: string;
+}
+
+export default function KTIBuilderClient({ initialPrompt = '' }: KTIBuilderClientProps = {}) {
   const { data: session } = useSession();
   const [filter, setFilter] = useState<FilterState>({
     jenjang: 'SMA',
@@ -15,7 +19,7 @@ export default function KTIBuilderClient() {
     mata_pelajaran: '',
   });
 
-  const [topik, setTopik] = useState('');
+  const [topik, setTopik] = useState(initialPrompt);
   const [metode, setMetode] = useState('Kualitatif Deskriptif');
   
   const [isGenerating, setIsGenerating] = useState(false);

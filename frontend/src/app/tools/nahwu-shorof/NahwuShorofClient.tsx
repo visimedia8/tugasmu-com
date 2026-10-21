@@ -6,10 +6,14 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function NahwuShorofClient() {
+interface NahwuShorofClientProps {
+  initialPrompt?: string;
+}
+
+export default function NahwuShorofClient({ initialPrompt = '' }: NahwuShorofClientProps = {}) {
   const { data: session } = useSession();
 
-  const [kalimat, setKalimat] = useState('');
+  const [kalimat, setKalimat] = useState(initialPrompt);
   
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');

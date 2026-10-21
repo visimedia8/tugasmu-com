@@ -5,10 +5,14 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function SlideOutlineClient() {
+interface SlideOutlineClientProps {
+  initialPrompt?: string;
+}
+
+export default function SlideOutlineClient({ initialPrompt = '' }: SlideOutlineClientProps = {}) {
   const { data: session } = useSession();
 
-  const [topik, setTopik] = useState('');
+  const [topik, setTopik] = useState(initialPrompt);
   const [jumlahSlide, setJumlahSlide] = useState('7');
   const [audiens, setAudiens] = useState('Teman Sekelas & Guru');
   

@@ -6,7 +6,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 
 export const metadata = {
   title: 'Peta Situs (HTML Sitemap) — Navigasi Lengkap Seluruh Materi & Tools',
-  description: 'Peta situs lengkap TugasMu: direktori 29 tools belajar AI, 50 panduan solusi & template praktis, 225 materi pelajaran SD/SMP/SMA/SMK, dan 40 glosarium istilah edukasi.',
+  description: 'Peta situs lengkap TugasMu: direktori 29 tools belajar AI, 75 panduan solusi & template praktis, 228 materi pelajaran SD/SMP/SMA/SMK, dan 40 glosarium istilah edukasi.',
   alternates: { canonical: '/peta-situs' },
 };
 
@@ -53,7 +53,7 @@ export default function PetaSitusPage() {
           Peta Situs TugasMu
         </h1>
         <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
-          Temukan seluruh navigasi halaman, kumpulan 29 alat bantu belajar AI, 225 artikel panduan materi pelajaran, dan 40 istilah kamus edukasi dalam satu indeks terstruktur.
+          Temukan seluruh navigasi halaman, kumpulan 29 alat bantu belajar AI, 75 panduan solusi & template praktis, 228 artikel panduan materi pelajaran, dan 40 istilah kamus edukasi dalam satu indeks terstruktur.
         </p>
       </div>
 

@@ -5,10 +5,14 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function AkuntansiSolverClient() {
+interface AkuntansiSolverClientProps {
+  initialPrompt?: string;
+}
+
+export default function AkuntansiSolverClient({ initialPrompt = '' }: AkuntansiSolverClientProps = {}) {
   const { data: session } = useSession();
 
-  const [transaksi, setTransaksi] = useState('');
+  const [transaksi, setTransaksi] = useState(initialPrompt);
   const [metode, setMetode] = useState('Jurnal Umum');
   
   const [isGenerating, setIsGenerating] = useState(false);
