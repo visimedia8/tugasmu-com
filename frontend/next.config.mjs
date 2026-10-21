@@ -122,6 +122,21 @@ const nextConfig = {
         destination: '/blog/bahasa-indonesia/jenis-puisi-lama-pantun-syair-gurindam',
         permanent: true,
       },
+      {
+        source: '/tools/grammar-bahasa-indonesia',
+        destination: '/tools/grammar-eyd',
+        permanent: true,
+      },
+      {
+        source: '/tools/grammar-bahasa-indonesia/:slug',
+        destination: '/tools/grammar-eyd/:slug',
+        permanent: true,
+      },
+      {
+        source: '/tools/grammar-bahasa-inggris',
+        destination: '/tools/grammar-checker',
+        permanent: true,
+      },
     ];
   },
 };
