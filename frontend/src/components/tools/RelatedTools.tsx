@@ -8,7 +8,14 @@ interface RelatedToolsProps {
 
 export default function RelatedTools({ toolIds }: RelatedToolsProps) {
   const relatedTools = toolIds
-    .map(id => TOOLS.find(t => t.id === id))
+    .map(id => {
+      const aliasId = id === 'grammar-eyd' 
+        ? 'grammar-bahasa-indonesia' 
+        : id === 'grammar-checker' 
+        ? 'grammar-bahasa-inggris' 
+        : id;
+      return TOOLS.find(t => t.id === aliasId || t.id === id);
+    })
     .filter((t): t is typeof TOOLS[0] => t !== undefined);
 
   if (relatedTools.length === 0) return null;

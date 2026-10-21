@@ -18,6 +18,18 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Host canonicalization (www to non-www)
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.tugasmu.com',
+          },
+        ],
+        destination: 'https://tugasmu.com/:path*',
+        permanent: true,
+      },
       // Cannibalization 301 Redirects (Consolidating into Koray Topical Authority nodes)
       {
         source: '/blog/bahasa-indonesia/perbedaan-kalimat-aktif-pasif',
