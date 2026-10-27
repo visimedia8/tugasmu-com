@@ -4,6 +4,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import GrammarEYDClient from '../GrammarEYDClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -76,14 +77,15 @@ export default function GrammarEydPseoPage({ params }: PageProps) {
       <div className="mt-12 prose prose-slate max-w-none prose-h2:text-2xl prose-h2:text-slate-800 prose-p:text-slate-600 prose-strong:text-slate-800"
            dangerouslySetInnerHTML={{ __html: data.explanation }} />
 
-      <RelatedTools toolIds={["parafrase","laporan-pkl","cerita-pendek"]} />
+      <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
+        <RelatedTools toolIds={["parafrase","laporan-pkl","cerita-pendek"]} />
 
       <FAQAccordion
         title={`FAQ: ${data.h1}`}
         description="Pertanyaan tentang pengecekan Ejaan Yang Disempurnakan (EYD) menggunakan AI."
         faqs={[
           {
-            question: 'Apakah alat ini menggunakan pedoman EYD V terbaru?',
+            question: "Apakah alat ini menggunakan pedoman EYD V terbaru?",
             answer: (
               <p>
                 Ya, mesin cerdas kami dikalibrasi menggunakan PUEBI dan pedoman EYD V terbaru dari Kemdikbud. Ini memastikan tanda baca, huruf kapital, dan tata bahasa baku kamu sesuai standar akademis.

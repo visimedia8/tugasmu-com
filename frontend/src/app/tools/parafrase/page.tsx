@@ -4,6 +4,7 @@ import ParafraseClient from './ParafraseClient';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
@@ -128,6 +129,8 @@ export default function ParafrasePage() {
         </div>
 
       <ParafraseClient />
+
+      <SiblingSpokes toolId="parafrase" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["kti-builder","makalah-builder","grammar-eyd"]} />
 

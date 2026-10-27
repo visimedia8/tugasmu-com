@@ -5,10 +5,10 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function MateriPaiClient() {
+export default function MateriPaiClient({ initialPrompt = '' }: { initialPrompt?: string } = {}) {
   const { data: session } = useSession();
 
-  const [topik, setTopik] = useState('');
+  const [topik, setTopik] = useState(initialPrompt || '');
   const [mapel, setMapel] = useState('Fikih');
   
   const [isGenerating, setIsGenerating] = useState(false);

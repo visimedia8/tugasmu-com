@@ -3,6 +3,7 @@ import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import PidatoClient from './PidatoClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
@@ -57,6 +58,8 @@ export default function PidatoPage() {
         </div>
 
       <PidatoClient />
+
+      <SiblingSpokes toolId="pidato" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["cerita-pendek","kamus-anak","pantun-puisi"]} />
 

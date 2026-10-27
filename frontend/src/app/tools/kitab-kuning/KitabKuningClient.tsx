@@ -5,10 +5,10 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function KitabKuningClient() {
+export default function KitabKuningClient({ initialPrompt = '' }: { initialPrompt?: string } = {}) {
   const { data: session } = useSession();
 
-  const [teksArab, setTeksArab] = useState('');
+  const [teksArab, setTeksArab] = useState(initialPrompt || '');
   
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');

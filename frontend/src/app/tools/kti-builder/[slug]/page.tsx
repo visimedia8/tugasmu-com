@@ -5,6 +5,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import KTIBuilderClient from '../KTIBuilderClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -80,6 +81,7 @@ export default function KTIBuilderPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["makalah-builder", "slide-outline", "parafrase"]} />
 
         <FAQAccordion
@@ -87,7 +89,7 @@ export default function KTIBuilderPseoPage({ params }: PageProps) {
           description="Pertanyaan umum seputar penyusunan karya tulis ilmiah (KTI), proposal penelitian, dan format penulisan akademis SMA/SMK."
           faqs={[
             {
-              question: 'Apakah kerangka KTI ini sesuai standar Lomba Karya Ilmiah Remaja (LKIR)?',
+              question: "Apakah kerangka KTI ini sesuai standar Lomba Karya Ilmiah Remaja (LKIR)?",
               answer: (
                 <p>
                   Ya, sistematika penulisan Bab 1 hingga Bab 5 mengikuti pedoman standar penulisan karya ilmiah remaja yang diakui BRIN dan Kemendikbudristek.
@@ -95,7 +97,7 @@ export default function KTIBuilderPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Bagaimana cara menambahkan daftar pustaka standar APA Style?',
+              question: "Bagaimana cara menambahkan daftar pustaka standar APA Style?",
               answer: (
                 <p>
                   Kamu dapat memanfaatkan outline dan rujukan yang dihasilkan untuk kemudian diverifikasi melalui alat Parafrase & Pengecek Sitasi TugasMu.

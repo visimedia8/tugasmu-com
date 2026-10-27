@@ -5,10 +5,10 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function KamusAnakClient() {
+export default function KamusAnakClient({ initialPrompt = '' }: { initialPrompt?: string } = {}) {
   const { data: session } = useSession();
 
-  const [kata, setKata] = useState('');
+  const [kata, setKata] = useState(initialPrompt || '');
   const [konteks, setKonteks] = useState('');
   
   const [isGenerating, setIsGenerating] = useState(false);

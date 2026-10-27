@@ -5,6 +5,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import SlideOutlineClient from '../SlideOutlineClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -80,6 +81,7 @@ export default function SlideOutlinePseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["kti-builder", "pidato", "proposal-usaha"]} />
 
         <FAQAccordion
@@ -87,7 +89,7 @@ export default function SlideOutlinePseoPage({ params }: PageProps) {
           description="Pertanyaan umum seputar penyusunan outline slide presentasi, catatan pembicara (speaker notes), dan tips berbicara di depan kelas."
           faqs={[
             {
-              question: 'Apakah outline ini bisa langsung dipindahkan ke Canva atau PowerPoint?',
+              question: "Apakah outline ini bisa langsung dipindahkan ke Canva atau PowerPoint?",
               answer: (
                 <p>
                   Bisa. Struktur poin teks dan catatan pembicara yang dihasilkan dirancang agar mudah disalin ke slide PowerPoint, Google Slides, maupun Canva.
@@ -95,7 +97,7 @@ export default function SlideOutlinePseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Berapa jumlah slide ideal untuk presentasi tugas kelompok?',
+              question: "Berapa jumlah slide ideal untuk presentasi tugas kelompok?",
               answer: (
                 <p>
                   Untuk durasi presentasi 10-15 menit, jumlah slide ideal berkisar antara 7 hingga 10 slide agar setiap slide mendapat waktu pemaparan yang memadai.

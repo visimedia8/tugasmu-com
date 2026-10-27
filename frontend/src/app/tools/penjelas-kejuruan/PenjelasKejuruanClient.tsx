@@ -5,11 +5,11 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function PenjelasKejuruanClient() {
+export default function PenjelasKejuruanClient({ initialPrompt = '' }: { initialPrompt?: string } = {}) {
   const { data: session } = useSession();
 
   const [jurusan, setJurusan] = useState('Teknik Komputer Jaringan (TKJ)');
-  const [pertanyaan, setPertanyaan] = useState('');
+  const [pertanyaan, setPertanyaan] = useState(initialPrompt || '');
   
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');

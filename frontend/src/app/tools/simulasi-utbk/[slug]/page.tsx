@@ -4,6 +4,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import SimulasiUTBKClient from '../SimulasiUTBKClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -78,6 +79,7 @@ export default function SimulasiUtbkPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["generator-soal", "rangkuman", "math-solver"]} />
 
         <FAQAccordion
@@ -85,7 +87,7 @@ export default function SimulasiUtbkPseoPage({ params }: PageProps) {
           description="Pertanyaan seputar persiapan dan strategi menaklukkan soal seleksi nasional UTBK SNBT."
           faqs={[
             {
-              question: 'Apakah tipe soal diperbarui sesuai kisi-kisi BP3 terbaru?',
+              question: "Apakah tipe soal diperbarui sesuai kisi-kisi BP3 terbaru?",
               answer: (
                 <p>
                   Ya, simulator kami mengadopsi standar soal Tes Potensi Skolastik (TPS) dan Literasi terbaru yang menitikberatkan pada nalar logis, pemahaman wacana kritis, dan penalaran kuantitatif.
@@ -93,7 +95,7 @@ export default function SimulasiUtbkPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Apakah pembahasan soal disertai rumus cepat eliminasi pilihan ganda?',
+              question: "Apakah pembahasan soal disertai rumus cepat eliminasi pilihan ganda?",
               answer: (
                 <p>
                   Setiap kunci jawaban dilengkapi pembahasan konsep fundamental serta trik eliminasi pilihan ganda (*distractor analysis*) agar kamu dapat menghemat waktu saat hari ujian.

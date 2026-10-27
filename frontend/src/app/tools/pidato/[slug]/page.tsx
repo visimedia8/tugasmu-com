@@ -4,6 +4,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import PidatoClient from '../PidatoClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -79,6 +80,7 @@ export default function PidatoPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["pantun-puisi", "cerita-pendek", "parafrase"]} />
 
         <FAQAccordion
@@ -86,7 +88,7 @@ export default function PidatoPseoPage({ params }: PageProps) {
           description="Pertanyaan umum seputar teknik pembacaan dan penyusunan naskah pidato sekolah."
           faqs={[
             {
-              question: 'Berapa durasi rata-rata naskah pidato yang dihasilkan?',
+              question: "Berapa durasi rata-rata naskah pidato yang dihasilkan?",
               answer: (
                 <p>
                   Secara umum, naskah disusun untuk durasi penyampaian 4 hingga 7 menit dengan kecepatan berbicara santun sekitar 110–130 kata per menit.
@@ -94,7 +96,7 @@ export default function PidatoPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Apakah teks pidato sudah dilengkapi salam pembuka dan pantun?',
+              question: "Apakah teks pidato sudah dilengkapi salam pembuka dan pantun?",
               answer: (
                 <p>
                   Ya, setiap naskah dirancang dengan salam pembuka formal, penghormatan kepada pejabat/guru, isi materi persuasif, dan penutup yang mengesankan.

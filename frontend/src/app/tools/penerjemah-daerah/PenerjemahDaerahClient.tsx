@@ -5,13 +5,13 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function PenerjemahDaerahClient() {
+export default function PenerjemahDaerahClient({ initialPrompt = '' }: { initialPrompt?: string } = {}) {
   const { data: session } = useSession();
 
   const [bahasaAsal, setBahasaAsal] = useState('Indonesia');
   const [bahasaTujuan, setBahasaTujuan] = useState('Jawa');
   const [tingkatKesopanan, setTingkatKesopanan] = useState('Halus / Sopan (Misal: Krama Alus)');
-  const [teks, setTeks] = useState('');
+  const [teks, setTeks] = useState(initialPrompt || '');
   
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');

@@ -5,10 +5,10 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function PenjelasHaditsClient() {
+export default function PenjelasHaditsClient({ initialPrompt = '' }: { initialPrompt?: string } = {}) {
   const { data: session } = useSession();
 
-  const [hadits, setHadits] = useState('');
+  const [hadits, setHadits] = useState(initialPrompt || '');
   
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');

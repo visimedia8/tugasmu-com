@@ -4,6 +4,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import ProposalUsahaClient from '../ProposalUsahaClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -79,6 +80,7 @@ export default function ProposalUsahaPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["laporan-pkl", "akuntansi-solver", "makalah-builder"]} />
 
         <FAQAccordion
@@ -86,7 +88,7 @@ export default function ProposalUsahaPseoPage({ params }: PageProps) {
           description="Pertanyaan umum seputar penyusunan proposal bisnis dan rencana anggaran kewirausahaan."
           faqs={[
             {
-              question: 'Apakah analisis SWOT dan RAB yang dihasilkan cocok untuk tugas sekolah?',
+              question: "Apakah analisis SWOT dan RAB yang dihasilkan cocok untuk tugas sekolah?",
               answer: (
                 <p>
                   Ya, draf proposal dirancang spesifik untuk memenuhi rubrik penilaian mata pelajaran Produk Kreatif dan Kewirausahaan (PKK) SMK maupun Prakarya dan Kewirausahaan (PKWU) SMA.
@@ -94,7 +96,7 @@ export default function ProposalUsahaPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Bagaimana cara menentukan harga jual produk?',
+              question: "Bagaimana cara menentukan harga jual produk?",
               answer: (
                 <p>
                   Hitung seluruh Total Biaya (Biaya Tetap + Biaya Variabel), bagi dengan jumlah unit produksi untuk memperoleh Harga Pokok Produksi (HPP), lalu tambahkan persentase margin keuntungan yang diinginkan.

@@ -5,10 +5,10 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function MuhafazhahClient() {
+export default function MuhafazhahClient({ initialPrompt = '' }: { initialPrompt?: string } = {}) {
   const { data: session } = useSession();
 
-  const [materi, setMateri] = useState('');
+  const [materi, setMateri] = useState(initialPrompt || '');
   const [tingkat, setTingkat] = useState('Mudah (Awal Bait/Ayat)');
   
   const [isGenerating, setIsGenerating] = useState(false);

@@ -5,6 +5,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import MathSolverClient from '../MathSolverClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -80,14 +81,15 @@ export default function MathSolverPseoPage({ params }: PageProps) {
       <div className="mt-12 prose prose-slate max-w-none prose-h2:text-2xl prose-h2:text-slate-800 prose-p:text-slate-600 prose-strong:text-slate-800"
            dangerouslySetInnerHTML={{ __html: data.explanation }} />
 
-      <RelatedTools toolIds={["generator-soal","rangkuman","simulasi-utbk"]} />
+      <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
+        <RelatedTools toolIds={["generator-soal","rangkuman","simulasi-utbk"]} />
 
       <FAQAccordion
         title={`FAQ: ${data.h1}`}
         description="Pertanyaan umum seputar penggunaan tool matematika kami."
         faqs={[
           {
-            question: 'Apakah hasil perhitungan ini dijamin akurat?',
+            question: "Apakah hasil perhitungan ini dijamin akurat?",
             answer: (
               <p>
                 Ya, AI kami dirancang menggunakan model reasoning khusus yang memecah soal matematika menjadi langkah-langkah logis, dari rumus hingga hasil akhir. Namun, kami selalu menyarankan kamu untuk membaca alasannya agar benar-benar paham.
@@ -95,7 +97,7 @@ export default function MathSolverPseoPage({ params }: PageProps) {
             )
           },
           {
-            question: 'Apakah tool ini gratis untuk digunakan pelajar?',
+            question: "Apakah tool ini gratis untuk digunakan pelajar?",
             answer: (
               <p>
                 Tentu saja! TugasMu menyediakan akses gratis dengan kuota harian. Cukup <em>login</em> untuk menyimpan riwayat pertanyaanmu.

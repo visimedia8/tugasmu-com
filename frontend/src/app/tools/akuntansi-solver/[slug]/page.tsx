@@ -5,6 +5,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import AkuntansiSolverClient from '../AkuntansiSolverClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -80,6 +81,7 @@ export default function AkuntansiSolverPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["proposal-usaha", "laporan-pkl", "math-solver"]} />
 
         <FAQAccordion
@@ -87,7 +89,7 @@ export default function AkuntansiSolverPseoPage({ params }: PageProps) {
           description="Pertanyaan umum seputar pencatatan transaksi akuntansi, jurnal umum, buku besar, dan neraca saldo."
           faqs={[
             {
-              question: 'Apakah perhitungan debit kredit dijamin seimbang (balance)?',
+              question: "Apakah perhitungan debit kredit dijamin seimbang (balance)?",
               answer: (
                 <p>
                   Ya, algoritma AI TugasMu menerapkan aturan ketat Persamaan Dasar Akuntansi (Harta = Utang + Modal) sehingga seluruh mutasi debit dan kredit otomatis divalidasi keseimbangannya.
@@ -95,7 +97,7 @@ export default function AkuntansiSolverPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Apakah alat ini cocok untuk kurikulum SMK Akuntansi dan Keuangan Lembaga (AKL)?',
+              question: "Apakah alat ini cocok untuk kurikulum SMK Akuntansi dan Keuangan Lembaga (AKL)?",
               answer: (
                 <p>
                   Sangat cocok. Format tabel, penomoran kode akun, dan penjelasan kronologis transaksi disesuaikan dengan Standar Akuntansi Keuangan (SAK) Entitas Mikro, Kecil, dan Menengah yang diajarkan pada SMK AKL.

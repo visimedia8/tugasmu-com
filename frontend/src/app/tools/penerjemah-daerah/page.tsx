@@ -3,6 +3,7 @@ import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import PenerjemahDaerahClient from './PenerjemahDaerahClient';
 import { Languages, CheckCircle , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
@@ -57,6 +58,8 @@ export default function PenerjemahDaerahPage() {
         </div>
 
       <PenerjemahDaerahClient />
+
+      <SiblingSpokes toolId="penerjemah-daerah" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["generator-soal","rangkuman","math-solver"]} />
 

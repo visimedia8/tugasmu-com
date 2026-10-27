@@ -5,6 +5,7 @@ import MakalahBuilderClient from './MakalahBuilderClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { BookOpen, CheckCircle , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
@@ -59,6 +60,8 @@ export default function MakalahBuilderPage() {
         </div>
 
       <MakalahBuilderClient />
+
+      <SiblingSpokes toolId="makalah-builder" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["kti-builder","parafrase","grammar-eyd"]} />
 

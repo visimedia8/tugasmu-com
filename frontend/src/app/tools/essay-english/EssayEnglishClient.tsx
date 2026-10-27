@@ -5,10 +5,10 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function EssayEnglishClient() {
+export default function EssayEnglishClient({ initialPrompt = '' }: { initialPrompt?: string } = {}) {
   const { data: session } = useSession();
 
-  const [topik, setTopik] = useState('');
+  const [topik, setTopik] = useState(initialPrompt || '');
   const [stance, setStance] = useState('Strongly Agree (Pro)');
   
   const [isGenerating, setIsGenerating] = useState(false);

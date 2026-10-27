@@ -5,6 +5,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import TajwidClient from '../TajwidClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -80,6 +81,7 @@ export default function TajwidPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["tafsir-quran", "nahwu-shorof", "materi-pai"]} />
 
         <FAQAccordion
@@ -87,7 +89,7 @@ export default function TajwidPseoPage({ params }: PageProps) {
           description="Pertanyaan umum seputar kaidah tajwid, makharijul huruf, sifat huruf, dan panjang harakat bacaan Al-Quran."
           faqs={[
             {
-              question: 'Apakah alat ini bisa mendeteksi hukum tajwid pada ayat Al-Quran panjang?',
+              question: "Apakah alat ini bisa mendeteksi hukum tajwid pada ayat Al-Quran panjang?",
               answer: (
                 <p>
                   Bisa. Namun untuk pemahaman yang optimal, masukkan potongan 1-2 ayat agar AI dapat mengurai setiap pertemuan huruf dan durasi ghunnah secara mendalam.
@@ -95,7 +97,7 @@ export default function TajwidPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Qiraat apa yang menjadi rujukan analisis tajwid ini?',
+              question: "Qiraat apa yang menjadi rujukan analisis tajwid ini?",
               answer: (
                 <p>
                   Analisis hukum tajwid TugasMu berpedoman pada kaidah Qiraat Imam Ashim riwayat Hafsh yang menjadi standar mushaf Al-Quran di Indonesia dan mayoritas dunia Islam.

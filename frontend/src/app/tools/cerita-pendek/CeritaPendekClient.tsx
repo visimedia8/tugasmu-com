@@ -5,10 +5,10 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function CeritaPendekClient() {
+export default function CeritaPendekClient({ initialPrompt = '' }: { initialPrompt?: string } = {}) {
   const { data: session } = useSession();
 
-  const [tema, setTema] = useState('');
+  const [tema, setTema] = useState(initialPrompt || '');
   const [tokoh, setTokoh] = useState('');
   const [gayaBahasa, setGayaBahasa] = useState('Pengalaman Pribadi (Sudut pandang Aku)');
   

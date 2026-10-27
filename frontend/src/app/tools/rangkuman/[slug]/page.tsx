@@ -4,6 +4,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import RangkumanClient from '../RangkumanClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -78,6 +79,7 @@ export default function RangkumanPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["generator-soal", "math-solver", "simulasi-utbk"]} />
 
         <FAQAccordion
@@ -85,7 +87,7 @@ export default function RangkumanPseoPage({ params }: PageProps) {
           description="Pertanyaan seputar metode merangkum materi sekolah secara efisien."
           faqs={[
             {
-              question: 'Apakah AI menghilangkan detail penting dari materi pelajaran?',
+              question: "Apakah AI menghilangkan detail penting dari materi pelajaran?",
               answer: (
                 <p>
                   Tidak, algoritma perangkum kami dirancang untuk memilah kalimat pengisi naratif dan memprioritaskan definisi esensial, tanggal/tokoh kunci, serta formula penting yang menjadi sasaran evaluasi kurikulum.
@@ -93,7 +95,7 @@ export default function RangkumanPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Berapa panjang teks yang dapat dirangkum sekaligus?',
+              question: "Berapa panjang teks yang dapat dirangkum sekaligus?",
               answer: (
                 <p>
                   Kamu dapat menempelkan satu bab teks materi atau artikel utuh hingga ribuan kata, dan sistem akan mengorganisasikannya menjadi poin-poin bertingkat yang rapi.

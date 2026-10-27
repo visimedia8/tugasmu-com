@@ -4,6 +4,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import CVLamaranClient from '../CVLamaranClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -78,6 +79,7 @@ export default function CvLamaranPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["laporan-pkl", "proposal-usaha", "pidato"]} />
 
         <FAQAccordion
@@ -85,7 +87,7 @@ export default function CvLamaranPseoPage({ params }: PageProps) {
           description="Pertanyaan umum seputar pembuatan resume ATS dan surat permohonan kerja/magang."
           faqs={[
             {
-              question: 'Apakah format ini benar-benar lolos sistem ATS HRD?',
+              question: "Apakah format ini benar-benar lolos sistem ATS HRD?",
               answer: (
                 <p>
                   Ya, teks yang dihasilkan menggunakan struktur satu kolom, heading standar yang jelas, tanpa tabel bertumpuk atau grafik rumit yang sering memicu error pada algoritma sistem penyaring ATS.
@@ -93,7 +95,7 @@ export default function CvLamaranPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Bagaimana jika saya belum memiliki pengalaman kerja sama sekali?',
+              question: "Bagaimana jika saya belum memiliki pengalaman kerja sama sekali?",
               answer: (
                 <p>
                   AI akan secara otomatis memfokuskan sorotan pada pengalaman Praktik Kerja Lapangan (PKL), kepanitiaan organisasi sekolah, serta keahlian teknis (hard skills) yang relevan dengan posisi yang kamu lamar.

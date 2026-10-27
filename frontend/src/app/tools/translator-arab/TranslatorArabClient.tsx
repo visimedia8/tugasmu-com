@@ -6,7 +6,7 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function TranslatorArabClient() {
+export default function TranslatorArabClient({ initialPrompt = '' }: { initialPrompt?: string } = {}) {
   const { data: session } = useSession();
   const [filter, setFilter] = useState<FilterState>({
     jenjang: 'Madrasah',
@@ -15,7 +15,7 @@ export default function TranslatorArabClient() {
     mata_pelajaran: '',
   });
 
-  const [teks, setTeks] = useState('');
+  const [teks, setTeks] = useState(initialPrompt || '');
   const [mode, setMode] = useState('arab-indo');
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');

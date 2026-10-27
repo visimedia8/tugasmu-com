@@ -3,6 +3,7 @@ import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import MathSolverClient from './MathSolverClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
@@ -57,6 +58,8 @@ export default function MathSolverPage() {
         </div>
 
       <MathSolverClient />
+
+      <SiblingSpokes toolId="math-solver" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["generator-soal","rangkuman","simulasi-utbk"]} />
 

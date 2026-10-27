@@ -6,7 +6,7 @@ import HasilOutput from '@/components/tools/HasilOutput';
 import UsageLimitModal from '@/components/shared/UsageLimitModal';
 import { useSession } from 'next-auth/react';
 
-export default function GrammarCheckerClient() {
+export default function GrammarCheckerClient({ initialPrompt = '' }: { initialPrompt?: string } = {}) {
   const { data: session } = useSession();
   const [filter, setFilter] = useState<FilterState>({
     jenjang: '',
@@ -15,7 +15,7 @@ export default function GrammarCheckerClient() {
     mata_pelajaran: '',
   });
 
-  const [teks, setTeks] = useState('');
+  const [teks, setTeks] = useState(initialPrompt || '');
   const [isGenerating, setIsGenerating] = useState(false);
   const [hasil, setHasil] = useState('');
   const [error, setError] = useState('');

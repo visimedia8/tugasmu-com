@@ -5,6 +5,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import ParafraseClient from '../ParafraseClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -78,6 +79,7 @@ export default function ParafrasePseoPage({ params }: PageProps) {
            dangerouslySetInnerHTML={{ __html: data.explanation }} />
 
       <div className="max-w-4xl mt-16">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["grammar-eyd", "rangkuman", "makalah-builder"]} />
 
         <FAQAccordion
@@ -85,7 +87,7 @@ export default function ParafrasePseoPage({ params }: PageProps) {
           description="Pertanyaan yang sering diajukan mengenai algoritma anti-plagiarisme kami."
           faqs={[
             {
-              question: 'Apakah hasil teks aman dari deteksi Turnitin?',
+              question: "Apakah hasil teks aman dari deteksi Turnitin?",
               answer: (
                 <p>
                   Ya, tool parafrase kami merombak struktur sintaksis (S-P-O-K) secara fundamental dan menggunakan sinonim tingkat lanjut. Hal ini mencegah kesamaan *string* secara langsung sehingga tingkat *similarity* Turnitin kamu dapat ditekan secara drastis.

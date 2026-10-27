@@ -4,6 +4,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import PantunPuisiClient from '../PantunPuisiClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -79,6 +80,7 @@ export default function PantunPuisiPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["pidato", "cerita-pendek", "parafrase"]} />
 
         <FAQAccordion
@@ -86,7 +88,7 @@ export default function PantunPuisiPseoPage({ params }: PageProps) {
           description="Pertanyaan umum seputar kaidah rima pantun dan diksi puisi bahasa Indonesia."
           faqs={[
             {
-              question: 'Apakah rima pantun yang dihasilkan selalu berima a-b-a-b?',
+              question: "Apakah rima pantun yang dihasilkan selalu berima a-b-a-b?",
               answer: (
                 <p>
                   Ya, algoritma TugasMu secara ketat mematuhi metrum pantun Melayu: baris 1 dan 2 sebagai sampiran berima silang dengan baris 3 dan 4 sebagai isi (a-b-a-b).
@@ -94,7 +96,7 @@ export default function PantunPuisiPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Apakah bisa membuat puisi modern bebas tanpa terikat bait?',
+              question: "Apakah bisa membuat puisi modern bebas tanpa terikat bait?",
               answer: (
                 <p>
                   Tentu, kamu bisa memilih opsi puisi bebas untuk menghasilkan karya sastra dengan pilihan diksi konotatif, majas personifikasi, dan metafora estetis.

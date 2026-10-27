@@ -4,6 +4,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import MakalahBuilderClient from '../MakalahBuilderClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -79,6 +80,7 @@ export default function MakalahBuilderPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["parafrase", "grammar-eyd", "kti-builder"]} />
 
         <FAQAccordion
@@ -86,7 +88,7 @@ export default function MakalahBuilderPseoPage({ params }: PageProps) {
           description="Pertanyaan umum seputar kaidah penyusunan makalah ilmiah sekolah."
           faqs={[
             {
-              question: 'Apakah susunan makalah ini sesuai standar karya ilmiah sekolah?',
+              question: "Apakah susunan makalah ini sesuai standar karya ilmiah sekolah?",
               answer: (
                 <p>
                   Ya, struktur makalah mengikuti kaidah tata tulis ilmiah baku: Bab I Pendahuluan (Latar Belakang & Rumusan Masalah), Bab II Pembahasan, dan Bab III Penutup (Kesimpulan & Saran).
@@ -94,7 +96,7 @@ export default function MakalahBuilderPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Bagaimana cara memastikan makalah bebas dari plagiasi?',
+              question: "Bagaimana cara memastikan makalah bebas dari plagiasi?",
               answer: (
                 <p>
                   Gunakan hasil draf AI sebagai kerangka ide dan lakukan parafrase pada kalimat rujukan kutipan menggunakan alat Parafrase Teks TugasMu agar lolos uji orisinalitas Turnitin.

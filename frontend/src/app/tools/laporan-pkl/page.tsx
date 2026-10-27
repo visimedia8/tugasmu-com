@@ -5,6 +5,7 @@ import LaporanPKLClient from './LaporanPKLClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { FileText, CheckCircle , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
 export const metadata = {
@@ -59,6 +60,8 @@ export default function LaporanPKLPage() {
         </div>
 
       <LaporanPKLClient />
+
+      <SiblingSpokes toolId="laporan-pkl" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["proposal-usaha","akuntansi-solver","penjelas-kejuruan"]} />
 

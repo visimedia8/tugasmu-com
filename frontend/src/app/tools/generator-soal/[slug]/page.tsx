@@ -4,6 +4,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import GeneratorSoalClient from '../GeneratorSoalClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -79,6 +80,7 @@ export default function GeneratorSoalPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["simulasi-utbk", "rangkuman", "math-solver"]} />
 
         <FAQAccordion
@@ -86,7 +88,7 @@ export default function GeneratorSoalPseoPage({ params }: PageProps) {
           description="Pertanyaan umum seputar bank soal dan simulasi latihan evaluasi mandiri."
           faqs={[
             {
-              question: 'Apakah soal yang dihasilkan disertai kunci jawaban dan pembahasan?',
+              question: "Apakah soal yang dihasilkan disertai kunci jawaban dan pembahasan?",
               answer: (
                 <p>
                   Ya, seluruh paket soal pilihan ganda maupun esai yang digenerate AI TugasMu dilengkapi kunci jawaban definitif dan pembahasan langkah demi langkah agar siswa memahami konsep dasar materi.
@@ -94,7 +96,7 @@ export default function GeneratorSoalPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Apakah soal ini sesuai dengan Kurikulum Merdeka?',
+              question: "Apakah soal ini sesuai dengan Kurikulum Merdeka?",
               answer: (
                 <p>
                   Format soal disesuaikan dengan Capaian Pembelajaran (CP) dan indikator asesmen Kurikulum Merdeka serta AKM Pusat Asesmen Pendidikan Kemendikbudristek.

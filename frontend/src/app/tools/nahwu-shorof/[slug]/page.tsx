@@ -5,6 +5,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import NahwuShorofClient from '../NahwuShorofClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -80,6 +81,7 @@ export default function NahwuShorofPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["tajwid", "translator-arab", "kitab-kuning"]} />
 
         <FAQAccordion
@@ -87,7 +89,7 @@ export default function NahwuShorofPseoPage({ params }: PageProps) {
           description="Pertanyaan umum seputar kaidah gramatika bahasa Arab, tashrif istilahi, pembagian i'rab, dan tarkib kalimat."
           faqs={[
             {
-              question: 'Apakah alat ini bisa membedah i\'rab kalimat Arab gundul (tanpa harakat)?',
+              question: "Apakah alat ini bisa membedah i\\'rab kalimat Arab gundul (tanpa harakat)?",
               answer: (
                 <p>
                   Bisa. Algoritma AI TugasMu mampu mengidentifikasi pola morfologi (wazan) dan konteks sintaksis kalimat untuk membedah amil, ma'mul, serta harakat akhirnya secara sistematis.
@@ -95,7 +97,7 @@ export default function NahwuShorofPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Apakah penjelasan i\'rab sesuai dengan kitab Al-Jurumiyyah?',
+              question: "Apakah penjelasan i\\'rab sesuai dengan kitab Al-Jurumiyyah?",
               answer: (
                 <p>
                   Ya, terminologi dan klasifikasi i'rab mengacu pada standar Matan Al-Jurumiyyah dan Alfiyyah Ibnu Malik yang menjadi kurikulum utama di pesantren dan madrasah aliyah di Indonesia.

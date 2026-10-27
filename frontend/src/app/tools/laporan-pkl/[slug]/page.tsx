@@ -4,6 +4,7 @@ import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import LaporanPKLClient from '../LaporanPKLClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 import SchemaMarkup from '@/components/shared/SchemaMarkup';
 
@@ -79,6 +80,7 @@ export default function LaporanPklPseoPage({ params }: PageProps) {
       />
 
       <div className="max-w-4xl mt-14">
+        <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["cv-lamaran", "makalah-builder", "kti-builder"]} />
 
         <FAQAccordion
@@ -86,7 +88,7 @@ export default function LaporanPklPseoPage({ params }: PageProps) {
           description="Pertanyaan seputar panduan penyusunan dan pengesahan laporan PKL industri."
           faqs={[
             {
-              question: 'Apakah struktur laporan ini sesuai dengan format resmi SMK?',
+              question: "Apakah struktur laporan ini sesuai dengan format resmi SMK?",
               answer: (
                 <p>
                   Ya, struktur yang dihasilkan mengikuti format baku buku pedoman PKL SMK Kemendikbudristek: Bab I Pendahuluan, Bab II Gambaran Umum Perusahaan, Bab III Pelaksanaan Kerja, dan Bab IV Penutup.
@@ -94,7 +96,7 @@ export default function LaporanPklPseoPage({ params }: PageProps) {
               )
             },
             {
-              question: 'Bisa langsung diunduh ke Microsoft Word?',
+              question: "Bisa langsung diunduh ke Microsoft Word?",
               answer: (
                 <p>
                   Tentu, kamu bisa menyalin draft hasil generasi AI atau mengekspor teksnya langsung ke aplikasi pengolah kata favoritmu untuk ditambahkan lembar pengesahan tanda tangan pembimbing industri.
