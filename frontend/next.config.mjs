@@ -157,6 +157,85 @@ const nextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      // 1. PUBLIC SEO & DIRECTORY CONTENT (Edge Cached 4 Hours at Cloudflare Edge PoP)
+      {
+        source: '/:path(blog|kamus|tools|harga|tentang|kontak|kebijakan-editorial|redaksi|privasi|syarat|peta-situs)/:subpath*',
+        headers: [
+          {
+            key: 'Cloudflare-CDN-Cache-Control',
+            value: 'public, max-age=14400, stale-while-revalidate=86400',
+          },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'public, max-age=14400, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      {
+        source: '/:path(blog|kamus|tools|harga|tentang|kontak|kebijakan-editorial|redaksi|privasi|syarat|peta-situs)',
+        headers: [
+          {
+            key: 'Cloudflare-CDN-Cache-Control',
+            value: 'public, max-age=14400, stale-while-revalidate=86400',
+          },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'public, max-age=14400, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      {
+        source: '/',
+        headers: [
+          {
+            key: 'Cloudflare-CDN-Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+          },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      // 2. AUTH, USER PORTAL & API (Strict No-Store Bypass to protect dynamic user session)
+      {
+        source: '/:path(admin|akun|guru|api|masuk|daftar)/:subpath*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          },
+          {
+            key: 'Cloudflare-CDN-Cache-Control',
+            value: 'no-store',
+          },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'no-store',
+          },
+        ],
+      },
+      {
+        source: '/:path(admin|akun|guru|masuk|daftar)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          },
+          {
+            key: 'Cloudflare-CDN-Cache-Control',
+            value: 'no-store',
+          },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'no-store',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
