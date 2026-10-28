@@ -82,7 +82,7 @@ export default function GrammarCheckerPseoPage({ params }: PageProps) {
 
       <div className="max-w-4xl mt-14">
         <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
-        <RelatedTools toolIds={["essay-english", "grammar-bahasa-indonesia", "parafrase"]} />
+        <RelatedTools toolIds={["essay-english", "grammar-eyd", "parafrase"]} />
 
         <FAQAccordion
           title="English Grammar & Syntax Correction"

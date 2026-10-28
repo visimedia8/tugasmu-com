@@ -1,24 +1,8 @@
 import Link from 'next/link';
+import { getAllPosts } from '@/lib/mdx';
 
 export default function BlogPreview() {
-  // Static content for MVP
-  const recentPosts = [
-    {
-      title: 'Cara Membuat Teks Eksplanasi Fenomena Alam',
-      category: 'Bahasa Indonesia',
-      slug: 'cara-membuat-teks-eksplanasi-fenomena-alam'
-    },
-    {
-      title: 'Contoh Majas Hiperbola dan Pengertiannya',
-      category: 'Bahasa Indonesia',
-      slug: 'contoh-majas-hiperbola-dan-pengertiannya'
-    },
-    {
-      title: 'Materi Sejarah Kelas 10 Kurikulum Merdeka Bab 1',
-      category: 'Sejarah',
-      slug: 'materi-sejarah-kelas-10-kurikulum-merdeka-bab-1'
-    }
-  ];
+  const recentPosts = getAllPosts().slice(0, 3);
 
   return (
     <section className="py-16 bg-slate-50">
@@ -37,15 +21,24 @@ export default function BlogPreview() {
           {recentPosts.map((post) => (
             <Link 
               key={post.slug}
-              href={`/blog/${post.category.toLowerCase().replace(/ /g, '-')}/${post.slug}`}
-              className="bg-white border rounded-xl p-6 hover:shadow-md transition-shadow group"
+              href={`/blog/${post.kategori}/${post.slug}`}
+              className="bg-white border rounded-xl p-6 hover:shadow-md transition-shadow group flex flex-col justify-between"
             >
-              <span className="text-xs font-bold text-sky-600 uppercase tracking-wider mb-2 block">
-                {post.category}
-              </span>
-              <h3 className="font-heading font-bold text-lg text-slate-900 group-hover:text-sky-600 transition-colors">
-                {post.title}
-              </h3>
+              <div>
+                <span className="text-xs font-bold text-sky-600 uppercase tracking-wider mb-2 block">
+                  {post.kategori.replace(/-/g, ' ')}
+                </span>
+                <h3 className="font-heading font-bold text-lg text-slate-900 group-hover:text-sky-600 transition-colors line-clamp-2 mb-2">
+                  {post.title}
+                </h3>
+                <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                  {post.description}
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-sky-600">
+                <span>Baca Selengkapnya</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
             </Link>
           ))}
         </div>

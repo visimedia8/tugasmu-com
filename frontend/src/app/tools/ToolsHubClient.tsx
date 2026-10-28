@@ -79,7 +79,7 @@ export default function ToolsHubClient() {
         <div className="relative flex flex-col items-center text-center mb-10 mt-8">
           <div className="inline-flex items-center gap-2 px-space-md py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm shadow-sm mb-space-md">
             <span className="material-symbols-outlined text-[15px]" style={{ fontVariationSettings: "'FILL' 1" }}>auto_awesome</span>
-            <span>Eksplorasi 8+ Asisten Belajar Mandiri</span>
+            <span>Eksplorasi 29 Asisten Belajar Mandiri</span>
           </div>
           <h1 className="font-display-lg text-display-lg text-on-surface max-w-2xl tracking-tight">
             Koleksi Tools AI TugasMu

@@ -93,7 +93,10 @@ export default function Home() {
               {/* Floating card cluster */}
               <div className="relative h-[420px]">
                 {/* Card 1 — main */}
-                <div className="absolute top-8 left-0 right-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 shadow-2xl">
+                <Link
+                  href="/tools/generator-soal"
+                  className="group block absolute top-8 left-0 right-12 bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-brand-lime/40 rounded-2xl p-5 shadow-2xl transition-all"
+                >
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-9 h-9 rounded-xl bg-brand-lime flex items-center justify-center shrink-0">
                       <svg className="w-5 h-5 text-brand-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -101,7 +104,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-brand-cream font-bold text-sm">Generator Soal</p>
+                      <p className="text-brand-cream font-bold text-sm group-hover:text-brand-lime transition-colors">Generator Soal</p>
                       <p className="text-brand-cream/40 text-xs">18.4k digunakan</p>
                     </div>
                     <span className="ml-auto px-2 py-0.5 rounded-full bg-brand-lime text-brand-navy text-[10px] font-bold">Terpopuler</span>
@@ -109,10 +112,13 @@ export default function Home() {
                   <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
                     <div className="h-full w-4/5 rounded-full bg-brand-lime" />
                   </div>
-                </div>
+                </Link>
 
                 {/* Card 2 — offset */}
-                <div className="absolute top-36 right-0 left-16 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 shadow-xl animate-float">
+                <Link
+                  href="/tools/rangkuman"
+                  className="group block absolute top-36 right-0 left-16 bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-brand-coral/40 rounded-2xl p-5 shadow-xl animate-float transition-all"
+                >
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-9 h-9 rounded-xl bg-brand-coral/20 border border-brand-coral/30 flex items-center justify-center shrink-0">
                       <svg className="w-5 h-5 text-brand-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -120,29 +126,32 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-brand-cream font-bold text-sm">Rangkuman Materi</p>
+                      <p className="text-brand-cream font-bold text-sm group-hover:text-brand-coral transition-colors">Rangkuman Materi</p>
                       <p className="text-brand-cream/40 text-xs">12.8k digunakan</p>
                     </div>
                   </div>
                   <p className="text-brand-cream/50 text-xs leading-relaxed line-clamp-2">
                     Paste bab buku tebal atau artikel panjang untuk dapat poin inti ringkas dalam sekejap.
                   </p>
-                </div>
+                </Link>
 
                 {/* Card 3 — bottom */}
-                <div className="absolute bottom-0 left-0 right-8 bg-brand-lime rounded-2xl p-5 shadow-xl shadow-brand-lime/20">
+                <Link
+                  href="/tools"
+                  className="group block absolute bottom-0 left-0 right-8 bg-brand-lime hover:bg-brand-lime-dark rounded-2xl p-5 shadow-xl shadow-brand-lime/20 hover:shadow-brand-lime/30 active:scale-[0.98] transition-all"
+                >
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-brand-navy font-heading font-bold text-base">Coba Sekarang</p>
                       <p className="text-brand-navy/60 text-xs mt-0.5">Gratis, tanpa daftar dulu</p>
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-brand-navy flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-brand-navy flex items-center justify-center group-hover:translate-x-1 transition-transform">
                       <svg className="w-5 h-5 text-brand-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
                       </svg>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

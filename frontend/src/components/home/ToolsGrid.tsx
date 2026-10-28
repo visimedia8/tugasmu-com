@@ -91,7 +91,7 @@ export default function ToolsGrid() {
             href="/tools"
             className="self-start md:self-auto inline-flex items-center gap-1.5 text-sm font-semibold text-brand-navy/60 hover:text-brand-navy transition-colors"
           >
-            Lihat semua 8 tools
+            Lihat semua 29 tools
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 18 15 12 9 6" />
             </svg>

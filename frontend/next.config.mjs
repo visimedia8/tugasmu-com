@@ -134,6 +134,27 @@ const nextConfig = {
         destination: '/tools/grammar-bahasa-inggris',
         permanent: true,
       },
+      {
+        source: '/tools/grammar-checker/:slug',
+        destination: '/tools/grammar-bahasa-inggris/:slug',
+        permanent: true,
+      },
+      // Fallback 301 Redirects for legacy mock homepage URLs
+      {
+        source: '/blog/bahasa-indonesia/cara-membuat-teks-eksplanasi-fenomena-alam',
+        destination: '/blog/bahasa-indonesia',
+        permanent: true,
+      },
+      {
+        source: '/blog/bahasa-indonesia/contoh-majas-hiperbola-dan-pengertiannya',
+        destination: '/blog/bahasa-indonesia/jenis-jenis-majas-bahasa-indonesia',
+        permanent: true,
+      },
+      {
+        source: '/blog/sejarah/materi-sejarah-kelas-10-kurikulum-merdeka-bab-1',
+        destination: '/blog/sejarah',
+        permanent: true,
+      },
     ];
   },
 };

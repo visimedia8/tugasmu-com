@@ -9,12 +9,15 @@ interface RelatedToolsProps {
 export default function RelatedTools({ toolIds }: RelatedToolsProps) {
   const relatedTools = toolIds
     .map(id => {
-      const aliasId = id === 'grammar-eyd' 
-        ? 'grammar-bahasa-indonesia' 
-        : id === 'grammar-checker' 
-        ? 'grammar-bahasa-inggris' 
-        : id;
-      return TOOLS.find(t => t.id === aliasId || t.id === id);
+      return TOOLS.find(t => 
+        t.id === id || 
+        t.href === `/tools/${id}` ||
+        t.href.endsWith(`/${id}`) ||
+        (id === 'grammar-bahasa-indonesia' && t.id === 'grammar-eyd') ||
+        (id === 'grammar-eyd' && t.id === 'grammar-eyd') ||
+        (id === 'grammar-bahasa-inggris' && t.id === 'grammar-checker') ||
+        (id === 'grammar-checker' && t.id === 'grammar-checker')
+      );
     })
     .filter((t): t is typeof TOOLS[0] => t !== undefined);
 

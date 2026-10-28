@@ -82,7 +82,7 @@ export default function EssayEnglishPseoPage({ params }: PageProps) {
 
       <div className="max-w-4xl mt-14">
         <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
-        <RelatedTools toolIds={["grammar-bahasa-inggris", "parafrase", "rangkuman"]} />
+        <RelatedTools toolIds={["grammar-checker", "parafrase", "rangkuman"]} />
 
         <FAQAccordion
           title="Academic English Essay Writing"
