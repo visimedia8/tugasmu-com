@@ -164,7 +164,7 @@ export default async function BlogPost({ params }: Props) {
       {/* Layout Grid: Left Content Column + Right Sticky Utility Rail */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
         {/* Left Column: Main Article Body */}
-        <article className="lg:col-span-8 flex flex-col">
+        <article className="lg:col-span-8 flex flex-col min-w-0">
           {/* Category Pill & Estimated Speed Read */}
           <div className="flex flex-wrap items-center gap-space-sm mb-space-md">
             <span className="px-space-md py-1 rounded-xl bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm tracking-wide uppercase">
@@ -228,7 +228,7 @@ export default async function BlogPost({ params }: Props) {
           )}
 
           <div 
-            className="prose-content flex flex-col gap-space-lg text-on-surface font-body-lg text-body-lg leading-relaxed bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-sm border border-slate-100"
+            className="prose-content prose prose-slate max-w-none prose-headings:font-heading prose-headings:text-on-surface prose-headings:font-bold prose-a:text-sky-600 prose-a:font-semibold prose-a:underline prose-a:decoration-sky-300 hover:prose-a:text-sky-800 hover:prose-a:decoration-sky-600 prose-a:transition-colors prose-p:leading-relaxed prose-p:text-slate-700 prose-strong:text-slate-900 prose-strong:font-bold prose-li:text-slate-700 flex flex-col gap-space-lg text-on-surface font-body-lg text-body-lg leading-relaxed bg-surface-container-lowest p-space-lg md:p-space-xl rounded-2xl shadow-sm border border-slate-100"
             dangerouslySetInnerHTML={{ __html: processedHtml }}
           />
 

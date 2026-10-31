@@ -44,12 +44,16 @@ export function processArticleContent(rawHtml: string): {
       const level = tag.toLowerCase() === 'h2' ? 2 : 3;
       toc.push({ id, text: cleanText, level });
 
-      // Add scroll-mt-28 so sticky header does not overlap heading
+      // Add scroll-mt-28 and explicit responsive heading typography
+      const headingClasses = level === 2
+        ? 'scroll-mt-28 font-heading font-bold text-2xl md:text-3xl text-on-surface mt-10 mb-4 block'
+        : 'scroll-mt-28 font-heading font-bold text-xl md:text-2xl text-on-surface mt-8 mb-3 block';
+
       let updatedAttrs = attrs;
       if (/class=["']/i.test(updatedAttrs)) {
-        updatedAttrs = updatedAttrs.replace(/class=["']([^"']*)["']/i, 'class="$1 scroll-mt-28 font-heading font-bold"');
+        updatedAttrs = updatedAttrs.replace(/class=["']([^"']*)["']/i, `class="$1 ${headingClasses}"`);
       } else {
-        updatedAttrs = `${updatedAttrs} class="scroll-mt-28 font-heading font-bold"`;
+        updatedAttrs = `${updatedAttrs} class="${headingClasses}"`;
       }
 
       if (!/id=["']/i.test(updatedAttrs)) {

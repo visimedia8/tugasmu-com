@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import { DM_Sans, Fraunces } from 'next/font/google';
 import './globals.css';
+import 'katex/dist/katex.min.css';
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display: 'swap' });
 const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces', display: 'swap' });
