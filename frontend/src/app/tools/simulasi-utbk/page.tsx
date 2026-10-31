@@ -5,6 +5,7 @@ import { School, CheckCircle , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
 
 export const metadata = {
   title: 'Simulasi Soal UTBK SNBT - Penalaran & Literasi',
@@ -90,6 +91,8 @@ export default function SimulasiUTBKPage() {
           </p>
         </div>
       </div>
+
+      <RelatedBlogArticles kategori="persiapan-ujian" categoryLabel="Persiapan Ujian & UTBK" />
     </div>
   );
 }

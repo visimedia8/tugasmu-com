@@ -34,6 +34,12 @@ export function getPostSlugs(kategori: string): string[] {
   return (postsData as BlogPost[]).filter(p => p.kategori === kategori).map(p => p.slug);
 }
 
+export function getPostsByCategory(kategori: string, limit: number = 3): BlogPost[] {
+  return getAllPosts()
+    .filter((p) => p.kategori === kategori)
+    .slice(0, limit);
+}
+
 export function getAllCategories(): string[] {
   return Array.from(new Set((postsData as BlogPost[]).map(p => p.kategori)));
 }

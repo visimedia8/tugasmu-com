@@ -274,6 +274,30 @@ export default async function BlogCategory({ params }: Props) {
       {visiblePosts.length === 0 && (
         <p className="text-slate-500 py-12 text-center">Belum ada artikel di kategori ini.</p>
       )}
+
+      {/* Sibling Category Silo Mesh (Koray Inter-Cluster Linking) */}
+      <section className="mt-16 pt-10 border-t border-slate-200">
+        <h3 className="text-xl font-heading font-bold text-slate-900 mb-2">
+          Kategori Materi Pelajaran Lainnya
+        </h3>
+        <p className="text-sm text-slate-500 mb-6">
+          Pilih mata pelajaran lain untuk mempelajari rangkuman konsep, rumus praktis, dan materi kurikulum sekolah:
+        </p>
+        <div className="flex flex-wrap gap-2.5">
+          {getAllCategories()
+            .filter((cat) => cat !== resolvedParams.kategori)
+            .map((cat) => (
+              <Link
+                key={cat}
+                href={`/blog/${cat}`}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-50 hover:bg-sky-50 border border-slate-200 hover:border-sky-300 text-slate-700 hover:text-sky-700 font-medium text-xs transition-colors capitalize"
+              >
+                <span>📁</span>
+                <span>{cat.replace(/-/g, ' ')}</span>
+              </Link>
+            ))}
+        </div>
+      </section>
     </main>
   );
 }

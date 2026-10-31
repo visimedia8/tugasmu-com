@@ -6,6 +6,7 @@ import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
 
 export const metadata = {
   title: 'Tool Parafrase Teks AI Gratis',
@@ -134,7 +135,9 @@ export default function ParafrasePage() {
 
       <RelatedTools toolIds={["kti-builder","makalah-builder","grammar-eyd"]} />
 
-        <FAQAccordion 
+        
+      <RelatedBlogArticles kategori="bahasa-indonesia" categoryLabel="Bahasa Indonesia & Penulisan" />
+      <FAQAccordion 
           title="Panduan & FAQ: Tool Parafrase TugasMu"
           description="Pertanyaan yang sering diajukan seputar penulisan ulang teks akademik untuk jenjang SD, SMP, SMA, dan sederajat."
           faqs={[

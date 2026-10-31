@@ -5,6 +5,7 @@ import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
 
 export const metadata = {
   title: 'Generator Soal Latihan & Kunci Jawaban',
@@ -63,6 +64,8 @@ export default function GeneratorSoalPage() {
 
       <RelatedTools toolIds={["rangkuman","math-solver","simulasi-utbk"]} />
 
+      
+      <RelatedBlogArticles kategori="kurikulum-merdeka" categoryLabel="Kurikulum Merdeka" />
       <FAQAccordion 
         title="Panduan & FAQ: Generator Soal AI"
         description="Pertanyaan seputar pembuatan soal otomatis untuk latihan siswa maupun ulangan harian guru tingkat SD-SMA."

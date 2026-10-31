@@ -7,6 +7,7 @@ import { BookOpen, CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
 
 export const metadata = {
   title: 'Korektor Grammar & Essay Bahasa Inggris - Pengecekan AI Otomatis',
@@ -147,7 +148,9 @@ export default function GrammarCheckerPage() {
 
       {/* FAQ Section */}
       <div className="mt-12">
-        <FAQAccordion
+        
+      <RelatedBlogArticles kategori="bahasa-inggris" categoryLabel="Bahasa Inggris & Grammar" />
+      <FAQAccordion
           title="Pertanyaan Seputar Pengecekan Grammar"
           description="Panduan singkat tentang cara kerja korektor grammar ini."
           faqs={[

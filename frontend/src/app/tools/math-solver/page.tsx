@@ -5,6 +5,7 @@ import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
 
 export const metadata = {
   title: 'Penjelas Soal Matematika Step-by-Step — Cara Mengerjakan Soal Cerita',
@@ -63,6 +64,8 @@ export default function MathSolverPage() {
 
       <RelatedTools toolIds={["generator-soal","rangkuman","simulasi-utbk"]} />
 
+      
+      <RelatedBlogArticles kategori="matematika" categoryLabel="Matematika & Rumus" />
       <FAQAccordion
         title="Panduan & FAQ: Penjelas Soal Matematika"
         description="Pertanyaan seputar cara menggunakan AI untuk memahami langkah pengerjaan soal matematika."

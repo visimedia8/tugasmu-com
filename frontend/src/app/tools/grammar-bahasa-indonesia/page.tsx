@@ -5,6 +5,7 @@ import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
 
 export const metadata = {
   title: 'Cek Grammar & EYD Bahasa Indonesia Online — Koreksi Otomatis',
@@ -63,6 +64,8 @@ export default function GrammarEYDPage() {
 
       <RelatedTools toolIds={["kti-builder","makalah-builder","parafrase"]} />
 
+      
+      <RelatedBlogArticles kategori="bahasa-indonesia" categoryLabel="Bahasa Indonesia & EYD" />
       <FAQAccordion
         title="Panduan & FAQ: Cek Grammar & EYD"
         description="Pertanyaan seputar pemeriksaan ejaan dan tanda baca Bahasa Indonesia."

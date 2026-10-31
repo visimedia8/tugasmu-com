@@ -7,6 +7,7 @@ import { FileText, CheckCircle , Zap , ShieldCheck , Users } from 'lucide-react'
 import RelatedTools from '@/components/tools/RelatedTools';
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
 
 export const metadata = {
   title: 'Generator Struktur Laporan PKL & Prakerin SMK - Otomatis Sesuai Jurusan',
@@ -109,7 +110,9 @@ export default function LaporanPKLPage() {
 
       {/* FAQ Section */}
       <div className="mt-12">
-        <FAQAccordion
+        
+      <RelatedBlogArticles kategori="smk" categoryLabel="Kejuruan SMK" />
+      <FAQAccordion
           title="Pertanyaan Seputar Laporan PKL SMK"
           description="Panduan singkat terkait penyusunan laporan magang dan penggunaan AI Generator ini."
           faqs={[
