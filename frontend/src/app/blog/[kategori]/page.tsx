@@ -107,11 +107,11 @@ export async function generateMetadata({ params }: Props) {
   const description = categoryInfo ? categoryInfo.desc : `Kumpulan artikel dan panduan belajar untuk materi ${resolvedParams.kategori.replace('-', ' ')}.`;
 
   return {
-    title: `${title} | TugasMu`,
+    title,
     description,
     alternates: { canonical: `/blog/${resolvedParams.kategori}` },
     openGraph: {
-      title: `${title} | TugasMu`,
+      title,
       description,
       type: 'website',
       images: [

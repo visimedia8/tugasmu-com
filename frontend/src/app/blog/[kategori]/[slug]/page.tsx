@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
   }
 
   return {
-    title: `${post.title} | TugasMu`,
+    title: post.title,
     description: post.description,
     alternates: {
       canonical: `/blog/${resolvedParams.kategori}/${resolvedParams.slug}`,

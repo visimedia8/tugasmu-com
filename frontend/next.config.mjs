@@ -15,16 +15,28 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Host canonicalization (www to non-www)
+      // Host canonicalization (www to non-www) - Root
       {
-        source: '/:path*',
+        source: '/',
         has: [
           {
             type: 'host',
             value: 'www.tugasmu.com',
           },
         ],
-        destination: 'https://tugasmu.com/:path*',
+        destination: 'https://tugasmu.com/',
+        permanent: true,
+      },
+      // Host canonicalization (www to non-www) - Subpaths
+      {
+        source: '/:path+',
+        has: [
+          {
+            type: 'host',
+            value: 'www.tugasmu.com',
+          },
+        ],
+        destination: 'https://tugasmu.com/:path+',
         permanent: true,
       },
       // Cannibalization 301 Redirects (Consolidating into Koray Topical Authority nodes)
