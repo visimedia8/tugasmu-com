@@ -1,0 +1,34 @@
+---
+title: "Item Response Theory (IRT)"
+description: "Metodologi psikometrik modern untuk menilai kemampuan peserta tes berdasarkan tingkat kesulitan dan daya pembeda butir soal."
+date: "2026-10-02T12:00:00Z"
+kategori: "Glosarium"
+---
+
+Item Response Theory (IRT) atau Teori Respon Butir adalah metodologi psikometrik modern yang digunakan dalam penilaian ujian terstandar nasional (seperti UTBK SNBT). Berbeda dengan sistem klasik yang hanya menghitung jumlah jawaban benar mentah, IRT mengalibrasi kemampuan peserta berdasarkan karakteristik butir soal yang berhasil dijawab.
+
+Dalam penerapannya, soal yang hanya mampu dijawab oleh sedikit peserta nasional (berkategori sulit) akan mendapatkan bobot skor yang jauh lebih melompat dibandingkan soal yang dijawab benar oleh mayoritas peserta.
+
+## Komponen & Atribut Kunci (EAV)
+
+| Parameter IRT | Simbol | Arti & Fungsi Psikometrik |
+|---|---|---|
+| **Kemampuan Laten** | $\theta$ (Theta) | Estimasi tingkat kecakapan bernalar peserta ujian (skala standar nasional) |
+| **Tingkat Kesukaran** | $b_i$ | Indeks seberapa sulit suatu butir soal dijawab oleh populasi peserta |
+| **Daya Pembeda** | $a_i$ | Kemampuan butir soal membedakan siswa berkemampuan tinggi vs rendah |
+| **Tebakan Semu** | $c_i$ | Probabilitas menjawab benar semata-mata karena faktor keberuntungan tebakan |
+
+## Contoh Soal Ujian & Pembahasan Singkat
+
+**Contoh Kasus UTBK:** Dua siswa (Siswa A dan Siswa B) sama-sama menjawab benar 12 soal pada subtes Pengetahuan Kuantitatif. Siswa A menjawab 12 soal mudah, sedangkan Siswa B menjawab 6 soal mudah dan 6 soal berkategori sulit dengan daya pembeda tinggi. Siapakah yang memperoleh skor IRT lebih tinggi?
+
+**Pembahasan Kilat:**
+1. Pada model IRT 3-PL, setiap butir soal dikalibrasi pasca-ujian berdasarkan persentase jawaban benar seluruh peserta nasional.
+2. Butir soal sulit memiliki parameter kesulitan ($b$) dan daya pembeda ($a$) yang tinggi, sehingga memberikan kontribusi $\theta$ yang jauh lebih besar.
+3. Siswa B terbukti memiliki kemampuan analitis tingkat lanjut, sehingga skor akhirnya dapat mencapai 680+, sementara Siswa A berada di kisaran 540.
+
+*Kunci Jawaban:* **Siswa B** memperoleh skor IRT yang jauh lebih tinggi.
+
+## Catatan Kakak Kelas & Tips Belajar
+
+💡 **Tips Penting:** Karena UTBK tidak menerapkan sistem minus, jangan pernah mengosongkan lembar jawaban. Setiap tebakan terarah tetap memberi peluang expected value positif pada estimasi skor IRT.

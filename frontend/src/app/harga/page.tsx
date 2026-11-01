@@ -65,6 +65,8 @@ export default function HargaPage() {
     "operatingSystem": "All modern web browsers, Windows, macOS, Android, iOS",
     "browserRequirements": "Requires JavaScript. Requires HTML5.",
     "inLanguage": "id-ID",
+    "sku": "TUGASMU-AI-PRO",
+    "category": "Educational Software",
     "image": [
       "https://tugasmu.com/og-image.jpg",
       "https://tugasmu.com/api/og?title=Paket%20Berlangganan%20TugasMu&category=Harga"
@@ -114,6 +116,8 @@ export default function HargaPage() {
       {
         "@type": "Offer",
         "name": "Paket Gratis Selamanya",
+        "sku": "TUGASMU-FREE",
+        "image": "https://tugasmu.com/og-image.jpg",
         "price": "0",
         "priceCurrency": "IDR",
         "validFrom": "2024-01-01",
@@ -132,6 +136,8 @@ export default function HargaPage() {
       {
         "@type": "Offer",
         "name": "Paket Pro Pelajar",
+        "sku": "TUGASMU-PRO-PELAJAR",
+        "image": "https://tugasmu.com/og-image.jpg",
         "price": "29000",
         "priceCurrency": "IDR",
         "validFrom": "2024-01-01",
@@ -150,6 +156,8 @@ export default function HargaPage() {
       {
         "@type": "Offer",
         "name": "Paket Guru / Tutor",
+        "sku": "TUGASMU-PRO-GURU",
+        "image": "https://tugasmu.com/og-image.jpg",
         "price": "99000",
         "priceCurrency": "IDR",
         "validFrom": "2024-01-01",

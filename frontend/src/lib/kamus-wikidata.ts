@@ -284,5 +284,125 @@ export const KAMUS_WIKIDATA_MAP: Record<string, string[]> = {
   'trigonometri': [
     'https://www.wikidata.org/wiki/Q8084',
     'https://id.wikipedia.org/wiki/Trigonometri'
-  ]
+  ],
+  'item-response-theory': [
+    'https://www.wikidata.org/wiki/Q845831',
+    'https://id.wikipedia.org/wiki/Teori_respons_butir'
+  ],
+  'silogisme': [
+    'https://www.wikidata.org/wiki/Q107659',
+    'https://id.wikipedia.org/wiki/Silogisme'
+  ],
+  'penalaran-deduktif': [
+    'https://www.wikidata.org/wiki/Q193110',
+    'https://id.wikipedia.org/wiki/Penalaran_deduktif'
+  ],
+  'penalaran-induktif': [
+    'https://www.wikidata.org/wiki/Q193132',
+    'https://id.wikipedia.org/wiki/Penalaran_induktif'
+  ],
+  'daya-pembeda': [
+    'https://www.wikidata.org/wiki/Q6084050',
+    'https://id.wikipedia.org/wiki/Analisis_butir_soal'
+  ],
+  'tingkat-kesukaran': [
+    'https://www.wikidata.org/wiki/Q6084053',
+    'https://id.wikipedia.org/wiki/Tingkat_kesukaran'
+  ],
+  'probabilitas': [
+    'https://www.wikidata.org/wiki/Q9492',
+    'https://id.wikipedia.org/wiki/Probabilitas'
+  ],
+  'statistika': [
+    'https://www.wikidata.org/wiki/Q12483',
+    'https://id.wikipedia.org/wiki/Statistika'
+  ],
+  'modus-ponens': [
+    'https://www.wikidata.org/wiki/Q466540',
+    'https://id.wikipedia.org/wiki/Modus_ponens'
+  ],
+  'modus-tollens': [
+    'https://www.wikidata.org/wiki/Q848130',
+    'https://id.wikipedia.org/wiki/Modus_tollens'
+  ],
+  'capaian-pembelajaran': [
+    'https://www.wikidata.org/wiki/Q1626084',
+    'https://id.wikipedia.org/wiki/Kurikulum_Merdeka'
+  ],
+  'alur-tujuan-pembelajaran': [
+    'https://www.wikidata.org/wiki/Q282676',
+    'https://id.wikipedia.org/wiki/Rencana_pelaksanaan_pembelajaran'
+  ],
+  'modul-ajar': [
+    'https://www.wikidata.org/wiki/Q20820271',
+    'https://id.wikipedia.org/wiki/Modul_(pendidikan)'
+  ],
+  'asesmen-diagnostik': [
+    'https://www.wikidata.org/wiki/Q5270381',
+    'https://id.wikipedia.org/wiki/Evaluasi_pendidikan'
+  ],
+  'profil-pelajar-pancasila': [
+    'https://www.wikidata.org/wiki/Q12480838',
+    'https://id.wikipedia.org/wiki/Profil_Pelajar_Pancasila'
+  ],
+  'diferensiasi-pembelajaran': [
+    'https://www.wikidata.org/wiki/Q1427513',
+    'https://id.wikipedia.org/wiki/Pembelajaran_berdiferensiasi'
+  ],
+  'asesmen-formatif': [
+    'https://www.wikidata.org/wiki/Q5470183',
+    'https://id.wikipedia.org/wiki/Asesmen_formatif'
+  ],
+  'asesmen-sumatif': [
+    'https://www.wikidata.org/wiki/Q7637128',
+    'https://id.wikipedia.org/wiki/Asesmen_sumatif'
+  ],
+  'taksonomi-bloom': [
+    'https://www.wikidata.org/wiki/Q177439',
+    'https://id.wikipedia.org/wiki/Taksonomi_Bloom'
+  ],
+  'kriteria-ketercapaian-tujuan-pembelajaran': [
+    'https://www.wikidata.org/wiki/Q644787',
+    'https://id.wikipedia.org/wiki/Kriteria_Ketuntasan_Minimal'
+  ],
+  'teorema-pythagoras': [
+    'https://www.wikidata.org/wiki/Q11518',
+    'https://id.wikipedia.org/wiki/Teorema_Pythagoras'
+  ],
+  'fungsi-komposisi': [
+    'https://www.wikidata.org/wiki/Q244761',
+    'https://id.wikipedia.org/wiki/Komposisi_fungsi'
+  ],
+  'matriks-invers': [
+    'https://www.wikidata.org/wiki/Q865360',
+    'https://id.wikipedia.org/wiki/Matriks_terbalikkan'
+  ],
+  'sudut-sehadap': [
+    'https://www.wikidata.org/wiki/Q11394',
+    'https://id.wikipedia.org/wiki/Sudut'
+  ],
+  'aritmetika-sosial': [
+    'https://www.wikidata.org/wiki/Q11205',
+    'https://id.wikipedia.org/wiki/Aritmetika'
+  ],
+  'paragraf-deduktif': [
+    'https://www.wikidata.org/wiki/Q12503233',
+    'https://id.wikipedia.org/wiki/Paragraf'
+  ],
+  'paragraf-induktif': [
+    'https://www.wikidata.org/wiki/Q12503233',
+    'https://id.wikipedia.org/wiki/Paragraf'
+  ],
+  'integritas-akademik': [
+    'https://www.wikidata.org/wiki/Q4671445',
+    'https://id.wikipedia.org/wiki/Integritas_akademik'
+  ],
+  'turnitin': [
+    'https://www.wikidata.org/wiki/Q1751147',
+    'https://id.wikipedia.org/wiki/Turnitin'
+  ],
+  'rata-rata-gabungan': [
+    'https://www.wikidata.org/wiki/Q19033',
+    'https://id.wikipedia.org/wiki/Rata-rata'
+  ],
 };

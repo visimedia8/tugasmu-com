@@ -1,0 +1,36 @@
+---
+title: "Fungsi Komposisi"
+description: "Penggabungan dua fungsi atau lebih secara berurutan di mana output suatu fungsi menjadi input bagi fungsi berikutnya."
+date: "2026-10-02T12:00:00Z"
+kategori: "Glosarium"
+---
+
+Fungsi komposisi adalah operasi matematika yang menggabungkan dua fungsi atau lebih secara berurutan untuk menghasilkan satu fungsi baru. Dilambangkan dengan simbol bundaran bundar $(f \circ g)(x)$, yang dibaca 'f komposisi g dari x'.
+
+Operasi $(f \circ g)(x)$ berarti fungsi $g(x)$ dikerjakan terlebih dahulu, kemudian hasilnya disubstitusikan ke dalam fungsi $f$:
+$$(f \circ g)(x) = f(g(x))$$
+
+## Komponen & Atribut Kunci (EAV)
+
+| Operasi Komposisi | Notasi Simbolik | Alur Pengerjaan |
+|---|---|---|
+| **$f$ bundaran $g$** | $(f \circ g)(x) = f(g(x))$ | Masukkan persamaan $g(x)$ ke dalam setiap variabel $x$ pada $f(x)$ |
+| **$g$ bundaran $f$** | $(g \circ f)(x) = g(f(x))$ | Masukkan persamaan $f(x)$ ke dalam setiap variabel $x$ pada $g(x)$ |
+| **Sifat Komutatif** | $(f \circ g)(x) \neq (g \circ f)(x)$ | Urutan pengerjaan tidak boleh dibalik |
+| **Sifat Asosiatif** | $f \circ (g \circ h) = (f \circ g) \circ h$ | Pengelompokan urutan menghasilkan fungsi yang sama |
+
+## Contoh Soal Ujian & Pembahasan Singkat
+
+**Soal Ujian SMA:** Diketahui fungsi $f(x) = 2x + 3$ dan $g(x) = x^2 - 1$. Tentukan nilai dari $(f \circ g)(3)$!
+
+**Pembahasan Kilat:**
+1. Hitung fungsi dalam terlebih dahulu: $g(3)$.
+   $$g(3) = 3^2 - 1 = 9 - 1 = 8$$
+2. Masukkan hasil $g(3) = 8$ ke dalam fungsi luar $f(x)$:
+   $$f(g(3)) = f(8) = 2(8) + 3 = 16 + 3 = 19$$
+
+*Kunci Jawaban:* Nilai $(f \circ g)(3)$ adalah **19**.
+
+## Catatan Kakak Kelas & Tips Belajar
+
+💡 **Tips Penting:** Jangan repot-repot mencari rumus fungsi gabungan $(f \circ g)(x)$ jika soal menanyakan angka tertentu $(f \circ g)(k)$. Cukup hitung nilai fungsi dalam terlebih dahulu, lalu oper ke fungsi luar!

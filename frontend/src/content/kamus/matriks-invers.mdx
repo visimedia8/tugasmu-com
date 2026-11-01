@@ -1,0 +1,37 @@
+---
+title: "Invers Matriks"
+description: "Kebalikan dari suatu matriks persegi yang jika dikalikan dengan matriks asalnya menghasilkan matriks identitas."
+date: "2026-10-02T12:00:00Z"
+kategori: "Glosarium"
+---
+
+Invers matriks adalah kebalikan dari suatu matriks persegi berordo $n \times n$. Jika matriks persegi $A$ memiliki invers (disimbolkan dengan $A^{-1}$), maka perkalian antara matriks tersebut dengan inversnya akan menghasilkan matriks identitas:
+$$A \cdot A^{-1} = A^{-1} \cdot A = I$$
+
+Matriks yang memiliki invers disebut matriks nonsingular (determinan $\neq 0$), sedangkan matriks yang determinannya bernilai 0 disebut matriks singular dan tidak memiliki invers.
+
+## Komponen & Atribut Kunci (EAV)
+
+| Ordo Matriks $2 \times 2$ | Rumus & Komponen Perhitungan |
+|---|---|
+| **Matriks Asal** | $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$ |
+| **Determinan** | $\det(A) = ad - bc$ (wajib $\neq 0$) |
+| **Adjoin Matriks** | $\text{Adj}(A) = \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$ |
+| **Rumus Invers Lengkap** | $A^{-1} = \frac{1}{ad - bc} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$ |
+
+## Contoh Soal Ujian & Pembahasan Singkat
+
+**Soal Matriks SMA:** Tentukan invers dari matriks $A = \begin{pmatrix} 4 & 1 \\ 7 & 2 \end{pmatrix}$!
+
+**Pembahasan Kilat:**
+1. Hitung determinan: $\det(A) = (4 \times 2) - (1 \times 7) = 8 - 7 = 1$.
+2. Susun adjoin (tukar posisi diagonal utama, ubah tanda diagonal samping):
+   $$\text{Adj}(A) = \begin{pmatrix} 2 & -1 \\ -7 & 4 \end{pmatrix}$$
+3. Hitung invers:
+   $$A^{-1} = \frac{1}{1} \begin{pmatrix} 2 & -1 \\ -7 & 4 \end{pmatrix} = \begin{pmatrix} 2 & -1 \\ -7 & 4 \end{pmatrix}$$
+
+*Kunci Jawaban:* Invers matriks adalah **$\begin{pmatrix} 2 & -1 \\ -7 & 4 \end{pmatrix}$**.
+
+## Catatan Kakak Kelas & Tips Belajar
+
+💡 **Tips Penting:** Selalu cek determinan terlebih dahulu sebelum menyusun adjoin. Jika determinan bernilai 0, hentikan perhitungan karena matriks tersebut dipastikan tidak memiliki invers.

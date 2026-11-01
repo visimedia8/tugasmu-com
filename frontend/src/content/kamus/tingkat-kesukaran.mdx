@@ -1,0 +1,34 @@
+---
+title: "Tingkat Kesukaran Soal"
+description: "Proporsi atau rasio peserta yang menjawab benar suatu butir soal ujian terhadap total seluruh peserta tes."
+date: "2026-10-02T12:00:00Z"
+kategori: "Glosarium"
+---
+
+Tingkat kesukaran (item difficulty) adalah parameter psikometrik yang merepresentasikan derajat kesulitan suatu butir soal berdasarkan rasio peserta yang mampu menjawab nomor tersebut dengan benar.
+
+Dalam Classical Test Theory, tingkat kesukaran diukur sebagai persentase sederhana $P = \frac{B}{N}$. Namun dalam Item Response Theory (IRT), tingkat kesukaran disimbolkan dengan parameter $b$, yang menunjukkan titik pada skala kemampuan $\theta$ di mana peserta memiliki peluang 50% untuk menjawab benar.
+
+## Komponen & Atribut Kunci (EAV)
+
+| Nilai Parameter ($b$ IRT) | Kategori Kesukaran | Proporsi Populasi Menjawab Benar |
+|---|---|---|
+| **$b > +1{,}5$** | Sangat Sulit | Kurang dari 20% peserta nasional menjawab benar |
+| **$+0{,}5 < b \le +1{,}5$** | Sedang-Sulit | Sekitar 20% - 50% peserta nasional menjawab benar |
+| **$-0{,}5 \le b \le +0{,}5$** | Sedang (Normal) | Sekitar 50% peserta nasional menjawab benar |
+| **$b < -1{,}5$** | Sangat Mudah | Lebih dari 80% peserta nasional menjawab benar |
+
+## Contoh Soal Ujian & Pembahasan Singkat
+
+**Kasus Analisis Butir:** Sebuah paket soal tryout berisikan 50 nomor. Nomor 42 hanya berhasil dijawab benar oleh 150 dari total 1.000 peserta tryout. Tentukan indeks tingkat kesukaran klasik nomor tersebut!
+
+**Pembahasan Kilat:**
+1. Rumus tingkat kesukaran klasik: $P = \frac{\text{Jumlah Siswa Menjawab Benar}}{\text{Total Seluruh Siswa}}$.
+2. $P = \frac{150}{1000} = 0{,}15$.
+3. Karena nilai $P < 0{,}30$, nomor 42 tergolong ke dalam kategori **Soal Sukar**.
+
+*Kunci Jawaban:* Nilai $P = 0{,}15$ berkategori **Sukar**.
+
+## Catatan Kakak Kelas & Tips Belajar
+
+💡 **Tips Penting:** Dalam ujian berbasis IRT, jangan panik saat bertemu soal berkategori sukar. Menjawab salah tidak memicu penalti minus, namun jika berhasil menjawab benar, skormu akan melesat tinggi.
