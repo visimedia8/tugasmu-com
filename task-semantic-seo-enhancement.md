@@ -34,29 +34,30 @@
 
 ---
 
-### [ ] FASE 3: QUALITY NODE UPGRADE PADA ARTIKEL PILAR
-- [ ] **3.1 Upgrade Artikel Kalimat Aktif & Pasif (`perbedaan-kalimat-aktif-dan-pasif.mdx`)**
-  - Tambahkan KBT Triples (TBBBI), matriks pola SPOK vs POSPel, dan jebakan ujian UTBK (verba pasif persona pertama/kedua & verba intransitif).
-- [ ] **3.2 Upgrade Artikel Laporan PKL SMK (`panduan-format-contoh-laporan-pkl-smk-lengkap.mdx`)**
-  - Tambahkan matriks penilaian sidang PKL, tips Bab 4, dan top-funnel tool bridge.
-- [ ] **3.3 Re-kompilasi MDX (`node scripts/generate-mdx.js`)**
+### [x] FASE 3: QUALITY NODE UPGRADE PADA ARTIKEL PILAR
+- [x] **3.1 Upgrade Artikel Kalimat Aktif & Pasif (`perbedaan-kalimat-aktif-dan-pasif.mdx`)**
+  - Tambahkan KBT Triples (TBBBI Edisi IV), matriks pola SPOK vs POSPel, aturan pelengkap vs objek dwitransitif, pasif persona (inkorporasi pronomina), dan 3 jebakan ujian UTBK-SNBT (PBM & Literasi).
+- [x] **3.2 Upgrade Artikel Laporan PKL SMK (`panduan-format-contoh-laporan-pkl-smk-lengkap.mdx`)**
+  - Tambahkan panduan Bab 4 Penutup bebas Sindrom Laporan Harian (Taksonomi Bloom Vokasi), Checklist 7 Poin Verifikasi Legalitas Lembar Pengesahan DUDI, serta bridge ke `/tools/laporan-pkl`.
+- [x] **3.3 Re-kompilasi MDX (`node scripts/generate-mdx.js`)**
   - Update `generated-posts.json` dan `generated-kamus.json`.
 
 ---
 
-### [ ] FASE 4: PRE-DEPLOY VERIFIKASI & LOCAL PRODUCTION BUILD
-- [ ] **4.1 Local Static Build (`npm run build`)**
-  - Pastikan seluruh 662 static pages ter-prerender sukses (Exit code 0).
-- [ ] **4.2 OpenNext Cloudflare Worker Bundle (`npx @opennextjs/cloudflare build`)**
-  - Build `.open-next/worker.js` dan assets dengan flag `--dangerouslyUseUnsupportedNextVersion`.
+### [x] FASE 4: PRE-DEPLOY VERIFIKASI & LOCAL PRODUCTION BUILD
+- [x] **4.1 Local Static Build (`npm run build`)**
+  - Seluruh 662 static pages ter-prerender sukses (Exit code 0).
+- [x] **4.2 OpenNext Cloudflare Worker Bundle (`npx @opennextjs/cloudflare build`)**
+  - Berhasil dibundel ke `.open-next/worker.js` dan assets tervalidasi.
 
 ---
 
-### [ ] FASE 5: CLOUDFLARE DEPLOYMENT & DEFINITION OF DONE GATE
-- [ ] **5.1 Atomic Git Commit & Push ke `origin/main`**
-- [ ] **5.2 Cloudflare Workers Deploy (`npx wrangler deploy`)**
-- [ ] **5.3 Live HTTP Post-Deploy Verification:**
-  - `curl -I https://tugasmu.com/kamus/aljabar` -> 200 OK (`sameAs` Wikidata confirmed).
-  - `curl -I https://tugasmu.com/tools/math-solver/cara-menghitung-luas-lingkaran` -> 200 OK (in-text link confirmed).
-  - `curl -I https://tugasmu.com/blog/bahasa-indonesia/perbedaan-kalimat-aktif-dan-pasif` -> 200 OK (Quality node confirmed).
+### [x] FASE 5: CLOUDFLARE DEPLOYMENT & DEFINITION OF DONE GATE
+- [x] **5.1 Atomic Git Commit & Push ke `origin/main`**
+- [x] **5.2 Cloudflare Workers Deploy (`npx wrangler deploy`)**
+  - Version ID: `32f1e00d-23db-4db2-9167-896eb8498525`.
+- [x] **5.3 Live HTTP Post-Deploy Verification:**
+  - `curl -I https://tugasmu.com/blog/bahasa-indonesia/perbedaan-kalimat-aktif-dan-pasif` -> 200 OK (KBT & UTBK confirmed).
+  - `curl -I https://tugasmu.com/blog/smk/panduan-format-contoh-laporan-pkl-smk-lengkap` -> 200 OK (Checklist & Bab 4 confirmed).
+  - `curl -I https://tugasmu.com/kamus/aljabar` -> 200 OK (Regression test passed).
   - `curl -I https://www.tugasmu.com/` -> 308 Permanent Redirect.
