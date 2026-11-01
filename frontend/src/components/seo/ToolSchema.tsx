@@ -92,8 +92,19 @@ export default function ToolSchema({ toolId, name, description, slug, faqs }: To
     "itemListElement": breadcrumbElements
   };
 
-  // 3. FAQPage Schema (only for root tool by default, or if explicit faqs provided for spoke)
-  const activeFaqs = faqs || (!slug ? toolData.faqs : undefined);
+  // 3. FAQPage Schema (for root tool or dynamically constructed for spoke)
+  const spokeDefaultFaqs = slug ? [
+    {
+      q: `Bagaimana langkah penyelesaian materi ${appName}?`,
+      a: `Penyelesaian materi ${appName} dilakukan melalui pemahaman parameter soal, penerapan rumus atau kaidah konsep yang relevan, serta verifikasi hasil akhir bertahap ala tutor bimbingan belajar.`
+    },
+    {
+      q: `Apakah asisten AI TugasMu dapat membantu memeriksa kebenaran tugas ini?`,
+      a: `Ya! Asisten AI TugasMu menyediakan langkah penyelesaian interaktif untuk memverifikasi hitungan matematika, merapikan struktur naskah, dan menjelaskan konsep materi tanpa biaya.`
+    }
+  ] : undefined;
+
+  const activeFaqs = faqs || (!slug ? toolData.faqs : spokeDefaultFaqs);
   const faqSchema = activeFaqs && activeFaqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",

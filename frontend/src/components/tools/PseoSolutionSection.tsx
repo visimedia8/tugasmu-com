@@ -83,6 +83,34 @@ export default function PseoSolutionSection({
         </p>
       </div>
 
+      {/* Parameter & Spesifikasi Materi (EAV) - Anti-Thin Content */}
+      <div className="mb-6 p-4 md:p-5 rounded-2xl bg-slate-50/90 border border-slate-200/80">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="material-symbols-outlined text-sky-600 text-[18px]">fact_check</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
+            Spesifikasi Entitas &amp; Parameter Materi (EAV)
+          </span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="p-3 bg-white rounded-xl border border-slate-200/60 shadow-xs">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Domain Materi</span>
+            <span className="text-xs font-bold text-slate-800 line-clamp-1 mt-0.5">{title.replace(' | TugasMu', '')}</span>
+          </div>
+          <div className="p-3 bg-white rounded-xl border border-slate-200/60 shadow-xs">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Fokus Asesmen</span>
+            <span className="text-xs font-bold text-slate-800 mt-0.5 block">Penalaran &amp; Pemecahan Soal</span>
+          </div>
+          <div className="p-3 bg-white rounded-xl border border-slate-200/60 shadow-xs">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Kaidah Analisis</span>
+            <span className="text-xs font-bold text-slate-800 mt-0.5 block">Step-by-Step Chain of Thought</span>
+          </div>
+          <div className="p-3 bg-white rounded-xl border border-slate-200/60 shadow-xs">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Status Kurasi</span>
+            <span className="text-xs font-bold text-emerald-600 mt-0.5 block">Terverifikasi Standar Nasional</span>
+          </div>
+        </div>
+      </div>
+
       {/* Steps List */}
       <div className="space-y-4 mb-6">
         {solution.steps.map((step, idx) => (
