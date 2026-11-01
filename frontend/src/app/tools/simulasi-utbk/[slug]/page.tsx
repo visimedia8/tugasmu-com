@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import SimulasiUTBKClient from '../SimulasiUTBKClient';
+import PseoSolutionSection from '@/components/tools/PseoSolutionSection';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
@@ -72,6 +73,15 @@ export default function SimulasiUtbkPseoPage({ params }: PageProps) {
       </div>
 
       <SimulasiUTBKClient />
+
+      
+      {/* Solusi Interaktif Terverifikasi & Schema HowTo (Anti-Doorway Thick Content) */}
+      <PseoSolutionSection
+        toolId={data.toolId}
+        title={data.title}
+        initialPrompt={data.initialPrompt}
+        solution={data.solution}
+      />
 
       <div 
         className="mt-12 prose prose-slate max-w-none prose-h2:text-2xl prose-h2:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-xs"

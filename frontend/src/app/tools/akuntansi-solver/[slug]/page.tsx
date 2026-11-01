@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import AkuntansiSolverClient from '../AkuntansiSolverClient';
+import PseoSolutionSection from '@/components/tools/PseoSolutionSection';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
@@ -73,6 +74,15 @@ export default function AkuntansiSolverPseoPage({ params }: PageProps) {
       </div>
 
       <AkuntansiSolverClient initialPrompt={data.initialPrompt} />
+
+      
+      {/* Solusi Interaktif Terverifikasi & Schema HowTo (Anti-Doorway Thick Content) */}
+      <PseoSolutionSection
+        toolId={data.toolId}
+        title={data.title}
+        initialPrompt={data.initialPrompt}
+        solution={data.solution}
+      />
 
       {/* Konten Edukatif Semantik (Pencegah Thin Content) */}
       <div 

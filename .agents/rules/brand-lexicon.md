@@ -1,5 +1,6 @@
 # Brand Lexicon — TugasMu
 Generated: 2026-09-21
+Last Updated: 2026-11-01
 Method: Opsi B
 
 ## REQUIRED INFO
@@ -39,29 +40,40 @@ DIGITAL_FINGERPRINT:
 
 ## WEBSITE INTEL
 MONEY_PAGES:
+  - /tools/grammar-bahasa-indonesia
+  - /tools/grammar-bahasa-inggris
+  - /tools/math-solver
   - /tools/parafrase
+  - /tools/laporan-pkl
+  - /tools/simulasi-utbk
   - /tools/generator-soal
-  - /tools/rangkuman
-  - /tools/pantun-puisi
 
-ACTIVE_CLUSTERS:
-  - /blog/bahasa-indonesia   (8 artikel live)
-  - /blog/matematika         (7 artikel live)
-  - /blog/tips-belajar       (5 artikel live)
-  - /blog/kurikulum-merdeka  (5 artikel live)
-  - /blog/ujian              (5 artikel live)
+ACTIVE_CLUSTERS (13 Kategori):
+  - /blog/bahasa-indonesia
+  - /blog/bahasa-inggris
+  - /blog/matematika
+  - /blog/ipa
+  - /blog/ips
+  - /blog/ppkn
+  - /blog/sejarah
+  - /blog/informatika
+  - /blog/seni-budaya
+  - /blog/tips-belajar
+  - /blog/kurikulum-merdeka
+  - /blog/ujian
+  - /blog/kehidupan-sekolah
 
-GAPS:
-  - INTERNAL SILO LINKS: FIXED (Silo link added via UI template)
-  - SIBLING ARTICLE LINKS: FIXED (Related articles added via UI template)
-  - TONE VIOLATION (35 artikel): FIXED (Semua artikel sudah di-rewrite dengan Persona Kakak Kelas)
-  - KAMUS/GLOSARIUM: Belum ada (Fase 2, planned)
-  - KLASTER MISSING: /blog/sejarah/, /blog/ipa/, /blog/ppkn/ belum ada artikel
+SSOT_ALIGNMENT:
+  - SEO_SSOT: .agents/rules/seo-architecture-ssot.md
+  - TOTAL_BLOG_POSTS: 230
+  - TOTAL_KAMUS_ENTRIES: 70
+  - TOTAL_PSEO_SPOKES: 75
+  - TOTAL_TOOLS: 29
+  - SITEMAP_TOTAL: 662 static pages
 
 COMPETITIVE_INTEL:
   - Kompetitor Utama: Brainly, Ruangguru (gaya tanya-jawab transaksional, bukan Semantic Authority)
-  - Keunggulan TugasMu: Silo-based Topical Authority → TugasMu bisa outrank Brainly di Featured Snippets jika silo linking diperbaiki
+  - Keunggulan TugasMu: Silo-based Topical Authority & Interactive AI Assistance → TugasMu bisa outrank Brainly di Featured Snippets jika silo linking dan EAV information gain diperkuat.
 
-SITEMAP_ANALYZED: 2026-09-22
-TOTAL_ARTICLES: 30
-ADSENSE_READINESS: 90% (butuh Surgical Fix internal linking & tone sebelum submit)
+SITEMAP_ANALYZED: 2026-11-01
+ADSENSE_READINESS: 95%

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import PidatoClient from '../PidatoClient';
+import PseoSolutionSection from '@/components/tools/PseoSolutionSection';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
@@ -72,6 +73,15 @@ export default function PidatoPseoPage({ params }: PageProps) {
       </div>
 
       <PidatoClient />
+
+      
+      {/* Solusi Interaktif Terverifikasi & Schema HowTo (Anti-Doorway Thick Content) */}
+      <PseoSolutionSection
+        toolId={data.toolId}
+        title={data.title}
+        initialPrompt={data.initialPrompt}
+        solution={data.solution}
+      />
 
       {/* Konten Edukatif Semantik (Pencegah Thin Content) */}
       <div 
