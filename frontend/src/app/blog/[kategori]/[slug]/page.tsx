@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getPostBySlug, getPostSlugs, getAllCategories, getAllPosts } from '@/lib/mdx';
 import { processArticleContent } from '@/lib/toc';
 import Link from 'next/link';
+import RelatedKamusTerms from '@/components/tools/RelatedKamusTerms';
 
 type Props = {
   params: { kategori: string; slug: string } | Promise<{ kategori: string; slug: string }>;
@@ -306,6 +307,8 @@ export default async function BlogPost({ params }: Props) {
               </div>
             </div>
           </section>
+
+          <RelatedKamusTerms kategori={resolvedParams.kategori} title="Glosarium & Konsep Kunci Terkait" description="Pahami istilah teknis, rumus pembentuk, dan contoh soal yang mendasari pembahasan ini:" limit={4} />
 
           {relatedPosts.length > 0 && (
             <section className="mt-space-xl pt-space-xl border-t border-slate-100">

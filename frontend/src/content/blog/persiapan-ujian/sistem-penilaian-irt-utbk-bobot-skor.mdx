@@ -5,9 +5,9 @@ date: "2026-10-02T11:30:00Z"
 kategori: "persiapan-ujian"
 ---
 
-Sistem penilaian IRT (Item Response Theory) dalam UTBK SNBT merupakan metode penilaian statistik modern yang menentukan skor akhir berdasarkan tingkat kesulitan soal, daya pembeda soal, serta pola jawaban dari seluruh peserta ujian di seluruh Indonesia. Berbeda dengan sistem penilaian lama (Classical Test Theory atau CTT) yang hanya menghitung jumlah jawaban benar secara polos (satu jawaban benar sama dengan satu poin tanpa memandang tingkat kesulitannya), pendekatan Teori Respon Butir (IRT) menilai kemampuan berpikir dan pemahaman konsep peserta secara jauh lebih adil dan objektif.
+Sistem penilaian IRT (Item Response Theory) dalam UTBK SNBT merupakan metode penilaian statistik modern yang menentukan skor akhir berdasarkan [tingkat kesulitan soal](/kamus/tingkat-kesukaran), [daya pembeda soal](/kamus/daya-pembeda), serta pola jawaban dari seluruh peserta ujian di seluruh Indonesia. Berbeda dengan sistem penilaian lama (Classical Test Theory atau CTT) yang hanya menghitung jumlah jawaban benar secara polos (satu jawaban benar sama dengan satu poin tanpa memandang tingkat kesulitannya), pendekatan [Item Response Theory (IRT)](/kamus/item-response-theory) menilai kemampuan berpikir dan pemahaman konsep peserta secara jauh lebih adil dan objektif.
 
-Metode IRT telah digunakan secara konsisten oleh Balai Pengelolaan Pengujian Pendidikan (BP3 / BPPP) Kemendikbudristek untuk memastikan seleksi masuk perguruan tinggi negeri berjalan transparan. Dengan sistem ini, peserta yang mampu menyelesaikan soal-soal berkategori sulit dan memiliki daya pembeda tinggi akan memperoleh bobot skor yang jauh lebih melompat dibandingkan peserta yang hanya mampu menjawab soal-soal berkategori mudah. Untuk membiasakan diri menghadapi format soal berbobot ini, kamu dapat berlatih langsung di platform [Simulasi UTBK SNBT TugasMu](/tools/simulasi-utbk).
+Metode IRT telah digunakan secara konsisten oleh Balai Pengelolaan Pengujian Pendidikan (BP3 / BPPP) Kemendikbudristek untuk memastikan seleksi masuk perguruan tinggi negeri berjalan transparan. Dengan sistem ini, peserta yang mampu menyelesaikan soal-soal berkategori sulit dan memiliki [daya pembeda](/kamus/daya-pembeda) tinggi akan memperoleh bobot skor yang jauh lebih melompat dibandingkan peserta yang hanya mampu menjawab soal-soal berkategori mudah. Untuk membiasakan diri menghadapi format soal berbobot ini, kamu dapat berlatih langsung di platform [Simulasi UTBK SNBT TugasMu](/tools/simulasi-utbk).
 
 Banyak siswa kelas 12 dan *gap year* merasa bingung mengapa jumlah jawaban benar yang sama bisa menghasilkan skor akhir UTBK yang sangat berbeda. Yuk, kita bedah secara tuntas bagaimana sistem IRT bekerja di balik layar, rumus matematis yang mendasarinya, perbandingan passing grade kampus impian, serta trik praktis mengamankan skor 700+ di hari ujian.
 
@@ -41,11 +41,11 @@ Mari kita pahami setiap variabel dalam rumus ini menggunakan analogi sederhana:
    * Menunjukkan tingkat kecakapan bernalar dan penguasaan konsep yang kamu miliki. Nilai $\theta$ biasanya berada pada rentang -3,0 (sangat rendah) hingga +3,0 (sangat tinggi), dengan nilai 0 mewakili rata-rata kemampuan nasional.
    * Nilai $\theta$ inilah yang nantinya dikonversi oleh sistem komputer panitia menjadi skor sertifikat UTBK kamu (misalnya skor 650, 720, atau 810).
 
-2. **Parameter $b_i$ (Tingkat Kesulitan Soal / Item Difficulty)**:
+2. **Parameter $b_i$ ([Tingkat Kesulitan Soal](/kamus/tingkat-kesukaran) / Item Difficulty)**:
    * Mengukur seberapa sulit butir soal nomor $i$. Jika dari 800.000 peserta UTBK hanya ada 5% peserta yang menjawab benar nomor tersebut, maka nilai $b_i$ butir soal tersebut bernilai tinggi (+2,0 ke atas).
    * Sebaliknya, jika suatu nomor dijawab benar oleh 85% peserta nasional, maka nilai $b_i$ butir soal tersebut rendah (-1,5 ke bawah).
 
-3. **Parameter $a_i$ (Daya Pembeda Soal / Item Discrimination)**:
+3. **Parameter $a_i$ ([Daya Pembeda Soal](/kamus/daya-pembeda) / Item Discrimination)**:
    * Mengukur seberapa tajam butir soal tersebut membedakan siswa yang benar-benar paham materi dari siswa yang hanya menebak secara asal.
    * Soal dengan daya pembeda tinggi ($a_i > 1,2$) adalah "tambang emas poin". Jika kamu bisa menjawab soal tipe ini dengan benar, sistem IRT akan menaikkan estimasi $\theta$ kamu secara signifikan.
 
