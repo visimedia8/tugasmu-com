@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getKamusBySlug, getKamusSlugs } from '@/lib/kamus';
+import { KAMUS_WIKIDATA_MAP } from '@/lib/kamus-wikidata';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
@@ -155,13 +156,16 @@ export default async function KamusEntryPage({ params }: Props) {
     notFound();
   }
 
+  const sameAsList = KAMUS_WIKIDATA_MAP[resolvedParams.slug] || [];
+
   const definedTermSchema = {
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
     "name": entry.title,
     "description": entry.description,
     "url": `https://tugasmu.com/kamus/${resolvedParams.slug}`,
-    "inDefinedTermSet": "https://tugasmu.com/kamus"
+    "inDefinedTermSet": "https://tugasmu.com/kamus",
+    ...(sameAsList.length > 0 ? { "sameAs": sameAsList } : {})
   };
 
   const breadcrumbSchema = {
