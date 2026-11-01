@@ -167,6 +167,16 @@ export default async function BlogCategory({ params }: Props) {
     "name": info.title,
     "description": info.desc,
     "url": `https://tugasmu.com/blog/${resolvedParams.kategori}`,
+    "inLanguage": "id-ID",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TugasMu",
+      "url": "https://tugasmu.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tugasmu.com/logo.png"
+      }
+    },
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": visiblePosts.map((post, idx) => ({
@@ -185,7 +195,7 @@ export default async function BlogCategory({ params }: Props) {
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": "Beranda",
         "item": "https://tugasmu.com"
       },
       {

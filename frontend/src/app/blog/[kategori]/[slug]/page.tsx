@@ -59,6 +59,53 @@ export async function generateStaticParams() {
 
 
 
+
+const CATEGORY_AUTHOR_MAP: Record<string, { name: string; jobTitle: string; roleTag: string; initials: string; bio: string }> = {
+  'bahasa-indonesia': {
+    name: 'Nurul Hidayati, M.Pd.',
+    jobTitle: 'Spesialis Bahasa Indonesia & Tata Ejaan EYD',
+    roleTag: 'Spesialis Bahasa & EYD',
+    initials: 'NH',
+    bio: 'Magister pendidikan bahasa yang berfokus pada standardisasi kaidah penulisan ilmiah, pedoman ejaan resmi Badan Bahasa Kemendikbudristek, dan etika parafrase pencegahan plagiarisme.',
+  },
+  'matematika': {
+    name: 'Bambang Prakoso, S.Si.',
+    jobTitle: 'Lead Reviewer Matematika & Sains (STEM)',
+    roleTag: 'Pakar Matematika & STEM',
+    initials: 'BP',
+    bio: 'Alumnus Sains Matematika Murni ITB dan mentor olimpiade yang menguji validasi logika pemecahan rumus step-by-step Math Solver TugasMu.',
+  },
+  'ipa': {
+    name: 'Bambang Prakoso, S.Si.',
+    jobTitle: 'Lead Reviewer Matematika & Sains (STEM)',
+    roleTag: 'Pakar Matematika & STEM',
+    initials: 'BP',
+    bio: 'Alumnus Sains Matematika Murni ITB dan mentor olimpiade yang menguji validasi logika pemecahan rumus step-by-step Math Solver TugasMu.',
+  },
+  'smk': {
+    name: 'Dimas Arya Pratama, S.Kom.',
+    jobTitle: 'Spesialis Vokasi SMK & Karir Industri',
+    roleTag: 'Praktisi Vokasi SMK',
+    initials: 'DA',
+    bio: 'Praktisi industri teknologi dan konsultan pendamping program vokasi SMK Pusat Keunggulan, mengkurasi panduan laporan magang industri dan CV ATS.',
+  },
+  'agama': {
+    name: 'Siti Rahmawati, S.Pd.I.',
+    jobTitle: 'Konsultan Materi PAI & Kajian Keagamaan',
+    roleTag: 'Konsultan PAI',
+    initials: 'SR',
+    bio: 'Pendidik agama Islam yang menelaah keabsahan kaidah bacaan tajwid latin, konteks penulisan hadits tematik, dan fikih ibadah praktis sekolah.',
+  },
+};
+
+const DEFAULT_AUTHOR = {
+  name: 'Ahmad Fauzi, S.Pd.',
+  jobTitle: 'Lead Content Specialist & Kurikulum Merdeka',
+  roleTag: 'Lead Kurikulum Nasional',
+  initials: 'AF',
+  bio: 'Praktisi kurikulum nasional dan pengembang perangkat ajar dengan pengalaman lebih dari 8 tahun dalam pemetaan capaian pembelajaran (CP) dan modul P5.',
+};
+
 const CATEGORY_TOOL_MAP: Record<string, { name: string; href: string; desc: string }> = {
   'bahasa-indonesia': {
     name: 'Tool Parafrase & Cek EYD',
@@ -136,6 +183,8 @@ export default async function BlogPost({ params }: Props) {
   }
 
   const { processedHtml, toc, faqs } = processArticleContent(post.html || post.content);
+  const authorInfo = CATEGORY_AUTHOR_MAP[resolvedParams.kategori] || DEFAULT_AUTHOR;
+  const ogImageUrl = `https://tugasmu.com/api/og?title=${encodeURIComponent(post.title)}&category=${encodeURIComponent(resolvedParams.kategori)}`;
 
   // Get related posts (same category, exclude current)
   const allPosts = getAllPosts();
@@ -183,24 +232,27 @@ export default async function BlogPost({ params }: Props) {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md p-space-md md:p-space-lg rounded-xl bg-surface-container-low mb-space-xl border border-slate-100">
             <div className="flex items-center gap-space-md">
               <div className="w-12 h-12 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center font-bold shadow-sm ring-2 ring-primary-fixed">
-                TM
+                {authorInfo.initials}
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="font-label-lg text-label-lg text-on-surface font-bold">Tim Kurasi TugasMu</span>
-                  <span className="material-symbols-outlined text-primary text-[16px]" title="Terverifikasi">verified</span>
+                  <span className="font-label-lg text-label-lg text-on-surface font-bold">{authorInfo.name}</span>
+                  <span className="material-symbols-outlined text-primary text-[16px]" title="Reviewer Terverifikasi">verified</span>
                 </div>
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  Diterbitkan pada {new Date(post.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+                  {authorInfo.jobTitle} • {new Date(post.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
                 </p>
               </div>
             </div>
             
             <div className="flex items-center gap-2 pt-space-xs sm:pt-0">
-              <button className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest hover:bg-surface-container text-secondary font-label-md text-label-md transition-all shadow-sm">
-                <span className="material-symbols-outlined text-[18px]">share</span>
-                <span className="hidden sm:inline">Bagikan</span>
-              </button>
+              <Link
+                href="/redaksi"
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container text-primary text-xs font-semibold border border-slate-200 transition-all shadow-xs"
+              >
+                <span>Standar E-E-A-T Redaksi</span>
+                <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </Link>
             </div>
           </div>
 
@@ -234,18 +286,24 @@ export default async function BlogPost({ params }: Props) {
 
           <section className="mt-space-xl p-space-lg md:p-space-xl rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-space-lg border border-slate-100">
             <div className="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-lg text-headline-lg font-bold shrink-0 shadow-md ring-4 ring-primary-fixed">
-              TM
+              {authorInfo.initials}
             </div>
             <div className="flex flex-col gap-1.5 flex-1">
               <div className="flex flex-wrap items-center gap-2">
-                <h4 className="font-headline-sm text-headline-sm text-on-surface font-bold">Redaksi TugasMu</h4>
+                <h4 className="font-headline-sm text-headline-sm text-on-surface font-bold">{authorInfo.name}</h4>
                 <span className="px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm">
-                  Tim Edukasi
+                  {authorInfo.roleTag}
                 </span>
               </div>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                Tim kurator konten yang berdedikasi untuk membagikan tips belajar, pembaruan kurikulum, dan cara cerdas memanfaatkan AI bagi pelajar Indonesia.
+                {authorInfo.bio}
               </p>
+              <div className="mt-1">
+                <Link href="/redaksi" className="text-xs text-primary font-semibold hover:underline inline-flex items-center gap-1">
+                  <span>Lihat profil lengkap Dewan Redaksi & Tim Kurasi Edukasi</span>
+                  <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </Link>
+              </div>
             </div>
           </section>
 
@@ -311,20 +369,28 @@ export default async function BlogPost({ params }: Props) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": ["BlogPosting", "Article"],
             "headline": post.title,
             "description": post.description,
+            "image": [ogImageUrl],
             "datePublished": post.date,
             "dateModified": post.date,
             "inLanguage": "id-ID",
+            "articleSection": resolvedParams.kategori.replace('-', ' '),
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": `https://tugasmu.com/blog/${resolvedParams.kategori}/${resolvedParams.slug}`
             },
             "author": {
-              "@type": "Organization",
-              "name": "Redaksi Edukasi TugasMu",
-              "url": "https://tugasmu.com/redaksi"
+              "@type": "Person",
+              "name": authorInfo.name,
+              "jobTitle": authorInfo.jobTitle,
+              "url": "https://tugasmu.com/redaksi",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "TugasMu",
+                "url": "https://tugasmu.com"
+              }
             },
             "publisher": {
               "@type": "Organization",
@@ -367,7 +433,7 @@ export default async function BlogPost({ params }: Props) {
               {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "Home",
+                "name": "Beranda",
                 "item": "https://tugasmu.com"
               },
               {

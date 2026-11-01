@@ -9,6 +9,7 @@ export default function Breadcrumb() {
   if (pathname === '/') return null;
   
   const segments = pathname.split('/').filter(Boolean);
+  const hasCustomBreadcrumbSchema = pathname.startsWith('/blog/') || pathname.startsWith('/kamus/');
 
   const breadcrumbListSchema = {
     "@context": "https://schema.org",
@@ -35,10 +36,12 @@ export default function Breadcrumb() {
   
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbListSchema) }}
-      />
+      {!hasCustomBreadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbListSchema) }}
+        />
+      )}
       <div className="w-full bg-brand-cream border-b border-brand-navy/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <nav className="flex font-body-sm text-body-sm text-brand-navy/60" aria-label="Breadcrumb">
