@@ -57,10 +57,18 @@ export default function HargaPage() {
 
   const productSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": ["SoftwareApplication", "Product"],
     "name": "TugasMu AI Pro",
-    "description": "Platform AI pendidikan untuk memparafrase teks, menyelesaikan soal matematika, membuat soal latihan, dan bimbingan belajar siswa Indonesia.",
-    "image": "https://tugasmu.com/og-image.jpg",
+    "description": "Platform SaaS asisten kecerdasan buatan pendidikan untuk memparafrase teks, memecahkan rumus matematika step-by-step, membuat latihan soal, dan bimbingan belajar siswa Indonesia.",
+    "url": "https://tugasmu.com/harga",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All modern web browsers, Windows, macOS, Android, iOS",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "inLanguage": "id-ID",
+    "image": [
+      "https://tugasmu.com/og-image.jpg",
+      "https://tugasmu.com/api/og?title=Paket%20Berlangganan%20TugasMu&category=Harga"
+    ],
     "brand": {
       "@type": "Brand",
       "name": "TugasMu"
@@ -111,6 +119,12 @@ export default function HargaPage() {
         "validFrom": "2024-01-01",
         "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@type": "Organization",
+          "name": "TugasMu",
+          "url": "https://tugasmu.com"
+        },
         "url": "https://tugasmu.com/harga",
         "shippingDetails": digitalShippingDetails,
         "hasMerchantReturnPolicy": digitalReturnPolicy
@@ -123,6 +137,12 @@ export default function HargaPage() {
         "validFrom": "2024-01-01",
         "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@type": "Organization",
+          "name": "TugasMu",
+          "url": "https://tugasmu.com"
+        },
         "url": "https://tugasmu.com/harga",
         "shippingDetails": digitalShippingDetails,
         "hasMerchantReturnPolicy": digitalReturnPolicy
@@ -135,6 +155,12 @@ export default function HargaPage() {
         "validFrom": "2024-01-01",
         "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@type": "Organization",
+          "name": "TugasMu",
+          "url": "https://tugasmu.com"
+        },
         "url": "https://tugasmu.com/harga",
         "shippingDetails": digitalShippingDetails,
         "hasMerchantReturnPolicy": digitalReturnPolicy
@@ -151,7 +177,7 @@ export default function HargaPage() {
         "name": "Apakah TugasMu benar-benar bisa digunakan gratis?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ya! TugasMu menyediakan akses gratis selamanya dengan kuota harian untuk seluruh 29 tools asisten belajar siswa."
+          "text": "Ya! TugasMu menyediakan akses gratis selamanya dengan kuota harian untuk seluruh 29 tools asisten belajar siswa. Kamu bisa mendaftar tanpa perlu memasukkan kartu kredit."
         }
       },
       {
@@ -159,7 +185,7 @@ export default function HargaPage() {
         "name": "Metode pembayaran apa saja yang didukung?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pembayaran diverifikasi secara otomatis melalui gateway Duitku, mendukung QRIS, GoPay, OVO, Dana, ShopeePay, dan Virtual Account bank lokal."
+          "text": "Pembayaran diverifikasi secara otomatis melalui gateway Duitku, mendukung QRIS, GoPay, OVO, Dana, ShopeePay, dan Virtual Account bank lokal (BCA, Mandiri, BNI, BRI, Permata)."
         }
       },
       {
@@ -167,7 +193,7 @@ export default function HargaPage() {
         "name": "Apakah langganan Pro bisa dibatalkan sewaktu-waktu?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bisa. Kamu dapat membatalkan perpanjangan langganan kapan saja melalui dashboard akun tanpa biaya pinalti."
+          "text": "Bisa. Kamu dapat membatalkan perpanjangan langganan kapan saja melalui dashboard akun tanpa biaya pinalti atau ikatan kontrak jangka panjang."
         }
       }
     ]
@@ -193,6 +219,48 @@ export default function HargaPage() {
       </div>
 
       <PricingClient />
+
+      {/* Pertanyaan yang Sering Diajukan (FAQ) - Sinkronisasi Schema.org */}
+      <div className="max-w-4xl mx-auto px-4 mt-20 text-left">
+        <div className="text-center mb-10">
+          <span className="text-xs font-bold text-sky-600 uppercase tracking-wider">Tanya Jawab</span>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-1 font-heading">
+            Pertanyaan yang Sering Diajukan
+          </h2>
+          <p className="text-slate-600 text-sm mt-2">
+            Punya pertanyaan seputar paket langganan dan akses fitur TugasMu? Berikut jawabannya.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
+            <h3 className="font-bold text-slate-900 text-base mb-2">
+              Apakah TugasMu benar-benar bisa digunakan gratis?
+            </h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Ya! TugasMu menyediakan akses gratis selamanya dengan kuota harian untuk seluruh 29 tools asisten belajar siswa. Kamu bisa mendaftar tanpa perlu memasukkan kartu kredit.
+            </p>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
+            <h3 className="font-bold text-slate-900 text-base mb-2">
+              Metode pembayaran apa saja yang didukung?
+            </h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Pembayaran diverifikasi secara otomatis melalui gateway Duitku, mendukung QRIS, GoPay, OVO, Dana, ShopeePay, dan Virtual Account bank lokal (BCA, Mandiri, BNI, BRI, Permata).
+            </p>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
+            <h3 className="font-bold text-slate-900 text-base mb-2">
+              Apakah langganan Pro bisa dibatalkan sewaktu-waktu?
+            </h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Bisa. Kamu dapat membatalkan perpanjangan langganan kapan saja melalui dashboard akun tanpa biaya pinalti atau ikatan kontrak jangka panjang.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="max-w-3xl mx-auto px-4 mt-20 text-center">
         <h4 className="text-lg font-bold text-slate-900 mb-4">Pembayaran Aman &amp; Mudah</h4>
