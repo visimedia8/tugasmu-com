@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation';
 import { getKamusBySlug, getKamusSlugs } from '@/lib/kamus';
 import { KAMUS_WIKIDATA_MAP } from '@/lib/kamus-wikidata';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { KAMUS_TO_PSEO_SPOKES } from '@/lib/seo/semantic-mesh';
 
 type Props = {
   params: { slug: string } | Promise<{ slug: string }>;
@@ -157,6 +158,7 @@ export default async function KamusEntryPage({ params }: Props) {
   }
 
   const sameAsList = KAMUS_WIKIDATA_MAP[resolvedParams.slug] || [];
+  const relatedSpokes = KAMUS_TO_PSEO_SPOKES[resolvedParams.slug] || [];
 
   const definedTermSchema = {
     "@context": "https://schema.org",
@@ -247,6 +249,43 @@ export default async function KamusEntryPage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: entry.html || entry.content }}
           />
           
+          {/* Studi Kasus & Pembahasan Terkait (Semantic Mesh) */}
+          {relatedSpokes.length > 0 && (
+            <div className="mt-12 pt-8 border-t border-surface-container">
+              <div className="mb-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-primary px-3 py-1 rounded-full bg-primary/10 inline-block mb-2">
+                  Studi Kasus & Pembahasan Terkait
+                </span>
+                <h2 className="text-2xl font-heading font-bold text-slate-900">
+                  Penerapan Praktis & Panduan Belajar
+                </h2>
+                <p className="text-slate-600 text-sm mt-1">
+                  Pelajari cara menyelesaikan soal atau contoh implementasi nyata dari konsep {entry.title}:
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {relatedSpokes.map((spoke, idx) => (
+                  <Link
+                    key={idx}
+                    href={`/tools/${spoke.toolId}/${spoke.slug}`}
+                    className="group block p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-primary/50 hover:shadow-md transition-all"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-semibold px-2.5 py-0.5 rounded-md bg-sky-50 text-sky-700 border border-sky-200/60">
+                        {spoke.badge}
+                      </span>
+                      <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+                    </div>
+                    <h3 className="font-heading font-bold text-slate-900 group-hover:text-primary transition-colors text-base line-clamp-2">
+                      {spoke.title}
+                    </h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Internal Linking Bridge - Targeted Tool Conversion */}
           <div className="mt-16 pt-8 border-t border-surface-container">
             <div className="bg-gradient-to-r from-sky-50 to-indigo-50 p-6 md:p-8 rounded-2xl border border-sky-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-6">

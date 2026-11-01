@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import { TOOL_TO_KAMUS_CONCEPTS } from '@/lib/seo/semantic-mesh';
 
 export interface SolutionStep {
   name: string;
@@ -19,6 +21,7 @@ interface PseoSolutionSectionProps {
 }
 
 export default function PseoSolutionSection({
+  toolId,
   title,
   initialPrompt,
   solution,
@@ -26,6 +29,8 @@ export default function PseoSolutionSection({
   if (!solution || !solution.steps || solution.steps.length === 0) {
     return null;
   }
+
+  const concepts = TOOL_TO_KAMUS_CONCEPTS[toolId] || [];
 
   const howToSchema = {
     '@context': 'https://schema.org',
@@ -113,6 +118,26 @@ export default function PseoSolutionSection({
         <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-amber-50 border border-amber-200/60 text-amber-900 text-xs md:text-sm">
           <span className="shrink-0 font-bold">💡 Tips Kakak Kelas:</span>
           <span>{solution.tips}</span>
+        </div>
+      )}
+
+      {/* Konsep Terkait di Glosarium (Semantic Mesh Bridge) */}
+      {concepts.length > 0 && (
+        <div className="mt-6 pt-5 border-t border-slate-100">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 mr-1 flex items-center gap-1.5">
+              <span>📚</span> Konsep Terkait di Glosarium:
+            </span>
+            {concepts.map((concept) => (
+              <Link
+                key={concept.slug}
+                href={`/kamus/${concept.slug}`}
+                className="inline-flex items-center text-xs font-medium px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-primary/10 text-slate-700 hover:text-primary border border-slate-200/60 hover:border-primary/20 transition-all"
+              >
+                {concept.title} →
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </section>

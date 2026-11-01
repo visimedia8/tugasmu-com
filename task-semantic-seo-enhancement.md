@@ -18,13 +18,19 @@
 
 ---
 
-### [ ] FASE 2: BIDIRECTIONAL SEMANTIC CROSS-LINKING MESH
-- [ ] **2.1 In-Text Contextual Links dari pSEO Spoke ke Glosarium Terkait (`frontend/src/lib/seo/pseo-data.ts`)**
-  - Sisipkan 1-2 link alami ke istilah kamus di dalam penjelasan spoke matematika dan bahasa.
-- [ ] **2.2 Rekomendasi Spoke & Panduan Terkait pada Halaman Kamus (`frontend/src/app/kamus/[slug]/page.tsx`)**
-  - Tambahkan kartu panduan & studi kasus terkait di bawah artikel kamus.
-- [ ] **2.3 Verifikasi Fase 2:**
-  - Cek tidak ada broken link (404) dan anchor text relevan secara semantik.
+### [x] FASE 2: BIDIRECTIONAL SEMANTIC CROSS-LINKING MESH
+- [x] **2.1 In-Text Contextual Links dari pSEO Spoke ke Glosarium Terkait (`frontend/src/lib/seo/pseo-data.ts`)**
+  - Sisipkan 1-2 link alami ke istilah kamus di dalam penjelasan spoke matematika, bahasa, sains, dan akademik (64 spoke diperkaya dengan 74 contextual links).
+- [x] **2.2 Rekomendasi Spoke & Panduan Terkait pada Halaman Kamus (`frontend/src/app/kamus/[slug]/page.tsx`)**
+  - Tambahkan kartu panduan & studi kasus terkait (`KAMUS_TO_PSEO_SPOKES`) di bawah artikel kamus untuk seluruh 70 entri glosarium.
+- [x] **2.3 Konsep Terkait di Glosarium pada Seluruh Spoke (`frontend/src/components/tools/PseoSolutionSection.tsx`)**
+  - Integrasi `TOOL_TO_KAMUS_CONCEPTS` menjembatani seluruh 29 tools (290 pSEO spoke) ke entri kamus terkait.
+- [x] **2.4 Verifikasi Fase 2 & Deployment:**
+  - Build OpenNext & deploy ke Cloudflare Workers (`Version ID: 0753f40c-c475-46ae-92a2-09882bc9cba4`).
+  - Verifikasi live produksi via HTTP request:
+    - `https://tugasmu.com/kamus/aljabar` (200 OK, terhubung ke spoke `cara-menyelesaikan-persamaan-kuadrat-rumus-abc`).
+    - `https://tugasmu.com/tools/math-solver/cara-menyelesaikan-persamaan-kuadrat-rumus-abc` (200 OK, terhubung ke `/kamus/aljabar`).
+    - `https://tugasmu.com/tools/grammar-bahasa-indonesia/koreksi-kalimat-efektif` (200 OK, terhubung ke `/kamus/kalimat-efektif`).
 
 ---
 
