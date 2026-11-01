@@ -1,3 +1,4 @@
+import RelatedKamusTerms from '@/components/tools/RelatedKamusTerms';
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 import Link from 'next/link';
 import ParafraseClient from './ParafraseClient';
@@ -115,6 +116,8 @@ export default function ParafrasePage() {
 
         
       <RelatedBlogArticles kategori="bahasa-indonesia" categoryLabel="Bahasa Indonesia & Penulisan" />
+      <RelatedKamusTerms toolId="parafrase" title="Glosarium Penulisan Akademik & Anti-Plagiarisme" description="Pahami kaidah paragraf deduktif-induktif, integritas akademik, dan teknik lolos Turnitin:" />
+
       <FAQAccordion 
           title="Panduan & FAQ: Tool Parafrase TugasMu"
           description="Pertanyaan yang sering diajukan seputar penulisan ulang teks akademik untuk jenjang SD, SMP, SMA, dan sederajat."

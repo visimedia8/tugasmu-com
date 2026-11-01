@@ -1,3 +1,4 @@
+import RelatedKamusTerms from '@/components/tools/RelatedKamusTerms';
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 /* eslint-disable react/no-unescaped-entities */
 import AkuntansiSolverClient from './AkuntansiSolverClient';
@@ -66,7 +67,9 @@ export default function AkuntansiSolverPage() {
       </div>
 
       <div className="mt-12">
-        <FAQAccordion
+        <RelatedKamusTerms toolId="akuntansi-solver" title="Glosarium Akuntansi & Keuangan Bisnis" description="Pahami istilah inflasi, biaya peluang, dan perhitungan keuangan SMK akuntansi:" />
+
+      <FAQAccordion
           title="Pertanyaan Seputar Tool Ini"
           description="Panduan singkat penggunaan."
           faqs={faqs.map(f => ({ question: f.q, answer: <div dangerouslySetInnerHTML={{ __html: f.a }} /> }))}

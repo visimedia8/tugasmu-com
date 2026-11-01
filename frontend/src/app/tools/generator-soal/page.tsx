@@ -1,3 +1,4 @@
+import RelatedKamusTerms from '@/components/tools/RelatedKamusTerms';
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 import GeneratorSoalClient from './GeneratorSoalClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
@@ -50,6 +51,8 @@ export default function GeneratorSoalPage() {
 
       
       <RelatedBlogArticles kategori="kurikulum-merdeka" categoryLabel="Kurikulum Merdeka" />
+      <RelatedKamusTerms toolId="generator-soal" title="Glosarium Kurikulum Merdeka & Asesmen" description="Pahami istilah capaian pembelajaran (CP), alur tujuan pembelajaran (ATP), dan taksonomi Bloom:" />
+
       <FAQAccordion 
         title="Panduan & FAQ: Generator Soal AI"
         description="Pertanyaan seputar pembuatan soal otomatis untuk latihan siswa maupun ulangan harian guru tingkat SD-SMA."

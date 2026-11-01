@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import RelatedKamusTerms from '@/components/tools/RelatedKamusTerms';
 import SlideOutlineClient from './SlideOutlineClient';
 import { Presentation, CheckCircle , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -78,6 +79,12 @@ export default function SlideOutlinePage() {
           </p>
         </div>
       </div>
+
+      <RelatedKamusTerms
+        toolId="slide-outline"
+        title="Glosarium Presentasi & Projek Edukasi"
+        description="Pahami istilah modul ajar, profil pelajar pancasila (P5), serta teknik retorika materi:"
+      />
     </div>
   );
 }

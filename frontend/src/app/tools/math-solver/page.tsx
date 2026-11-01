@@ -1,3 +1,4 @@
+import RelatedKamusTerms from '@/components/tools/RelatedKamusTerms';
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 import MathSolverClient from './MathSolverClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
@@ -49,6 +50,8 @@ export default function MathSolverPage() {
       <RelatedTools toolIds={["generator-soal","rangkuman","simulasi-utbk"]} />
 
       
+      <RelatedKamusTerms toolId="math-solver" title="Glosarium & Rumus Matematika Terkait" description="Pahami istilah teorema pythagoras, fungsi komposisi, dan konsep aljabar yang mendasari perhitungan ini:" />
+
       <RelatedBlogArticles kategori="matematika" categoryLabel="Matematika & Rumus" />
       <FAQAccordion
         title="Panduan & FAQ: Penjelas Soal Matematika"

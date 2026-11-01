@@ -1,3 +1,4 @@
+import RelatedKamusTerms from '@/components/tools/RelatedKamusTerms';
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 /* eslint-disable react/no-unescaped-entities */
 import ProposalUsahaClient from './ProposalUsahaClient';
@@ -66,7 +67,9 @@ export default function ProposalUsahaPage() {
       </div>
 
       <div className="mt-12">
-        <FAQAccordion
+        <RelatedKamusTerms toolId="proposal-usaha" title="Glosarium Ekonomi & Bisnis Plan" description="Pahami istilah permintaan-penawaran, biaya peluang (opportunity cost), dan elastisitas harga:" />
+
+      <FAQAccordion
           title="Pertanyaan Seputar Tool Ini"
           description="Panduan singkat penggunaan."
           faqs={faqs.map(f => ({ question: f.q, answer: <div dangerouslySetInnerHTML={{ __html: f.a }} /> }))}

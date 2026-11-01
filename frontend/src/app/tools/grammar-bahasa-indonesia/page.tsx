@@ -1,3 +1,4 @@
+import RelatedKamusTerms from '@/components/tools/RelatedKamusTerms';
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 import GrammarEYDClient from './GrammarEYDClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
@@ -50,6 +51,8 @@ export default function GrammarEYDPage() {
 
       
       <RelatedBlogArticles kategori="bahasa-indonesia" categoryLabel="Bahasa Indonesia & EYD" />
+      <RelatedKamusTerms toolId="grammar-bahasa-indonesia" title="Glosarium Tata Bahasa PUEBI & EYD" description="Pahami pola SPOK, kalimat efektif, kata baku, serta ragam majas bahasa Indonesia:" />
+
       <FAQAccordion
         title="Panduan & FAQ: Cek Grammar & EYD"
         description="Pertanyaan seputar pemeriksaan ejaan dan tanda baca Bahasa Indonesia."

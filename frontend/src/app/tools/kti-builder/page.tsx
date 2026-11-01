@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import RelatedKamusTerms from '@/components/tools/RelatedKamusTerms';
 import KTIBuilderClient from './KTIBuilderClient';
 import { Microscope, CheckCircle , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -85,6 +86,12 @@ export default function KTIBuilderPage() {
           </p>
         </div>
       </div>
+
+      <RelatedKamusTerms
+        toolId="kti-builder"
+        title="Glosarium Karya Tulis Ilmiah (KTI)"
+        description="Pahami struktur karya ilmiah, sitasi daftar pustaka, metodologi, dan telaah anomi sosial:"
+      />
     </div>
   );
 }
