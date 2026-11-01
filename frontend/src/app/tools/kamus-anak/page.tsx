@@ -1,6 +1,5 @@
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 /* eslint-disable react/no-unescaped-entities */
-import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import KamusAnakClient from './KamusAnakClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -14,20 +13,6 @@ export const metadata = {
 };
 
 export default function KamusAnakPage() {
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Kamus Penjelas Kata Sulit untuk Anak SD - TugasMu",
-    "description": "Kamus pintar yang menjelaskan kata-kata sulit dari buku pelajaran SD menggunakan perumpamaan sehari-hari yang mudah dipahami anak.",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "IDR"
-    }
-  };
   const faqs = [
   {
     "q": "Apakah orang tua bisa menggunakan ini?",
@@ -38,7 +23,6 @@ export default function KamusAnakPage() {
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
       <ToolSchema toolId="kamus-anak" />
-      <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Kamus Pintar & Ramah Anak

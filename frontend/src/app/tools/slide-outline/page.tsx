@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import SlideOutlineClient from './SlideOutlineClient';
 import { Presentation, CheckCircle , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -13,24 +12,9 @@ export const metadata = {
 };
 
 export default function SlideOutlinePage() {
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Pembuat Presentasi & Slide Outline Otomatis",
-    "description": "Ubah topik tugasmu menjadi susunan slide presentasi Canva/PowerPoint lengkap dengan catatan pembicara (speaker notes).",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "IDR"
-    }
-  };
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
       <ToolSchema toolId="slide-outline" />
-      <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Pembuat Outline Presentasi (Slide PPT/Canva)

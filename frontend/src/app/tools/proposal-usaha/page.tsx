@@ -1,6 +1,5 @@
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 /* eslint-disable react/no-unescaped-entities */
-import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import ProposalUsahaClient from './ProposalUsahaClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -14,20 +13,6 @@ export const metadata = {
 };
 
 export default function ProposalUsahaPage() {
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Generator Proposal Usaha Sederhana (SMK / Kewirausahaan)",
-    "description": "Buat proposal bisnis tugas sekolah dengan analisis SWOT dan Rencana Anggaran secara otomatis.",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "IDR"
-    }
-  };
   const faqs = [
   {
     "q": "Apakah bisa digunakan untuk pengajuan modal beneran?",
@@ -38,7 +23,6 @@ export default function ProposalUsahaPage() {
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
       <ToolSchema toolId="proposal-usaha" />
-      <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Pembuat Proposal Usaha Sederhana

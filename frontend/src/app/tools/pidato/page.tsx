@@ -1,5 +1,4 @@
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
-import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import PidatoClient from './PidatoClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -13,24 +12,9 @@ export const metadata = {
 };
 
 export default function PidatoPage() {
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Generator Teks Pidato Otomatis — Semua Acara & Jenjang",
-    "description": "Buat teks pidato untuk 17 Agustus, Hari Guru, Perpisahan, dan acara sekolah lainnya secara otomatis. Pilih tema, durasi, dan gaya bahasa.",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "IDR"
-    }
-  };
   return (
     <div className="container py-8 md:py-12 max-w-4xl">
       <ToolSchema toolId="pidato" />
-      <SchemaMarkup schema={schema} />
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Generator Teks Pidato

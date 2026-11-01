@@ -1,6 +1,5 @@
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 /* eslint-disable react/no-unescaped-entities */
-import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import MuhafazhahClient from './MuhafazhahClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -14,20 +13,6 @@ export const metadata = {
 };
 
 export default function MuhafazhahPage() {
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Ujian Hafalan (Muhafazhah) - Sambung Ayat & Nadhom",
-    "description": "Generator otomatis untuk mengetes hafalan Qur",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "IDR"
-    }
-  };
   const faqs = [
   {
     "q": "Apakah ada nadhom kitab yang tidak didukung?",
@@ -38,7 +23,6 @@ export default function MuhafazhahPage() {
   return (
     <div className="container py-8 md:py-12 max-w-5xl">
       <ToolSchema toolId="muhafazhah" />
-      <SchemaMarkup schema={schema} />
       <div className="mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Tes Hafalan (Muhafazhah) Otomatis

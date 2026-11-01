@@ -1,7 +1,6 @@
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 import Link from 'next/link';
 import ParafraseClient from './ParafraseClient';
-import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
@@ -15,7 +14,7 @@ export const metadata = {
 };
 
 export default function ParafrasePage() {
-  const schema = {
+  const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Cara Memparafrase Teks dengan AI TugasMu",
@@ -39,34 +38,13 @@ export default function ParafrasePage() {
     ]
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Apa itu Parafrase?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Parafrase adalah menulis ulang sebuah teks menggunakan kata-kata sendiri tanpa mengubah makna dasar dari teks aslinya."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Mengapa menggunakan TugasMu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "TugasMu dirancang khusus untuk memahami konteks siswa Indonesia sehingga hasil parafrase terdengar lebih natural dan disesuaikan dengan tingkat sekolah."
-        }
-      }
-    ]
-  };
-
   return (
     <div className="w-full bg-surface min-h-screen">
       <ToolSchema toolId="parafrase" />
-      <SchemaMarkup schema={schema} />
-      <SchemaMarkup schema={faqSchema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
       
       <section className="max-w-[1200px] mx-auto w-full px-margin md:px-margin-desktop py-space-lg">
         {/* Breadcrumb */}

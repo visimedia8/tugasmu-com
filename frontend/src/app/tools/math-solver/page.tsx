@@ -1,5 +1,4 @@
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
-import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import MathSolverClient from './MathSolverClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -14,24 +13,9 @@ export const metadata = {
 };
 
 export default function MathSolverPage() {
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Penjelas Soal Matematika Step-by-Step — Cara Mengerjakan Soal Cerita",
-    "description": "Pahami cara mengerjakan soal matematika SD, SMP, SMA secara bertahap. AI menjelaskan setiap langkah dengan rumus, alasan, dan tips agar tidak salah lagi.",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "IDR"
-    }
-  };
   return (
     <div className="container py-8 md:py-12 max-w-4xl">
       <ToolSchema toolId="math-solver" />
-      <SchemaMarkup schema={schema} />
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Penjelas Soal Matematika Step-by-Step

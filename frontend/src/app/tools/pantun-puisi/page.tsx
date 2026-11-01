@@ -1,5 +1,4 @@
 import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
-import SchemaMarkup from '@/components/shared/SchemaMarkup';
 import PantunPuisiClient from './PantunPuisiClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -13,24 +12,9 @@ export const metadata = {
 };
 
 export default function PantunPuisiPage() {
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Generator Pantun & Puisi",
-    "description": "Buat pantun dan puisi seru untuk tugas sastramu otomatis dengan AI TugasMu.",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "IDR"
-    }
-  };
   return (
     <div className="container py-8 md:py-12 max-w-4xl">
       <ToolSchema toolId="pantun-puisi" />
-      <SchemaMarkup schema={schema} />
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">
           Generator Pantun & Puisi

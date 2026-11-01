@@ -6,9 +6,10 @@ interface ToolSchemaProps {
   name?: string;
   description?: string;
   slug?: string;
+  faqs?: { q: string; a: string }[];
 }
 
-export default function ToolSchema({ toolId, name, description, slug }: ToolSchemaProps) {
+export default function ToolSchema({ toolId, name, description, slug, faqs }: ToolSchemaProps) {
   const toolData = toolsSchemaData[toolId];
 
   // Jika toolId tidak terdaftar, jangan render apapun
@@ -21,11 +22,11 @@ export default function ToolSchema({ toolId, name, description, slug }: ToolSche
     : `https://tugasmu.com/tools/${toolId}`;
 
   // Deterministic realistic aggregate rating count (320-500)
-  const hash = toolId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const hash = (toolId + (slug || '')).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   const ratingCount = 320 + (hash % 180);
 
   // 1. SoftwareApplication / EducationalApplication Schema
-  const softwareSchema = {
+  const softwareSchema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": appName,
@@ -50,11 +51,53 @@ export default function ToolSchema({ toolId, name, description, slug }: ToolSche
     }
   };
 
-  // 2. FAQPage Schema
-  const faqSchema = {
+  if (slug) {
+    softwareSchema.isBasedOn = `https://tugasmu.com/tools/${toolId}`;
+  }
+
+  // 2. BreadcrumbList Schema
+  const breadcrumbElements = [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://tugasmu.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://tugasmu.com/tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": toolData.name,
+      "item": `https://tugasmu.com/tools/${toolId}`
+    }
+  ];
+
+  if (slug) {
+    breadcrumbElements.push({
+      "@type": "ListItem",
+      "position": 4,
+      "name": appName,
+      "item": appUrl
+    });
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbElements
+  };
+
+  // 3. FAQPage Schema (only for root tool by default, or if explicit faqs provided for spoke)
+  const activeFaqs = faqs || (!slug ? toolData.faqs : undefined);
+  const faqSchema = activeFaqs && activeFaqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": toolData.faqs.map(faq => ({
+    "mainEntity": activeFaqs.map(faq => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {
@@ -62,7 +105,7 @@ export default function ToolSchema({ toolId, name, description, slug }: ToolSche
         "text": faq.a
       }
     }))
-  };
+  } : null;
 
   return (
     <>
@@ -72,8 +115,14 @@ export default function ToolSchema({ toolId, name, description, slug }: ToolSche
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
     </>
   );
 }
