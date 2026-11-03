@@ -2,6 +2,9 @@ import { ReactNode } from 'react'
 import Link from 'next/link'
 import { LayoutDashboard, Users, Building } from 'lucide-react'
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export const metadata = {
   title: 'Admin Panel',
   robots: {

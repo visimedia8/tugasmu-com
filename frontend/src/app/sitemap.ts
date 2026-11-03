@@ -4,6 +4,8 @@ import { getAllKamus } from '@/lib/kamus';
 import { PSEO_DATA } from '@/lib/seo/pseo-data';
 import { TOOLS } from '@/data/tools';
 
+export const revalidate = 86400; // Cache sitemap for 24 hours
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://tugasmu.com';
   
