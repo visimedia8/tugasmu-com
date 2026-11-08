@@ -5,6 +5,8 @@ import LaporanPKLClient from '../LaporanPKLClient';
 import PseoSolutionSection from '@/components/tools/PseoSolutionSection';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -76,6 +78,8 @@ export default function LaporanPklPseoPage({ params }: PageProps) {
       <div className="max-w-4xl mt-14">
         <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["cv-lamaran", "makalah-builder", "kti-builder"]} />
+        <RelatedBlogArticles kategori="smk" categoryLabel="Laporan PKL & Kejuruan SMK" />
+
 
         <FAQAccordion
           title={`FAQ: ${data.h1}`}

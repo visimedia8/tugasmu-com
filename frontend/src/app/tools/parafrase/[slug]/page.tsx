@@ -6,6 +6,8 @@ import ParafraseClient from '../ParafraseClient';
 import PseoSolutionSection from '@/components/tools/PseoSolutionSection';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -75,6 +77,8 @@ export default function ParafrasePseoPage({ params }: PageProps) {
       <div className="max-w-4xl mt-16">
         <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["grammar-eyd", "rangkuman", "makalah-builder"]} />
+        <RelatedBlogArticles kategori="bahasa-indonesia" categoryLabel="Penulisan & Parafrase Akademik" />
+
 
         <FAQAccordion
           title={`FAQ: ${data.h1}`}

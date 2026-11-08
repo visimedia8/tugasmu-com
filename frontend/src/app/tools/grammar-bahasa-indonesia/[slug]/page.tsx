@@ -5,6 +5,8 @@ import GrammarEYDClient from '../GrammarEYDClient';
 import PseoSolutionSection from '@/components/tools/PseoSolutionSection';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -73,6 +75,8 @@ export default function GrammarEydPseoPage({ params }: PageProps) {
 
       <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["parafrase","laporan-pkl","cerita-pendek"]} />
+        <RelatedBlogArticles kategori="bahasa-indonesia" categoryLabel="Tata Bahasa EYD & PUEBI" />
+
 
       <FAQAccordion
         title={`FAQ: ${data.h1}`}

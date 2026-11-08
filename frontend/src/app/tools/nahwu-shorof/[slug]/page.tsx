@@ -6,6 +6,8 @@ import NahwuShorofClient from '../NahwuShorofClient';
 import PseoSolutionSection from '@/components/tools/PseoSolutionSection';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -77,6 +79,8 @@ export default function NahwuShorofPseoPage({ params }: PageProps) {
       <div className="max-w-4xl mt-14">
         <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["tajwid", "translator-arab", "kitab-kuning"]} />
+        <RelatedBlogArticles kategori="agama" categoryLabel="Kaidah Bahasa Arab & Agama" />
+
 
         <FAQAccordion
           title={`FAQ: ${data.h1}`}

@@ -5,6 +5,8 @@ import RangkumanClient from '../RangkumanClient';
 import PseoSolutionSection from '@/components/tools/PseoSolutionSection';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -75,6 +77,8 @@ export default function RangkumanPseoPage({ params }: PageProps) {
       <div className="max-w-4xl mt-14">
         <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["generator-soal", "math-solver", "simulasi-utbk"]} />
+        <RelatedBlogArticles kategori="ipa" categoryLabel="Rangkuman Materi Sains IPA" />
+
 
         <FAQAccordion
           title={`FAQ: ${data.h1}`}

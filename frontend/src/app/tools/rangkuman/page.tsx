@@ -3,6 +3,8 @@ import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 import RangkumanClient from './RangkumanClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -47,6 +49,8 @@ export default function RangkumanPage() {
       <SiblingSpokes toolId="rangkuman" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["generator-soal","math-solver","simulasi-utbk"]} />
+      <RelatedBlogArticles kategori="ipa" categoryLabel="Rangkuman Materi Sains IPA" />
+
 
       <RelatedKamusTerms toolId="rangkuman" title="Glosarium Sains & Konsep Kunci Terkait" description="Pahami konsep reaksi fotosintesis, organel sel, dan hukum gerak fisika yang sering diujikan:" />
 

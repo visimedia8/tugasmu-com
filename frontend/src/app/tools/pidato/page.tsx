@@ -2,6 +2,8 @@ import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 import PidatoClient from './PidatoClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -46,6 +48,8 @@ export default function PidatoPage() {
       <SiblingSpokes toolId="pidato" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["cerita-pendek","kamus-anak","pantun-puisi"]} />
+      <RelatedBlogArticles kategori="bahasa-indonesia" categoryLabel="Naskah Pidato & Bahasa Indonesia" />
+
 
       <FAQAccordion
         title="Panduan & FAQ: Generator Teks Pidato"

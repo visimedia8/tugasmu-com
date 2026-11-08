@@ -3,6 +3,8 @@ import RelatedKamusTerms from '@/components/tools/RelatedKamusTerms';
 import KTIBuilderClient from './KTIBuilderClient';
 import { Microscope, CheckCircle , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -47,6 +49,8 @@ export default function KTIBuilderPage() {
       <SiblingSpokes toolId="kti-builder" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["makalah-builder","parafrase","grammar-eyd"]} />
+      <RelatedBlogArticles kategori="bahasa-indonesia" categoryLabel="Karya Tulis Ilmiah & Bahasa Indonesia" />
+
 
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
         <div className="prose prose-slate max-w-none prose-headings:font-heading prose-a:text-sky-600">

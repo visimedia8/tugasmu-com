@@ -6,6 +6,8 @@ import SlideOutlineClient from '../SlideOutlineClient';
 import PseoSolutionSection from '@/components/tools/PseoSolutionSection';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -77,6 +79,8 @@ export default function SlideOutlinePseoPage({ params }: PageProps) {
       <div className="max-w-4xl mt-14">
         <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["kti-builder", "pidato", "proposal-usaha"]} />
+        <RelatedBlogArticles kategori="kurikulum-merdeka" categoryLabel="Presentasi Kurikulum Merdeka" />
+
 
         <FAQAccordion
           title={`FAQ: ${data.h1}`}

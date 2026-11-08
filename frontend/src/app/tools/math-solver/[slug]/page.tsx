@@ -6,6 +6,8 @@ import MathSolverClient from '../MathSolverClient';
 import PseoSolutionSection from '@/components/tools/PseoSolutionSection';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -77,6 +79,8 @@ export default function MathSolverPseoPage({ params }: PageProps) {
 
       <SiblingSpokes toolId={data.toolId} currentSlug={data.slug} />
         <RelatedTools toolIds={["generator-soal","rangkuman","simulasi-utbk"]} />
+        <RelatedBlogArticles kategori="matematika" categoryLabel="Matematika & Rumus Cepat" />
+
 
       <FAQAccordion
         title={`FAQ: ${data.h1}`}

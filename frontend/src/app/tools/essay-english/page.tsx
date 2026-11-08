@@ -3,6 +3,8 @@ import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 import EssayEnglishClient from './EssayEnglishClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -54,6 +56,8 @@ export default function EssayEnglishPage() {
       <SiblingSpokes toolId="essay-english" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["generator-soal","rangkuman","math-solver"]} />
+      <RelatedBlogArticles kategori="bahasa-inggris" categoryLabel="Bahasa Inggris & Esai" />
+
 
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
         <div className="prose prose-slate max-w-none prose-headings:font-heading prose-a:text-sky-600">

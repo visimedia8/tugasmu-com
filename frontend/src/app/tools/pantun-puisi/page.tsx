@@ -2,6 +2,8 @@ import { CheckCircle, Zap, ShieldCheck, Users } from 'lucide-react';
 import PantunPuisiClient from './PantunPuisiClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -46,6 +48,8 @@ export default function PantunPuisiPage() {
       <SiblingSpokes toolId="pantun-puisi" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["cerita-pendek","kamus-anak","pidato"]} />
+      <RelatedBlogArticles kategori="seni-budaya" categoryLabel="Sastra & Seni Budaya" />
+
 
       <FAQAccordion 
         title="Panduan & FAQ: Generator Pantun & Puisi"

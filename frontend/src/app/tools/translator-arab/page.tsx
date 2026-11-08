@@ -4,6 +4,8 @@ import TranslatorArabClient from './TranslatorArabClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { BookOpen, CheckCircle, Lightbulb , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -48,6 +50,8 @@ export default function TranslatorArabPage() {
       <SiblingSpokes toolId="translator-arab" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["kitab-kuning","nahwu-shorof","muhafazhah"]} />
+      <RelatedBlogArticles kategori="agama" categoryLabel="Bahasa Arab & Pendidikan Agama" />
+
 
       {/* SEO Helpful Content Section */}
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">

@@ -4,6 +4,8 @@ import MakalahBuilderClient from './MakalahBuilderClient';
 import FAQAccordion from '@/components/shared/FAQAccordion';
 import { BookOpen, CheckCircle , Zap , ShieldCheck , Users } from 'lucide-react';
 import RelatedTools from '@/components/tools/RelatedTools';
+import RelatedBlogArticles from '@/components/tools/RelatedBlogArticles';
+
 import SiblingSpokes from '@/components/tools/SiblingSpokes';
 import ToolSchema from '@/components/seo/ToolSchema';
 
@@ -48,6 +50,8 @@ export default function MakalahBuilderPage() {
       <SiblingSpokes toolId="makalah-builder" title="Panduan Materi & Contoh Tugas Populer" description="Pahami konsep, rumus, dan template tugas terkait melalui panduan praktis berikut:" />
 
       <RelatedTools toolIds={["kti-builder","parafrase","grammar-eyd"]} />
+      <RelatedBlogArticles kategori="bahasa-indonesia" categoryLabel="Format Makalah & Karya Ilmiah" />
+
 
       {/* SEO Helpful Content Section */}
       <div className="mt-16 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
