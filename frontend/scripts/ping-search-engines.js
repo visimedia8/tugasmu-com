@@ -16,9 +16,11 @@ const KEY_LOCATION = `https://${HOST}/${INDEXNOW_KEY}.txt`;
 const priorityUrls = [
   `https://${HOST}/`,
   `https://${HOST}/tools`,
+  `https://${HOST}/tools/math-solver`,
   `https://${HOST}/harga`,
   `https://${HOST}/kamus`,
   `https://${HOST}/blog`,
+  `https://${HOST}/blog/matematika/integral-tak-tentu-dan-tentu`,
   `https://${HOST}/redaksi`,
   `https://${HOST}/kebijakan-editorial`
 ];
@@ -92,10 +94,20 @@ req.on('error', (e) => {
 req.write(payload);
 req.end();
 
-// Ping Bing sitemap
-const bingPingUrl = `https://www.bing.com/ping?sitemap=https%3A%2F%2F${HOST}%2Fsitemap.xml`;
-https.get(bingPingUrl, (res) => {
-  console.log(`[Bing Sitemap Ping] HTTP ${res.statusCode}`);
-}).on('error', (e) => {
-  console.log('[Bing Sitemap Ping] Error:', e.message);
+// Ping Bing modular sitemaps
+const sitemapsToPing = [
+  `https://${HOST}/sitemap.xml`,
+  `https://${HOST}/sitemap/main.xml`,
+  `https://${HOST}/sitemap/kamus.xml`,
+  `https://${HOST}/sitemap/blog.xml`,
+  `https://${HOST}/sitemap/spokes.xml`
+];
+
+sitemapsToPing.forEach(sitemapUrl => {
+  const bingPingUrl = `https://www.bing.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`;
+  https.get(bingPingUrl, (res) => {
+    console.log(`[Bing Sitemap Ping] ${sitemapUrl} -> HTTP ${res.statusCode}`);
+  }).on('error', (e) => {
+    console.log(`[Bing Sitemap Ping] ${sitemapUrl} -> Error:`, e.message);
+  });
 });
