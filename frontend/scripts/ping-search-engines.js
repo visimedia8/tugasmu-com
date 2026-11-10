@@ -94,13 +94,9 @@ req.on('error', (e) => {
 req.write(payload);
 req.end();
 
-// Ping Bing modular sitemaps
+// Ping Bing unified sitemap
 const sitemapsToPing = [
-  `https://${HOST}/sitemap.xml`,
-  `https://${HOST}/sitemap/main.xml`,
-  `https://${HOST}/sitemap/kamus.xml`,
-  `https://${HOST}/sitemap/blog.xml`,
-  `https://${HOST}/sitemap/spokes.xml`
+  `https://${HOST}/sitemap.xml`
 ];
 
 sitemapsToPing.forEach(sitemapUrl => {

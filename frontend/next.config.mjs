@@ -224,19 +224,6 @@ const nextConfig = {
           },
         ],
       },
-      {
-        source: '/sitemap/:path*',
-        headers: [
-          {
-            key: 'Cloudflare-CDN-Cache-Control',
-            value: 'public, max-age=86400, stale-while-revalidate=86400',
-          },
-          {
-            key: 'CDN-Cache-Control',
-            value: 'public, max-age=86400, stale-while-revalidate=86400',
-          },
-        ],
-      },
       // 2. AUTH, USER PORTAL & API (Strict No-Store Bypass to protect dynamic user session)
       {
         source: '/:path(admin|akun|guru|api|masuk|daftar)/:subpath*',
