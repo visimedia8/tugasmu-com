@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', '/api/og'],
         disallow: ['/api/', '/admin/', '/akun/', '/s/'],
       },
       {
@@ -24,6 +24,9 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/'],
       },
     ],
-    sitemap: 'https://tugasmu.com/sitemap.xml',
+    sitemap: [
+      'https://tugasmu.com/sitemap.xml',
+      'https://tugasmu.com/feed.xml',
+    ],
   };
 }
